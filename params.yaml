@@ -1,0 +1,36 @@
+# StockM v1.0 — DVC pipeline parameters
+# Consumed by stages in dvc.yaml via `dvc params diff`.
+
+data:
+  symbols:
+    - AAPL
+    - MSFT
+    - GOOGL
+  start_date: "2015-01-01"
+  end_date: "2024-12-31"
+  target_horizon_days: 1
+  test_size: 0.15
+  val_size: 0.15
+
+train:
+  epochs: 50
+  batch_size: 64
+  learning_rate: 0.001
+  early_stopping_patience: 10
+  random_seed: 42
+
+model:
+  name: "lstm_baseline"
+  hidden_size: 64
+  num_layers: 2
+  dropout: 0.2
+
+features:
+  active_groups:
+    - ohlcv
+  window_size: 30
+
+backtest:
+  initial_capital: 100000
+  commission_pct: 0.1
+  slippage_pct: 0.05

@@ -1,0 +1,51 @@
+# StockM v1.0 — backtesting configuration
+
+engine:
+  type: event_driven              # event_driven | vectorized
+  currency: USD
+
+# ── Portfolio settings ──────────────────────────────────────
+portfolio:
+  initial_capital: 100000
+  position_sizing: equal_weight   # equal_weight | kelly | volatility_scaled
+  max_positions: 5
+  allow_short: false              # v1 = long-only
+
+# ── Transaction costs ───────────────────────────────────────
+costs:
+  commission_pct: 0.1             # percent of trade value
+  slippage_pct: 0.05
+  fixed_cost_per_trade: 0.0
+
+# ── Backtest periods ────────────────────────────────────────
+periods:
+  method: walk_forward            # walk_forward | single
+  train_window_days: 756          # ~3 years
+  test_window_days: 63            # ~1 quarter
+  step_days: 63
+
+# ── Strategy ────────────────────────────────────────────────
+strategy:
+  type: long_up_prediction        # buy when model predicts UP
+  confidence_threshold: 0.55      # only act on high-confidence UP calls
+  holding_period_days: 1          # next-day exit (matches v1 horizon)
+
+# ── Backtest metrics ────────────────────────────────────────
+metrics:
+  - total_return
+  - annual_return
+  - sharpe_ratio
+  - sortino_ratio
+  - max_drawdown
+  - calmar_ratio
+  - win_rate
+  - profit_factor
+  - turnover
+
+benchmark:
+  symbol: SPY                     # buy-and-hold benchmark
+
+reporting:
+  output_dir: reports/backtesting
+  generate_equity_curve: true
+  generate_drawdown_plot: true

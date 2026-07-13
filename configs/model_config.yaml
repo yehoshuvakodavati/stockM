@@ -1,0 +1,53 @@
+# StockM v1.0 — model configuration
+# Each model family lives under src/stockM/models/. The `registry` selects
+# which architecture is active for a given run.
+
+registry:
+  active_model: lstm_baseline_v1   # must match a model block below
+
+# ── Classical baselines (always train a baseline first) ────
+logistic_baseline:
+  family: classical
+  type: logistic_regression
+  C: 1.0
+  max_iter: 1000
+
+xgboost_baseline:
+  family: classical
+  type: xgboost
+  n_estimators: 300
+  max_depth: 6
+  learning_rate: 0.05
+  subsample: 0.8
+
+# ── Deep learning (sequence models) ───────────────────────
+lstm_baseline_v1:
+  family: deep_learning
+  type: lstm
+  input_size: auto                # inferred from active feature groups
+  hidden_size: 64
+  num_layers: 2
+  dropout: 0.2
+  bidirectional: false
+  output_size: 1                  # binary: UP probability
+
+transformer_v1:
+  family: deep_learning
+  type: transformer
+  d_model: 64
+  n_heads: 4
+  num_layers: 2
+  dropout: 0.1
+
+# ── Ensembles (future) ──────────────────────────────────────
+ensemble_blend_v1:
+  family: ensemble
+  type: stacking
+  base_models: [xgboost_baseline, lstm_baseline_v1]
+  meta_learner: logistic_regression
+
+# ── Model registry staging ──────────────────────────────────
+stages:
+  - staging
+  - production
+  - archived

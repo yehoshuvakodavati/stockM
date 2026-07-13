@@ -1,0 +1,42 @@
+# StockM v1.0 — prediction / inference configuration
+
+mode: batch                       # batch | real_time
+
+# ── Model to serve ──────────────────────────────────────────
+model:
+  source: registry                # registry | path
+  name: lstm_baseline_v1
+  stage: production                # staging | production | archived
+  version: latest
+  device: cpu
+
+# ── Input preparation ───────────────────────────────────────
+input:
+  lookback_window: 30
+  features_from: feature_config.yaml
+  scaling: reuse_training_scaler  # critical: do not re-fit at inference
+
+# ── Output ─────────────────────────────────────────────────
+output:
+  label: binary                   # binary | probability | both
+  threshold: 0.5
+  return_confidence: true
+
+# ── Batch inference ─────────────────────────────────────────
+batch:
+  input_path: data/processed/latest_features.parquet
+  output_path: reports/performance/predictions.csv
+  overwrite: true
+
+# ── Real-time serving ───────────────────────────────────────
+serving:
+  api_version: v1
+  max_batch_size: 32
+  timeout_seconds: 5
+  warmup_on_load: true
+
+# ── Monitoring (prediction drift) ───────────────────────────
+monitoring:
+  track_prediction_distribution: true
+  drift_detection: true
+  alert_on_drift: true

@@ -1,0 +1,155 @@
+# StockM v1.0 — project & tool configuration
+# PEP 518 / PEP 621 compliant. This is the primary build/config file.
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stockM"
+version = "1.0.0"
+description = "StockM — self-built ML system for next-day stock movement prediction (OHLCV)."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [
+    { name = "StockM Team" },
+]
+keywords = ["machine-learning", "stock-market", "prediction", "mlops", "finance"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "pyarrow>=16.0",
+    "pyyaml>=6.0",
+    "scikit-learn>=1.5",
+    "xgboost>=2.0",
+    "torch>=2.3",
+    "optuna>=3.6",
+    "mlflow>=2.12",
+    "fastapi>=0.111",
+    "uvicorn[standard]>=0.29",
+    "pydantic>=2.7",
+    "matplotlib>=3.9",
+    "structlog>=24.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2",
+    "pytest-cov>=5.0",
+    "pytest-mock>=3.14",
+    "ruff>=0.4",
+    "black>=24.4",
+    "isort>=5.13",
+    "mypy>=1.10",
+    "pre-commit>=3.7",
+    "mkdocs>=1.6",
+    "mkdocs-material>=9.5",
+    "mkdocstrings[python]>=0.25",
+    "jupyterlab>=4.2",
+]
+data = [
+    "yfinance>=0.2.40",
+    "great-expectations>=0.18",
+    "dvc>=3.51",
+]
+backtest = [
+    "backtrader>=1.9.78",
+]
+
+[project.urls]
+Documentation = "https://github.com/your-org/stockM/tree/main/docs"
+Repository = "https://github.com/your-org/stockM"
+
+[project.scripts]
+stockM = "stockM.cli:main"
+
+# ── setuptools ───────────────────────────────────────────────
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+stockM = ["py.typed"]
+
+# ── Black ────────────────────────────────────────────────────
+[tool.black]
+line-length = 100
+target-version = ["py310", "py311", "py312"]
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | \.mypy_cache
+  | \.ruff_cache
+  | \.pytest_cache
+  | build
+  | dist
+  | data
+  | models
+  | experiments
+)/
+'''
+
+# ── Ruff ─────────────────────────────────────────────────────
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests", "scripts"]
+exclude = ["data", "models", "experiments", ".venv", "build", "dist"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "B", "C4", "UP", "SIM", "TID"]
+ignore = ["E501"]  # line-length handled by black
+
+[tool.ruff.lint.isort]
+known-first-party = ["stockM"]
+
+# ── isort ────────────────────────────────────────────────────
+[tool.isort]
+profile = "black"
+line_length = 100
+known_first_party = ["stockM"]
+src_paths = ["src", "tests", "scripts"]
+
+# ── Mypy ─────────────────────────────────────────────────────
+[tool.mypy]
+python_version = "3.10"
+packages = ["stockM"]
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+exclude = "(data|models|experiments|notebooks|build|dist)/"
+
+# ── Pytest ────────────────────────────────────────────────────
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-ra",
+    "--strict-markers",
+    "--strict-config",
+    "--cov=stockM",
+    "--cov-report=term-missing",
+    "--cov-report=html:reports/coverage",
+]
+markers = [
+    "unit: isolated unit tests.",
+    "integration: cross-module integration tests.",
+    "pipeline: end-to-end pipeline tests.",
+    "slow: long-running tests.",
+]

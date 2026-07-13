@@ -1,0 +1,41 @@
+# StockM v1.0 — local orchestration of services
+# Usage:  docker-compose up -d   |   docker-compose down
+
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: deployment/docker/Dockerfile.api
+    image: stockM-api:1.0
+    container_name: stockM-api
+    ports:
+      - "8000:8000"
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    volumes:
+      - ./models:/app/models:ro
+      - ./configs:/app/configs:ro
+    restart: unless-stopped
+
+  tracker:
+    image: ghcr.io/mlflow/mlflow:v2.12.2
+    container_name: stockM-mlflow
+    ports:
+      - "5000:5000"
+    environment:
+      - BACKEND_STORE_URI=sqlite:///mlflow.db
+      - ARTIFACT_STORE=/mlruns
+    volumes:
+      - ./experiments:/mlruns
+      - mlflow-db:/mlflow
+    command: >
+      mlflow server
+      --backend-store-uri sqlite:///mlflow.db
+      --default-artifact-root /mlruns
+      --host 0.0.0.0 --port 5000
+    restart: unless-stopped
+
+volumes:
+  mlflow-db:

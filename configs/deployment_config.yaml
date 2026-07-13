@@ -1,0 +1,47 @@
+# StockM v1.0 — deployment configuration
+
+target: local                     # local | docker | kubernetes | cloud
+
+# ── API service ─────────────────────────────────────────────
+api:
+  host: 0.0.0.0
+  port: 8000
+  workers: 4
+  log_level: info
+  reload: false                   # true only in dev
+  max_request_size_mb: 10
+
+# ── Docker ───────────────────────────────────────────────────
+docker:
+  registry: ghcr.io/your-org
+  images:
+    api: stockM-api
+    trainer: stockM-trainer
+    worker: stockM-worker
+  tag: "1.0"
+
+# ── Kubernetes (placeholder) ────────────────────────────────
+kubernetes:
+  namespace: stockM
+  replicas: 2
+  resources:
+    requests:
+      cpu: "500m"
+      memory: "1Gi"
+    limits:
+      cpu: "2000m"
+      memory: "4Gi"
+  autoscaling:
+    enabled: true
+    min_replicas: 2
+    max_replicas: 10
+    target_cpu_pct: 70
+
+# ── Monitoring ──────────────────────────────────────────────
+monitoring:
+  metrics_enabled: true
+  metrics_port: 9090
+  tracing_enabled: false
+  alerting:
+    enabled: true
+    channels: [email]            # email | slack | pagerduty

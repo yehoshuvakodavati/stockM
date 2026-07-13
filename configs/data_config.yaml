@@ -1,0 +1,37 @@
+# StockM v1.0 — data configuration
+# v1 uses only historical OHLCV data. Future versions add sources here.
+
+source:
+  provider: yfinance            # yfinance | polygon | alphavantage (future)
+  provider_key_env: DATA_PROVIDER_KEY
+  cache_enabled: true
+  cache_dir: cache/ingestion
+
+universe:
+  symbols:
+    - AAPL
+    - MSFT
+    - GOOGL
+  # Future: index-based universes (e.g., "SP500", "NASDAQ100")
+
+timeframe:
+  interval: 1d                  # 1d | 1h | 5m
+  start_date: "2015-01-01"
+  end_date: "2024-12-31"
+
+target:
+  # Binary next-day direction (UP/DOWN) for v1.
+  type: binary_direction
+  horizon_days: 1
+  threshold_pct: 0.0             # move > threshold => UP
+
+splits:
+  method: chronological          # chronological | walk_forward (set in backtest_config)
+  test_size: 0.15
+  val_size: 0.15
+  gap_days: 1                    # no-leakage gap between train/val/test
+
+storage:
+  format: parquet
+  compression: snappy
+  partition_by: ["symbol"]

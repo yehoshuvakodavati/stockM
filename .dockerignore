@@ -1,0 +1,54 @@
+# StockM v1.0 — Docker build context exclusions
+
+# Git
+.git
+.gitignore
+
+# Python caches & build artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Data & model artifacts (mounted as volumes at runtime, not baked into images)
+data/
+models/
+experiments/
+cache/
+artifacts/
+logs/
+metadata/
+
+# Notebooks & research (not needed in production images)
+notebooks/
+research/
+
+# Docs & reports (built separately)
+docs/
+reports/
+site/
+
+# IDE & OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# CI & config
+.github/
+.env
+.env.*
+!.env.example
+.pre-commit-config.yaml

@@ -1,0 +1,50 @@
+# StockM v1.0 — feature engineering configuration
+# Plugin pattern: only groups listed under `active` are computed.
+# Future versions add groups here without touching pipeline code.
+
+# ── Active feature groups (computed for this run) ───────────
+active_groups:
+  - ohlcv                        # v1 — required
+  # - technical                   # v2 — technical indicators
+  # - fundamental                 # v3 — fundamentals
+  # - text_nlp                    # v4 — news & NLP embeddings
+  # - macro                       # v5 — macro & global events
+  # - graph                       # v6 — relationship knowledge graph
+
+# ── Per-group settings ───────────────────────────────────────
+ohlcv:
+  returns: [1, 5, 10, 21]         # daily log returns over N days
+  volatility_window: 21
+  volume_zscore_window: 21
+  include_ohlc_ratios: true
+
+technical:                        # v2 (currently inactive)
+  indicators: [rsi, macd, bollinger, atr]
+  windows: [7, 14, 21]
+
+fundamental:                      # v3 (placeholder)
+  metrics: [pe_ratio, debt_to_equity, roe]
+
+text_nlp:                         # v4 (placeholder)
+  embedding_model: local
+  sources: [earnings_calls, news]
+
+macro:                            # v5 (placeholder)
+  indicators: [cpi, fed_rate, vix]
+
+graph:                           # v6 (placeholder)
+  relation_types: [supplier, customer, competitor]
+
+# ── Common windowing / preprocessing ───────────────────────
+windowing:
+  lookback_window: 30            # sequence length fed to models
+  horizon: 1                      # prediction horizon in days
+
+scaling:
+  method: standard                # standard | minmax | robust
+  fit_on: train_only              # prevents leakage
+
+selection:
+  enabled: false                 # enable when feature count grows
+  method: mutual_information
+  top_k: 50

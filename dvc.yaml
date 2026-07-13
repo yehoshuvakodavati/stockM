@@ -1,0 +1,57 @@
+# StockM v1.0 — DVC pipeline definition
+# Reproducible data + pipeline stages. Run:  dvc repro
+# Parameters are defined in params.yaml.
+
+stages:
+  fetch_data:
+    cmd: python scripts/data/fetch_data.py
+    outs:
+      - data/raw/ohlcv_daily.parquet:
+          cache: true
+
+  preprocess:
+    cmd: python -m stockM.pipelines.preprocessing_pipeline
+    deps:
+      - data/raw/ohlcv_daily.parquet
+      - src/stockM/data/preprocessing
+    outs:
+      - data/interim/ohlcv_clean.parquet
+
+  validate_data:
+    cmd: python -m stockM.pipelines.validation_pipeline
+    deps:
+      - data/interim/ohlcv_clean.parquet
+    outs:
+      - data/validation/validation_report.json
+
+  build_features:
+    cmd: python -m stockM.pipelines.feature_pipeline
+    deps:
+      - data/interim/ohlcv_clean.parquet
+      - src/stockM/features/ohlcv
+    outs:
+      - data/processed/features.parquet
+
+  train:
+    cmd: python -m stockM.pipelines.training_pipeline
+    deps:
+      - data/processed/features.parquet
+      - src/stockM/training
+    params:
+      - train.epochs
+      - train.batch_size
+      - train.learning_rate
+    outs:
+      - models/checkpoints/last.ckpt
+      - models/best/model_v1.pkl
+
+  evaluate:
+    cmd: python -m stockM.pipelines.evaluation_pipeline
+    deps:
+      - models/best/model_v1.pkl
+      - data/processed/features.parquet
+    metrics:
+      - experiments/metrics/eval_metrics.json:
+          cache: false
+    outs:
+      - reports/evaluation/eval_report.html

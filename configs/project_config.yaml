@@ -1,0 +1,42 @@
+# StockM v1.0 — global project configuration
+# Top-level settings shared across all subsystems.
+
+project:
+  name: stockM
+  version: "1.0"
+  description: "Next-day stock movement prediction from OHLCV data."
+  owner: "StockM Team"
+
+environment:
+  # dev | staging | production
+  name: dev
+  debug: true
+  random_seed: 42
+  deterministic: true
+
+paths:
+  # Centralized in paths.yaml; referenced here for convenience.
+  config_dir: configs
+  data_dir: data
+  models_dir: models
+  experiments_dir: experiments
+  reports_dir: reports
+  logs_dir: logs
+
+reproducibility:
+  version_control: git
+  data_versioning: dvc
+  experiment_tracking: mlflow
+  seed_everything: true
+
+# Version roadmap — which feature scopes are active per version.
+versions:
+  v1:
+    active: true
+    scope: ["ohlcv"]
+  v2:
+    active: false
+    scope: ["ohlcv", "technical"]
+  v3:
+    active: false
+    scope: ["ohlcv", "technical", "fundamental"]

@@ -1,0 +1,45 @@
+# StockM v1.0 — evaluation configuration
+
+# ── ML metrics ──────────────────────────────────────────────
+metrics:
+  classification:
+    - accuracy
+    - precision
+    - recall
+    - f1
+    - roc_auc
+    - pr_auc
+    - confusion_matrix
+  financial:                        # finance-aware metrics
+    - directional_accuracy         # % of correct UP/DOWN calls
+    - precision_up                 # precision of UP predictions (key for trading)
+    - matthews_correlation_coeff
+
+# ── Testing strategy ───────────────────────────────────────
+testing:
+  method: holdout                  # holdout | walk_forward | expanding_window
+  n_splits: 5                     # used by walk_forward
+  retrain: false                  # retrain per fold (walk_forward)
+
+# ── Decision threshold tuning ───────────────────────────────
+threshold:
+  default: 0.5                    # probability cutoff for UP/DOWN
+  optimize: true                  # sweep thresholds to maximize target metric
+  optimize_metric: f1
+  range: [0.3, 0.7, 0.05]
+
+# ── Model comparison ────────────────────────────────────────
+comparison:
+  enabled: true
+  baseline: logistic_baseline
+  metrics_to_rank: [roc_auc, directional_accuracy]
+  output: experiments/comparisons/leaderboard.csv
+
+# ── Reporting ───────────────────────────────────────────────
+reporting:
+  generate_html: true
+  output_dir: reports/evaluation
+  include_plots:
+    - confusion_matrix
+    - roc_curve
+    - precision_recall_curve
