@@ -78,11 +78,18 @@ def flatten_columns(df) -> None:
         df.columns = df.columns.get_level_values(0)
 
 
-def inspect_data(df, symbol: str) -> None:
-    """Print a structured summary so we understand what we downloaded."""
+def inspect_data(df, symbol: str, start: str, end: str) -> None:
+    """
+    Print a structured summary so we understand what we downloaded.
+
+    Every value this function needs arrives through its parameters. It does
+    NOT reach up to the global START_DATE / END_DATE. That makes the function
+    self-contained: you can read it in isolation and see exactly what it
+    depends on - a property engineers call "no hidden dependencies".
+    """
     print("=" * 70)
-    print(f"  Symbol : {symbol}")
-    print(f"  Range  : {START_DATE}  ->  {END_DATE}")
+    print(f"  Symbol          : {symbol}")
+    print(f"  Requested range : {start}  ->  {end}")
     print("=" * 70)
 
     # df.shape is a tuple: (number_of_rows, number_of_columns)
@@ -139,8 +146,8 @@ def main() -> None:
     # 2. Flatten the MultiIndex columns into simple flat columns
     flatten_columns(df)
 
-    # 3. Inspect
-    inspect_data(df, SYMBOL)
+    # 3. Inspect (pass everything in - the function uses no globals)
+    inspect_data(df, SYMBOL, START_DATE, END_DATE)
 
     # 4. Persist the RAW data to data/raw/
     file_path = save_raw_csv(df, SYMBOL, START_DATE, END_DATE)
