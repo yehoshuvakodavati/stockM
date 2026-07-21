@@ -1,0 +1,115 @@
+{
+  "model_name": "gradient_boosting",
+  "symbol": "AXISBANK.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:53:33+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "roc_20",
+    "dist_sma_10",
+    "month_cos",
+    "vma_10",
+    "bb_width",
+    "momentum_10",
+    "high_low_range",
+    "volume_change_ratio",
+    "price_diff",
+    "return_lag_5",
+    "roc_5",
+    "macd_hist",
+    "day_of_month",
+    "dist_sma_20",
+    "dist_sma_50",
+    "return_lag_10",
+    "momentum_20",
+    "dist_sma_100",
+    "volume_ratio_20",
+    "trading_day_number",
+    "return_lag_3",
+    "volume_lag_1",
+    "open_close_diff",
+    "return_lag_1",
+    "day_of_week",
+    "return_lag_20",
+    "atr_pct",
+    "volume_lag_10",
+    "vma_20",
+    "volume_lag_5",
+    "log_return",
+    "vma_5",
+    "volume_change",
+    "Volume",
+    "obv",
+    "dist_sma_200",
+    "volume_lag_20",
+    "volume_ratio_10",
+    "rolling_vol_5",
+    "bb_upper"
+  ],
+  "hyperparameters": {
+    "categorical_features": "from_dtype",
+    "early_stopping": "auto",
+    "interaction_cst": null,
+    "l2_regularization": 0.0,
+    "learning_rate": 0.1,
+    "loss": "squared_error",
+    "max_bins": 255,
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_iter": 100,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 20,
+    "monotonic_cst": null,
+    "n_iter_no_change": 10,
+    "quantile": null,
+    "random_state": null,
+    "scoring": "loss",
+    "tol": 1e-07,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_time_s": 0.2376,
+  "metrics": {
+    "validation": {
+      "mae": 0.027301129628922942,
+      "mse": 0.0010854489832738548,
+      "rmse": 0.03294615278410903,
+      "r2": -1.47570518089256,
+      "mape": 651.1253658073757
+    },
+    "test": {
+      "mae": 0.02942437908170843,
+      "mse": 0.0010809785006024148,
+      "rmse": 0.03287823749233548,
+      "r2": -4.083439403483453,
+      "mape": 964.2416430771581
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\AXISBANK_NS\\scaler_params.json",
+  "is_best": false
+}

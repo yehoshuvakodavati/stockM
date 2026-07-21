@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "MARUTI.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:54:35+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "roc_10",
+    "month_sin",
+    "price_diff",
+    "momentum_10",
+    "volume_lag_1",
+    "volume_ratio_10",
+    "rolling_var_5",
+    "day_of_month",
+    "rolling_var_20",
+    "day_of_week_sin",
+    "dist_sma_5",
+    "rolling_var_10",
+    "volume_lag_3",
+    "atr_pct",
+    "rolling_vol_20",
+    "obv",
+    "dist_sma_10",
+    "bb_width",
+    "month_cos",
+    "day_of_week",
+    "bb_pct",
+    "return_lag_3",
+    "volume_ratio_20",
+    "rolling_vol_5",
+    "momentum_20",
+    "week",
+    "High",
+    "rolling_vol_10",
+    "dist_sma_50",
+    "roc_20",
+    "vma_20",
+    "macd",
+    "macd_hist",
+    "volume_ratio_5",
+    "volume_lag_5",
+    "Volume",
+    "volume_lag_10",
+    "return_lag_5",
+    "volume_change_ratio",
+    "dist_sma_200"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.006,
+  "metrics": {
+    "validation": {
+      "mae": 0.012484229200393795,
+      "mse": 0.0003075445626378327,
+      "rmse": 0.017536948498465536,
+      "r2": -0.018944776828249354,
+      "mape": 148.03342447709983
+    },
+    "test": {
+      "mae": 0.011626811017510811,
+      "mse": 0.0002604561619610575,
+      "rmse": 0.016138654279742704,
+      "r2": -0.4076487430442566,
+      "mape": 246.7815003992962
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3565,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\MARUTI_NS\\scaler_params.json",
+  "is_best": true
+}

@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "Bajajfinsv.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:54:07+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "rolling_vol_20",
+    "high_low_range",
+    "volume_lag_10",
+    "roc_10",
+    "day_of_week",
+    "return_lag_3",
+    "volume_lag_3",
+    "atr",
+    "sma_200",
+    "volume_ratio_20",
+    "month_sin",
+    "volume_ratio_10",
+    "dist_ema_10",
+    "dist_sma_10",
+    "return_lag_20",
+    "bb_upper",
+    "rolling_vol_5",
+    "volume_lag_1",
+    "dist_ema_20",
+    "dist_sma_200",
+    "macd",
+    "rolling_var_10",
+    "roc_20",
+    "bb_width",
+    "return_lag_10",
+    "price_diff_pct",
+    "log_return",
+    "dist_sma_100",
+    "atr_pct",
+    "price_diff",
+    "roc_5",
+    "rolling_var_5",
+    "vma_5",
+    "volume_change_ratio",
+    "volume_change",
+    "obv",
+    "open_close_diff",
+    "volume_momentum",
+    "rolling_var_20",
+    "momentum_20"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0046,
+  "metrics": {
+    "validation": {
+      "mae": 0.017245270962741092,
+      "mse": 0.0005282886355707456,
+      "rmse": 0.022984530353495274,
+      "r2": -0.09824962044087493,
+      "mape": 224.1046656153043
+    },
+    "test": {
+      "mae": 0.012071095786440084,
+      "mse": 0.0002636836479845916,
+      "rmse": 0.016238338830822308,
+      "r2": -0.22746773041948942,
+      "mape": 216.61457252627324
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3559,
+      "val": 762,
+      "test": 762
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-19",
+        "2020-05-04"
+      ],
+      "val": [
+        "2020-05-06",
+        "2023-05-26"
+      ],
+      "test": [
+        "2023-05-30",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\Bajajfinsv_NS\\scaler_params.json",
+  "is_best": true
+}

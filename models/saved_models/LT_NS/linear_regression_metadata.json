@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "LT.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:52:51+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "macd",
+    "open_close_diff",
+    "return_lag_20",
+    "volume_ratio_20",
+    "bb_width",
+    "price_diff_pct",
+    "roc_5",
+    "rolling_vol_5",
+    "volume_momentum",
+    "Volume",
+    "volume_lag_10",
+    "rolling_var_10",
+    "rolling_var_5",
+    "roc_20",
+    "day_of_week",
+    "bb_pct",
+    "momentum_5",
+    "dist_sma_10",
+    "macd_hist",
+    "price_diff",
+    "day_of_week_sin",
+    "dist_sma_100",
+    "trading_day_number",
+    "month_sin",
+    "dist_sma_5",
+    "obv",
+    "return_lag_1",
+    "dist_sma_50",
+    "rolling_var_20",
+    "roc_10",
+    "rsi",
+    "return_lag_3",
+    "high_low_range",
+    "volume_ratio_5",
+    "sma_200",
+    "open_lag_20",
+    "return_lag_10",
+    "atr",
+    "volume_ratio_10",
+    "volume_change"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0057,
+  "metrics": {
+    "validation": {
+      "mae": 0.014008401520857581,
+      "mse": 0.0003444100209543838,
+      "rmse": 0.018558287123395408,
+      "r2": -0.2601312565474234,
+      "mape": 193.50465173265613
+    },
+    "test": {
+      "mae": 0.0409510146208433,
+      "mse": 0.003851275286529404,
+      "rmse": 0.06205864393079665,
+      "r2": -14.128326591443964,
+      "mape": 1165.731419539834
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\LT_NS\\scaler_params.json",
+  "is_best": true
+}

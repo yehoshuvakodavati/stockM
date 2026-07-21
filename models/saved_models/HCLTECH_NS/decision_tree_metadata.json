@@ -1,0 +1,106 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "HCLTECH.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:55:00+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "volume_lag_1",
+    "rolling_var_5",
+    "day_of_week",
+    "volume_lag_10",
+    "dist_sma_50",
+    "volume_change",
+    "dist_sma_10",
+    "volume_lag_5",
+    "atr_pct",
+    "day_of_week_sin",
+    "macd_signal",
+    "rolling_vol_5",
+    "open_close_diff",
+    "rolling_var_20",
+    "rolling_vol_20",
+    "return_lag_1",
+    "obv",
+    "volume_lag_3",
+    "dist_sma_100",
+    "bb_width",
+    "volume_ratio_5",
+    "return_lag_20",
+    "month_sin",
+    "volume_ratio_10",
+    "vma_5",
+    "momentum_10",
+    "macd",
+    "return_lag_3",
+    "dist_sma_5",
+    "momentum_20",
+    "price_diff_pct",
+    "return_lag_5",
+    "volume_momentum",
+    "price_diff",
+    "high_low_range",
+    "volume_ratio_20",
+    "roc_20",
+    "rolling_vol_10",
+    "roc_5",
+    "momentum_5"
+  ],
+  "hyperparameters": {
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": null,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "random_state": null,
+    "splitter": "best"
+  },
+  "training_time_s": 0.2346,
+  "metrics": {
+    "validation": {
+      "mae": 0.02017549400195028,
+      "mse": 0.0007417856955374802,
+      "rmse": 0.027235742977519087,
+      "r2": -1.6962136874395788,
+      "mape": 478.6165817267958
+    },
+    "test": {
+      "mae": 0.01958324976387002,
+      "mse": 0.0007229849461871455,
+      "rmse": 0.026888379389378332,
+      "r2": -1.8618580959761784,
+      "mape": 459.10291024620625
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3551,
+      "val": 760,
+      "test": 760
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-05-08"
+      ],
+      "val": [
+        "2020-05-12",
+        "2023-05-30"
+      ],
+      "test": [
+        "2023-06-01",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\HCLTECH_NS\\scaler_params.json",
+  "is_best": false
+}

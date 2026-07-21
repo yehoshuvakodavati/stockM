@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "HCLTECH.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:54:59+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "volume_lag_1",
+    "rolling_var_5",
+    "day_of_week",
+    "volume_lag_10",
+    "dist_sma_50",
+    "volume_change",
+    "dist_sma_10",
+    "volume_lag_5",
+    "atr_pct",
+    "day_of_week_sin",
+    "macd_signal",
+    "rolling_vol_5",
+    "open_close_diff",
+    "rolling_var_20",
+    "rolling_vol_20",
+    "return_lag_1",
+    "obv",
+    "volume_lag_3",
+    "dist_sma_100",
+    "bb_width",
+    "volume_ratio_5",
+    "return_lag_20",
+    "month_sin",
+    "volume_ratio_10",
+    "vma_5",
+    "momentum_10",
+    "macd",
+    "return_lag_3",
+    "dist_sma_5",
+    "momentum_20",
+    "price_diff_pct",
+    "return_lag_5",
+    "volume_momentum",
+    "price_diff",
+    "high_low_range",
+    "volume_ratio_20",
+    "roc_20",
+    "rolling_vol_10",
+    "roc_5",
+    "momentum_5"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0062,
+  "metrics": {
+    "validation": {
+      "mae": 0.01589554344176448,
+      "mse": 0.0004520483145707179,
+      "rmse": 0.02126142785822998,
+      "r2": -0.643087566209315,
+      "mape": 286.48163307228054
+    },
+    "test": {
+      "mae": 0.02646371577710028,
+      "mse": 0.0012566757607118276,
+      "rmse": 0.03544962285711694,
+      "r2": -3.974415745136728,
+      "mape": 664.4704292108785
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3551,
+      "val": 760,
+      "test": 760
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-05-08"
+      ],
+      "val": [
+        "2020-05-12",
+        "2023-05-30"
+      ],
+      "test": [
+        "2023-06-01",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\HCLTECH_NS\\scaler_params.json",
+  "is_best": false
+}

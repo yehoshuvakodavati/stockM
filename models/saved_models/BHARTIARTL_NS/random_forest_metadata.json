@@ -1,0 +1,112 @@
+{
+  "model_name": "random_forest",
+  "symbol": "BHARTIARTL.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:52:38+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "volume_ratio_20",
+    "dist_sma_200",
+    "momentum_5",
+    "atr",
+    "atr_pct",
+    "rsi",
+    "day_of_week_sin",
+    "dist_sma_50",
+    "Volume",
+    "momentum_10",
+    "open_close_diff",
+    "day_of_month",
+    "vma_5",
+    "rolling_vol_20",
+    "volume_lag_20",
+    "volume_momentum",
+    "volume_lag_3",
+    "return_lag_20",
+    "month_sin",
+    "rolling_var_5",
+    "momentum_20",
+    "return_lag_3",
+    "volume_change",
+    "rolling_var_10",
+    "bb_pct",
+    "volume_ratio_10",
+    "price_diff",
+    "dist_sma_10",
+    "volume_lag_1",
+    "sma_200",
+    "dist_sma_5",
+    "obv",
+    "dist_sma_100",
+    "volume_lag_10",
+    "return_lag_10",
+    "bb_lower",
+    "macd_signal",
+    "return_lag_1",
+    "volume_ratio_5",
+    "vma_10"
+  ],
+  "hyperparameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "oob_score": false,
+    "random_state": null,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_time_s": 12.0284,
+  "metrics": {
+    "validation": {
+      "mae": 0.013862130563147598,
+      "mse": 0.000339379995921052,
+      "rmse": 0.0184222690220573,
+      "r2": -0.10078014087852138,
+      "mape": 197.34134418842476
+    },
+    "test": {
+      "mae": 0.01204475474401694,
+      "mse": 0.00024775239062662974,
+      "rmse": 0.01574015217927164,
+      "r2": -0.46943239053072694,
+      "mape": 325.3560373744568
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\BHARTIARTL_NS\\scaler_params.json",
+  "is_best": true
+}

@@ -1,0 +1,106 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "BAJFINANCE.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:54:21+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "vma_20",
+    "rolling_var_20",
+    "dist_sma_200",
+    "dist_sma_10",
+    "high_low_range",
+    "return_lag_3",
+    "volume_lag_1",
+    "dist_sma_20",
+    "obv",
+    "volume_lag_20",
+    "atr",
+    "rolling_vol_5",
+    "return_lag_10",
+    "month_sin",
+    "month_cos",
+    "macd",
+    "volume_lag_3",
+    "Volume",
+    "rolling_vol_10",
+    "volume_change",
+    "volume_momentum",
+    "dist_sma_50",
+    "rolling_var_10",
+    "day_of_week_sin",
+    "day_of_week",
+    "dist_sma_5",
+    "momentum_10",
+    "day_of_month",
+    "return_lag_5",
+    "open_close_diff",
+    "return_lag_20",
+    "roc_20",
+    "rolling_var_5",
+    "macd_hist",
+    "rolling_vol_20",
+    "dist_sma_100",
+    "volume_change_ratio",
+    "roc_10",
+    "volume_ratio_10",
+    "volume_lag_5"
+  ],
+  "hyperparameters": {
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": null,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "random_state": null,
+    "splitter": "best"
+  },
+  "training_time_s": 0.3001,
+  "metrics": {
+    "validation": {
+      "mae": 0.028799033389546397,
+      "mse": 0.0016229166928681934,
+      "rmse": 0.04028544020943787,
+      "r2": -2.0532243346502086,
+      "mape": 660.8873243202102
+    },
+    "test": {
+      "mae": 0.042473150080718634,
+      "mse": 0.003203111679466554,
+      "rmse": 0.05659603943268958,
+      "r2": -10.464340874395553,
+      "mape": 1089.455025913517
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3568,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\BAJFINANCE_NS\\scaler_params.json",
+  "is_best": false
+}

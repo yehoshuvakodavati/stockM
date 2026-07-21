@@ -1,0 +1,106 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "SUNPHARMA.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:55:14+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "day_of_week",
+    "volume_lag_1",
+    "volume_ratio_20",
+    "volume_change_ratio",
+    "dist_sma_100",
+    "rolling_var_20",
+    "return_lag_1",
+    "obv",
+    "volume_lag_5",
+    "dist_sma_5",
+    "Volume",
+    "day_of_week_sin",
+    "vma_10",
+    "bb_width",
+    "rolling_vol_20",
+    "volume_momentum",
+    "volume_ratio_5",
+    "rolling_vol_5",
+    "high_low_range",
+    "return_lag_10",
+    "bb_pct",
+    "vma_5",
+    "week",
+    "macd",
+    "volume_lag_20",
+    "rolling_vol_10",
+    "dist_sma_200",
+    "atr_pct",
+    "return_lag_5",
+    "rsi",
+    "volume_lag_3",
+    "rolling_var_10",
+    "return_lag_3",
+    "dist_sma_50",
+    "open_close_diff",
+    "return_lag_20",
+    "roc_5",
+    "momentum_20",
+    "volume_change",
+    "momentum_5"
+  ],
+  "hyperparameters": {
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": null,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "random_state": null,
+    "splitter": "best"
+  },
+  "training_time_s": 0.2393,
+  "metrics": {
+    "validation": {
+      "mae": 0.021782924732540624,
+      "mse": 0.000979213451713535,
+      "rmse": 0.03129238648159541,
+      "r2": -3.011696465707395,
+      "mape": 559.5988704055014
+    },
+    "test": {
+      "mae": 0.05007152826239015,
+      "mse": 0.006380240531377523,
+      "rmse": 0.07987640785224084,
+      "r2": -41.67096193194378,
+      "mape": 1999.8000102780377
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\SUNPHARMA_NS\\scaler_params.json",
+  "is_best": false
+}

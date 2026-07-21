@@ -1,0 +1,308 @@
+2026-07-20 19:20:03,692 | INFO    | stockm.runner | Feature engineering run: 1 ticker(s), missing_strategy=drop
+2026-07-20 19:20:03,693 | INFO    | stockm.feature_engineering | Processing RELIANCE.NS
+2026-07-20 19:20:04,239 | ERROR   | stockm.runner |   RELIANCE.NS      FAILED: Cannot interpret 'Int64Dtype()' as a data type
+Traceback (most recent call last):
+  File "C:\stockM\src\run_feature_pipeline.py", line 125, in main
+    summary = engine.process_ticker(ticker)
+  File "C:\stockM\src\feature_engineering\feature_pipeline.py", line 281, in process_ticker
+    report = validate_features(cleaned)
+  File "C:\stockM\src\feature_engineering\feature_validator.py", line 120, in validate_features
+    if not np.issubdtype(df[c].dtype, np.number) and c not in df.index.names
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\YEHOSHUVA\AppData\Roaming\Python\Python314\site-packages\numpy\_core\numerictypes.py", line 534, in issubdtype
+    arg1 = dtype(arg1).type
+           ~~~~~^^^^^^
+TypeError: Cannot interpret 'Int64Dtype()' as a data type
+2026-07-20 19:20:04,246 | INFO    | stockm.runner | 
+Done. 0/1 tickers succeeded | 0 total feature-rows written | 1 failure(s).
+2026-07-20 19:20:04,247 | INFO    | stockm.runner |   FAILED RELIANCE.NS: TypeError("Cannot interpret 'Int64Dtype()' as a data type")
+2026-07-20 19:21:36,083 | INFO    | stockm.runner | Feature engineering run: 1 ticker(s), missing_strategy=drop
+2026-07-20 19:21:36,084 | INFO    | stockm.feature_engineering | Processing RELIANCE.NS
+2026-07-20 19:21:37,494 | INFO    | stockm.feature_engineering | saved RELIANCE.NS -> RELIANCE_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:21:37,500 | INFO    | stockm.runner |   RELIANCE.NS      rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:21:37,500 | INFO    | stockm.runner | 
+Done. 1/1 tickers succeeded | 5099 total feature-rows written | 0 failure(s).
+2026-07-20 19:22:19,271 | INFO    | stockm.runner | Feature engineering run: 51 ticker(s), missing_strategy=drop
+2026-07-20 19:22:19,272 | INFO    | stockm.feature_engineering | Processing RELIANCE.NS
+2026-07-20 19:22:20,501 | INFO    | stockm.feature_engineering | saved RELIANCE.NS -> RELIANCE_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:20,503 | INFO    | stockm.runner |   RELIANCE.NS      rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:20,504 | INFO    | stockm.feature_engineering | Processing HDFCBANK.NS
+2026-07-20 19:22:21,804 | INFO    | stockm.feature_engineering | saved HDFCBANK.NS -> HDFCBANK_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:21,806 | INFO    | stockm.runner |   HDFCBANK.NS      rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:21,806 | INFO    | stockm.feature_engineering | Processing INFY.NS
+2026-07-20 19:22:23,091 | INFO    | stockm.feature_engineering | saved INFY.NS -> INFY_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:23,099 | INFO    | stockm.runner |   INFY.NS          rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:23,099 | INFO    | stockm.feature_engineering | Processing ICICIBANK.NS
+2026-07-20 19:22:24,419 | INFO    | stockm.feature_engineering | saved ICICIBANK.NS -> ICICIBANK_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:24,422 | INFO    | stockm.runner |   ICICIBANK.NS     rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:24,422 | INFO    | stockm.feature_engineering | Processing TCS.NS
+2026-07-20 19:22:25,815 | INFO    | stockm.feature_engineering | saved TCS.NS -> TCS_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:25,818 | INFO    | stockm.runner |   TCS.NS           rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:25,818 | INFO    | stockm.feature_engineering | Processing BHARTIARTL.NS
+2026-07-20 19:22:27,084 | INFO    | stockm.feature_engineering | saved BHARTIARTL.NS -> BHARTIARTL_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:27,087 | INFO    | stockm.runner |   BHARTIARTL.NS    rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:27,087 | INFO    | stockm.feature_engineering | Processing SBIN.NS
+2026-07-20 19:22:28,476 | INFO    | stockm.feature_engineering | saved SBIN.NS -> SBIN_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:28,479 | INFO    | stockm.runner |   SBIN.NS          rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:28,479 | INFO    | stockm.feature_engineering | Processing LT.NS
+2026-07-20 19:22:29,835 | INFO    | stockm.feature_engineering | saved LT.NS -> LT_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:29,838 | INFO    | stockm.runner |   LT.NS            rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:29,839 | INFO    | stockm.feature_engineering | Processing ITC.NS
+2026-07-20 19:22:31,255 | INFO    | stockm.feature_engineering | saved ITC.NS -> ITC_NS_features.csv (5100 rows x 119 cols)
+2026-07-20 19:22:31,258 | INFO    | stockm.runner |   ITC.NS           rows=5100  cols=119 dropped=214   ok=True corr_pairs=20
+2026-07-20 19:22:31,258 | INFO    | stockm.feature_engineering | Processing AXISBANK.NS
+2026-07-20 19:22:32,602 | INFO    | stockm.feature_engineering | saved AXISBANK.NS -> AXISBANK_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:32,604 | INFO    | stockm.runner |   AXISBANK.NS      rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:32,604 | INFO    | stockm.feature_engineering | Processing KOTAKBANK.NS
+2026-07-20 19:22:33,984 | INFO    | stockm.feature_engineering | saved KOTAKBANK.NS -> KOTAKBANK_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:33,987 | INFO    | stockm.runner |   KOTAKBANK.NS     rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:33,987 | INFO    | stockm.feature_engineering | Processing HINDUNILVR.NS
+2026-07-20 19:22:35,357 | INFO    | stockm.feature_engineering | saved HINDUNILVR.NS -> HINDUNILVR_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:35,360 | INFO    | stockm.runner |   HINDUNILVR.NS    rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:35,360 | INFO    | stockm.feature_engineering | Processing Bajajfinsv.NS
+2026-07-20 19:22:35,720 | WARNING | stockm.feature_engineering | Bajajfinsv.NS validation issues: duplicates=[] constant=[] dtype=['rsi']
+2026-07-20 19:22:36,652 | INFO    | stockm.feature_engineering | saved Bajajfinsv.NS -> Bajajfinsv_NS_features.csv (5085 rows x 119 cols)
+2026-07-20 19:22:36,655 | INFO    | stockm.runner |   Bajajfinsv.NS    rows=5085  cols=119 dropped=228   ok=False corr_pairs=20
+2026-07-20 19:22:36,656 | INFO    | stockm.feature_engineering | Processing BAJFINANCE.NS
+2026-07-20 19:22:37,991 | INFO    | stockm.feature_engineering | saved BAJFINANCE.NS -> BAJFINANCE_NS_features.csv (5098 rows x 119 cols)
+2026-07-20 19:22:37,995 | INFO    | stockm.runner |   BAJFINANCE.NS    rows=5098  cols=119 dropped=216   ok=True corr_pairs=20
+2026-07-20 19:22:37,995 | INFO    | stockm.feature_engineering | Processing MARUTI.NS
+2026-07-20 19:22:39,271 | INFO    | stockm.feature_engineering | saved MARUTI.NS -> MARUTI_NS_features.csv (5095 rows x 119 cols)
+2026-07-20 19:22:39,274 | INFO    | stockm.runner |   MARUTI.NS        rows=5095  cols=119 dropped=219   ok=True corr_pairs=20
+2026-07-20 19:22:39,275 | INFO    | stockm.feature_engineering | Processing ASIANPAINT.NS
+2026-07-20 19:22:40,775 | INFO    | stockm.feature_engineering | saved ASIANPAINT.NS -> ASIANPAINT_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:40,781 | INFO    | stockm.runner |   ASIANPAINT.NS    rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:40,781 | INFO    | stockm.feature_engineering | Processing HCLTECH.NS
+2026-07-20 19:22:42,231 | INFO    | stockm.feature_engineering | saved HCLTECH.NS -> HCLTECH_NS_features.csv (5073 rows x 119 cols)
+2026-07-20 19:22:42,234 | INFO    | stockm.runner |   HCLTECH.NS       rows=5073  cols=119 dropped=242   ok=True corr_pairs=20
+2026-07-20 19:22:42,234 | INFO    | stockm.feature_engineering | Processing SUNPHARMA.NS
+2026-07-20 19:22:43,527 | INFO    | stockm.feature_engineering | saved SUNPHARMA.NS -> SUNPHARMA_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:43,530 | INFO    | stockm.runner |   SUNPHARMA.NS     rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:43,530 | INFO    | stockm.feature_engineering | Processing WIPRO.NS
+2026-07-20 19:22:44,885 | INFO    | stockm.feature_engineering | saved WIPRO.NS -> WIPRO_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:44,887 | INFO    | stockm.runner |   WIPRO.NS         rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:44,888 | INFO    | stockm.feature_engineering | Processing ULTRACEMCO.NS
+2026-07-20 19:22:46,183 | INFO    | stockm.feature_engineering | saved ULTRACEMCO.NS -> ULTRACEMCO_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:46,186 | INFO    | stockm.runner |   ULTRACEMCO.NS    rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:46,186 | INFO    | stockm.feature_engineering | Processing TITAN.NS
+2026-07-20 19:22:47,598 | INFO    | stockm.feature_engineering | saved TITAN.NS -> TITAN_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:47,601 | INFO    | stockm.runner |   TITAN.NS         rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:47,601 | INFO    | stockm.feature_engineering | Processing NESTLEIND.NS
+2026-07-20 19:22:47,930 | WARNING | stockm.feature_engineering | NESTLEIND.NS validation issues: duplicates=[] constant=[] dtype=['rsi']
+2026-07-20 19:22:48,650 | INFO    | stockm.feature_engineering | saved NESTLEIND.NS -> NESTLEIND_NS_features.csv (4063 rows x 119 cols)
+2026-07-20 19:22:48,653 | INFO    | stockm.runner |   NESTLEIND.NS     rows=4063  cols=119 dropped=1251  ok=False corr_pairs=20
+2026-07-20 19:22:48,653 | INFO    | stockm.feature_engineering | Processing ONGC.NS
+2026-07-20 19:22:49,963 | INFO    | stockm.feature_engineering | saved ONGC.NS -> ONGC_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:49,965 | INFO    | stockm.runner |   ONGC.NS          rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:49,966 | INFO    | stockm.feature_engineering | Processing NTPC.NS
+2026-07-20 19:22:51,284 | INFO    | stockm.feature_engineering | saved NTPC.NS -> NTPC_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:51,287 | INFO    | stockm.runner |   NTPC.NS          rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:51,287 | INFO    | stockm.feature_engineering | Processing POWERGRID.NS
+2026-07-20 19:22:52,448 | INFO    | stockm.feature_engineering | saved POWERGRID.NS -> POWERGRID_NS_features.csv (4414 rows x 119 cols)
+2026-07-20 19:22:52,450 | INFO    | stockm.runner |   POWERGRID.NS     rows=4414  cols=119 dropped=214   ok=True corr_pairs=20
+2026-07-20 19:22:52,450 | INFO    | stockm.feature_engineering | Processing TATAMOTORS.NS
+2026-07-20 19:22:52,503 | ERROR   | stockm.runner |   TATAMOTORS.NS    FAILED: time_features require a DatetimeIndex, got Index
+Traceback (most recent call last):
+  File "C:\stockM\src\run_feature_pipeline.py", line 125, in main
+    summary = engine.process_ticker(ticker)
+  File "C:\stockM\src\feature_engineering\feature_pipeline.py", line 272, in process_ticker
+    engineered = build_features(raw, params=self.params)
+  File "C:\stockM\src\feature_engineering\feature_pipeline.py", line 189, in build_features
+    out = add_time_features(out)
+  File "C:\stockM\src\feature_engineering\time_features.py", line 54, in add_time_features
+    raise TypeError(
+        f"time_features require a DatetimeIndex, got {type(idx).__name__}"
+    )
+TypeError: time_features require a DatetimeIndex, got Index
+2026-07-20 19:22:52,506 | INFO    | stockm.feature_engineering | Processing TATASTEEL.NS
+2026-07-20 19:22:53,757 | INFO    | stockm.feature_engineering | saved TATASTEEL.NS -> TATASTEEL_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:22:53,762 | INFO    | stockm.runner |   TATASTEEL.NS     rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:22:53,762 | INFO    | stockm.feature_engineering | Processing JSWSTEEL.NS
+2026-07-20 19:22:54,166 | WARNING | stockm.feature_engineering | JSWSTEEL.NS validation issues: duplicates=[] constant=[] dtype=['rsi']
+2026-07-20 19:22:55,075 | INFO    | stockm.feature_engineering | saved JSWSTEEL.NS -> JSWSTEEL_NS_features.csv (5090 rows x 119 cols)
+2026-07-20 19:22:55,077 | INFO    | stockm.runner |   JSWSTEEL.NS      rows=5090  cols=119 dropped=224   ok=False corr_pairs=20
+2026-07-20 19:22:55,078 | INFO    | stockm.feature_engineering | Processing COALINDIA.NS
+2026-07-20 19:22:56,188 | INFO    | stockm.feature_engineering | saved COALINDIA.NS -> COALINDIA_NS_features.csv (3658 rows x 119 cols)
+2026-07-20 19:22:56,191 | INFO    | stockm.runner |   COALINDIA.NS     rows=3658  cols=119 dropped=211   ok=True corr_pairs=20
+2026-07-20 19:22:56,191 | INFO    | stockm.feature_engineering | Processing M&M.NS
+2026-07-20 19:22:57,502 | INFO    | stockm.feature_engineering | saved M&M.NS -> M&M_NS_features.csv (5098 rows x 119 cols)
+2026-07-20 19:22:57,504 | INFO    | stockm.runner |   M&M.NS           rows=5098  cols=119 dropped=216   ok=True corr_pairs=20
+2026-07-20 19:22:57,504 | INFO    | stockm.feature_engineering | Processing TECHM.NS
+2026-07-20 19:22:58,679 | INFO    | stockm.feature_engineering | saved TECHM.NS -> TECHM_NS_features.csv (4689 rows x 119 cols)
+2026-07-20 19:22:58,682 | INFO    | stockm.runner |   TECHM.NS         rows=4689  cols=119 dropped=214   ok=True corr_pairs=20
+2026-07-20 19:22:58,682 | INFO    | stockm.feature_engineering | Processing HDFCLIFE.NS
+2026-07-20 19:22:59,263 | INFO    | stockm.feature_engineering | saved HDFCLIFE.NS -> HDFCLIFE_NS_features.csv (1928 rows x 119 cols)
+2026-07-20 19:22:59,266 | INFO    | stockm.runner |   HDFCLIFE.NS      rows=1928  cols=119 dropped=209   ok=True corr_pairs=20
+2026-07-20 19:22:59,266 | INFO    | stockm.feature_engineering | Processing GRASIM.NS
+2026-07-20 19:23:00,636 | INFO    | stockm.feature_engineering | saved GRASIM.NS -> GRASIM_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:23:00,638 | INFO    | stockm.runner |   GRASIM.NS        rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:23:00,638 | INFO    | stockm.feature_engineering | Processing DIVISLAB.NS
+2026-07-20 19:23:02,060 | INFO    | stockm.feature_engineering | saved DIVISLAB.NS -> DIVISLAB_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:23:02,064 | INFO    | stockm.runner |   DIVISLAB.NS      rows=5099  cols=119 dropped=214   ok=True corr_pairs=20
+2026-07-20 19:23:02,064 | INFO    | stockm.feature_engineering | Processing DRREDDY.NS
+2026-07-20 19:23:03,536 | INFO    | stockm.feature_engineering | saved DRREDDY.NS -> DRREDDY_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:23:03,539 | INFO    | stockm.runner |   DRREDDY.NS       rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:23:03,539 | INFO    | stockm.feature_engineering | Processing CIPLA.NS
+2026-07-20 19:23:05,175 | INFO    | stockm.feature_engineering | saved CIPLA.NS -> CIPLA_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:23:05,178 | INFO    | stockm.runner |   CIPLA.NS         rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:23:05,179 | INFO    | stockm.feature_engineering | Processing ADANIPORTS.NS
+2026-07-20 19:23:06,651 | INFO    | stockm.feature_engineering | saved ADANIPORTS.NS -> ADANIPORTS_NS_features.csv (4375 rows x 119 cols)
+2026-07-20 19:23:06,656 | INFO    | stockm.runner |   ADANIPORTS.NS    rows=4375  cols=119 dropped=217   ok=True corr_pairs=20
+2026-07-20 19:23:06,656 | INFO    | stockm.feature_engineering | Processing ADANIENT.NS
+2026-07-20 19:23:07,031 | WARNING | stockm.feature_engineering | ADANIENT.NS validation issues: duplicates=[] constant=[] dtype=['rsi']
+2026-07-20 19:23:07,962 | INFO    | stockm.feature_engineering | saved ADANIENT.NS -> ADANIENT_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:23:07,965 | INFO    | stockm.runner |   ADANIENT.NS      rows=5099  cols=119 dropped=215   ok=False corr_pairs=20
+2026-07-20 19:23:07,965 | INFO    | stockm.feature_engineering | Processing EICHERMOT.NS
+2026-07-20 19:23:09,423 | INFO    | stockm.feature_engineering | saved EICHERMOT.NS -> EICHERMOT_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:23:09,427 | INFO    | stockm.runner |   EICHERMOT.NS     rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:23:09,427 | INFO    | stockm.feature_engineering | Processing HEROMOTOCO.NS
+2026-07-20 19:23:10,741 | INFO    | stockm.feature_engineering | saved HEROMOTOCO.NS -> HEROMOTOCO_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:23:10,743 | INFO    | stockm.runner |   HEROMOTOCO.NS    rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:23:10,744 | INFO    | stockm.feature_engineering | Processing BAJAJ-AUTO.NS
+2026-07-20 19:23:11,110 | WARNING | stockm.feature_engineering | BAJAJ-AUTO.NS validation issues: duplicates=[] constant=[] dtype=['rsi']
+2026-07-20 19:23:12,037 | INFO    | stockm.feature_engineering | saved BAJAJ-AUTO.NS -> BAJAJ-AUTO_NS_features.csv (5049 rows x 119 cols)
+2026-07-20 19:23:12,039 | INFO    | stockm.runner |   BAJAJ-AUTO.NS    rows=5049  cols=119 dropped=265   ok=False corr_pairs=20
+2026-07-20 19:23:12,039 | INFO    | stockm.feature_engineering | Processing BRITANNIA.NS
+2026-07-20 19:23:13,375 | INFO    | stockm.feature_engineering | saved BRITANNIA.NS -> BRITANNIA_NS_features.csv (5088 rows x 119 cols)
+2026-07-20 19:23:13,377 | INFO    | stockm.runner |   BRITANNIA.NS     rows=5088  cols=119 dropped=226   ok=True corr_pairs=20
+2026-07-20 19:23:13,377 | INFO    | stockm.feature_engineering | Processing UPL.NS
+2026-07-20 19:23:14,820 | INFO    | stockm.feature_engineering | saved UPL.NS -> UPL_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:23:14,822 | INFO    | stockm.runner |   UPL.NS           rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:23:14,822 | INFO    | stockm.feature_engineering | Processing SHREECEM.NS
+2026-07-20 19:23:16,207 | INFO    | stockm.feature_engineering | saved SHREECEM.NS -> SHREECEM_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:23:16,210 | INFO    | stockm.runner |   SHREECEM.NS      rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:23:16,210 | INFO    | stockm.feature_engineering | Processing BPCL.NS
+2026-07-20 19:23:17,686 | INFO    | stockm.feature_engineering | saved BPCL.NS -> BPCL_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:23:17,688 | INFO    | stockm.runner |   BPCL.NS          rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:23:17,688 | INFO    | stockm.feature_engineering | Processing TATACONSUM.NS
+2026-07-20 19:23:19,096 | INFO    | stockm.feature_engineering | saved TATACONSUM.NS -> TATACONSUM_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:23:19,099 | INFO    | stockm.runner |   TATACONSUM.NS    rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:23:19,099 | INFO    | stockm.feature_engineering | Processing INDUSINDBK.NS
+2026-07-20 19:23:20,405 | INFO    | stockm.feature_engineering | saved INDUSINDBK.NS -> INDUSINDBK_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:23:20,407 | INFO    | stockm.runner |   INDUSINDBK.NS    rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:23:20,407 | INFO    | stockm.feature_engineering | Processing SBILIFE.NS
+2026-07-20 19:23:20,987 | INFO    | stockm.feature_engineering | saved SBILIFE.NS -> SBILIFE_NS_features.csv (1960 rows x 119 cols)
+2026-07-20 19:23:20,990 | INFO    | stockm.runner |   SBILIFE.NS       rows=1960  cols=119 dropped=209   ok=True corr_pairs=20
+2026-07-20 19:23:20,990 | INFO    | stockm.feature_engineering | Processing HINDALCO.NS
+2026-07-20 19:23:22,362 | INFO    | stockm.feature_engineering | saved HINDALCO.NS -> HINDALCO_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:23:22,366 | INFO    | stockm.runner |   HINDALCO.NS      rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:23:22,366 | INFO    | stockm.feature_engineering | Processing DABUR.NS
+2026-07-20 19:23:23,712 | INFO    | stockm.feature_engineering | saved DABUR.NS -> DABUR_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:23:23,715 | INFO    | stockm.runner |   DABUR.NS         rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:23:23,715 | INFO    | stockm.feature_engineering | Processing JSPL.NS
+2026-07-20 19:23:23,766 | ERROR   | stockm.runner |   JSPL.NS          FAILED: time_features require a DatetimeIndex, got Index
+Traceback (most recent call last):
+  File "C:\stockM\src\run_feature_pipeline.py", line 125, in main
+    summary = engine.process_ticker(ticker)
+  File "C:\stockM\src\feature_engineering\feature_pipeline.py", line 272, in process_ticker
+    engineered = build_features(raw, params=self.params)
+  File "C:\stockM\src\feature_engineering\feature_pipeline.py", line 189, in build_features
+    out = add_time_features(out)
+  File "C:\stockM\src\feature_engineering\time_features.py", line 54, in add_time_features
+    raise TypeError(
+        f"time_features require a DatetimeIndex, got {type(idx).__name__}"
+    )
+TypeError: time_features require a DatetimeIndex, got Index
+2026-07-20 19:23:23,767 | INFO    | stockm.runner | 
+Done. 49/51 tickers succeeded | 239130 total feature-rows written | 2 failure(s).
+2026-07-20 19:23:23,767 | INFO    | stockm.runner |   FAILED TATAMOTORS.NS: TypeError('time_features require a DatetimeIndex, got Index')
+2026-07-20 19:23:23,767 | INFO    | stockm.runner |   FAILED JSPL.NS: TypeError('time_features require a DatetimeIndex, got Index')
+2026-07-20 19:25:09,067 | INFO    | stockm.runner | Feature engineering run: 4 ticker(s), missing_strategy=drop
+2026-07-20 19:25:09,068 | INFO    | stockm.feature_engineering | Processing ADANIENT.NS
+2026-07-20 19:25:09,122 | ERROR   | stockm.runner |   ADANIENT.NS      FAILED: name 'np' is not defined
+Traceback (most recent call last):
+  File "C:\stockM\src\run_feature_pipeline.py", line 125, in main
+    summary = engine.process_ticker(ticker)
+  File "C:\stockM\src\feature_engineering\feature_pipeline.py", line 286, in process_ticker
+    engineered = build_features(raw, params=self.params)
+  File "C:\stockM\src\feature_engineering\feature_pipeline.py", line 186, in build_features
+    out = add_momentum_features(
+        out, price_col=PRICE_COL,
+    ...<2 lines>...
+        roc_periods=roc_periods, momentum_periods=momentum_periods,
+    )
+  File "C:\stockM\src\feature_engineering\momentum_features.py", line 127, in add_momentum_features
+    out["rsi"] = _rsi(price, window=rsi_window)
+                 ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\stockM\src\feature_engineering\momentum_features.py", line 71, in _rsi
+    rs_arr = np.divide(
+             ^^
+NameError: name 'np' is not defined
+2026-07-20 19:25:09,130 | INFO    | stockm.feature_engineering | Processing BAJAJ-AUTO.NS
+2026-07-20 19:25:09,179 | ERROR   | stockm.runner |   BAJAJ-AUTO.NS    FAILED: name 'np' is not defined
+Traceback (most recent call last):
+  File "C:\stockM\src\run_feature_pipeline.py", line 125, in main
+    summary = engine.process_ticker(ticker)
+  File "C:\stockM\src\feature_engineering\feature_pipeline.py", line 286, in process_ticker
+    engineered = build_features(raw, params=self.params)
+  File "C:\stockM\src\feature_engineering\feature_pipeline.py", line 186, in build_features
+    out = add_momentum_features(
+        out, price_col=PRICE_COL,
+    ...<2 lines>...
+        roc_periods=roc_periods, momentum_periods=momentum_periods,
+    )
+  File "C:\stockM\src\feature_engineering\momentum_features.py", line 127, in add_momentum_features
+    out["rsi"] = _rsi(price, window=rsi_window)
+                 ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\stockM\src\feature_engineering\momentum_features.py", line 71, in _rsi
+    rs_arr = np.divide(
+             ^^
+NameError: name 'np' is not defined
+2026-07-20 19:25:09,181 | INFO    | stockm.feature_engineering | Processing JSPL.NS
+2026-07-20 19:25:09,184 | ERROR   | stockm.runner |   JSPL.NS          FAILED: Raw file for JSPL.NS has no data rows (JSPL_NS.csv). Re-run the collector for this ticker.
+Traceback (most recent call last):
+  File "C:\stockM\src\run_feature_pipeline.py", line 125, in main
+    summary = engine.process_ticker(ticker)
+  File "C:\stockM\src\feature_engineering\feature_pipeline.py", line 285, in process_ticker
+    raw = load_raw_ohlc(symbol)
+  File "C:\stockM\src\feature_engineering\feature_pipeline.py", line 104, in load_raw_ohlc
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Raw file for JSPL.NS has no data rows (JSPL_NS.csv). Re-run the collector for this ticker.
+2026-07-20 19:25:09,185 | INFO    | stockm.feature_engineering | Processing TATAMOTORS.NS
+2026-07-20 19:25:09,187 | ERROR   | stockm.runner |   TATAMOTORS.NS    FAILED: Raw file for TATAMOTORS.NS has no data rows (TATAMOTORS_NS.csv). Re-run the collector for this ticker.
+Traceback (most recent call last):
+  File "C:\stockM\src\run_feature_pipeline.py", line 125, in main
+    summary = engine.process_ticker(ticker)
+  File "C:\stockM\src\feature_engineering\feature_pipeline.py", line 285, in process_ticker
+    raw = load_raw_ohlc(symbol)
+  File "C:\stockM\src\feature_engineering\feature_pipeline.py", line 104, in load_raw_ohlc
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Raw file for TATAMOTORS.NS has no data rows (TATAMOTORS_NS.csv). Re-run the collector for this ticker.
+2026-07-20 19:25:09,188 | INFO    | stockm.runner | 
+Done. 0/4 tickers succeeded | 0 total feature-rows written | 4 failure(s).
+2026-07-20 19:25:09,188 | INFO    | stockm.runner |   FAILED ADANIENT.NS: NameError("name 'np' is not defined")
+2026-07-20 19:25:09,188 | INFO    | stockm.runner |   FAILED BAJAJ-AUTO.NS: NameError("name 'np' is not defined")
+2026-07-20 19:25:09,188 | INFO    | stockm.runner |   FAILED JSPL.NS: ValueError('Raw file for JSPL.NS has no data rows (JSPL_NS.csv). Re-run the collector for this ticker.')
+2026-07-20 19:25:09,188 | INFO    | stockm.runner |   FAILED TATAMOTORS.NS: ValueError('Raw file for TATAMOTORS.NS has no data rows (TATAMOTORS_NS.csv). Re-run the collector for this ticker.')
+2026-07-20 19:26:35,124 | INFO    | stockm.runner | Feature engineering run: 2 ticker(s), missing_strategy=drop
+2026-07-20 19:26:35,125 | INFO    | stockm.feature_engineering | Processing ADANIENT.NS
+2026-07-20 19:26:36,614 | INFO    | stockm.feature_engineering | saved ADANIENT.NS -> ADANIENT_NS_features.csv (5099 rows x 119 cols)
+2026-07-20 19:26:36,617 | INFO    | stockm.runner |   ADANIENT.NS      rows=5099  cols=119 dropped=215   ok=True corr_pairs=20
+2026-07-20 19:26:36,617 | INFO    | stockm.feature_engineering | Processing BAJAJ-AUTO.NS
+2026-07-20 19:26:38,085 | INFO    | stockm.feature_engineering | saved BAJAJ-AUTO.NS -> BAJAJ-AUTO_NS_features.csv (5049 rows x 119 cols)
+2026-07-20 19:26:38,087 | INFO    | stockm.runner |   BAJAJ-AUTO.NS    rows=5049  cols=119 dropped=265   ok=True corr_pairs=20
+2026-07-20 19:26:38,087 | INFO    | stockm.runner | 
+Done. 2/2 tickers succeeded | 10148 total feature-rows written | 0 failure(s).
+2026-07-21 20:20:56,992 | INFO    | stockm.runner | Feature engineering run: 2 ticker(s), missing_strategy=drop
+2026-07-21 20:20:56,993 | INFO    | stockm.feature_engineering | Processing JSPL.NS
+2026-07-21 20:20:57,699 | INFO    | stockm.feature_engineering | saved JSPL.NS -> JSPL_NS_features.csv (4951 rows x 119 cols)
+2026-07-21 20:20:57,701 | INFO    | stockm.runner |   JSPL.NS          rows=4951  cols=119 dropped=437   ok=True corr_pairs=20
+2026-07-21 20:20:57,701 | INFO    | stockm.feature_engineering | Processing TATAMOTORS.NS
+2026-07-21 20:20:57,703 | ERROR   | stockm.runner |   TATAMOTORS.NS    FAILED: Raw file for TATAMOTORS.NS has no data rows (TATAMOTORS_NS.csv). Re-run the collector for this ticker.
+Traceback (most recent call last):
+  File "C:\stockM\src\run_feature_pipeline.py", line 125, in main
+    summary = engine.process_ticker(ticker)
+  File "C:\stockM\src\feature_engineering\feature_pipeline.py", line 285, in process_ticker
+    raw = load_raw_ohlc(symbol)
+  File "C:\stockM\src\feature_engineering\feature_pipeline.py", line 104, in load_raw_ohlc
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Raw file for TATAMOTORS.NS has no data rows (TATAMOTORS_NS.csv). Re-run the collector for this ticker.
+2026-07-21 20:20:57,704 | INFO    | stockm.runner | 
+Done. 1/2 tickers succeeded | 4951 total feature-rows written | 1 failure(s).
+2026-07-21 20:20:57,704 | INFO    | stockm.runner |   FAILED TATAMOTORS.NS: ValueError('Raw file for TATAMOTORS.NS has no data rows (TATAMOTORS_NS.csv). Re-run the collector for this ticker.')

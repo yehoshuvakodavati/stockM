@@ -1,0 +1,115 @@
+{
+  "model_name": "gradient_boosting",
+  "symbol": "HDFCBANK.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:51:45+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "roc_20",
+    "rolling_var_5",
+    "month_sin",
+    "macd",
+    "volume_lag_5",
+    "return_lag_10",
+    "rolling_vol_10",
+    "volume_lag_20",
+    "rolling_vol_5",
+    "dist_sma_5",
+    "volume_ratio_5",
+    "day_of_week_sin",
+    "momentum_20",
+    "return_lag_5",
+    "dist_sma_50",
+    "day_of_week",
+    "roc_10",
+    "price_diff",
+    "atr_pct",
+    "dist_sma_10",
+    "volume_change",
+    "rolling_var_20",
+    "momentum_10",
+    "open_close_diff",
+    "volume_ratio_10",
+    "Volume",
+    "dist_sma_20",
+    "volume_ratio_20",
+    "return_lag_1",
+    "dist_sma_100",
+    "volume_momentum",
+    "return_lag_3",
+    "volume_lag_10",
+    "price_diff_pct",
+    "volume_lag_1",
+    "obv",
+    "bb_width",
+    "macd_hist",
+    "rolling_var_10",
+    "dist_sma_200"
+  ],
+  "hyperparameters": {
+    "categorical_features": "from_dtype",
+    "early_stopping": "auto",
+    "interaction_cst": null,
+    "l2_regularization": 0.0,
+    "learning_rate": 0.1,
+    "loss": "squared_error",
+    "max_bins": 255,
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_iter": 100,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 20,
+    "monotonic_cst": null,
+    "n_iter_no_change": 10,
+    "quantile": null,
+    "random_state": null,
+    "scoring": "loss",
+    "tol": 1e-07,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_time_s": 0.2119,
+  "metrics": {
+    "validation": {
+      "mae": 0.013241900327717578,
+      "mse": 0.00032742547793520867,
+      "rmse": 0.018094901987444106,
+      "r2": -0.21278268077760853,
+      "mape": 186.5831128736029
+    },
+    "test": {
+      "mae": 0.011107529102646658,
+      "mse": 0.00022273523700947238,
+      "rmse": 0.014924316969612793,
+      "r2": -0.42275128136575946,
+      "mape": 260.56215227931824
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\HDFCBANK_NS\\scaler_params.json",
+  "is_best": false
+}

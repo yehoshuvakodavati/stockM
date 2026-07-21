@@ -1,0 +1,59 @@
+2026-07-21 21:10:58,926 | INFO    | stockm.baseline_runner | Baseline run | models=['linear_regression', 'decision_tree', 'random_forest', 'gradient_boosting'] | target=target_next_return
+2026-07-21 21:10:58,926 | INFO    | stockm.baseline_runner | Training 1 ticker(s)...
+2026-07-21 21:10:58,927 | INFO    | stockm.models.training | === Baseline training: RELIANCE.NS (target=target_next_return) ===
+2026-07-21 21:10:59,011 | ERROR   | stockm.baseline_runner |   RELIANCE.NS      FAILED: HistGradientBoostingRegressor.__init__() got an unexpected keyword argument 'n_estimators'
+Traceback (most recent call last):
+  File "C:\stockM\src\run_baseline_training.py", line 106, in main
+    s = trainer.run(t)
+  File "C:\stockM\src\models\training_pipeline.py", line 99, in run
+    models = get_baseline_models(self.model_overrides)
+  File "C:\stockM\src\models\baseline_models.py", line 200, in get_baseline_models
+    models[name] = create_model(name, overrides.get(name))
+                   ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\stockM\src\models\baseline_models.py", line 185, in create_model
+    return _BUILDERS[name](merged)
+           ~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\stockM\src\models\baseline_models.py", line 134, in _build_gradient_boosting
+    return HistGradientBoostingRegressor(**params)
+TypeError: HistGradientBoostingRegressor.__init__() got an unexpected keyword argument 'n_estimators'
+2026-07-21 21:10:59,015 | INFO    | stockm.baseline_runner | 
+Done. 0/1 succeeded | 1 failure(s).
+2026-07-21 21:10:59,015 | INFO    | stockm.baseline_runner |   FAILED RELIANCE.NS: TypeError("HistGradientBoostingRegressor.__init__() got an unexpected keyword argument 'n_estimators'")
+2026-07-21 21:11:40,601 | INFO    | stockm.baseline_runner | Baseline run | models=['linear_regression', 'decision_tree', 'random_forest', 'gradient_boosting'] | target=target_next_return
+2026-07-21 21:11:40,601 | INFO    | stockm.baseline_runner | Training 1 ticker(s)...
+2026-07-21 21:11:40,602 | INFO    | stockm.models.training | === Baseline training: RELIANCE.NS (target=target_next_return) ===
+2026-07-21 21:11:40,667 | INFO    | stockm.models | xgboost not installed - using gradient_boosting (HistGBT) as the booster.
+2026-07-21 21:11:40,669 | INFO    | stockm.models.training | training RELIANCE.NS / linear_regression ...
+2026-07-21 21:11:40,697 | INFO    | stockm.models.storage | saved RELIANCE.NS / linear_regression
+2026-07-21 21:11:40,697 | INFO    | stockm.models.training | training RELIANCE.NS / decision_tree ...
+2026-07-21 21:11:40,961 | INFO    | stockm.models.storage | saved RELIANCE.NS / decision_tree
+2026-07-21 21:11:40,962 | INFO    | stockm.models.training | training RELIANCE.NS / random_forest ...
+2026-07-21 21:12:00,381 | INFO    | stockm.models.storage | saved RELIANCE.NS / random_forest
+2026-07-21 21:12:00,381 | INFO    | stockm.models.training | training RELIANCE.NS / gradient_boosting ...
+2026-07-21 21:12:02,680 | INFO    | stockm.models.storage | saved RELIANCE.NS / gradient_boosting
+2026-07-21 21:12:02,711 | INFO    | stockm.models.training | RELIANCE.NS done | best=random_forest | val_rmse=0.018467 test_rmse=0.014265 dir_acc=0.4987 naive_test_rmse=0.013040
+2026-07-21 21:12:02,717 | INFO    | stockm.baseline_runner |   RELIANCE.NS      best=random_forest      val_rmse=0.018467 test_rmse=0.014265 dir_acc=0.4987 beats_naive=False
+2026-07-21 21:12:02,721 | INFO    | stockm.baseline_runner | 
+=== Global leaderboard (by validation RMSE) ===
+2026-07-21 21:12:02,721 | INFO    | stockm.baseline_runner |    1. RELIANCE.NS      best=random_forest      val_rmse=0.018467 test_rmse=0.014265 dir_acc=0.4987
+2026-07-21 21:12:02,721 | INFO    | stockm.baseline_runner | 
+Done. 1/1 succeeded | 0 failure(s).
+2026-07-21 21:18:41,579 | INFO    | stockm.baseline_runner | Baseline run | models=['linear_regression', 'decision_tree', 'random_forest', 'gradient_boosting'] | target=target_next_return
+2026-07-21 21:18:41,580 | INFO    | stockm.baseline_runner | Training 1 ticker(s)...
+2026-07-21 21:18:41,580 | INFO    | stockm.models.training | === Baseline training: RELIANCE.NS (target=target_next_return) ===
+2026-07-21 21:18:41,639 | INFO    | stockm.models | xgboost not installed - using gradient_boosting (HistGBT) as the booster.
+2026-07-21 21:18:41,641 | INFO    | stockm.models.training | training RELIANCE.NS / linear_regression ...
+2026-07-21 21:18:41,654 | INFO    | stockm.models.storage | saved RELIANCE.NS / linear_regression
+2026-07-21 21:18:41,654 | INFO    | stockm.models.training | training RELIANCE.NS / decision_tree ...
+2026-07-21 21:18:41,921 | INFO    | stockm.models.storage | saved RELIANCE.NS / decision_tree
+2026-07-21 21:18:41,921 | INFO    | stockm.models.training | training RELIANCE.NS / random_forest ...
+2026-07-21 21:19:00,772 | INFO    | stockm.models.storage | saved RELIANCE.NS / random_forest
+2026-07-21 21:19:00,772 | INFO    | stockm.models.training | training RELIANCE.NS / gradient_boosting ...
+2026-07-21 21:19:02,919 | INFO    | stockm.models.storage | saved RELIANCE.NS / gradient_boosting
+2026-07-21 21:19:02,952 | INFO    | stockm.models.training | RELIANCE.NS done | best=random_forest | val_rmse=0.018390 test_rmse=0.014074 dir_acc=0.4960 naive_test_rmse=0.013040
+2026-07-21 21:19:02,958 | INFO    | stockm.baseline_runner |   RELIANCE.NS      best=random_forest      val_rmse=0.018390 test_rmse=0.014074 dir_acc=0.4960 beats_naive=False
+2026-07-21 21:19:02,959 | INFO    | stockm.baseline_runner | 
+=== Global leaderboard (by validation RMSE) ===
+2026-07-21 21:19:02,959 | INFO    | stockm.baseline_runner |    1. RELIANCE.NS      best=random_forest      val_rmse=0.018390 test_rmse=0.014074 dir_acc=0.4960
+2026-07-21 21:19:02,959 | INFO    | stockm.baseline_runner | 
+Done. 1/1 succeeded | 0 failure(s).

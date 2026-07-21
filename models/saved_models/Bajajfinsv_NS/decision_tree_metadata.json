@@ -1,0 +1,106 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "Bajajfinsv.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:54:07+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "rolling_vol_20",
+    "high_low_range",
+    "volume_lag_10",
+    "roc_10",
+    "day_of_week",
+    "return_lag_3",
+    "volume_lag_3",
+    "atr",
+    "sma_200",
+    "volume_ratio_20",
+    "month_sin",
+    "volume_ratio_10",
+    "dist_ema_10",
+    "dist_sma_10",
+    "return_lag_20",
+    "bb_upper",
+    "rolling_vol_5",
+    "volume_lag_1",
+    "dist_ema_20",
+    "dist_sma_200",
+    "macd",
+    "rolling_var_10",
+    "roc_20",
+    "bb_width",
+    "return_lag_10",
+    "price_diff_pct",
+    "log_return",
+    "dist_sma_100",
+    "atr_pct",
+    "price_diff",
+    "roc_5",
+    "rolling_var_5",
+    "vma_5",
+    "volume_change_ratio",
+    "volume_change",
+    "obv",
+    "open_close_diff",
+    "volume_momentum",
+    "rolling_var_20",
+    "momentum_20"
+  ],
+  "hyperparameters": {
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": null,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "random_state": null,
+    "splitter": "best"
+  },
+  "training_time_s": 0.2385,
+  "metrics": {
+    "validation": {
+      "mae": 0.025932184820115348,
+      "mse": 0.0011338645585253666,
+      "rmse": 0.03367290540665249,
+      "r2": -1.3571703746504022,
+      "mape": 531.9214578116594
+    },
+    "test": {
+      "mae": 0.020372726344050542,
+      "mse": 0.0007370899149770888,
+      "rmse": 0.027149399900865005,
+      "r2": -2.4312104370798564,
+      "mape": 537.7654696005998
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3559,
+      "val": 762,
+      "test": 762
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-19",
+        "2020-05-04"
+      ],
+      "val": [
+        "2020-05-06",
+        "2023-05-26"
+      ],
+      "test": [
+        "2023-05-30",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\Bajajfinsv_NS\\scaler_params.json",
+  "is_best": false
+}

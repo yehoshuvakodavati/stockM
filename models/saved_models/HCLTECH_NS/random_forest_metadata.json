@@ -1,0 +1,112 @@
+{
+  "model_name": "random_forest",
+  "symbol": "HCLTECH.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:55:13+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "volume_lag_1",
+    "rolling_var_5",
+    "day_of_week",
+    "volume_lag_10",
+    "dist_sma_50",
+    "volume_change",
+    "dist_sma_10",
+    "volume_lag_5",
+    "atr_pct",
+    "day_of_week_sin",
+    "macd_signal",
+    "rolling_vol_5",
+    "open_close_diff",
+    "rolling_var_20",
+    "rolling_vol_20",
+    "return_lag_1",
+    "obv",
+    "volume_lag_3",
+    "dist_sma_100",
+    "bb_width",
+    "volume_ratio_5",
+    "return_lag_20",
+    "month_sin",
+    "volume_ratio_10",
+    "vma_5",
+    "momentum_10",
+    "macd",
+    "return_lag_3",
+    "dist_sma_5",
+    "momentum_20",
+    "price_diff_pct",
+    "return_lag_5",
+    "volume_momentum",
+    "price_diff",
+    "high_low_range",
+    "volume_ratio_20",
+    "roc_20",
+    "rolling_vol_10",
+    "roc_5",
+    "momentum_5"
+  ],
+  "hyperparameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "oob_score": false,
+    "random_state": null,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_time_s": 13.4511,
+  "metrics": {
+    "validation": {
+      "mae": 0.013497282049038696,
+      "mse": 0.0003201169371821536,
+      "rmse": 0.017891812015057434,
+      "r2": -0.16354854616921966,
+      "mape": 202.74995512022232
+    },
+    "test": {
+      "mae": 0.013550358273390474,
+      "mse": 0.00033096568858232605,
+      "rmse": 0.01819246241118354,
+      "r2": -0.3100920570405383,
+      "mape": 289.2700139871801
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3551,
+      "val": 760,
+      "test": 760
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-05-08"
+      ],
+      "val": [
+        "2020-05-12",
+        "2023-05-30"
+      ],
+      "test": [
+        "2023-06-01",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\HCLTECH_NS\\scaler_params.json",
+  "is_best": true
+}

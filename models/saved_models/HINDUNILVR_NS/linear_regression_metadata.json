@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "HINDUNILVR.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:53:52+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "volume_ratio_5",
+    "vma_10",
+    "vma_5",
+    "day_of_week_sin",
+    "dist_sma_10",
+    "return_lag_20",
+    "rolling_vol_10",
+    "return_lag_10",
+    "day_of_week",
+    "month_sin",
+    "dist_sma_100",
+    "rolling_vol_5",
+    "volume_lag_3",
+    "dist_sma_200",
+    "roc_20",
+    "momentum_20",
+    "roc_10",
+    "day_of_month",
+    "volume_lag_20",
+    "dist_sma_50",
+    "High",
+    "high_low_range",
+    "open_close_diff",
+    "momentum_10",
+    "volume_momentum",
+    "vma_20",
+    "dist_sma_5",
+    "obv",
+    "Volume",
+    "return_lag_3",
+    "price_diff_pct",
+    "price_diff",
+    "volume_lag_10",
+    "volume_change_ratio",
+    "volume_lag_1",
+    "volume_change",
+    "volume_lag_5",
+    "return_lag_1",
+    "volume_ratio_10",
+    "macd"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0059,
+  "metrics": {
+    "validation": {
+      "mae": 0.010846342673774335,
+      "mse": 0.00021802982396000814,
+      "rmse": 0.014765832992418956,
+      "r2": -0.1930131368257786,
+      "mape": 154.48432359114946
+    },
+    "test": {
+      "mae": 0.009094646503242442,
+      "mse": 0.00015761827496260173,
+      "rmse": 0.012554611700988674,
+      "r2": -0.08465881343547355,
+      "mape": 171.24113465723312
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\HINDUNILVR_NS\\scaler_params.json",
+  "is_best": false
+}

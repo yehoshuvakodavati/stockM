@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "ITC.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:53:05+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "volume_lag_1",
+    "roc_5",
+    "volume_ratio_20",
+    "momentum_20",
+    "dist_sma_20",
+    "dist_sma_50",
+    "return_lag_20",
+    "day_of_week_sin",
+    "rolling_var_5",
+    "rolling_var_10",
+    "macd_signal",
+    "log_return",
+    "return_lag_10",
+    "day_of_month",
+    "roc_10",
+    "atr",
+    "rsi",
+    "rolling_var_20",
+    "return_lag_1",
+    "week",
+    "vma_20",
+    "Volume",
+    "roc_20",
+    "return_lag_5",
+    "rolling_vol_5",
+    "dist_sma_100",
+    "volume_lag_10",
+    "volume_ratio_5",
+    "macd",
+    "vma_5",
+    "volume_momentum",
+    "volume_lag_3",
+    "volume_lag_20",
+    "dist_sma_10",
+    "price_diff",
+    "volume_ratio_10",
+    "obv",
+    "rolling_vol_20",
+    "dist_sma_5",
+    "bb_pct"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0047,
+  "metrics": {
+    "validation": {
+      "mae": 0.011607122632580234,
+      "mse": 0.0002489252456455461,
+      "rmse": 0.01577736497788988,
+      "r2": -0.08137896297623626,
+      "mape": 149.4117718512792
+    },
+    "test": {
+      "mae": 0.009571146424769304,
+      "mse": 0.00018366434115041805,
+      "rmse": 0.013552281769149358,
+      "r2": -0.3559823090862795,
+      "mape": 216.1404708599799
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3568,
+      "val": 765,
+      "test": 765
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-24"
+      ],
+      "val": [
+        "2020-04-28",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ITC_NS\\scaler_params.json",
+  "is_best": true
+}

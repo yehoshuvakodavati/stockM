@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "ASIANPAINT.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:54:47+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "rolling_var_10",
+    "dist_sma_50",
+    "vma_20",
+    "dist_sma_20",
+    "price_diff",
+    "high_low_range",
+    "rolling_var_20",
+    "return_lag_10",
+    "bb_pct",
+    "volume_lag_3",
+    "vma_10",
+    "day_of_week_sin",
+    "volume_ratio_5",
+    "volume_ratio_20",
+    "volume_change_ratio",
+    "obv",
+    "open_close_diff",
+    "roc_10",
+    "dist_sma_5",
+    "bb_width",
+    "macd_hist",
+    "atr",
+    "volume_ratio_10",
+    "day_of_month",
+    "month_sin",
+    "return_lag_1",
+    "volume_lag_20",
+    "rolling_vol_10",
+    "log_return",
+    "momentum_5",
+    "vma_5",
+    "dist_sma_200",
+    "roc_20",
+    "volume_lag_10",
+    "return_lag_3",
+    "volume_lag_5",
+    "return_lag_20",
+    "Volume",
+    "rsi",
+    "return_lag_5"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0047,
+  "metrics": {
+    "validation": {
+      "mae": 0.012523662428949662,
+      "mse": 0.00029395458564152716,
+      "rmse": 0.01714510383875021,
+      "r2": -0.06775766205354361,
+      "mape": 154.03321706582454
+    },
+    "test": {
+      "mae": 0.010563528785284245,
+      "mse": 0.00021276905939631875,
+      "rmse": 0.014586605478874061,
+      "r2": -0.20957945438681902,
+      "mape": 194.57276135792432
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ASIANPAINT_NS\\scaler_params.json",
+  "is_best": false
+}

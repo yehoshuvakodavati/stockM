@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "KOTAKBANK.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:53:34+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "high_low_range",
+    "dist_sma_100",
+    "volume_lag_1",
+    "vma_5",
+    "vma_10",
+    "dist_sma_20",
+    "volume_change",
+    "return_lag_10",
+    "return_lag_1",
+    "bb_pct",
+    "roc_20",
+    "bb_width",
+    "open_close_diff",
+    "volume_lag_5",
+    "bb_upper",
+    "roc_10",
+    "return_lag_5",
+    "dist_sma_5",
+    "obv",
+    "day_of_week_sin",
+    "roc_5",
+    "rolling_vol_5",
+    "vma_20",
+    "macd",
+    "rsi",
+    "momentum_5",
+    "dist_sma_200",
+    "day_of_month",
+    "atr_pct",
+    "volume_lag_10",
+    "volume_lag_20",
+    "momentum_10",
+    "macd_hist",
+    "dist_sma_50",
+    "return_lag_20",
+    "price_diff",
+    "rolling_var_5",
+    "price_diff_pct",
+    "rolling_var_10",
+    "volume_lag_3"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0053,
+  "metrics": {
+    "validation": {
+      "mae": 0.014088362236437139,
+      "mse": 0.0003514184703725675,
+      "rmse": 0.01874615881647671,
+      "r2": -0.15945588766095975,
+      "mape": 185.49351685910636
+    },
+    "test": {
+      "mae": 0.010944470483961473,
+      "mse": 0.00024337841180277232,
+      "rmse": 0.01560059011072249,
+      "r2": -0.24580336260786595,
+      "mape": 210.99581297809783
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\KOTAKBANK_NS\\scaler_params.json",
+  "is_best": false
+}

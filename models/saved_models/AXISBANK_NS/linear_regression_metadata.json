@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "AXISBANK.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:53:18+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "roc_20",
+    "dist_sma_10",
+    "month_cos",
+    "vma_10",
+    "bb_width",
+    "momentum_10",
+    "high_low_range",
+    "volume_change_ratio",
+    "price_diff",
+    "return_lag_5",
+    "roc_5",
+    "macd_hist",
+    "day_of_month",
+    "dist_sma_20",
+    "dist_sma_50",
+    "return_lag_10",
+    "momentum_20",
+    "dist_sma_100",
+    "volume_ratio_20",
+    "trading_day_number",
+    "return_lag_3",
+    "volume_lag_1",
+    "open_close_diff",
+    "return_lag_1",
+    "day_of_week",
+    "return_lag_20",
+    "atr_pct",
+    "volume_lag_10",
+    "vma_20",
+    "volume_lag_5",
+    "log_return",
+    "vma_5",
+    "volume_change",
+    "Volume",
+    "obv",
+    "dist_sma_200",
+    "volume_lag_20",
+    "volume_ratio_10",
+    "rolling_vol_5",
+    "bb_upper"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0052,
+  "metrics": {
+    "validation": {
+      "mae": 0.016022378354045297,
+      "mse": 0.0004735558187732858,
+      "rmse": 0.021761337706429854,
+      "r2": -0.08009184406141134,
+      "mape": 190.3689472802962
+    },
+    "test": {
+      "mae": 0.014208351312096457,
+      "mse": 0.00033095575141724604,
+      "rmse": 0.01819218929698254,
+      "r2": -0.5563616728975906,
+      "mape": 358.8850989535087
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\AXISBANK_NS\\scaler_params.json",
+  "is_best": true
+}

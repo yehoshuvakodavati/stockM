@@ -1,0 +1,112 @@
+{
+  "model_name": "random_forest",
+  "symbol": "KOTAKBANK.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:53:51+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "high_low_range",
+    "dist_sma_100",
+    "volume_lag_1",
+    "vma_5",
+    "vma_10",
+    "dist_sma_20",
+    "volume_change",
+    "return_lag_10",
+    "return_lag_1",
+    "bb_pct",
+    "roc_20",
+    "bb_width",
+    "open_close_diff",
+    "volume_lag_5",
+    "bb_upper",
+    "roc_10",
+    "return_lag_5",
+    "dist_sma_5",
+    "obv",
+    "day_of_week_sin",
+    "roc_5",
+    "rolling_vol_5",
+    "vma_20",
+    "macd",
+    "rsi",
+    "momentum_5",
+    "dist_sma_200",
+    "day_of_month",
+    "atr_pct",
+    "volume_lag_10",
+    "volume_lag_20",
+    "momentum_10",
+    "macd_hist",
+    "dist_sma_50",
+    "return_lag_20",
+    "price_diff",
+    "rolling_var_5",
+    "price_diff_pct",
+    "rolling_var_10",
+    "volume_lag_3"
+  ],
+  "hyperparameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "oob_score": false,
+    "random_state": null,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_time_s": 17.194,
+  "metrics": {
+    "validation": {
+      "mae": 0.01359222408077817,
+      "mse": 0.00032631765770460845,
+      "rmse": 0.018064264659946955,
+      "r2": -0.07663928157282474,
+      "mape": 160.5439133097616
+    },
+    "test": {
+      "mae": 0.010278900268530098,
+      "mse": 0.00021653262535016563,
+      "rmse": 0.01471504758232761,
+      "r2": -0.10838537722955421,
+      "mape": 194.31459181973685
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\KOTAKBANK_NS\\scaler_params.json",
+  "is_best": true
+}

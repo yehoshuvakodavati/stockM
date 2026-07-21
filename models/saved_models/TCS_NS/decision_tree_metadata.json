@@ -1,0 +1,106 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "TCS.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:52:13+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "rolling_vol_20",
+    "volume_lag_10",
+    "dist_sma_10",
+    "return_lag_1",
+    "price_diff",
+    "rsi",
+    "volume_ratio_20",
+    "volume_lag_20",
+    "vma_10",
+    "High",
+    "dist_sma_5",
+    "price_diff_pct",
+    "high_low_range",
+    "return_lag_3",
+    "rolling_vol_10",
+    "rolling_var_5",
+    "momentum_10",
+    "macd_signal",
+    "rolling_var_10",
+    "month_sin",
+    "macd",
+    "rolling_vol_5",
+    "roc_20",
+    "atr",
+    "vma_5",
+    "day_of_week_sin",
+    "bb_width",
+    "volume_ratio_5",
+    "return_lag_10",
+    "dist_sma_50",
+    "Volume",
+    "roc_5",
+    "obv",
+    "return_lag_20",
+    "bb_pct",
+    "volume_momentum",
+    "momentum_5",
+    "dist_sma_20",
+    "volume_lag_3",
+    "day_of_month"
+  ],
+  "hyperparameters": {
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": null,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "random_state": null,
+    "splitter": "best"
+  },
+  "training_time_s": 0.2363,
+  "metrics": {
+    "validation": {
+      "mae": 0.021064523997289385,
+      "mse": 0.0008268198397643272,
+      "rmse": 0.02875447512587088,
+      "r2": -2.959682091801544,
+      "mape": 568.9892713569193
+    },
+    "test": {
+      "mae": 0.02240120193082164,
+      "mse": 0.0008738249884261033,
+      "rmse": 0.029560530922601903,
+      "r2": -3.4279433564218493,
+      "mape": 730.8974349860308
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\TCS_NS\\scaler_params.json",
+  "is_best": false
+}
