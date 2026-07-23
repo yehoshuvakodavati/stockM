@@ -1,0 +1,36 @@
+# StockM v1.0 — Phase 6 hyperparameter optimization configuration
+# Single source of truth for the search budget and strategy.
+#
+# The search SPACES themselves live in code (src/optimization/search_spaces.py)
+# because grid/random/bayesian need different representation types (lists,
+# scipy distributions, optuna suggest calls) that are awkward in YAML.
+
+# ── Search strategy ─────────────────────────────────────────
+search:
+  method: random           # grid | random | bayesian
+  n_iter: 15                # trials for random / bayesian (grid ignores this)
+  scoring: neg_root_mean_squared_error   # sklearn scoring string
+
+# ── Time-series cross-validation (NEVER K-Fold) ────────────
+cv:
+  method: timeseries        # timeseries | expanding | rolling
+  n_splits: 3
+
+# ── Models to tune ─────────────────────────────────────────
+# Leave empty/null to tune every tunable model automatically
+# (ridge, decision_tree, random_forest, gradient_boosting, +xgboost/lightgbm
+#  if installed). Override here to restrict, e.g. [random_forest, ridge].
+models: []
+
+# ── Runtime ────────────────────────────────────────────────
+runtime:
+  n_jobs: -1                # parallelise search across (config x fold)
+  random_state: 42
+
+# ── Target (must match Phase 4/5) ──────────────────────────
+target_col: target_next_return
+
+# ── Deploy decision ────────────────────────────────────────
+# An optimized model is deployed only if it beats the Phase 5 baseline on
+# validation RMSE by at least this relative margin (see model_selection.py).
+deploy_tolerance: 0.005     # 0.5% relative improvement required
