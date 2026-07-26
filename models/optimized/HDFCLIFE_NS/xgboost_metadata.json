@@ -1,0 +1,106 @@
+{
+  "model_name": "xgboost",
+  "symbol": "HDFCLIFE.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "colsample_bytree": 0.662397808134481,
+    "learning_rate": 0.0013927723945289009,
+    "max_depth": 7,
+    "n_estimators": 249,
+    "reg_lambda": 0.003727925903376985,
+    "subsample": 0.8603553891795411
+  },
+  "selected_features": [
+    "momentum_20",
+    "price_diff",
+    "week",
+    "volume_lag_1",
+    "macd",
+    "rolling_var_20",
+    "volume_lag_3",
+    "year",
+    "return_lag_1",
+    "vma_10",
+    "return_lag_20",
+    "obv",
+    "vma_20",
+    "bb_pct",
+    "dist_sma_20",
+    "sma_200",
+    "return_lag_3",
+    "rolling_vol_20",
+    "dist_sma_10",
+    "momentum_5",
+    "volume_lag_10",
+    "bb_width",
+    "return_lag_10",
+    "open_lag_20",
+    "rsi",
+    "volume_change",
+    "rolling_vol_5",
+    "Volume",
+    "rolling_var_10",
+    "dist_sma_100",
+    "day_of_month",
+    "vma_5",
+    "open_close_diff",
+    "high_low_range",
+    "atr",
+    "dist_sma_5",
+    "macd_hist",
+    "rolling_var_5",
+    "volume_momentum",
+    "volume_change_ratio"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\HDFCLIFE_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "HDFCLIFE.NS",
+    "row_counts": {
+      "train": 1348,
+      "val": 289,
+      "test": 289
+    },
+    "date_ranges": {
+      "train": [
+        "2018-09-05",
+        "2024-02-21"
+      ],
+      "val": [
+        "2024-02-23",
+        "2025-04-30"
+      ],
+      "test": [
+        "2025-05-05",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.01987208877769275,
+    "validation": {
+      "mae": 0.010960847625393733,
+      "mse": 0.00022342003271927718,
+      "rmse": 0.014947241642499701,
+      "r2": -0.0003293881681338817,
+      "mape": 114.71078786590714
+    },
+    "test": {
+      "mae": 0.010186833126834213,
+      "mse": 0.00017922140475198873,
+      "rmse": 0.013387359887296252,
+      "r2": -0.011429702462936842,
+      "mape": 104.87692371942217
+    },
+    "directional_accuracy": 0.5105633802816901
+  },
+  "training_time_s": 12.0941,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:29:22+00:00",
+  "stockm_version": "1.0"
+}

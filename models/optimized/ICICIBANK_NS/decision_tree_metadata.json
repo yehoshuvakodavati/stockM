@@ -1,0 +1,103 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "ICICIBANK.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "max_depth": 4,
+    "max_features": "sqrt",
+    "min_samples_leaf": 42
+  },
+  "selected_features": [
+    "volume_lag_10",
+    "open_close_diff",
+    "trading_day_number",
+    "price_diff_pct",
+    "rolling_var_10",
+    "volume_ratio_5",
+    "rolling_vol_10",
+    "return_lag_3",
+    "volume_lag_3",
+    "week",
+    "dist_sma_200",
+    "vma_20",
+    "dist_sma_20",
+    "volume_ratio_20",
+    "bb_width",
+    "return_lag_5",
+    "day_of_month",
+    "month_cos",
+    "dist_sma_5",
+    "day_of_week",
+    "dist_sma_100",
+    "month_sin",
+    "dist_sma_10",
+    "dist_sma_50",
+    "obv",
+    "high_low_range",
+    "rolling_var_5",
+    "macd",
+    "bb_upper",
+    "volume_change_ratio",
+    "Volume",
+    "day_of_week_sin",
+    "volume_lag_20",
+    "rolling_vol_5",
+    "momentum_5",
+    "roc_5",
+    "bb_pct",
+    "rsi",
+    "atr",
+    "return_lag_20"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ICICIBANK_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "ICICIBANK.NS",
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.021857100966340397,
+    "validation": {
+      "mae": 0.013664758125043324,
+      "mse": 0.00037096200699208927,
+      "rmse": 0.01926037400966267,
+      "r2": -0.00862150898322045,
+      "mape": 108.98823850154227
+    },
+    "test": {
+      "mae": 0.008453569919130495,
+      "mse": 0.00013805294177804398,
+      "rmse": 0.011749593260110922,
+      "r2": -0.007376857445744678,
+      "mape": 108.21191935243264
+    },
+    "directional_accuracy": 0.5126498002663116
+  },
+  "training_time_s": 0.3406,
+  "seed": 42,
+  "tuned_at": "2026-07-23T14:37:22+00:00",
+  "stockm_version": "1.0"
+}

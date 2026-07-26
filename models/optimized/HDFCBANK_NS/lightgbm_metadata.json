@@ -1,0 +1,106 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "HDFCBANK.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "colsample_bytree": 0.7801997007878172,
+    "learning_rate": 0.0010785962778329494,
+    "n_estimators": 238,
+    "num_leaves": 28,
+    "reg_lambda": 1.7123375973163988,
+    "subsample": 0.7218455076693483
+  },
+  "selected_features": [
+    "roc_20",
+    "rolling_var_5",
+    "month_sin",
+    "macd",
+    "volume_lag_5",
+    "return_lag_10",
+    "rolling_vol_10",
+    "volume_lag_20",
+    "rolling_vol_5",
+    "dist_sma_5",
+    "volume_ratio_5",
+    "day_of_week_sin",
+    "momentum_20",
+    "return_lag_5",
+    "dist_sma_50",
+    "day_of_week",
+    "roc_10",
+    "price_diff",
+    "atr_pct",
+    "dist_sma_10",
+    "volume_change",
+    "rolling_var_20",
+    "momentum_10",
+    "open_close_diff",
+    "volume_ratio_10",
+    "Volume",
+    "dist_sma_20",
+    "volume_ratio_20",
+    "return_lag_1",
+    "dist_sma_100",
+    "volume_momentum",
+    "return_lag_3",
+    "volume_lag_10",
+    "price_diff_pct",
+    "volume_lag_1",
+    "obv",
+    "bb_width",
+    "macd_hist",
+    "rolling_var_10",
+    "dist_sma_200"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\HDFCBANK_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "HDFCBANK.NS",
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.014416208634186562,
+    "validation": {
+      "mae": 0.011970823409700886,
+      "mse": 0.0002684529972303686,
+      "rmse": 0.016384535307123256,
+      "r2": 0.005651155502762628,
+      "mape": 104.6322146876519
+    },
+    "test": {
+      "mae": 0.008975288437224817,
+      "mse": 0.00015952229716785588,
+      "rmse": 0.012630213662795094,
+      "r2": -0.018970126816191035,
+      "mape": 119.74248338656864
+    },
+    "directional_accuracy": 0.5019867549668874
+  },
+  "training_time_s": 8.3624,
+  "seed": 42,
+  "tuned_at": "2026-07-23T14:36:00+00:00",
+  "stockm_version": "1.0"
+}

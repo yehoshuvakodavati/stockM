@@ -1,0 +1,106 @@
+{
+  "model_name": "xgboost",
+  "symbol": "BRITANNIA.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "colsample_bytree": 0.662397808134481,
+    "learning_rate": 0.0013927723945289009,
+    "max_depth": 7,
+    "n_estimators": 249,
+    "reg_lambda": 0.003727925903376985,
+    "subsample": 0.8603553891795411
+  },
+  "selected_features": [
+    "bb_pct",
+    "rolling_var_5",
+    "volume_lag_10",
+    "rolling_vol_10",
+    "volume_change_ratio",
+    "week",
+    "volume_ratio_10",
+    "dist_sma_100",
+    "volume_lag_1",
+    "volume_lag_20",
+    "open_close_diff",
+    "vma_5",
+    "macd_signal",
+    "rolling_var_20",
+    "day_of_month",
+    "Volume",
+    "return_lag_20",
+    "volume_ratio_5",
+    "atr_pct",
+    "dist_sma_200",
+    "return_lag_3",
+    "obv",
+    "rolling_vol_20",
+    "roc_20",
+    "dist_sma_50",
+    "volume_ratio_20",
+    "rolling_vol_5",
+    "return_lag_1",
+    "volume_change",
+    "rolling_var_10",
+    "atr",
+    "price_diff_pct",
+    "rsi",
+    "momentum_20",
+    "volume_momentum",
+    "high_low_range",
+    "dist_sma_5",
+    "macd",
+    "roc_10",
+    "momentum_5"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\BRITANNIA_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "BRITANNIA.NS",
+    "row_counts": {
+      "train": 3560,
+      "val": 763,
+      "test": 763
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-24"
+      ],
+      "val": [
+        "2020-04-28",
+        "2023-05-25"
+      ],
+      "test": [
+        "2023-05-29",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.017066703575011628,
+    "validation": {
+      "mae": 0.009635779082772848,
+      "mse": 0.00017517926934124277,
+      "rmse": 0.01323553056515842,
+      "r2": -0.002044901285232825,
+      "mape": 113.18331947202229
+    },
+    "test": {
+      "mae": 0.009060899548280347,
+      "mse": 0.00015606075375628302,
+      "rmse": 0.01249242785675719,
+      "r2": -0.0036525196278414107,
+      "mape": 111.80139150378801
+    },
+    "directional_accuracy": 0.5472703062583223
+  },
+  "training_time_s": 18.4364,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:42:51+00:00",
+  "stockm_version": "1.0"
+}

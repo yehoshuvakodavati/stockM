@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "DRREDDY.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:58:29+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "momentum_10",
+    "rolling_vol_5",
+    "return_lag_3",
+    "open_close_diff",
+    "bb_pct",
+    "volume_change_ratio",
+    "month_cos",
+    "obv",
+    "volume_ratio_5",
+    "volume_lag_5",
+    "volume_lag_10",
+    "week",
+    "dist_sma_10",
+    "dist_sma_200",
+    "rsi",
+    "volume_change",
+    "momentum_20",
+    "Volume",
+    "macd_hist",
+    "volume_lag_1",
+    "return_lag_10",
+    "atr_pct",
+    "volume_lag_3",
+    "roc_5",
+    "rolling_vol_10",
+    "atr",
+    "return_lag_1",
+    "momentum_5",
+    "volume_ratio_20",
+    "vma_5",
+    "rolling_var_10",
+    "return_lag_20",
+    "volume_momentum",
+    "dist_sma_5",
+    "trading_day_number",
+    "volume_lag_20",
+    "High",
+    "dist_sma_20",
+    "rolling_var_20",
+    "vma_20"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0053,
+  "metrics": {
+    "validation": {
+      "mae": 0.011763612138381485,
+      "mse": 0.0002795510028326022,
+      "rmse": 0.01671977879137766,
+      "r2": -0.11696892273105153,
+      "mape": 164.02373349378553
+    },
+    "test": {
+      "mae": 0.01031864658957928,
+      "mse": 0.00019484833501429657,
+      "rmse": 0.013958808509836954,
+      "r2": -0.09685898501418011,
+      "mape": 157.86889531549522
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\DRREDDY_NS\\scaler_params.json",
+  "is_best": true
+}

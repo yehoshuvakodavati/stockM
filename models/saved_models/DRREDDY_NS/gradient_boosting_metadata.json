@@ -1,0 +1,115 @@
+{
+  "model_name": "gradient_boosting",
+  "symbol": "DRREDDY.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:58:44+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "momentum_10",
+    "rolling_vol_5",
+    "return_lag_3",
+    "open_close_diff",
+    "bb_pct",
+    "volume_change_ratio",
+    "month_cos",
+    "obv",
+    "volume_ratio_5",
+    "volume_lag_5",
+    "volume_lag_10",
+    "week",
+    "dist_sma_10",
+    "dist_sma_200",
+    "rsi",
+    "volume_change",
+    "momentum_20",
+    "Volume",
+    "macd_hist",
+    "volume_lag_1",
+    "return_lag_10",
+    "atr_pct",
+    "volume_lag_3",
+    "roc_5",
+    "rolling_vol_10",
+    "atr",
+    "return_lag_1",
+    "momentum_5",
+    "volume_ratio_20",
+    "vma_5",
+    "rolling_var_10",
+    "return_lag_20",
+    "volume_momentum",
+    "dist_sma_5",
+    "trading_day_number",
+    "volume_lag_20",
+    "High",
+    "dist_sma_20",
+    "rolling_var_20",
+    "vma_20"
+  ],
+  "hyperparameters": {
+    "categorical_features": "from_dtype",
+    "early_stopping": "auto",
+    "interaction_cst": null,
+    "l2_regularization": 0.0,
+    "learning_rate": 0.1,
+    "loss": "squared_error",
+    "max_bins": 255,
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_iter": 100,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 20,
+    "monotonic_cst": null,
+    "n_iter_no_change": 10,
+    "quantile": null,
+    "random_state": null,
+    "scoring": "loss",
+    "tol": 1e-07,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_time_s": 0.2583,
+  "metrics": {
+    "validation": {
+      "mae": 0.015490127599957583,
+      "mse": 0.00041381855712825,
+      "rmse": 0.020342530745417347,
+      "r2": -0.6534459303601308,
+      "mape": 415.78170344380044
+    },
+    "test": {
+      "mae": 0.014684193168174977,
+      "mse": 0.00034280856042140996,
+      "rmse": 0.018515090073272934,
+      "r2": -0.9297709144417936,
+      "mape": 390.108695190064
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\DRREDDY_NS\\scaler_params.json",
+  "is_best": false
+}

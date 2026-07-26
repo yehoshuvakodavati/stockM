@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "HDFCLIFE.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:58:00+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "momentum_20",
+    "price_diff",
+    "week",
+    "volume_lag_1",
+    "macd",
+    "rolling_var_20",
+    "volume_lag_3",
+    "year",
+    "return_lag_1",
+    "vma_10",
+    "return_lag_20",
+    "obv",
+    "vma_20",
+    "bb_pct",
+    "dist_sma_20",
+    "sma_200",
+    "return_lag_3",
+    "rolling_vol_20",
+    "dist_sma_10",
+    "momentum_5",
+    "volume_lag_10",
+    "bb_width",
+    "return_lag_10",
+    "open_lag_20",
+    "rsi",
+    "volume_change",
+    "rolling_vol_5",
+    "Volume",
+    "rolling_var_10",
+    "dist_sma_100",
+    "day_of_month",
+    "vma_5",
+    "open_close_diff",
+    "high_low_range",
+    "atr",
+    "dist_sma_5",
+    "macd_hist",
+    "rolling_var_5",
+    "volume_momentum",
+    "volume_change_ratio"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0039,
+  "metrics": {
+    "validation": {
+      "mae": 0.011156633426142535,
+      "mse": 0.0002320017350001183,
+      "rmse": 0.015231603165790471,
+      "r2": -0.03875266153154411,
+      "mape": 156.8431301055146
+    },
+    "test": {
+      "mae": 0.011337112605240956,
+      "mse": 0.00021465455601646962,
+      "rmse": 0.014651094021146326,
+      "r2": -0.21139544701421897,
+      "mape": 153.99725375153312
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 1348,
+      "val": 289,
+      "test": 289
+    },
+    "date_ranges": {
+      "train": [
+        "2018-09-05",
+        "2024-02-21"
+      ],
+      "val": [
+        "2024-02-23",
+        "2025-04-30"
+      ],
+      "test": [
+        "2025-05-05",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\HDFCLIFE_NS\\scaler_params.json",
+  "is_best": true
+}

@@ -1,0 +1,106 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "ADANIENT.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "colsample_bytree": 0.7801997007878172,
+    "learning_rate": 0.0010785962778329494,
+    "n_estimators": 238,
+    "num_leaves": 28,
+    "reg_lambda": 1.7123375973163988,
+    "subsample": 0.7218455076693483
+  },
+  "selected_features": [
+    "momentum_20",
+    "vma_20",
+    "momentum_10",
+    "volume_ratio_5",
+    "month_cos",
+    "trading_day_number",
+    "macd_hist",
+    "dist_sma_10",
+    "momentum_5",
+    "macd",
+    "vma_10",
+    "dist_sma_50",
+    "bb_width",
+    "return_lag_20",
+    "obv",
+    "return_lag_5",
+    "high_low_range",
+    "day_of_month",
+    "dist_sma_5",
+    "rsi",
+    "roc_10",
+    "open_close_diff",
+    "volume_ratio_10",
+    "atr",
+    "volume_lag_1",
+    "rolling_vol_10",
+    "atr_pct",
+    "month_sin",
+    "Volume",
+    "volume_lag_3",
+    "dist_sma_100",
+    "week",
+    "roc_20",
+    "return_lag_10",
+    "log_return",
+    "volume_lag_20",
+    "bb_pct",
+    "volume_change_ratio",
+    "roc_5",
+    "volume_ratio_20"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ADANIENT_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "ADANIENT.NS",
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.0324359180325249,
+    "validation": {
+      "mae": 0.0221811919646738,
+      "mse": 0.0013712858567603028,
+      "rmse": 0.03703087707252291,
+      "r2": -0.0064500854856721634,
+      "mape": 105.40628659223682
+    },
+    "test": {
+      "mae": 0.01534919639266681,
+      "mse": 0.000627312343339636,
+      "rmse": 0.025046204170285684,
+      "r2": -0.0070380780398708875,
+      "mape": 105.68097344118699
+    },
+    "directional_accuracy": 0.4715984147952444
+  },
+  "training_time_s": 10.3363,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:37:52+00:00",
+  "stockm_version": "1.0"
+}

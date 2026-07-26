@@ -1,0 +1,103 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "BAJFINANCE.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "max_depth": 4,
+    "max_features": "sqrt",
+    "min_samples_leaf": 42
+  },
+  "selected_features": [
+    "vma_20",
+    "rolling_var_20",
+    "dist_sma_200",
+    "dist_sma_10",
+    "high_low_range",
+    "return_lag_3",
+    "volume_lag_1",
+    "dist_sma_20",
+    "obv",
+    "volume_lag_20",
+    "atr",
+    "rolling_vol_5",
+    "return_lag_10",
+    "month_sin",
+    "month_cos",
+    "macd",
+    "volume_lag_3",
+    "Volume",
+    "rolling_vol_10",
+    "volume_change",
+    "volume_momentum",
+    "dist_sma_50",
+    "rolling_var_10",
+    "day_of_week_sin",
+    "day_of_week",
+    "dist_sma_5",
+    "momentum_10",
+    "day_of_month",
+    "return_lag_5",
+    "open_close_diff",
+    "return_lag_20",
+    "roc_20",
+    "rolling_var_5",
+    "macd_hist",
+    "rolling_vol_20",
+    "dist_sma_100",
+    "volume_change_ratio",
+    "roc_10",
+    "volume_ratio_10",
+    "volume_lag_5"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\BAJFINANCE_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "BAJFINANCE.NS",
+    "row_counts": {
+      "train": 3568,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.02392031037927535,
+    "validation": {
+      "mae": 0.017435696126880826,
+      "mse": 0.0006040596126412347,
+      "rmse": 0.02457762422695153,
+      "r2": -0.13642894733931077,
+      "mape": 173.02407356331122
+    },
+    "test": {
+      "mae": 0.012927154857200664,
+      "mse": 0.00031127753648867276,
+      "rmse": 0.01764305915901981,
+      "r2": -0.11410158057384923,
+      "mape": 189.8743614880233
+    },
+    "directional_accuracy": 0.4966711051930759
+  },
+  "training_time_s": 0.3019,
+  "seed": 42,
+  "tuned_at": "2026-07-23T14:48:54+00:00",
+  "stockm_version": "1.0"
+}

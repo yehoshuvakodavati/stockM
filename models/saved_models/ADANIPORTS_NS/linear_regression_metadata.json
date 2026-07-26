@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "ADANIPORTS.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:58:57+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "dist_sma_100",
+    "roc_10",
+    "atr",
+    "dist_sma_50",
+    "volume_lag_1",
+    "volume_lag_3",
+    "momentum_10",
+    "volume_change_ratio",
+    "sma_200",
+    "volume_ratio_10",
+    "return_lag_5",
+    "dist_sma_5",
+    "week",
+    "open_close_diff",
+    "month_sin",
+    "roc_20",
+    "return_lag_20",
+    "rolling_vol_5",
+    "pct_change_1d",
+    "rolling_var_20",
+    "bb_pct",
+    "high_low_range",
+    "day_of_week_sin",
+    "vma_10",
+    "macd_hist",
+    "macd",
+    "day_of_month",
+    "bb_width",
+    "volume_lag_10",
+    "atr_pct",
+    "return_lag_10",
+    "obv",
+    "momentum_20",
+    "rsi",
+    "volume_change",
+    "volume_ratio_20",
+    "return_lag_3",
+    "vma_20",
+    "rolling_vol_20",
+    "volume_lag_5"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0047,
+  "metrics": {
+    "validation": {
+      "mae": 0.019725412002285687,
+      "mse": 0.0008477296929187752,
+      "rmse": 0.02911579799556892,
+      "r2": -0.2717495266028973,
+      "mape": 258.26011596944824
+    },
+    "test": {
+      "mae": 0.02560111643178476,
+      "mse": 0.0010640230151295947,
+      "rmse": 0.032619365645726386,
+      "r2": -1.1577740387313078,
+      "mape": 488.08656016136854
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3061,
+      "val": 656,
+      "test": 656
+    },
+    "date_ranges": {
+      "train": [
+        "2008-09-16",
+        "2021-03-03"
+      ],
+      "val": [
+        "2021-03-05",
+        "2023-10-30"
+      ],
+      "test": [
+        "2023-11-01",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ADANIPORTS_NS\\scaler_params.json",
+  "is_best": false
+}

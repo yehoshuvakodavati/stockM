@@ -1,0 +1,112 @@
+{
+  "model_name": "random_forest",
+  "symbol": "SBILIFE.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T16:01:19+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "dist_sma_200",
+    "month_cos",
+    "volume_ratio_10",
+    "macd",
+    "momentum_10",
+    "rsi",
+    "volume_lag_5",
+    "week",
+    "return_lag_5",
+    "dist_sma_10",
+    "volume_lag_10",
+    "rolling_vol_10",
+    "rolling_vol_20",
+    "high_low_range",
+    "return_lag_3",
+    "volume_lag_3",
+    "obv",
+    "day_of_week",
+    "rolling_vol_5",
+    "bb_upper",
+    "month_sin",
+    "momentum_5",
+    "vma_10",
+    "rolling_var_5",
+    "day_of_month",
+    "macd_signal",
+    "atr",
+    "dist_sma_20",
+    "return_lag_10",
+    "bb_pct",
+    "macd_hist",
+    "volume_momentum",
+    "vma_5",
+    "volume_ratio_20",
+    "atr_pct",
+    "volume_lag_20",
+    "volume_change_ratio",
+    "return_lag_20",
+    "dist_sma_5",
+    "price_diff"
+  ],
+  "hyperparameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "oob_score": false,
+    "random_state": null,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_time_s": 3.2993,
+  "metrics": {
+    "validation": {
+      "mae": 0.012147794878172885,
+      "mse": 0.00025119597918283443,
+      "rmse": 0.01584916335908096,
+      "r2": -0.08057074912062889,
+      "mape": 128.44728321434147
+    },
+    "test": {
+      "mae": 0.009675867815103987,
+      "mse": 0.0001683462070848276,
+      "rmse": 0.012974829751670254,
+      "r2": -0.12349652442390835,
+      "mape": 162.51280715960215
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 1370,
+      "val": 294,
+      "test": 294
+    },
+    "date_ranges": {
+      "train": [
+        "2018-07-19",
+        "2024-02-07"
+      ],
+      "val": [
+        "2024-02-09",
+        "2025-04-23"
+      ],
+      "test": [
+        "2025-04-25",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\SBILIFE_NS\\scaler_params.json",
+  "is_best": true
+}

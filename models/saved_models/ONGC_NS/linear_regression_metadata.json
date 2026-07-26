@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "ONGC.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:56:13+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "bb_pct",
+    "macd_hist",
+    "day_of_week",
+    "rolling_vol_10",
+    "dist_sma_100",
+    "rolling_var_5",
+    "momentum_20",
+    "volume_change",
+    "open_lag_20",
+    "month_sin",
+    "Volume",
+    "sma_100",
+    "atr",
+    "High",
+    "dist_sma_50",
+    "atr_pct",
+    "volume_lag_10",
+    "volume_lag_3",
+    "momentum_5",
+    "bb_upper",
+    "open_close_diff",
+    "volume_lag_1",
+    "rolling_vol_5",
+    "macd",
+    "volume_lag_20",
+    "return_lag_1",
+    "return_lag_10",
+    "price_diff",
+    "day_of_week_sin",
+    "month_cos",
+    "vma_5",
+    "obv",
+    "volume_momentum",
+    "volume_ratio_5",
+    "dist_sma_10",
+    "dist_sma_20",
+    "volume_ratio_20",
+    "return_lag_3",
+    "bb_width",
+    "trading_day_number"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0045,
+  "metrics": {
+    "validation": {
+      "mae": 0.026411596256833966,
+      "mse": 0.0010304810200649115,
+      "rmse": 0.03210110621247984,
+      "r2": -1.0306470446082123,
+      "mape": 470.2012790913535
+    },
+    "test": {
+      "mae": 0.03006444864573451,
+      "mse": 0.0012078566344019043,
+      "rmse": 0.03475423189198553,
+      "r2": -2.581197759873728,
+      "mape": 820.7555898828857
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ONGC_NS\\scaler_params.json",
+  "is_best": false
+}

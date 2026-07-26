@@ -1,0 +1,103 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "JSWSTEEL.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "max_depth": 4,
+    "max_features": "log2",
+    "min_samples_leaf": 47
+  },
+  "selected_features": [
+    "High",
+    "return_lag_1",
+    "roc_5",
+    "high_low_range",
+    "return_lag_5",
+    "atr_pct",
+    "volume_ratio_20",
+    "return_lag_10",
+    "Volume",
+    "rolling_var_5",
+    "bb_pct",
+    "week",
+    "month_sin",
+    "rolling_var_20",
+    "volume_lag_10",
+    "volume_momentum",
+    "dist_sma_10",
+    "dist_sma_20",
+    "day_of_week_sin",
+    "day_of_month",
+    "rolling_vol_10",
+    "rolling_vol_5",
+    "open_close_diff",
+    "return_lag_20",
+    "price_diff",
+    "volume_ratio_5",
+    "volume_lag_1",
+    "dist_sma_200",
+    "macd_hist",
+    "rsi",
+    "obv",
+    "dist_sma_5",
+    "volume_ratio_10",
+    "trading_day_number",
+    "bb_width",
+    "rolling_vol_20",
+    "dist_sma_50",
+    "volume_lag_5",
+    "momentum_5",
+    "return_lag_3"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\JSWSTEEL_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "JSWSTEEL.NS",
+    "row_counts": {
+      "train": 3562,
+      "val": 763,
+      "test": 763
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-24"
+      ],
+      "val": [
+        "2020-04-28",
+        "2023-05-25"
+      ],
+      "test": [
+        "2023-05-29",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.025483147485895346,
+    "validation": {
+      "mae": 0.01614364677477432,
+      "mse": 0.000507277479655135,
+      "rmse": 0.022522821307623408,
+      "r2": -0.00986801433258555,
+      "mape": 105.81372483408728
+    },
+    "test": {
+      "mae": 0.011750631544061012,
+      "mse": 0.00024979112703731027,
+      "rmse": 0.015804781777592192,
+      "r2": -0.04086411720249239,
+      "mape": 120.34717790087535
+    },
+    "directional_accuracy": 0.4562334217506631
+  },
+  "training_time_s": 0.2542,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:23:31+00:00",
+  "stockm_version": "1.0"
+}

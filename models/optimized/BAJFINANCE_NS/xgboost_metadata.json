@@ -1,0 +1,106 @@
+{
+  "model_name": "xgboost",
+  "symbol": "BAJFINANCE.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "colsample_bytree": 0.679486272613669,
+    "learning_rate": 0.0010319982330247674,
+    "max_depth": 5,
+    "n_estimators": 392,
+    "reg_lambda": 0.6720930050156113,
+    "subsample": 0.8916028672163949
+  },
+  "selected_features": [
+    "vma_20",
+    "rolling_var_20",
+    "dist_sma_200",
+    "dist_sma_10",
+    "high_low_range",
+    "return_lag_3",
+    "volume_lag_1",
+    "dist_sma_20",
+    "obv",
+    "volume_lag_20",
+    "atr",
+    "rolling_vol_5",
+    "return_lag_10",
+    "month_sin",
+    "month_cos",
+    "macd",
+    "volume_lag_3",
+    "Volume",
+    "rolling_vol_10",
+    "volume_change",
+    "volume_momentum",
+    "dist_sma_50",
+    "rolling_var_10",
+    "day_of_week_sin",
+    "day_of_week",
+    "dist_sma_5",
+    "momentum_10",
+    "day_of_month",
+    "return_lag_5",
+    "open_close_diff",
+    "return_lag_20",
+    "roc_20",
+    "rolling_var_5",
+    "macd_hist",
+    "rolling_vol_20",
+    "dist_sma_100",
+    "volume_change_ratio",
+    "roc_10",
+    "volume_ratio_10",
+    "volume_lag_5"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\BAJFINANCE_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "BAJFINANCE.NS",
+    "row_counts": {
+      "train": 3568,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.02395913551250874,
+    "validation": {
+      "mae": 0.016335371152941393,
+      "mse": 0.000532066778869789,
+      "rmse": 0.023066572759510438,
+      "r2": -0.0009874468868549258,
+      "mape": 111.67383140519611
+    },
+    "test": {
+      "mae": 0.012026706506676484,
+      "mse": 0.00028173685315466176,
+      "rmse": 0.01678501871177574,
+      "r2": -0.008371747432321275,
+      "mape": 107.82936920541219
+    },
+    "directional_accuracy": 0.4966711051930759
+  },
+  "training_time_s": 14.2514,
+  "seed": 42,
+  "tuned_at": "2026-07-23T14:49:43+00:00",
+  "stockm_version": "1.0"
+}

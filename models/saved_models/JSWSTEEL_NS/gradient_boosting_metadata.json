@@ -1,0 +1,115 @@
+{
+  "model_name": "gradient_boosting",
+  "symbol": "JSWSTEEL.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:57:25+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "High",
+    "return_lag_1",
+    "roc_5",
+    "high_low_range",
+    "return_lag_5",
+    "atr_pct",
+    "volume_ratio_20",
+    "return_lag_10",
+    "Volume",
+    "rolling_var_5",
+    "bb_pct",
+    "week",
+    "month_sin",
+    "rolling_var_20",
+    "volume_lag_10",
+    "volume_momentum",
+    "dist_sma_10",
+    "dist_sma_20",
+    "day_of_week_sin",
+    "day_of_month",
+    "rolling_vol_10",
+    "rolling_vol_5",
+    "open_close_diff",
+    "return_lag_20",
+    "price_diff",
+    "volume_ratio_5",
+    "volume_lag_1",
+    "dist_sma_200",
+    "macd_hist",
+    "rsi",
+    "obv",
+    "dist_sma_5",
+    "volume_ratio_10",
+    "trading_day_number",
+    "bb_width",
+    "rolling_vol_20",
+    "dist_sma_50",
+    "volume_lag_5",
+    "momentum_5",
+    "return_lag_3"
+  ],
+  "hyperparameters": {
+    "categorical_features": "from_dtype",
+    "early_stopping": "auto",
+    "interaction_cst": null,
+    "l2_regularization": 0.0,
+    "learning_rate": 0.1,
+    "loss": "squared_error",
+    "max_bins": 255,
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_iter": 100,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 20,
+    "monotonic_cst": null,
+    "n_iter_no_change": 10,
+    "quantile": null,
+    "random_state": null,
+    "scoring": "loss",
+    "tol": 1e-07,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_time_s": 0.2343,
+  "metrics": {
+    "validation": {
+      "mae": 0.024261540865567418,
+      "mse": 0.0008994879805133292,
+      "rmse": 0.029991465127821436,
+      "r2": -0.7906652221473758,
+      "mape": 446.7047607290381
+    },
+    "test": {
+      "mae": 0.018691837296289978,
+      "mse": 0.0005336100414208615,
+      "rmse": 0.023100000896555426,
+      "r2": -1.223519911541735,
+      "mape": 487.7431761673915
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3562,
+      "val": 763,
+      "test": 763
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-24"
+      ],
+      "val": [
+        "2020-04-28",
+        "2023-05-25"
+      ],
+      "test": [
+        "2023-05-29",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\JSWSTEEL_NS\\scaler_params.json",
+  "is_best": true
+}

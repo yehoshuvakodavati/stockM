@@ -1,0 +1,104 @@
+{
+  "model_name": "gradient_boosting",
+  "symbol": "HEROMOTOCO.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "l2_regularization": 0.06796578090758151,
+    "learning_rate": 0.001124579825911934,
+    "max_depth": 4,
+    "max_iter": 237
+  },
+  "selected_features": [
+    "volume_lag_20",
+    "rolling_var_10",
+    "atr",
+    "day_of_month",
+    "high_low_range",
+    "High",
+    "roc_20",
+    "rolling_vol_20",
+    "Volume",
+    "dist_sma_50",
+    "return_lag_10",
+    "macd_hist",
+    "vma_10",
+    "dist_sma_10",
+    "volume_momentum",
+    "rolling_vol_5",
+    "momentum_5",
+    "macd_signal",
+    "rolling_var_20",
+    "month_cos",
+    "momentum_20",
+    "return_lag_20",
+    "month_sin",
+    "volume_change_ratio",
+    "price_diff_pct",
+    "volume_lag_1",
+    "macd",
+    "return_lag_1",
+    "week",
+    "vma_20",
+    "volume_lag_5",
+    "dist_sma_5",
+    "volume_ratio_20",
+    "return_lag_3",
+    "volume_lag_10",
+    "volume_lag_3",
+    "obv",
+    "dist_sma_20",
+    "vma_5",
+    "rsi"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\HEROMOTOCO_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "HEROMOTOCO.NS",
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.018292189049368027,
+    "validation": {
+      "mae": 0.01253529649419349,
+      "mse": 0.0003076954783196359,
+      "rmse": 0.017541250762691807,
+      "r2": 0.0038956582365777814,
+      "mape": 102.2005725447515
+    },
+    "test": {
+      "mae": 0.012485121938865801,
+      "mse": 0.0002685923128292774,
+      "rmse": 0.016388786191456565,
+      "r2": -0.006392965296604158,
+      "mape": 101.46009352072679
+    },
+    "directional_accuracy": 0.48408488063660476
+  },
+  "training_time_s": 5.5014,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:39:40+00:00",
+  "stockm_version": "1.0"
+}

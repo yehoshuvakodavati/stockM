@@ -1,0 +1,106 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "Bajajfinsv.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "colsample_bytree": 0.7801997007878172,
+    "learning_rate": 0.0010785962778329494,
+    "n_estimators": 238,
+    "num_leaves": 28,
+    "reg_lambda": 1.7123375973163988,
+    "subsample": 0.7218455076693483
+  },
+  "selected_features": [
+    "rolling_vol_20",
+    "high_low_range",
+    "volume_lag_10",
+    "roc_10",
+    "day_of_week",
+    "return_lag_3",
+    "volume_lag_3",
+    "atr",
+    "sma_200",
+    "volume_ratio_20",
+    "month_sin",
+    "volume_ratio_10",
+    "dist_ema_10",
+    "dist_sma_10",
+    "return_lag_20",
+    "bb_upper",
+    "rolling_vol_5",
+    "volume_lag_1",
+    "dist_ema_20",
+    "dist_sma_200",
+    "macd",
+    "rolling_var_10",
+    "roc_20",
+    "bb_width",
+    "return_lag_10",
+    "price_diff_pct",
+    "log_return",
+    "dist_sma_100",
+    "atr_pct",
+    "price_diff",
+    "roc_5",
+    "rolling_var_5",
+    "vma_5",
+    "volume_change_ratio",
+    "volume_change",
+    "obv",
+    "open_close_diff",
+    "volume_momentum",
+    "rolling_var_20",
+    "momentum_20"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\Bajajfinsv_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "Bajajfinsv.NS",
+    "row_counts": {
+      "train": 3559,
+      "val": 762,
+      "test": 762
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-19",
+        "2020-05-04"
+      ],
+      "val": [
+        "2020-05-06",
+        "2023-05-26"
+      ],
+      "test": [
+        "2023-05-30",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.02297977851851596,
+    "validation": {
+      "mae": 0.01565582466752523,
+      "mse": 0.0004842347657795732,
+      "rmse": 0.022005334939045423,
+      "r2": -0.00666683307912086,
+      "mape": 102.70309130704078
+    },
+    "test": {
+      "mae": 0.01073572845807025,
+      "mse": 0.00021776851423365316,
+      "rmse": 0.014756981880914984,
+      "r2": -0.01372923943629023,
+      "mape": 102.66758244034386
+    },
+    "directional_accuracy": 0.48738379814077026
+  },
+  "training_time_s": 8.7002,
+  "seed": 42,
+  "tuned_at": "2026-07-23T14:48:50+00:00",
+  "stockm_version": "1.0"
+}

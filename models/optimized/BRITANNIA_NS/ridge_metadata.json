@@ -1,0 +1,101 @@
+{
+  "model_name": "ridge",
+  "symbol": "BRITANNIA.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "alpha": 70.72114131472235
+  },
+  "selected_features": [
+    "bb_pct",
+    "rolling_var_5",
+    "volume_lag_10",
+    "rolling_vol_10",
+    "volume_change_ratio",
+    "week",
+    "volume_ratio_10",
+    "dist_sma_100",
+    "volume_lag_1",
+    "volume_lag_20",
+    "open_close_diff",
+    "vma_5",
+    "macd_signal",
+    "rolling_var_20",
+    "day_of_month",
+    "Volume",
+    "return_lag_20",
+    "volume_ratio_5",
+    "atr_pct",
+    "dist_sma_200",
+    "return_lag_3",
+    "obv",
+    "rolling_vol_20",
+    "roc_20",
+    "dist_sma_50",
+    "volume_ratio_20",
+    "rolling_vol_5",
+    "return_lag_1",
+    "volume_change",
+    "rolling_var_10",
+    "atr",
+    "price_diff_pct",
+    "rsi",
+    "momentum_20",
+    "volume_momentum",
+    "high_low_range",
+    "dist_sma_5",
+    "macd",
+    "roc_10",
+    "momentum_5"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\BRITANNIA_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "BRITANNIA.NS",
+    "row_counts": {
+      "train": 3560,
+      "val": 763,
+      "test": 763
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-24"
+      ],
+      "val": [
+        "2020-04-28",
+        "2023-05-25"
+      ],
+      "test": [
+        "2023-05-29",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.017413640653346513,
+    "validation": {
+      "mae": 0.009929526606770796,
+      "mse": 0.0001830274571293204,
+      "rmse": 0.013528764065106627,
+      "r2": -0.046937408183711726,
+      "mape": 142.74783795829845
+    },
+    "test": {
+      "mae": 0.010356608683583552,
+      "mse": 0.00020817108932795556,
+      "rmse": 0.014428135337872166,
+      "r2": -0.33878270666281085,
+      "mape": 225.6267033626588
+    },
+    "directional_accuracy": 0.5206391478029294
+  },
+  "training_time_s": 0.3658,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:41:39+00:00",
+  "stockm_version": "1.0"
+}

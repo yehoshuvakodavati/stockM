@@ -1,0 +1,112 @@
+{
+  "model_name": "random_forest",
+  "symbol": "NESTLEIND.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:56:13+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "vma_20",
+    "rsi",
+    "dist_ema_10",
+    "volume_lag_20",
+    "week",
+    "month_sin",
+    "volume_ratio_5",
+    "volume_momentum",
+    "roc_5",
+    "month_cos",
+    "dist_sma_50",
+    "price_diff",
+    "roc_20",
+    "bb_pct",
+    "open_close_diff",
+    "roc_10",
+    "volume_lag_5",
+    "return_lag_1",
+    "pct_change_1d",
+    "vma_10",
+    "macd_hist",
+    "volume_lag_10",
+    "trading_day_number",
+    "rolling_var_5",
+    "dist_sma_100",
+    "Volume",
+    "rolling_vol_20",
+    "dist_sma_20",
+    "return_lag_20",
+    "volume_lag_1",
+    "dist_sma_200",
+    "macd_signal",
+    "momentum_5",
+    "macd",
+    "return_lag_3",
+    "obv",
+    "rolling_vol_5",
+    "volume_change",
+    "volume_change_ratio",
+    "dist_ema_20"
+  ],
+  "hyperparameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "oob_score": false,
+    "random_state": null,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_time_s": 8.4691,
+  "metrics": {
+    "validation": {
+      "mae": 0.009230016439383147,
+      "mse": 0.00014829113299134108,
+      "rmse": 0.01217748467423963,
+      "r2": -0.0960195109801052,
+      "mape": 188.12109611832705
+    },
+    "test": {
+      "mae": 0.009808735115559181,
+      "mse": 0.0001718439666419076,
+      "rmse": 0.013108926982858192,
+      "r2": -0.1315710762677682,
+      "mape": 184.0706507470346
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 2843,
+      "val": 609,
+      "test": 609
+    },
+    "date_ranges": {
+      "train": [
+        "2010-01-11",
+        "2021-07-22"
+      ],
+      "val": [
+        "2021-07-26",
+        "2024-01-08"
+      ],
+      "test": [
+        "2024-01-10",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\NESTLEIND_NS\\scaler_params.json",
+  "is_best": false
+}

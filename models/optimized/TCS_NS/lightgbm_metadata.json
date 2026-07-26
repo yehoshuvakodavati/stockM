@@ -1,0 +1,106 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "TCS.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "colsample_bytree": 0.7801997007878172,
+    "learning_rate": 0.0010785962778329494,
+    "n_estimators": 238,
+    "num_leaves": 28,
+    "reg_lambda": 1.7123375973163988,
+    "subsample": 0.7218455076693483
+  },
+  "selected_features": [
+    "rolling_vol_20",
+    "volume_lag_10",
+    "dist_sma_10",
+    "return_lag_1",
+    "price_diff",
+    "rsi",
+    "volume_ratio_20",
+    "volume_lag_20",
+    "vma_10",
+    "High",
+    "dist_sma_5",
+    "price_diff_pct",
+    "high_low_range",
+    "return_lag_3",
+    "rolling_vol_10",
+    "rolling_var_5",
+    "momentum_10",
+    "macd_signal",
+    "rolling_var_10",
+    "month_sin",
+    "macd",
+    "rolling_vol_5",
+    "roc_20",
+    "atr",
+    "vma_5",
+    "day_of_week_sin",
+    "bb_width",
+    "volume_ratio_5",
+    "return_lag_10",
+    "dist_sma_50",
+    "Volume",
+    "roc_5",
+    "obv",
+    "return_lag_20",
+    "bb_pct",
+    "volume_momentum",
+    "momentum_5",
+    "dist_sma_20",
+    "volume_lag_3",
+    "day_of_month"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\TCS_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "TCS.NS",
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.01662184037918241,
+    "validation": {
+      "mae": 0.010643877569246988,
+      "mse": 0.00021116246597076632,
+      "rmse": 0.014531430279596235,
+      "r2": -0.011267745103243465,
+      "mape": 119.08813451631244
+    },
+    "test": {
+      "mae": 0.00985758859942977,
+      "mse": 0.00019680242302768153,
+      "rmse": 0.014028628693770518,
+      "r2": 0.002740831270197752,
+      "mape": 122.3916522793323
+    },
+    "directional_accuracy": 0.5319148936170213
+  },
+  "training_time_s": 8.193,
+  "seed": 42,
+  "tuned_at": "2026-07-23T14:39:39+00:00",
+  "stockm_version": "1.0"
+}

@@ -1,0 +1,101 @@
+{
+  "model_name": "ridge",
+  "symbol": "DRREDDY.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "alpha": 70.72114131472235
+  },
+  "selected_features": [
+    "momentum_10",
+    "rolling_vol_5",
+    "return_lag_3",
+    "open_close_diff",
+    "bb_pct",
+    "volume_change_ratio",
+    "month_cos",
+    "obv",
+    "volume_ratio_5",
+    "volume_lag_5",
+    "volume_lag_10",
+    "week",
+    "dist_sma_10",
+    "dist_sma_200",
+    "rsi",
+    "volume_change",
+    "momentum_20",
+    "Volume",
+    "macd_hist",
+    "volume_lag_1",
+    "return_lag_10",
+    "atr_pct",
+    "volume_lag_3",
+    "roc_5",
+    "rolling_vol_10",
+    "atr",
+    "return_lag_1",
+    "momentum_5",
+    "volume_ratio_20",
+    "vma_5",
+    "rolling_var_10",
+    "return_lag_20",
+    "volume_momentum",
+    "dist_sma_5",
+    "trading_day_number",
+    "volume_lag_20",
+    "High",
+    "dist_sma_20",
+    "rolling_var_20",
+    "vma_20"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\DRREDDY_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "DRREDDY.NS",
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.018163363064500865,
+    "validation": {
+      "mae": 0.011549797436416735,
+      "mse": 0.0002701305104128498,
+      "rmse": 0.016435647550761417,
+      "r2": -0.07932857387496872,
+      "mape": 149.68782252467523
+    },
+    "test": {
+      "mae": 0.01009634502038812,
+      "mse": 0.00018917658993345502,
+      "rmse": 0.01375414809915376,
+      "r2": -0.0649310521828601,
+      "mape": 142.93359886712935
+    },
+    "directional_accuracy": 0.48339973439575035
+  },
+  "training_time_s": 0.3019,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:32:09+00:00",
+  "stockm_version": "1.0"
+}

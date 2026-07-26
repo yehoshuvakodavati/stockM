@@ -1,0 +1,103 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "COALINDIA.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "max_depth": 9,
+    "max_features": "log2",
+    "min_samples_leaf": 92
+  },
+  "selected_features": [
+    "bb_pct",
+    "volume_ratio_10",
+    "rolling_var_20",
+    "bb_upper",
+    "sma_200",
+    "return_lag_20",
+    "volume_lag_3",
+    "dist_sma_10",
+    "rolling_vol_5",
+    "dist_sma_5",
+    "macd",
+    "dist_sma_100",
+    "obv",
+    "high_low_range",
+    "day_of_month",
+    "vma_5",
+    "momentum_20",
+    "volume_lag_10",
+    "volume_ratio_5",
+    "vma_20",
+    "macd_hist",
+    "month_cos",
+    "High",
+    "dist_sma_50",
+    "month_sin",
+    "dist_sma_200",
+    "open_close_diff",
+    "volume_momentum",
+    "volume_change",
+    "return_lag_5",
+    "atr",
+    "volume_ratio_20",
+    "Volume",
+    "rolling_vol_20",
+    "momentum_5",
+    "rolling_vol_10",
+    "volume_lag_20",
+    "momentum_10",
+    "return_lag_1",
+    "volume_lag_5"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\COALINDIA_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "COALINDIA.NS",
+    "row_counts": {
+      "train": 2560,
+      "val": 548,
+      "test": 548
+    },
+    "date_ranges": {
+      "train": [
+        "2011-08-23",
+        "2022-01-17"
+      ],
+      "val": [
+        "2022-01-19",
+        "2024-04-09"
+      ],
+      "test": [
+        "2024-04-12",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.01872332493960012,
+    "validation": {
+      "mae": 0.013765826737501454,
+      "mse": 0.00038610764105998755,
+      "rmse": 0.01964962190628582,
+      "r2": -0.06596466373717047,
+      "mape": 152.70903295587902
+    },
+    "test": {
+      "mae": 0.01194911514633693,
+      "mse": 0.00029470475804816646,
+      "rmse": 0.017166967060263338,
+      "r2": -0.07963253358124422,
+      "mape": 145.62233819712574
+    },
+    "directional_accuracy": 0.49074074074074076
+  },
+  "training_time_s": 0.2192,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:24:44+00:00",
+  "stockm_version": "1.0"
+}

@@ -1,0 +1,103 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "NTPC.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "max_depth": 9,
+    "max_features": "sqrt",
+    "min_samples_leaf": 82
+  },
+  "selected_features": [
+    "volume_lag_10",
+    "momentum_10",
+    "atr_pct",
+    "atr",
+    "close_lag_20",
+    "vma_20",
+    "sma_200",
+    "day_of_month",
+    "obv",
+    "open_close_diff",
+    "vma_10",
+    "month_sin",
+    "volume_change_ratio",
+    "high_low_range",
+    "dist_sma_200",
+    "price_diff",
+    "rsi",
+    "macd_signal",
+    "return_lag_1",
+    "return_lag_20",
+    "macd",
+    "rolling_var_10",
+    "return_lag_5",
+    "rolling_var_20",
+    "dist_sma_5",
+    "open_lag_20",
+    "day_of_week",
+    "volume_lag_3",
+    "volume_lag_1",
+    "volume_change",
+    "dist_sma_100",
+    "rolling_var_5",
+    "macd_hist",
+    "rolling_vol_5",
+    "bb_pct",
+    "dist_sma_50",
+    "momentum_5",
+    "return_lag_3",
+    "High",
+    "rolling_vol_10"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\NTPC_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "NTPC.NS",
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.016325414773541283,
+    "validation": {
+      "mae": 0.013536826563348455,
+      "mse": 0.00033425196951042933,
+      "rmse": 0.01828255916195622,
+      "r2": -0.09306884508928959,
+      "mape": 139.3109951637629
+    },
+    "test": {
+      "mae": 0.012142908508881929,
+      "mse": 0.000279986786331288,
+      "rmse": 0.01673280569215121,
+      "r2": -0.060505926767036255,
+      "mape": 172.64457191584884
+    },
+    "directional_accuracy": 0.517426273458445
+  },
+  "training_time_s": 0.331,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:01:29+00:00",
+  "stockm_version": "1.0"
+}

@@ -1,0 +1,101 @@
+{
+  "model_name": "ridge",
+  "symbol": "HDFCLIFE.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "alpha": 70.72114131472235
+  },
+  "selected_features": [
+    "momentum_20",
+    "price_diff",
+    "week",
+    "volume_lag_1",
+    "macd",
+    "rolling_var_20",
+    "volume_lag_3",
+    "year",
+    "return_lag_1",
+    "vma_10",
+    "return_lag_20",
+    "obv",
+    "vma_20",
+    "bb_pct",
+    "dist_sma_20",
+    "sma_200",
+    "return_lag_3",
+    "rolling_vol_20",
+    "dist_sma_10",
+    "momentum_5",
+    "volume_lag_10",
+    "bb_width",
+    "return_lag_10",
+    "open_lag_20",
+    "rsi",
+    "volume_change",
+    "rolling_vol_5",
+    "Volume",
+    "rolling_var_10",
+    "dist_sma_100",
+    "day_of_month",
+    "vma_5",
+    "open_close_diff",
+    "high_low_range",
+    "atr",
+    "dist_sma_5",
+    "macd_hist",
+    "rolling_var_5",
+    "volume_momentum",
+    "volume_change_ratio"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\HDFCLIFE_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "HDFCLIFE.NS",
+    "row_counts": {
+      "train": 1348,
+      "val": 289,
+      "test": 289
+    },
+    "date_ranges": {
+      "train": [
+        "2018-09-05",
+        "2024-02-21"
+      ],
+      "val": [
+        "2024-02-23",
+        "2025-04-30"
+      ],
+      "test": [
+        "2025-05-05",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.020168733606263107,
+    "validation": {
+      "mae": 0.011073635417832142,
+      "mse": 0.00022828027654187464,
+      "rmse": 0.015108946903800895,
+      "r2": -0.022090394422732418,
+      "mape": 140.94141228626975
+    },
+    "test": {
+      "mae": 0.010569547871619218,
+      "mse": 0.00019193120677534717,
+      "rmse": 0.013853923876481608,
+      "r2": -0.08315702374265488,
+      "mape": 123.56345203734203
+    },
+    "directional_accuracy": 0.5246478873239436
+  },
+  "training_time_s": 0.1856,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:28:49+00:00",
+  "stockm_version": "1.0"
+}

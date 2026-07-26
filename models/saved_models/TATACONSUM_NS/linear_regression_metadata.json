@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "TATACONSUM.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T16:00:46+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "volume_lag_3",
+    "vma_20",
+    "vma_5",
+    "bb_upper",
+    "macd_signal",
+    "return_lag_3",
+    "volume_ratio_20",
+    "dist_sma_10",
+    "month_cos",
+    "rolling_vol_10",
+    "atr",
+    "return_lag_20",
+    "roc_10",
+    "momentum_20",
+    "obv",
+    "volume_momentum",
+    "return_lag_10",
+    "rolling_vol_20",
+    "bb_pct",
+    "momentum_10",
+    "rolling_var_5",
+    "dist_sma_20",
+    "volume_ratio_5",
+    "dist_sma_200",
+    "day_of_week_sin",
+    "high_low_range",
+    "volume_lag_20",
+    "return_lag_1",
+    "volume_lag_5",
+    "return_lag_5",
+    "dist_sma_100",
+    "rolling_var_10",
+    "day_of_month",
+    "atr_pct",
+    "rolling_var_20",
+    "volume_lag_10",
+    "rsi",
+    "price_diff",
+    "price_diff_pct",
+    "rolling_vol_5"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0046,
+  "metrics": {
+    "validation": {
+      "mae": 0.018438250432462906,
+      "mse": 0.0005252643334611877,
+      "rmse": 0.022918645977919108,
+      "r2": -0.9818491091887684,
+      "mape": 434.4686666300757
+    },
+    "test": {
+      "mae": 0.02727121003523049,
+      "mse": 0.0010339086209995435,
+      "rmse": 0.032154449474365805,
+      "r2": -3.997205853282269,
+      "mape": 770.8276569204987
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\TATACONSUM_NS\\scaler_params.json",
+  "is_best": false
+}

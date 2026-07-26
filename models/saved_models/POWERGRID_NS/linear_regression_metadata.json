@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "POWERGRID.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:56:42+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "dist_sma_20",
+    "volume_change_ratio",
+    "volume_ratio_5",
+    "High",
+    "dist_sma_10",
+    "Volume",
+    "price_diff",
+    "day_of_week_sin",
+    "week",
+    "vma_10",
+    "atr",
+    "bb_width",
+    "volume_lag_5",
+    "roc_5",
+    "macd",
+    "dist_sma_5",
+    "dist_sma_50",
+    "month_sin",
+    "volume_lag_20",
+    "atr_pct",
+    "roc_10",
+    "volume_ratio_20",
+    "sma_200",
+    "roc_20",
+    "obv",
+    "dist_sma_100",
+    "momentum_20",
+    "rolling_var_20",
+    "momentum_5",
+    "macd_hist",
+    "vma_5",
+    "bb_pct",
+    "return_lag_5",
+    "return_lag_10",
+    "volume_momentum",
+    "return_lag_3",
+    "pct_change_1d",
+    "momentum_10",
+    "rolling_vol_5",
+    "return_lag_1"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0061,
+  "metrics": {
+    "validation": {
+      "mae": 0.012718993737399422,
+      "mse": 0.0002845384858440276,
+      "rmse": 0.016868268608367237,
+      "r2": -0.09267722539323531,
+      "mape": 148.65365178833247
+    },
+    "test": {
+      "mae": 0.023226290999104882,
+      "mse": 0.001122560333211793,
+      "rmse": 0.03350463151881831,
+      "r2": -3.1682223391001694,
+      "mape": 619.0739864704602
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3088,
+      "val": 662,
+      "test": 662
+    },
+    "date_ranges": {
+      "train": [
+        "2008-07-24",
+        "2021-02-15"
+      ],
+      "val": [
+        "2021-02-17",
+        "2023-10-19"
+      ],
+      "test": [
+        "2023-10-23",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\POWERGRID_NS\\scaler_params.json",
+  "is_best": false
+}

@@ -1,0 +1,106 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "POWERGRID.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "colsample_bytree": 0.662397808134481,
+    "learning_rate": 0.0013927723945289009,
+    "n_estimators": 237,
+    "num_leaves": 50,
+    "reg_lambda": 0.003727925903376985,
+    "subsample": 0.8603553891795411
+  },
+  "selected_features": [
+    "dist_sma_20",
+    "volume_change_ratio",
+    "volume_ratio_5",
+    "High",
+    "dist_sma_10",
+    "Volume",
+    "price_diff",
+    "day_of_week_sin",
+    "week",
+    "vma_10",
+    "atr",
+    "bb_width",
+    "volume_lag_5",
+    "roc_5",
+    "macd",
+    "dist_sma_5",
+    "dist_sma_50",
+    "month_sin",
+    "volume_lag_20",
+    "atr_pct",
+    "roc_10",
+    "volume_ratio_20",
+    "sma_200",
+    "roc_20",
+    "obv",
+    "dist_sma_100",
+    "momentum_20",
+    "rolling_var_20",
+    "momentum_5",
+    "macd_hist",
+    "vma_5",
+    "bb_pct",
+    "return_lag_5",
+    "return_lag_10",
+    "volume_momentum",
+    "return_lag_3",
+    "pct_change_1d",
+    "momentum_10",
+    "rolling_vol_5",
+    "return_lag_1"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\POWERGRID_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "POWERGRID.NS",
+    "row_counts": {
+      "train": 3088,
+      "val": 662,
+      "test": 662
+    },
+    "date_ranges": {
+      "train": [
+        "2008-07-24",
+        "2021-02-15"
+      ],
+      "val": [
+        "2021-02-17",
+        "2023-10-19"
+      ],
+      "test": [
+        "2023-10-23",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.014959382497526976,
+    "validation": {
+      "mae": 0.011962327245923741,
+      "mse": 0.0002584154264090678,
+      "rmse": 0.016075304862087927,
+      "r2": 0.007639861827862582,
+      "mape": 100.52892032893477
+    },
+    "test": {
+      "mae": 0.011516468973037215,
+      "mse": 0.0002686027648753629,
+      "rmse": 0.01638910506633486,
+      "r2": 0.002640649439085374,
+      "mape": 106.62677701551043
+    },
+    "directional_accuracy": 0.5251908396946565
+  },
+  "training_time_s": 9.1556,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:03:21+00:00",
+  "stockm_version": "1.0"
+}

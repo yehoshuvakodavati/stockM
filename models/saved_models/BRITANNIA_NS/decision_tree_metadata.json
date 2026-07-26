@@ -1,0 +1,106 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "BRITANNIA.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:59:57+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "bb_pct",
+    "rolling_var_5",
+    "volume_lag_10",
+    "rolling_vol_10",
+    "volume_change_ratio",
+    "week",
+    "volume_ratio_10",
+    "dist_sma_100",
+    "volume_lag_1",
+    "volume_lag_20",
+    "open_close_diff",
+    "vma_5",
+    "macd_signal",
+    "rolling_var_20",
+    "day_of_month",
+    "Volume",
+    "return_lag_20",
+    "volume_ratio_5",
+    "atr_pct",
+    "dist_sma_200",
+    "return_lag_3",
+    "obv",
+    "rolling_vol_20",
+    "roc_20",
+    "dist_sma_50",
+    "volume_ratio_20",
+    "rolling_vol_5",
+    "return_lag_1",
+    "volume_change",
+    "rolling_var_10",
+    "atr",
+    "price_diff_pct",
+    "rsi",
+    "momentum_20",
+    "volume_momentum",
+    "high_low_range",
+    "dist_sma_5",
+    "macd",
+    "roc_10",
+    "momentum_5"
+  ],
+  "hyperparameters": {
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": null,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "random_state": null,
+    "splitter": "best"
+  },
+  "training_time_s": 0.1906,
+  "metrics": {
+    "validation": {
+      "mae": 0.02007965147796144,
+      "mse": 0.0008313512842578946,
+      "rmse": 0.02883316292497052,
+      "r2": -3.7554217956281137,
+      "mape": 615.1454079623983
+    },
+    "test": {
+      "mae": 0.016321797795364492,
+      "mse": 0.0005332894879605253,
+      "rmse": 0.023093061467906878,
+      "r2": -2.429672902378084,
+      "mape": 499.77840047395443
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3560,
+      "val": 763,
+      "test": 763
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-24"
+      ],
+      "val": [
+        "2020-04-28",
+        "2023-05-25"
+      ],
+      "test": [
+        "2023-05-29",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\BRITANNIA_NS\\scaler_params.json",
+  "is_best": false
+}

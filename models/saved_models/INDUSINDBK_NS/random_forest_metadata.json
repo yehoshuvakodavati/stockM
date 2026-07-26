@@ -1,0 +1,112 @@
+{
+  "model_name": "random_forest",
+  "symbol": "INDUSINDBK.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T16:01:15+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "volume_lag_20",
+    "volume_momentum",
+    "obv",
+    "dist_sma_200",
+    "return_lag_10",
+    "rolling_var_20",
+    "high_low_range",
+    "dist_sma_5",
+    "month_sin",
+    "volume_change",
+    "volume_lag_1",
+    "dist_sma_10",
+    "vma_20",
+    "rsi",
+    "dist_sma_100",
+    "roc_5",
+    "rolling_var_5",
+    "roc_20",
+    "day_of_week",
+    "price_diff_pct",
+    "volume_ratio_5",
+    "volume_lag_5",
+    "return_lag_5",
+    "day_of_week_sin",
+    "return_lag_1",
+    "volume_lag_3",
+    "momentum_10",
+    "macd",
+    "macd_hist",
+    "rolling_vol_20",
+    "volume_ratio_20",
+    "High",
+    "price_diff",
+    "volume_ratio_10",
+    "volume_change_ratio",
+    "volume_lag_10",
+    "rolling_vol_10",
+    "trading_day_number",
+    "return_lag_20",
+    "day_of_month"
+  ],
+  "hyperparameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "oob_score": false,
+    "random_state": null,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_time_s": 16.5945,
+  "metrics": {
+    "validation": {
+      "mae": 0.021024649283139206,
+      "mse": 0.0008126578255502724,
+      "rmse": 0.02850715393634153,
+      "r2": -0.1651569084264901,
+      "mape": 215.8190674966753
+    },
+    "test": {
+      "mae": 0.01618396635536532,
+      "mse": 0.0005841293901705204,
+      "rmse": 0.024168768900598152,
+      "r2": -0.2024183124154837,
+      "mape": 295.6924163219472
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\INDUSINDBK_NS\\scaler_params.json",
+  "is_best": true
+}

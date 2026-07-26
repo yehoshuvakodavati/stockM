@@ -1,0 +1,103 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "DRREDDY.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "max_depth": 3,
+    "max_features": 1.0,
+    "min_samples_leaf": 68
+  },
+  "selected_features": [
+    "momentum_10",
+    "rolling_vol_5",
+    "return_lag_3",
+    "open_close_diff",
+    "bb_pct",
+    "volume_change_ratio",
+    "month_cos",
+    "obv",
+    "volume_ratio_5",
+    "volume_lag_5",
+    "volume_lag_10",
+    "week",
+    "dist_sma_10",
+    "dist_sma_200",
+    "rsi",
+    "volume_change",
+    "momentum_20",
+    "Volume",
+    "macd_hist",
+    "volume_lag_1",
+    "return_lag_10",
+    "atr_pct",
+    "volume_lag_3",
+    "roc_5",
+    "rolling_vol_10",
+    "atr",
+    "return_lag_1",
+    "momentum_5",
+    "volume_ratio_20",
+    "vma_5",
+    "rolling_var_10",
+    "return_lag_20",
+    "volume_momentum",
+    "dist_sma_5",
+    "trading_day_number",
+    "volume_lag_20",
+    "High",
+    "dist_sma_20",
+    "rolling_var_20",
+    "vma_20"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\DRREDDY_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "DRREDDY.NS",
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.017345742522687037,
+    "validation": {
+      "mae": 0.011102291765231259,
+      "mse": 0.00025401906121749296,
+      "rmse": 0.015937975442868926,
+      "r2": -0.014953959335846756,
+      "mape": 111.89318849499332
+    },
+    "test": {
+      "mae": 0.009815103642079354,
+      "mse": 0.00017987558481883116,
+      "rmse": 0.013411770383466574,
+      "r2": -0.012572939762297342,
+      "mape": 118.63875057440222
+    },
+    "directional_accuracy": 0.5033200531208499
+  },
+  "training_time_s": 0.3703,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:32:11+00:00",
+  "stockm_version": "1.0"
+}

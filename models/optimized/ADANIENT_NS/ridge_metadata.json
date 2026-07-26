@@ -1,0 +1,101 @@
+{
+  "model_name": "ridge",
+  "symbol": "ADANIENT.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "alpha": 70.72114131472235
+  },
+  "selected_features": [
+    "momentum_20",
+    "vma_20",
+    "momentum_10",
+    "volume_ratio_5",
+    "month_cos",
+    "trading_day_number",
+    "macd_hist",
+    "dist_sma_10",
+    "momentum_5",
+    "macd",
+    "vma_10",
+    "dist_sma_50",
+    "bb_width",
+    "return_lag_20",
+    "obv",
+    "return_lag_5",
+    "high_low_range",
+    "day_of_month",
+    "dist_sma_5",
+    "rsi",
+    "roc_10",
+    "open_close_diff",
+    "volume_ratio_10",
+    "atr",
+    "volume_lag_1",
+    "rolling_vol_10",
+    "atr_pct",
+    "month_sin",
+    "Volume",
+    "volume_lag_3",
+    "dist_sma_100",
+    "week",
+    "roc_20",
+    "return_lag_10",
+    "log_return",
+    "volume_lag_20",
+    "bb_pct",
+    "volume_change_ratio",
+    "roc_5",
+    "volume_ratio_20"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ADANIENT_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "ADANIENT.NS",
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.03315439436552067,
+    "validation": {
+      "mae": 0.08880518667910316,
+      "mse": 0.01561737510923652,
+      "rmse": 0.12496949671514453,
+      "r2": -10.462313591483637,
+      "mape": 1694.6719515844034
+    },
+    "test": {
+      "mae": 0.09183703543795418,
+      "mse": 0.013056523149059559,
+      "rmse": 0.11426514406878223,
+      "r2": -19.959919117665564,
+      "mape": 2733.3958583869307
+    },
+    "directional_accuracy": 0.5191545574636723
+  },
+  "training_time_s": 0.427,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:36:27+00:00",
+  "stockm_version": "1.0"
+}

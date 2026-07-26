@@ -1,0 +1,106 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "ULTRACEMCO.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:55:39+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "volume_ratio_5",
+    "day_of_month",
+    "rolling_vol_10",
+    "vma_5",
+    "momentum_10",
+    "dist_sma_10",
+    "return_lag_20",
+    "day_of_week",
+    "macd_signal",
+    "dist_sma_200",
+    "roc_20",
+    "dist_sma_20",
+    "volume_lag_5",
+    "volume_ratio_20",
+    "month_sin",
+    "return_lag_5",
+    "Volume",
+    "week",
+    "volume_momentum",
+    "macd",
+    "open_close_diff",
+    "volume_lag_3",
+    "bb_pct",
+    "open_lag_20",
+    "dist_sma_5",
+    "atr",
+    "rolling_vol_5",
+    "roc_5",
+    "rsi",
+    "volume_lag_1",
+    "dist_sma_100",
+    "rolling_vol_20",
+    "volume_change_ratio",
+    "return_lag_3",
+    "price_diff_pct",
+    "trading_day_number",
+    "obv",
+    "return_lag_10",
+    "bb_width",
+    "macd_hist"
+  ],
+  "hyperparameters": {
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": null,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "random_state": null,
+    "splitter": "best"
+  },
+  "training_time_s": 0.253,
+  "metrics": {
+    "validation": {
+      "mae": 0.02538469684035637,
+      "mse": 0.0009621543197228539,
+      "rmse": 0.031018612472559985,
+      "r2": -2.475594324399844,
+      "mape": 640.9913062664456
+    },
+    "test": {
+      "mae": 0.02510234563123993,
+      "mse": 0.0008473280867904558,
+      "rmse": 0.029108900473746098,
+      "r2": -3.2570344142232575,
+      "mape": 818.0547368942182
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ULTRACEMCO_NS\\scaler_params.json",
+  "is_best": false
+}

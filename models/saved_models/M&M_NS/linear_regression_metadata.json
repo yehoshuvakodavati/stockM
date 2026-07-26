@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "M&M.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:57:33+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "bb_width",
+    "dist_sma_200",
+    "volume_change_ratio",
+    "roc_5",
+    "day_of_month",
+    "atr",
+    "rolling_var_20",
+    "rolling_vol_5",
+    "roc_10",
+    "return_lag_5",
+    "dist_sma_50",
+    "rolling_var_10",
+    "return_lag_20",
+    "High",
+    "macd",
+    "volume_momentum",
+    "week",
+    "month_cos",
+    "obv",
+    "dist_sma_5",
+    "volume_ratio_20",
+    "momentum_5",
+    "macd_hist",
+    "rolling_vol_20",
+    "volume_lag_10",
+    "dist_sma_10",
+    "open_close_diff",
+    "return_lag_3",
+    "volume_lag_1",
+    "volume_change",
+    "price_diff",
+    "high_low_range",
+    "rolling_var_5",
+    "dist_sma_100",
+    "momentum_20",
+    "return_lag_10",
+    "volume_lag_20",
+    "momentum_10",
+    "rolling_vol_10",
+    "volume_lag_5"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0048,
+  "metrics": {
+    "validation": {
+      "mae": 0.015717274807987087,
+      "mse": 0.0004723308990789618,
+      "rmse": 0.021733175080483794,
+      "r2": -0.22430644310172276,
+      "mape": 209.3301937682544
+    },
+    "test": {
+      "mae": 0.0358431380115938,
+      "mse": 0.002583213511491922,
+      "rmse": 0.050825323525698504,
+      "r2": -6.827910522627237,
+      "mape": 944.0708023634389
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3568,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-24"
+      ],
+      "val": [
+        "2020-04-28",
+        "2023-05-23"
+      ],
+      "test": [
+        "2023-05-25",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\M&M_NS\\scaler_params.json",
+  "is_best": false
+}

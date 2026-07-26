@@ -1,0 +1,106 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "EICHERMOT.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:59:20+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "vma_10",
+    "month_cos",
+    "macd",
+    "obv",
+    "return_lag_20",
+    "rolling_vol_10",
+    "volume_lag_1",
+    "volume_lag_5",
+    "week",
+    "trading_day_number",
+    "volume_change",
+    "dist_sma_20",
+    "momentum_20",
+    "vma_5",
+    "dist_sma_200",
+    "volume_lag_3",
+    "momentum_5",
+    "high_low_range",
+    "atr",
+    "rolling_var_10",
+    "bb_width",
+    "volume_lag_10",
+    "volume_lag_20",
+    "atr_pct",
+    "rolling_var_20",
+    "return_lag_1",
+    "day_of_week",
+    "volume_ratio_10",
+    "Volume",
+    "price_diff",
+    "pct_change_1d",
+    "rolling_vol_5",
+    "volume_momentum",
+    "open_close_diff",
+    "roc_10",
+    "volume_change_ratio",
+    "return_lag_10",
+    "High",
+    "return_lag_5",
+    "bb_pct"
+  ],
+  "hyperparameters": {
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": null,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "random_state": null,
+    "splitter": "best"
+  },
+  "training_time_s": 0.1966,
+  "metrics": {
+    "validation": {
+      "mae": 0.02469138705265473,
+      "mse": 0.0010051421547898067,
+      "rmse": 0.03170397695542007,
+      "r2": -1.7489809675983796,
+      "mape": 434.16928742558474
+    },
+    "test": {
+      "mae": 0.02527304184486854,
+      "mse": 0.0011409141353213768,
+      "rmse": 0.033777420495374966,
+      "r2": -3.5012285115186836,
+      "mape": 623.8778447488345
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\EICHERMOT_NS\\scaler_params.json",
+  "is_best": false
+}

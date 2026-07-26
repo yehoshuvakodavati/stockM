@@ -1,0 +1,227 @@
+{
+  "symbol": "BHARTIARTL.NS",
+  "target_col": "target_next_return",
+  "method": "random",
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "n_iter": 15,
+  "models_tuned": [
+    "ridge",
+    "decision_tree",
+    "random_forest",
+    "gradient_boosting",
+    "xgboost",
+    "lightgbm"
+  ],
+  "best_tuned_model": "lightgbm",
+  "best_cv_rmse": 0.02089,
+  "best_hyperparameters": {
+    "colsample_bytree": 0.7801997007878172,
+    "learning_rate": 0.0010785962778329494,
+    "n_estimators": 238,
+    "num_leaves": 28,
+    "reg_lambda": 1.7123375973163988,
+    "subsample": 0.7218455076693483
+  },
+  "naive_test_rmse": 0.013033,
+  "comparison": {
+    "baseline_model": "random_forest",
+    "baseline_val_rmse": 0.018422,
+    "baseline_test_rmse": 0.01574,
+    "optimized_model": "lightgbm",
+    "optimized_val_rmse": 0.017589,
+    "optimized_test_rmse": 0.01318,
+    "relative_val_improvement_pct": 4.525,
+    "directional_accuracy": 0.4834,
+    "beats_baseline": true,
+    "deploy": "optimized",
+    "reason": "optimized val RMSE 0.017589 beats baseline 0.018422 by 4.52% (>tol 0.5%). Deploy optimized.",
+    "optimized_cv_rmse": 0.02089,
+    "note": "deploy decision uses full-validation RMSE (apples-to-apples); CV RMSE reported separately for transparency."
+  },
+  "deploy": "optimized",
+  "robustness": {
+    "n_segments": 6,
+    "segments": [
+      {
+        "segment": 1,
+        "date_range": [
+          "2023-05-26",
+          "2023-11-29"
+        ],
+        "n_rows": 127,
+        "regime": "bull",
+        "cum_return": 0.2201,
+        "rmse": 0.010127,
+        "r2": -0.0328,
+        "directional_accuracy": 0.5873
+      },
+      {
+        "segment": 2,
+        "date_range": [
+          "2023-11-30",
+          "2024-06-07"
+        ],
+        "n_rows": 127,
+        "regime": "bull",
+        "cum_return": 0.3403,
+        "rmse": 0.015677,
+        "r2": -0.0566,
+        "directional_accuracy": 0.496
+      },
+      {
+        "segment": 3,
+        "date_range": [
+          "2024-06-10",
+          "2024-12-11"
+        ],
+        "n_rows": 127,
+        "regime": "bull",
+        "cum_return": 0.1272,
+        "rmse": 0.013396,
+        "r2": -0.0131,
+        "directional_accuracy": 0.4355
+      },
+      {
+        "segment": 4,
+        "date_range": [
+          "2024-12-12",
+          "2025-06-18"
+        ],
+        "n_rows": 127,
+        "regime": "bull",
+        "cum_return": 0.1123,
+        "rmse": 0.014164,
+        "r2": -0.0368,
+        "directional_accuracy": 0.4683
+      },
+      {
+        "segment": 5,
+        "date_range": [
+          "2025-06-19",
+          "2025-12-19"
+        ],
+        "n_rows": 127,
+        "regime": "bull",
+        "cum_return": 0.143,
+        "rmse": 0.011782,
+        "r2": -0.0367,
+        "directional_accuracy": 0.4409
+      },
+      {
+        "segment": 6,
+        "date_range": [
+          "2025-12-22",
+          "2026-07-01"
+        ],
+        "n_rows": 127,
+        "regime": "bear",
+        "cum_return": -0.1168,
+        "rmse": 0.013198,
+        "r2": -0.0369,
+        "directional_accuracy": 0.4793
+      }
+    ],
+    "regime_summary": {
+      "bull": {
+        "n_rows": 635,
+        "count": 5,
+        "mean_directional_accuracy": 0.4856
+      },
+      "bear": {
+        "n_rows": 127,
+        "count": 1,
+        "mean_directional_accuracy": 0.4793
+      }
+    },
+    "stable_across_regimes": false
+  },
+  "per_model": {
+    "ridge": {
+      "best_cv_rmse": 0.021184,
+      "best_params": {
+        "alpha": 70.72114131472235
+      },
+      "val_rmse": 0.018621,
+      "test_rmse": 0.028242,
+      "directional_accuracy": 0.47,
+      "wall_time_s": 0.331,
+      "n_candidates": 15
+    },
+    "decision_tree": {
+      "best_cv_rmse": 0.021292,
+      "best_params": {
+        "max_depth": 3,
+        "max_features": 1.0,
+        "min_samples_leaf": 68
+      },
+      "val_rmse": 0.017578,
+      "test_rmse": 0.016448,
+      "directional_accuracy": 0.4847,
+      "wall_time_s": 0.345,
+      "n_candidates": 15
+    },
+    "random_forest": {
+      "best_cv_rmse": 0.020971,
+      "best_params": {
+        "max_depth": 7,
+        "max_features": "log2",
+        "min_samples_leaf": 26,
+        "n_estimators": 188
+      },
+      "val_rmse": 0.017695,
+      "test_rmse": 0.013515,
+      "directional_accuracy": 0.486,
+      "wall_time_s": 13.608,
+      "n_candidates": 15
+    },
+    "gradient_boosting": {
+      "best_cv_rmse": 0.020914,
+      "best_params": {
+        "l2_regularization": 0.06796578090758151,
+        "learning_rate": 0.001124579825911934,
+        "max_depth": 4,
+        "max_iter": 237
+      },
+      "val_rmse": 0.017598,
+      "test_rmse": 0.013257,
+      "directional_accuracy": 0.4727,
+      "wall_time_s": 4.865,
+      "n_candidates": 15
+    },
+    "xgboost": {
+      "best_cv_rmse": 0.020921,
+      "best_params": {
+        "colsample_bytree": 0.7541666010159664,
+        "learning_rate": 0.0010953435185048703,
+        "max_depth": 4,
+        "n_estimators": 233,
+        "reg_lambda": 0.009206654892274768,
+        "subsample": 0.8733054075301833
+      },
+      "val_rmse": 0.017566,
+      "test_rmse": 0.013275,
+      "directional_accuracy": 0.4834,
+      "wall_time_s": 15.201,
+      "n_candidates": 15
+    },
+    "lightgbm": {
+      "best_cv_rmse": 0.02089,
+      "best_params": {
+        "colsample_bytree": 0.7801997007878172,
+        "learning_rate": 0.0010785962778329494,
+        "n_estimators": 238,
+        "num_leaves": 28,
+        "reg_lambda": 1.7123375973163988,
+        "subsample": 0.7218455076693483
+      },
+      "val_rmse": 0.017589,
+      "test_rmse": 0.01318,
+      "directional_accuracy": 0.4834,
+      "wall_time_s": 8.407,
+      "n_candidates": 15
+    }
+  }
+}

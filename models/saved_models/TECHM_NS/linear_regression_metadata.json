@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "TECHM.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:57:48+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "volume_ratio_5",
+    "return_lag_3",
+    "volume_change_ratio",
+    "dist_sma_5",
+    "price_diff",
+    "momentum_10",
+    "vma_5",
+    "bb_width",
+    "momentum_20",
+    "week",
+    "rolling_vol_10",
+    "vma_10",
+    "macd_hist",
+    "day_of_week",
+    "return_lag_20",
+    "sma_200",
+    "volume_change",
+    "vma_20",
+    "momentum_5",
+    "dist_sma_100",
+    "month_cos",
+    "volume_lag_3",
+    "rolling_vol_20",
+    "day_of_week_sin",
+    "rolling_vol_5",
+    "dist_sma_50",
+    "dist_sma_10",
+    "Volume",
+    "rolling_var_20",
+    "rsi",
+    "roc_10",
+    "open_close_diff",
+    "High",
+    "roc_20",
+    "dist_sma_200",
+    "dist_sma_20",
+    "atr_pct",
+    "volume_ratio_20",
+    "pct_change_1d",
+    "volume_lag_1"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0047,
+  "metrics": {
+    "validation": {
+      "mae": 0.016362700997480203,
+      "mse": 0.0004692304777969216,
+      "rmse": 0.02166172841203863,
+      "r2": -0.3984048861644096,
+      "mape": 280.24606807638963
+    },
+    "test": {
+      "mae": 0.015978941568556077,
+      "mse": 0.0004229907369265783,
+      "rmse": 0.020566738606949287,
+      "r2": -0.5636631585043825,
+      "mape": 347.26593958801504
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3281,
+      "val": 703,
+      "test": 703
+    },
+    "date_ranges": {
+      "train": [
+        "2007-06-19",
+        "2020-10-19"
+      ],
+      "val": [
+        "2020-10-21",
+        "2023-08-21"
+      ],
+      "test": [
+        "2023-08-23",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\TECHM_NS\\scaler_params.json",
+  "is_best": false
+}

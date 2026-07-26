@@ -1,0 +1,106 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "GRASIM.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "colsample_bytree": 0.662397808134481,
+    "learning_rate": 0.0013927723945289009,
+    "n_estimators": 237,
+    "num_leaves": 50,
+    "reg_lambda": 0.003727925903376985,
+    "subsample": 0.8603553891795411
+  },
+  "selected_features": [
+    "bb_pct",
+    "volume_momentum",
+    "dist_sma_50",
+    "high_low_range",
+    "return_lag_20",
+    "momentum_5",
+    "dist_sma_20",
+    "rolling_var_20",
+    "volume_change",
+    "volume_lag_5",
+    "volume_lag_20",
+    "volume_lag_10",
+    "vma_20",
+    "log_return",
+    "rolling_vol_20",
+    "day_of_week_sin",
+    "roc_10",
+    "rolling_var_5",
+    "rolling_var_10",
+    "rolling_vol_10",
+    "atr",
+    "return_lag_10",
+    "day_of_month",
+    "volume_lag_1",
+    "dist_sma_10",
+    "roc_20",
+    "volume_change_ratio",
+    "rsi",
+    "day_of_week",
+    "month_cos",
+    "bb_upper",
+    "week",
+    "volume_ratio_10",
+    "volume_lag_3",
+    "momentum_20",
+    "obv",
+    "momentum_10",
+    "macd",
+    "dist_sma_5",
+    "Volume"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\GRASIM_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "GRASIM.NS",
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.018344805486324004,
+    "validation": {
+      "mae": 0.013258936142933631,
+      "mse": 0.0003156537502711341,
+      "rmse": 0.017766647130821676,
+      "r2": -0.008191134605361583,
+      "mape": 104.82746982885094
+    },
+    "test": {
+      "mae": 0.010478153087753263,
+      "mse": 0.00019669239480639476,
+      "rmse": 0.014024706585394033,
+      "r2": -0.00957542049751825,
+      "mape": 109.96067880987353
+    },
+    "directional_accuracy": 0.48544973544973546
+  },
+  "training_time_s": 9.3016,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:30:48+00:00",
+  "stockm_version": "1.0"
+}

@@ -1,0 +1,101 @@
+{
+  "model_name": "ridge",
+  "symbol": "ITC.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "alpha": 70.72114131472235
+  },
+  "selected_features": [
+    "volume_lag_1",
+    "roc_5",
+    "volume_ratio_20",
+    "momentum_20",
+    "dist_sma_20",
+    "dist_sma_50",
+    "return_lag_20",
+    "day_of_week_sin",
+    "rolling_var_5",
+    "rolling_var_10",
+    "macd_signal",
+    "log_return",
+    "return_lag_10",
+    "day_of_month",
+    "roc_10",
+    "atr",
+    "rsi",
+    "rolling_var_20",
+    "return_lag_1",
+    "week",
+    "vma_20",
+    "Volume",
+    "roc_20",
+    "return_lag_5",
+    "rolling_vol_5",
+    "dist_sma_100",
+    "volume_lag_10",
+    "volume_ratio_5",
+    "macd",
+    "vma_5",
+    "volume_momentum",
+    "volume_lag_3",
+    "volume_lag_20",
+    "dist_sma_10",
+    "price_diff",
+    "volume_ratio_10",
+    "obv",
+    "rolling_vol_20",
+    "dist_sma_5",
+    "bb_pct"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ITC_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "ITC.NS",
+    "row_counts": {
+      "train": 3568,
+      "val": 765,
+      "test": 765
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-24"
+      ],
+      "val": [
+        "2020-04-28",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.01677193981457352,
+    "validation": {
+      "mae": 0.01158133984024928,
+      "mse": 0.0002483522954351799,
+      "rmse": 0.01575919716975392,
+      "r2": -0.07888995748096783,
+      "mape": 146.3609943019282
+    },
+    "test": {
+      "mae": 0.009449192729151252,
+      "mse": 0.00017833194716405067,
+      "rmse": 0.013354098515588787,
+      "r2": -0.3166135787965467,
+      "mape": 208.0267407005638
+    },
+    "directional_accuracy": 0.5046235138705416
+  },
+  "training_time_s": 0.3509,
+  "seed": 42,
+  "tuned_at": "2026-07-23T14:43:08+00:00",
+  "stockm_version": "1.0"
+}

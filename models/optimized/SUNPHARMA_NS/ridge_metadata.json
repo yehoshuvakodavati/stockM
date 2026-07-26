@@ -1,0 +1,101 @@
+{
+  "model_name": "ridge",
+  "symbol": "SUNPHARMA.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "alpha": 70.72114131472235
+  },
+  "selected_features": [
+    "day_of_week",
+    "volume_lag_1",
+    "volume_ratio_20",
+    "volume_change_ratio",
+    "dist_sma_100",
+    "rolling_var_20",
+    "return_lag_1",
+    "obv",
+    "volume_lag_5",
+    "dist_sma_5",
+    "Volume",
+    "day_of_week_sin",
+    "vma_10",
+    "bb_width",
+    "rolling_vol_20",
+    "volume_momentum",
+    "volume_ratio_5",
+    "rolling_vol_5",
+    "high_low_range",
+    "return_lag_10",
+    "bb_pct",
+    "vma_5",
+    "week",
+    "macd",
+    "volume_lag_20",
+    "rolling_vol_10",
+    "dist_sma_200",
+    "atr_pct",
+    "return_lag_5",
+    "rsi",
+    "volume_lag_3",
+    "rolling_var_10",
+    "return_lag_3",
+    "dist_sma_50",
+    "open_close_diff",
+    "return_lag_20",
+    "roc_5",
+    "momentum_20",
+    "volume_change",
+    "momentum_5"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\SUNPHARMA_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "SUNPHARMA.NS",
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.019950915388373115,
+    "validation": {
+      "mae": 0.012794654580951744,
+      "mse": 0.0002711137640913184,
+      "rmse": 0.016465532608795817,
+      "r2": -0.11071404023966713,
+      "mape": 226.81451255289696
+    },
+    "test": {
+      "mae": 0.01066177983208884,
+      "mse": 0.00019579549987031416,
+      "rmse": 0.01399269451786589,
+      "r2": -0.30947764121492183,
+      "mape": 265.8896197342026
+    },
+    "directional_accuracy": 0.5499334221038615
+  },
+  "training_time_s": 0.3263,
+  "seed": 42,
+  "tuned_at": "2026-07-23T14:54:37+00:00",
+  "stockm_version": "1.0"
+}

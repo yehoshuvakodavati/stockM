@@ -1,0 +1,112 @@
+{
+  "model_name": "random_forest",
+  "symbol": "ADANIPORTS.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:59:07+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "dist_sma_100",
+    "roc_10",
+    "atr",
+    "dist_sma_50",
+    "volume_lag_1",
+    "volume_lag_3",
+    "momentum_10",
+    "volume_change_ratio",
+    "sma_200",
+    "volume_ratio_10",
+    "return_lag_5",
+    "dist_sma_5",
+    "week",
+    "open_close_diff",
+    "month_sin",
+    "roc_20",
+    "return_lag_20",
+    "rolling_vol_5",
+    "pct_change_1d",
+    "rolling_var_20",
+    "bb_pct",
+    "high_low_range",
+    "day_of_week_sin",
+    "vma_10",
+    "macd_hist",
+    "macd",
+    "day_of_month",
+    "bb_width",
+    "volume_lag_10",
+    "atr_pct",
+    "return_lag_10",
+    "obv",
+    "momentum_20",
+    "rsi",
+    "volume_change",
+    "volume_ratio_20",
+    "return_lag_3",
+    "vma_20",
+    "rolling_vol_20",
+    "volume_lag_5"
+  ],
+  "hyperparameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "oob_score": false,
+    "random_state": null,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_time_s": 9.7712,
+  "metrics": {
+    "validation": {
+      "mae": 0.018709053000815285,
+      "mse": 0.0007676335069507682,
+      "rmse": 0.027706199792659553,
+      "r2": -0.15159060396708224,
+      "mape": 262.56412954648465
+    },
+    "test": {
+      "mae": 0.01451794090078146,
+      "mse": 0.0005000239271479245,
+      "rmse": 0.02236121479588988,
+      "r2": -0.014018149422129422,
+      "mape": 147.65948915256243
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3061,
+      "val": 656,
+      "test": 656
+    },
+    "date_ranges": {
+      "train": [
+        "2008-09-16",
+        "2021-03-03"
+      ],
+      "val": [
+        "2021-03-05",
+        "2023-10-30"
+      ],
+      "test": [
+        "2023-11-01",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ADANIPORTS_NS\\scaler_params.json",
+  "is_best": true
+}

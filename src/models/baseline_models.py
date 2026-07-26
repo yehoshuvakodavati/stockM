@@ -47,7 +47,7 @@ import logging
 from typing import Any, Protocol
 
 from sklearn.ensemble import HistGradientBoostingRegressor, RandomForestRegressor
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression, Ridge
 from sklearn.tree import DecisionTreeRegressor
 
 logger = logging.getLogger("stockm.models")
@@ -83,6 +83,7 @@ class Estimator(Protocol):
 # ---------------------------------------------------------------------------
 DEFAULT_PARAMS: dict[str, dict[str, Any]] = {
     "linear_regression": {},
+    "ridge": {"alpha": 1.0, "random_state": 42},
     "decision_tree": {"max_depth": 6, "min_samples_leaf": 50, "random_state": 42},
     "random_forest": {
         "n_estimators": 200,
@@ -123,6 +124,17 @@ def _build_linear_regression(params: dict[str, Any]) -> Estimator:
     return LinearRegression(**params)
 
 
+def _build_ridge(params: dict[str, Any]) -> Estimator:
+    """L2-regularised linear regression - the *tunable* linear variant.
+
+    Plain OLS (linear_regression) has no hyperparameters to search; Ridge
+    exposes ``alpha`` (the L2 penalty) so the optimizer has a linear model
+    with a capacity/variance knob to tune. The param filter drops anything
+    Ridge's constructor does not accept.
+    """
+    return Ridge(**params)
+
+
 def _build_decision_tree(params: dict[str, Any]) -> Estimator:
     return DecisionTreeRegressor(**params)
 
@@ -149,6 +161,7 @@ def _build_lightgbm(params: dict[str, Any]) -> Estimator:
 
 _BUILDERS = {
     "linear_regression": _build_linear_regression,
+    "ridge": _build_ridge,
     "decision_tree": _build_decision_tree,
     "random_forest": _build_random_forest,
     "gradient_boosting": _build_gradient_boosting,
@@ -161,8 +174,9 @@ def available_models() -> list[str]:
     """Return the model names usable in this environment.
 
     XGBoost / LightGBM appear only if their libraries are importable.
+    "ridge" is the tunable linear variant (alpha is the L2 knob).
     """
-    names = ["linear_regression", "decision_tree", "random_forest", "gradient_boosting"]
+    names = ["linear_regression", "ridge", "decision_tree", "random_forest", "gradient_boosting"]
     if _HAS_XGB:
         names.append("xgboost")
     if _HAS_LGBM:

@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "JSWSTEEL.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:57:10+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "High",
+    "return_lag_1",
+    "roc_5",
+    "high_low_range",
+    "return_lag_5",
+    "atr_pct",
+    "volume_ratio_20",
+    "return_lag_10",
+    "Volume",
+    "rolling_var_5",
+    "bb_pct",
+    "week",
+    "month_sin",
+    "rolling_var_20",
+    "volume_lag_10",
+    "volume_momentum",
+    "dist_sma_10",
+    "dist_sma_20",
+    "day_of_week_sin",
+    "day_of_month",
+    "rolling_vol_10",
+    "rolling_vol_5",
+    "open_close_diff",
+    "return_lag_20",
+    "price_diff",
+    "volume_ratio_5",
+    "volume_lag_1",
+    "dist_sma_200",
+    "macd_hist",
+    "rsi",
+    "obv",
+    "dist_sma_5",
+    "volume_ratio_10",
+    "trading_day_number",
+    "bb_width",
+    "rolling_vol_20",
+    "dist_sma_50",
+    "volume_lag_5",
+    "momentum_5",
+    "return_lag_3"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0054,
+  "metrics": {
+    "validation": {
+      "mae": 0.027323874373457714,
+      "mse": 0.0018364744855906084,
+      "rmse": 0.04285410698626922,
+      "r2": -2.6559810291532435,
+      "mape": 406.72592812948807
+    },
+    "test": {
+      "mae": 0.026780275228887655,
+      "mse": 0.0012738212204154021,
+      "rmse": 0.03569063211005658,
+      "r2": -4.307933935793638,
+      "mape": 703.9437590518896
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3562,
+      "val": 763,
+      "test": 763
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-24"
+      ],
+      "val": [
+        "2020-04-28",
+        "2023-05-25"
+      ],
+      "test": [
+        "2023-05-29",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\JSWSTEEL_NS\\scaler_params.json",
+  "is_best": false
+}

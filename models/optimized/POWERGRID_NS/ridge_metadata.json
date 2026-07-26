@@ -1,0 +1,101 @@
+{
+  "model_name": "ridge",
+  "symbol": "POWERGRID.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "alpha": 70.72114131472235
+  },
+  "selected_features": [
+    "dist_sma_20",
+    "volume_change_ratio",
+    "volume_ratio_5",
+    "High",
+    "dist_sma_10",
+    "Volume",
+    "price_diff",
+    "day_of_week_sin",
+    "week",
+    "vma_10",
+    "atr",
+    "bb_width",
+    "volume_lag_5",
+    "roc_5",
+    "macd",
+    "dist_sma_5",
+    "dist_sma_50",
+    "month_sin",
+    "volume_lag_20",
+    "atr_pct",
+    "roc_10",
+    "volume_ratio_20",
+    "sma_200",
+    "roc_20",
+    "obv",
+    "dist_sma_100",
+    "momentum_20",
+    "rolling_var_20",
+    "momentum_5",
+    "macd_hist",
+    "vma_5",
+    "bb_pct",
+    "return_lag_5",
+    "return_lag_10",
+    "volume_momentum",
+    "return_lag_3",
+    "pct_change_1d",
+    "momentum_10",
+    "rolling_vol_5",
+    "return_lag_1"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\POWERGRID_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "POWERGRID.NS",
+    "row_counts": {
+      "train": 3088,
+      "val": 662,
+      "test": 662
+    },
+    "date_ranges": {
+      "train": [
+        "2008-07-24",
+        "2021-02-15"
+      ],
+      "val": [
+        "2021-02-17",
+        "2023-10-19"
+      ],
+      "test": [
+        "2023-10-23",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.015258755593894275,
+    "validation": {
+      "mae": 0.012492071042214932,
+      "mse": 0.0002744109880533362,
+      "rmse": 0.01656535505364543,
+      "r2": -0.05378587418187508,
+      "mape": 139.63619984318333
+    },
+    "test": {
+      "mae": 0.01955348578289663,
+      "mse": 0.0007718189432347015,
+      "rmse": 0.02778162960005589,
+      "r2": -1.8658708719263077,
+      "mape": 494.93355095564414
+    },
+    "directional_accuracy": 0.5099236641221374
+  },
+  "training_time_s": 0.2741,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:02:28+00:00",
+  "stockm_version": "1.0"
+}

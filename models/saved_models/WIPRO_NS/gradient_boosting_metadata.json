@@ -1,0 +1,115 @@
+{
+  "model_name": "gradient_boosting",
+  "symbol": "WIPRO.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:55:38+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "volume_lag_1",
+    "volume_ratio_20",
+    "atr",
+    "dist_sma_200",
+    "volume_lag_5",
+    "dist_sma_20",
+    "roc_10",
+    "month_sin",
+    "dist_sma_10",
+    "return_lag_10",
+    "log_return",
+    "volume_momentum",
+    "bb_pct",
+    "price_diff",
+    "dist_sma_100",
+    "dist_sma_5",
+    "open_close_diff",
+    "momentum_20",
+    "day_of_month",
+    "month_cos",
+    "rolling_vol_5",
+    "week",
+    "vma_10",
+    "volume_change_ratio",
+    "day_of_week_sin",
+    "day_of_week",
+    "return_lag_20",
+    "high_low_range",
+    "obv",
+    "Volume",
+    "rolling_var_20",
+    "return_lag_5",
+    "rolling_var_10",
+    "rolling_var_5",
+    "bb_width",
+    "volume_ratio_10",
+    "vma_20",
+    "volume_lag_3",
+    "bb_upper",
+    "vma_5"
+  ],
+  "hyperparameters": {
+    "categorical_features": "from_dtype",
+    "early_stopping": "auto",
+    "interaction_cst": null,
+    "l2_regularization": 0.0,
+    "learning_rate": 0.1,
+    "loss": "squared_error",
+    "max_bins": 255,
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_iter": 100,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 20,
+    "monotonic_cst": null,
+    "n_iter_no_change": 10,
+    "quantile": null,
+    "random_state": null,
+    "scoring": "loss",
+    "tol": 1e-07,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_time_s": 0.214,
+  "metrics": {
+    "validation": {
+      "mae": 0.014804304991513705,
+      "mse": 0.0004064840931628733,
+      "rmse": 0.020161450671091933,
+      "r2": -0.2347792930925947,
+      "mape": 278.26910750260146
+    },
+    "test": {
+      "mae": 0.014475193573158532,
+      "mse": 0.0003648895102082348,
+      "rmse": 0.019102081305664962,
+      "r2": -0.37903364788332294,
+      "mape": 330.66047413350356
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\WIPRO_NS\\scaler_params.json",
+  "is_best": true
+}

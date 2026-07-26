@@ -1,0 +1,104 @@
+{
+  "model_name": "gradient_boosting",
+  "symbol": "HDFCBANK.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "l2_regularization": 0.06796578090758151,
+    "learning_rate": 0.001124579825911934,
+    "max_depth": 4,
+    "max_iter": 237
+  },
+  "selected_features": [
+    "roc_20",
+    "rolling_var_5",
+    "month_sin",
+    "macd",
+    "volume_lag_5",
+    "return_lag_10",
+    "rolling_vol_10",
+    "volume_lag_20",
+    "rolling_vol_5",
+    "dist_sma_5",
+    "volume_ratio_5",
+    "day_of_week_sin",
+    "momentum_20",
+    "return_lag_5",
+    "dist_sma_50",
+    "day_of_week",
+    "roc_10",
+    "price_diff",
+    "atr_pct",
+    "dist_sma_10",
+    "volume_change",
+    "rolling_var_20",
+    "momentum_10",
+    "open_close_diff",
+    "volume_ratio_10",
+    "Volume",
+    "dist_sma_20",
+    "volume_ratio_20",
+    "return_lag_1",
+    "dist_sma_100",
+    "volume_momentum",
+    "return_lag_3",
+    "volume_lag_10",
+    "price_diff_pct",
+    "volume_lag_1",
+    "obv",
+    "bb_width",
+    "macd_hist",
+    "rolling_var_10",
+    "dist_sma_200"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\HDFCBANK_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "HDFCBANK.NS",
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.014444308781696712,
+    "validation": {
+      "mae": 0.011983130911076058,
+      "mse": 0.00026936054298559524,
+      "rmse": 0.016412207133277207,
+      "r2": 0.0022896095995759147,
+      "mape": 104.53549044176067
+    },
+    "test": {
+      "mae": 0.009044676028789575,
+      "mse": 0.00016121920780410852,
+      "rmse": 0.012697212599783802,
+      "r2": -0.029809371717476996,
+      "mape": 125.72182395836822
+    },
+    "directional_accuracy": 0.5033112582781457
+  },
+  "training_time_s": 5.2066,
+  "seed": 42,
+  "tuned_at": "2026-07-23T14:35:27+00:00",
+  "stockm_version": "1.0"
+}

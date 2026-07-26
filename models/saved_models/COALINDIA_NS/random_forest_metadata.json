@@ -1,0 +1,112 @@
+{
+  "model_name": "random_forest",
+  "symbol": "COALINDIA.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:57:33+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "bb_pct",
+    "volume_ratio_10",
+    "rolling_var_20",
+    "bb_upper",
+    "sma_200",
+    "return_lag_20",
+    "volume_lag_3",
+    "dist_sma_10",
+    "rolling_vol_5",
+    "dist_sma_5",
+    "macd",
+    "dist_sma_100",
+    "obv",
+    "high_low_range",
+    "day_of_month",
+    "vma_5",
+    "momentum_20",
+    "volume_lag_10",
+    "volume_ratio_5",
+    "vma_20",
+    "macd_hist",
+    "month_cos",
+    "High",
+    "dist_sma_50",
+    "month_sin",
+    "dist_sma_200",
+    "open_close_diff",
+    "volume_momentum",
+    "volume_change",
+    "return_lag_5",
+    "atr",
+    "volume_ratio_20",
+    "Volume",
+    "rolling_vol_20",
+    "momentum_5",
+    "rolling_vol_10",
+    "volume_lag_20",
+    "momentum_10",
+    "return_lag_1",
+    "volume_lag_5"
+  ],
+  "hyperparameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "oob_score": false,
+    "random_state": null,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_time_s": 7.7193,
+  "metrics": {
+    "validation": {
+      "mae": 0.014637052084030105,
+      "mse": 0.00041536508193835725,
+      "rmse": 0.020380507401396002,
+      "r2": -0.1467385071195555,
+      "mape": 200.10845599371763
+    },
+    "test": {
+      "mae": 0.013185551491488166,
+      "mse": 0.0003343499206395088,
+      "rmse": 0.01828523777913508,
+      "r2": -0.2248701185330817,
+      "mape": 236.29830206589185
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 2560,
+      "val": 548,
+      "test": 548
+    },
+    "date_ranges": {
+      "train": [
+        "2011-08-23",
+        "2022-01-17"
+      ],
+      "val": [
+        "2022-01-19",
+        "2024-04-09"
+      ],
+      "test": [
+        "2024-04-12",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\COALINDIA_NS\\scaler_params.json",
+  "is_best": true
+}

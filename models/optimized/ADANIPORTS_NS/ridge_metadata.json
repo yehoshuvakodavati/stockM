@@ -1,0 +1,101 @@
+{
+  "model_name": "ridge",
+  "symbol": "ADANIPORTS.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "alpha": 70.72114131472235
+  },
+  "selected_features": [
+    "dist_sma_100",
+    "roc_10",
+    "atr",
+    "dist_sma_50",
+    "volume_lag_1",
+    "volume_lag_3",
+    "momentum_10",
+    "volume_change_ratio",
+    "sma_200",
+    "volume_ratio_10",
+    "return_lag_5",
+    "dist_sma_5",
+    "week",
+    "open_close_diff",
+    "month_sin",
+    "roc_20",
+    "return_lag_20",
+    "rolling_vol_5",
+    "pct_change_1d",
+    "rolling_var_20",
+    "bb_pct",
+    "high_low_range",
+    "day_of_week_sin",
+    "vma_10",
+    "macd_hist",
+    "macd",
+    "day_of_month",
+    "bb_width",
+    "volume_lag_10",
+    "atr_pct",
+    "return_lag_10",
+    "obv",
+    "momentum_20",
+    "rsi",
+    "volume_change",
+    "volume_ratio_20",
+    "return_lag_3",
+    "vma_20",
+    "rolling_vol_20",
+    "volume_lag_5"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ADANIPORTS_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "ADANIPORTS.NS",
+    "row_counts": {
+      "train": 3061,
+      "val": 656,
+      "test": 656
+    },
+    "date_ranges": {
+      "train": [
+        "2008-09-16",
+        "2021-03-03"
+      ],
+      "val": [
+        "2021-03-05",
+        "2023-10-30"
+      ],
+      "test": [
+        "2023-11-01",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.024678492400045108,
+    "validation": {
+      "mae": 0.01897109979619626,
+      "mse": 0.0008060440605161757,
+      "rmse": 0.028390915105296902,
+      "r2": -0.2092134567719357,
+      "mape": 234.0439183208487
+    },
+    "test": {
+      "mae": 0.021907718085521086,
+      "mse": 0.0008346291091647687,
+      "rmse": 0.028889948237488566,
+      "r2": -0.6925771323713588,
+      "mape": 392.132560234261
+    },
+    "directional_accuracy": 0.5147744945567652
+  },
+  "training_time_s": 0.3516,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:35:07+00:00",
+  "stockm_version": "1.0"
+}

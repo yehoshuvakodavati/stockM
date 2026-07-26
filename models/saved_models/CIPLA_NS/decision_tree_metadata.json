@@ -1,0 +1,106 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "CIPLA.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:58:44+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "dist_sma_100",
+    "momentum_10",
+    "high_low_range",
+    "roc_10",
+    "macd_signal",
+    "vma_5",
+    "dist_sma_5",
+    "return_lag_10",
+    "volume_lag_5",
+    "roc_20",
+    "volume_ratio_20",
+    "volume_lag_20",
+    "open_close_diff",
+    "dist_sma_200",
+    "price_diff",
+    "High",
+    "rolling_var_10",
+    "volume_lag_3",
+    "volume_change_ratio",
+    "week",
+    "month_cos",
+    "momentum_5",
+    "month_sin",
+    "rolling_vol_10",
+    "price_diff_pct",
+    "return_lag_1",
+    "volume_ratio_5",
+    "rolling_vol_5",
+    "volume_change",
+    "volume_lag_10",
+    "rolling_var_20",
+    "macd_hist",
+    "bb_pct",
+    "atr_pct",
+    "return_lag_3",
+    "Volume",
+    "atr",
+    "volume_lag_1",
+    "return_lag_5",
+    "roc_5"
+  ],
+  "hyperparameters": {
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": null,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "random_state": null,
+    "splitter": "best"
+  },
+  "training_time_s": 0.2375,
+  "metrics": {
+    "validation": {
+      "mae": 0.021227040825311058,
+      "mse": 0.0007750467140735199,
+      "rmse": 0.02783966081103575,
+      "r2": -2.000057775892459,
+      "mape": 533.5626170379733
+    },
+    "test": {
+      "mae": 0.0222814479607454,
+      "mse": 0.0009561331152608126,
+      "rmse": 0.03092140222015833,
+      "r2": -3.4342407099705676,
+      "mape": 670.7142210626902
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\CIPLA_NS\\scaler_params.json",
+  "is_best": false
+}

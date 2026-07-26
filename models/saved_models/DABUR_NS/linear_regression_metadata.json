@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "DABUR.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T16:01:33+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "roc_5",
+    "dist_sma_20",
+    "macd_hist",
+    "obv",
+    "volume_lag_3",
+    "vma_5",
+    "macd",
+    "bb_width",
+    "month_sin",
+    "pct_change_1d",
+    "open_close_diff",
+    "rolling_var_10",
+    "volume_ratio_20",
+    "volume_lag_1",
+    "return_lag_1",
+    "rolling_vol_5",
+    "dist_sma_5",
+    "momentum_5",
+    "dist_sma_10",
+    "return_lag_3",
+    "volume_lag_10",
+    "dist_sma_50",
+    "dist_sma_100",
+    "Volume",
+    "rolling_vol_20",
+    "rolling_vol_10",
+    "return_lag_20",
+    "day_of_week",
+    "momentum_20",
+    "week",
+    "vma_20",
+    "volume_change_ratio",
+    "dist_sma_200",
+    "rolling_var_5",
+    "volume_lag_5",
+    "price_diff",
+    "open_lag_1",
+    "roc_10",
+    "return_lag_5",
+    "bb_pct"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0065,
+  "metrics": {
+    "validation": {
+      "mae": 0.01171212898546721,
+      "mse": 0.00024442187314793,
+      "rmse": 0.015633997350259787,
+      "r2": -0.3388297169954877,
+      "mape": 181.96242782439614
+    },
+    "test": {
+      "mae": 0.01124258733914931,
+      "mse": 0.0002322109953552764,
+      "rmse": 0.015238470899512076,
+      "r2": -0.28878136241003505,
+      "mape": 208.73513725461584
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\DABUR_NS\\scaler_params.json",
+  "is_best": false
+}

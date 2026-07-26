@@ -1,0 +1,106 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "SUNPHARMA.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "colsample_bytree": 0.7801997007878172,
+    "learning_rate": 0.0010785962778329494,
+    "n_estimators": 238,
+    "num_leaves": 28,
+    "reg_lambda": 1.7123375973163988,
+    "subsample": 0.7218455076693483
+  },
+  "selected_features": [
+    "day_of_week",
+    "volume_lag_1",
+    "volume_ratio_20",
+    "volume_change_ratio",
+    "dist_sma_100",
+    "rolling_var_20",
+    "return_lag_1",
+    "obv",
+    "volume_lag_5",
+    "dist_sma_5",
+    "Volume",
+    "day_of_week_sin",
+    "vma_10",
+    "bb_width",
+    "rolling_vol_20",
+    "volume_momentum",
+    "volume_ratio_5",
+    "rolling_vol_5",
+    "high_low_range",
+    "return_lag_10",
+    "bb_pct",
+    "vma_5",
+    "week",
+    "macd",
+    "volume_lag_20",
+    "rolling_vol_10",
+    "dist_sma_200",
+    "atr_pct",
+    "return_lag_5",
+    "rsi",
+    "volume_lag_3",
+    "rolling_var_10",
+    "return_lag_3",
+    "dist_sma_50",
+    "open_close_diff",
+    "return_lag_20",
+    "roc_5",
+    "momentum_20",
+    "volume_change",
+    "momentum_5"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\SUNPHARMA_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "SUNPHARMA.NS",
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.019134460717470984,
+    "validation": {
+      "mae": 0.011573318421853905,
+      "mse": 0.0002441759683186786,
+      "rmse": 0.015626130945268525,
+      "r2": -0.0003537710808434458,
+      "mape": 104.65603154571725
+    },
+    "test": {
+      "mae": 0.008985069087788723,
+      "mse": 0.0001503793412083317,
+      "rmse": 0.012262925475119374,
+      "r2": -0.005734989534333934,
+      "mape": 114.98060739014218
+    },
+    "directional_accuracy": 0.5432756324900133
+  },
+  "training_time_s": 8.2962,
+  "seed": 42,
+  "tuned_at": "2026-07-23T14:55:47+00:00",
+  "stockm_version": "1.0"
+}

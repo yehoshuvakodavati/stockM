@@ -1,0 +1,106 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "JSWSTEEL.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:57:10+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "High",
+    "return_lag_1",
+    "roc_5",
+    "high_low_range",
+    "return_lag_5",
+    "atr_pct",
+    "volume_ratio_20",
+    "return_lag_10",
+    "Volume",
+    "rolling_var_5",
+    "bb_pct",
+    "week",
+    "month_sin",
+    "rolling_var_20",
+    "volume_lag_10",
+    "volume_momentum",
+    "dist_sma_10",
+    "dist_sma_20",
+    "day_of_week_sin",
+    "day_of_month",
+    "rolling_vol_10",
+    "rolling_vol_5",
+    "open_close_diff",
+    "return_lag_20",
+    "price_diff",
+    "volume_ratio_5",
+    "volume_lag_1",
+    "dist_sma_200",
+    "macd_hist",
+    "rsi",
+    "obv",
+    "dist_sma_5",
+    "volume_ratio_10",
+    "trading_day_number",
+    "bb_width",
+    "rolling_vol_20",
+    "dist_sma_50",
+    "volume_lag_5",
+    "momentum_5",
+    "return_lag_3"
+  ],
+  "hyperparameters": {
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": null,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "random_state": null,
+    "splitter": "best"
+  },
+  "training_time_s": 0.2858,
+  "metrics": {
+    "validation": {
+      "mae": 0.045166362161560704,
+      "mse": 0.0030029738605451346,
+      "rmse": 0.05479939653449785,
+      "r2": -4.978202012245934,
+      "mape": 1022.5492035344492
+    },
+    "test": {
+      "mae": 0.05187287415697878,
+      "mse": 0.0035362754416136226,
+      "rmse": 0.059466590970171,
+      "r2": -13.735440203087094,
+      "mape": 1532.9208411021623
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3562,
+      "val": 763,
+      "test": 763
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-24"
+      ],
+      "val": [
+        "2020-04-28",
+        "2023-05-25"
+      ],
+      "test": [
+        "2023-05-29",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\JSWSTEEL_NS\\scaler_params.json",
+  "is_best": false
+}

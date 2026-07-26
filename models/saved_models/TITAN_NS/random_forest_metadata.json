@@ -1,0 +1,112 @@
+{
+  "model_name": "random_forest",
+  "symbol": "TITAN.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:56:04+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "rolling_var_20",
+    "obv",
+    "dist_sma_5",
+    "bb_width",
+    "volume_momentum",
+    "volume_lag_5",
+    "dist_sma_200",
+    "volume_ratio_10",
+    "dist_sma_10",
+    "day_of_week",
+    "momentum_5",
+    "return_lag_5",
+    "rolling_vol_10",
+    "day_of_month",
+    "rsi",
+    "macd",
+    "month_sin",
+    "high_low_range",
+    "bb_upper",
+    "pct_change_1d",
+    "roc_10",
+    "day_of_week_sin",
+    "Volume",
+    "bb_pct",
+    "momentum_10",
+    "volume_ratio_5",
+    "month_cos",
+    "macd_hist",
+    "momentum_20",
+    "dist_sma_100",
+    "roc_5",
+    "return_lag_3",
+    "roc_20",
+    "return_lag_20",
+    "rolling_vol_20",
+    "volume_change_ratio",
+    "volume_ratio_20",
+    "volume_lag_20",
+    "rolling_vol_5",
+    "price_diff"
+  ],
+  "hyperparameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "oob_score": false,
+    "random_state": null,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_time_s": 11.6713,
+  "metrics": {
+    "validation": {
+      "mae": 0.018965153175580094,
+      "mse": 0.0005847017306133696,
+      "rmse": 0.02418060649804652,
+      "r2": -0.8244294552381881,
+      "mape": 402.9945086945587
+    },
+    "test": {
+      "mae": 0.018834350190197923,
+      "mse": 0.0005636019593876591,
+      "rmse": 0.023740302428310787,
+      "r2": -1.905004679999303,
+      "mape": 609.1298751635276
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\TITAN_NS\\scaler_params.json",
+  "is_best": false
+}

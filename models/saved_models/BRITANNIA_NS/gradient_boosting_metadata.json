@@ -1,0 +1,115 @@
+{
+  "model_name": "gradient_boosting",
+  "symbol": "BRITANNIA.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T16:00:08+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "bb_pct",
+    "rolling_var_5",
+    "volume_lag_10",
+    "rolling_vol_10",
+    "volume_change_ratio",
+    "week",
+    "volume_ratio_10",
+    "dist_sma_100",
+    "volume_lag_1",
+    "volume_lag_20",
+    "open_close_diff",
+    "vma_5",
+    "macd_signal",
+    "rolling_var_20",
+    "day_of_month",
+    "Volume",
+    "return_lag_20",
+    "volume_ratio_5",
+    "atr_pct",
+    "dist_sma_200",
+    "return_lag_3",
+    "obv",
+    "rolling_vol_20",
+    "roc_20",
+    "dist_sma_50",
+    "volume_ratio_20",
+    "rolling_vol_5",
+    "return_lag_1",
+    "volume_change",
+    "rolling_var_10",
+    "atr",
+    "price_diff_pct",
+    "rsi",
+    "momentum_20",
+    "volume_momentum",
+    "high_low_range",
+    "dist_sma_5",
+    "macd",
+    "roc_10",
+    "momentum_5"
+  ],
+  "hyperparameters": {
+    "categorical_features": "from_dtype",
+    "early_stopping": "auto",
+    "interaction_cst": null,
+    "l2_regularization": 0.0,
+    "learning_rate": 0.1,
+    "loss": "squared_error",
+    "max_bins": 255,
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_iter": 100,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 20,
+    "monotonic_cst": null,
+    "n_iter_no_change": 10,
+    "quantile": null,
+    "random_state": null,
+    "scoring": "loss",
+    "tol": 1e-07,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_time_s": 0.2236,
+  "metrics": {
+    "validation": {
+      "mae": 0.010419821357842321,
+      "mse": 0.0002030097416143075,
+      "rmse": 0.014248148708316722,
+      "r2": -0.16123829754983854,
+      "mape": 172.57436993887714
+    },
+    "test": {
+      "mae": 0.010114000236980062,
+      "mse": 0.00018483759722172943,
+      "rmse": 0.013595499153092152,
+      "r2": -0.18872115960208902,
+      "mape": 200.12974932746977
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3560,
+      "val": 763,
+      "test": 763
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-24"
+      ],
+      "val": [
+        "2020-04-28",
+        "2023-05-25"
+      ],
+      "test": [
+        "2023-05-29",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\BRITANNIA_NS\\scaler_params.json",
+  "is_best": false
+}

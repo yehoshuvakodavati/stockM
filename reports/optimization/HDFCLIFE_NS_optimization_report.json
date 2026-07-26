@@ -1,0 +1,225 @@
+{
+  "symbol": "HDFCLIFE.NS",
+  "target_col": "target_next_return",
+  "method": "random",
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "n_iter": 15,
+  "models_tuned": [
+    "ridge",
+    "decision_tree",
+    "random_forest",
+    "gradient_boosting",
+    "xgboost",
+    "lightgbm"
+  ],
+  "best_tuned_model": "random_forest",
+  "best_cv_rmse": 0.019798,
+  "best_hyperparameters": {
+    "max_depth": 4,
+    "max_features": 0.5,
+    "min_samples_leaf": 46,
+    "n_estimators": 287
+  },
+  "naive_test_rmse": 0.01334,
+  "comparison": {
+    "baseline_model": "linear_regression",
+    "baseline_val_rmse": 0.015232,
+    "baseline_test_rmse": 0.014651,
+    "optimized_model": "random_forest",
+    "optimized_val_rmse": 0.015025,
+    "optimized_test_rmse": 0.013224,
+    "relative_val_improvement_pct": 1.355,
+    "directional_accuracy": 0.5634,
+    "beats_baseline": true,
+    "deploy": "optimized",
+    "reason": "optimized val RMSE 0.015025 beats baseline 0.015232 by 1.36% (>tol 0.5%). Deploy optimized.",
+    "optimized_cv_rmse": 0.019798,
+    "note": "deploy decision uses full-validation RMSE (apples-to-apples); CV RMSE reported separately for transparency."
+  },
+  "deploy": "optimized",
+  "robustness": {
+    "n_segments": 6,
+    "segments": [
+      {
+        "segment": 1,
+        "date_range": [
+          "2025-05-05",
+          "2025-07-09"
+        ],
+        "n_rows": 48,
+        "regime": "sideways",
+        "cum_return": 0.0456,
+        "rmse": 0.012449,
+        "r2": -0.0114,
+        "directional_accuracy": 0.5833
+      },
+      {
+        "segment": 2,
+        "date_range": [
+          "2025-07-10",
+          "2025-09-17"
+        ],
+        "n_rows": 48,
+        "regime": "sideways",
+        "cum_return": 0.0172,
+        "rmse": 0.010432,
+        "r2": 0.0035,
+        "directional_accuracy": 0.5625
+      },
+      {
+        "segment": 3,
+        "date_range": [
+          "2025-09-18",
+          "2025-11-27"
+        ],
+        "n_rows": 48,
+        "regime": "sideways",
+        "cum_return": -0.0262,
+        "rmse": 0.011672,
+        "r2": 0.018,
+        "directional_accuracy": 0.6596
+      },
+      {
+        "segment": 4,
+        "date_range": [
+          "2025-11-28",
+          "2026-02-06"
+        ],
+        "n_rows": 48,
+        "regime": "bear",
+        "cum_return": -0.0824,
+        "rmse": 0.009776,
+        "r2": 0.0234,
+        "directional_accuracy": 0.5106
+      },
+      {
+        "segment": 5,
+        "date_range": [
+          "2026-02-09",
+          "2026-04-22"
+        ],
+        "n_rows": 48,
+        "regime": "bear",
+        "cum_return": -0.1676,
+        "rmse": 0.018886,
+        "r2": -0.0059,
+        "directional_accuracy": 0.625
+      },
+      {
+        "segment": 6,
+        "date_range": [
+          "2026-04-23",
+          "2026-07-02"
+        ],
+        "n_rows": 48,
+        "regime": "sideways",
+        "cum_return": -0.0325,
+        "rmse": 0.01414,
+        "r2": 0.0007,
+        "directional_accuracy": 0.4222
+      }
+    ],
+    "regime_summary": {
+      "sideways": {
+        "n_rows": 192,
+        "count": 4,
+        "mean_directional_accuracy": 0.5569
+      },
+      "bear": {
+        "n_rows": 96,
+        "count": 2,
+        "mean_directional_accuracy": 0.5678
+      }
+    },
+    "stable_across_regimes": true
+  },
+  "per_model": {
+    "ridge": {
+      "best_cv_rmse": 0.020169,
+      "best_params": {
+        "alpha": 70.72114131472235
+      },
+      "val_rmse": 0.015109,
+      "test_rmse": 0.013854,
+      "directional_accuracy": 0.5246,
+      "wall_time_s": 0.186,
+      "n_candidates": 15
+    },
+    "decision_tree": {
+      "best_cv_rmse": 0.01999,
+      "best_params": {
+        "max_depth": 9,
+        "max_features": "sqrt",
+        "min_samples_leaf": 82
+      },
+      "val_rmse": 0.015819,
+      "test_rmse": 0.013636,
+      "directional_accuracy": 0.5176,
+      "wall_time_s": 0.166,
+      "n_candidates": 15
+    },
+    "random_forest": {
+      "best_cv_rmse": 0.019798,
+      "best_params": {
+        "max_depth": 4,
+        "max_features": 0.5,
+        "min_samples_leaf": 46,
+        "n_estimators": 287
+      },
+      "val_rmse": 0.015025,
+      "test_rmse": 0.013224,
+      "directional_accuracy": 0.5634,
+      "wall_time_s": 7.722,
+      "n_candidates": 15
+    },
+    "gradient_boosting": {
+      "best_cv_rmse": 0.019852,
+      "best_params": {
+        "l2_regularization": 0.06796578090758151,
+        "learning_rate": 0.001124579825911934,
+        "max_depth": 4,
+        "max_iter": 237
+      },
+      "val_rmse": 0.014928,
+      "test_rmse": 0.013405,
+      "directional_accuracy": 0.4542,
+      "wall_time_s": 3.824,
+      "n_candidates": 15
+    },
+    "xgboost": {
+      "best_cv_rmse": 0.019872,
+      "best_params": {
+        "colsample_bytree": 0.662397808134481,
+        "learning_rate": 0.0013927723945289009,
+        "max_depth": 7,
+        "n_estimators": 249,
+        "reg_lambda": 0.003727925903376985,
+        "subsample": 0.8603553891795411
+      },
+      "val_rmse": 0.014947,
+      "test_rmse": 0.013387,
+      "directional_accuracy": 0.5106,
+      "wall_time_s": 12.094,
+      "n_candidates": 15
+    },
+    "lightgbm": {
+      "best_cv_rmse": 0.019855,
+      "best_params": {
+        "colsample_bytree": 0.7801997007878172,
+        "learning_rate": 0.0010785962778329494,
+        "n_estimators": 238,
+        "num_leaves": 28,
+        "reg_lambda": 1.7123375973163988,
+        "subsample": 0.7218455076693483
+      },
+      "val_rmse": 0.014949,
+      "test_rmse": 0.013413,
+      "directional_accuracy": 0.4824,
+      "wall_time_s": 5.713,
+      "n_candidates": 15
+    }
+  }
+}

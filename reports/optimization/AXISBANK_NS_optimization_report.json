@@ -1,0 +1,227 @@
+{
+  "symbol": "AXISBANK.NS",
+  "target_col": "target_next_return",
+  "method": "random",
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "n_iter": 15,
+  "models_tuned": [
+    "ridge",
+    "decision_tree",
+    "random_forest",
+    "gradient_boosting",
+    "xgboost",
+    "lightgbm"
+  ],
+  "best_tuned_model": "xgboost",
+  "best_cv_rmse": 0.022925,
+  "best_hyperparameters": {
+    "colsample_bytree": 0.7541666010159664,
+    "learning_rate": 0.0010953435185048703,
+    "max_depth": 4,
+    "n_estimators": 233,
+    "reg_lambda": 0.009206654892274768,
+    "subsample": 0.8733054075301833
+  },
+  "naive_test_rmse": 0.014591,
+  "comparison": {
+    "baseline_model": "linear_regression",
+    "baseline_val_rmse": 0.021761,
+    "baseline_test_rmse": 0.018192,
+    "optimized_model": "xgboost",
+    "optimized_val_rmse": 0.024383,
+    "optimized_test_rmse": 0.0193,
+    "relative_val_improvement_pct": -12.046,
+    "directional_accuracy": 0.4894,
+    "beats_baseline": false,
+    "deploy": "baseline",
+    "reason": "optimized val RMSE 0.024383 does NOT beat baseline 0.021761 by >0.5% (only -12.05%). Keep the simpler baseline.",
+    "optimized_cv_rmse": 0.022925,
+    "note": "deploy decision uses full-validation RMSE (apples-to-apples); CV RMSE reported separately for transparency."
+  },
+  "deploy": "baseline",
+  "robustness": {
+    "n_segments": 6,
+    "segments": [
+      {
+        "segment": 1,
+        "date_range": [
+          "2023-05-26",
+          "2023-11-29"
+        ],
+        "n_rows": 127,
+        "regime": "bull",
+        "cum_return": 0.1485,
+        "rmse": 0.017305,
+        "r2": -1.062,
+        "directional_accuracy": 0.4173
+      },
+      {
+        "segment": 2,
+        "date_range": [
+          "2023-11-30",
+          "2024-06-07"
+        ],
+        "n_rows": 127,
+        "regime": "bull",
+        "cum_return": 0.1107,
+        "rmse": 0.020966,
+        "r2": -0.5493,
+        "directional_accuracy": 0.5159
+      },
+      {
+        "segment": 3,
+        "date_range": [
+          "2024-06-10",
+          "2024-12-11"
+        ],
+        "n_rows": 127,
+        "regime": "sideways",
+        "cum_return": -0.0456,
+        "rmse": 0.018689,
+        "r2": -0.805,
+        "directional_accuracy": 0.4762
+      },
+      {
+        "segment": 4,
+        "date_range": [
+          "2024-12-12",
+          "2025-06-18"
+        ],
+        "n_rows": 127,
+        "regime": "bull",
+        "cum_return": 0.0586,
+        "rmse": 0.019447,
+        "r2": -0.7044,
+        "directional_accuracy": 0.536
+      },
+      {
+        "segment": 5,
+        "date_range": [
+          "2025-06-19",
+          "2025-12-19"
+        ],
+        "n_rows": 127,
+        "regime": "sideways",
+        "cum_return": 0.0137,
+        "rmse": 0.01697,
+        "r2": -1.0699,
+        "directional_accuracy": 0.5039
+      },
+      {
+        "segment": 6,
+        "date_range": [
+          "2025-12-22",
+          "2026-07-01"
+        ],
+        "n_rows": 127,
+        "regime": "bull",
+        "cum_return": 0.1183,
+        "rmse": 0.022043,
+        "r2": -0.6633,
+        "directional_accuracy": 0.4797
+      }
+    ],
+    "regime_summary": {
+      "bull": {
+        "n_rows": 508,
+        "count": 4,
+        "mean_directional_accuracy": 0.4872
+      },
+      "sideways": {
+        "n_rows": 254,
+        "count": 2,
+        "mean_directional_accuracy": 0.49
+      }
+    },
+    "stable_across_regimes": false
+  },
+  "per_model": {
+    "ridge": {
+      "best_cv_rmse": 0.023418,
+      "best_params": {
+        "alpha": 70.72114131472235
+      },
+      "val_rmse": 0.021474,
+      "test_rmse": 0.017067,
+      "directional_accuracy": 0.4894,
+      "wall_time_s": 0.35,
+      "n_candidates": 15
+    },
+    "decision_tree": {
+      "best_cv_rmse": 0.023196,
+      "best_params": {
+        "max_depth": 4,
+        "max_features": "log2",
+        "min_samples_leaf": 47
+      },
+      "val_rmse": 0.021492,
+      "test_rmse": 0.014618,
+      "directional_accuracy": 0.5106,
+      "wall_time_s": 0.314,
+      "n_candidates": 15
+    },
+    "random_forest": {
+      "best_cv_rmse": 0.022956,
+      "best_params": {
+        "max_depth": 9,
+        "max_features": "log2",
+        "min_samples_leaf": 25,
+        "n_estimators": 260
+      },
+      "val_rmse": 0.021401,
+      "test_rmse": 0.015068,
+      "directional_accuracy": 0.4907,
+      "wall_time_s": 14.601,
+      "n_candidates": 15
+    },
+    "gradient_boosting": {
+      "best_cv_rmse": 0.022931,
+      "best_params": {
+        "l2_regularization": 0.06796578090758151,
+        "learning_rate": 0.001124579825911934,
+        "max_depth": 4,
+        "max_iter": 237
+      },
+      "val_rmse": 0.022836,
+      "test_rmse": 0.017718,
+      "directional_accuracy": 0.4894,
+      "wall_time_s": 4.767,
+      "n_candidates": 15
+    },
+    "xgboost": {
+      "best_cv_rmse": 0.022925,
+      "best_params": {
+        "colsample_bytree": 0.7541666010159664,
+        "learning_rate": 0.0010953435185048703,
+        "max_depth": 4,
+        "n_estimators": 233,
+        "reg_lambda": 0.009206654892274768,
+        "subsample": 0.8733054075301833
+      },
+      "val_rmse": 0.024383,
+      "test_rmse": 0.0193,
+      "directional_accuracy": 0.4894,
+      "wall_time_s": 16.149,
+      "n_candidates": 15
+    },
+    "lightgbm": {
+      "best_cv_rmse": 0.022985,
+      "best_params": {
+        "colsample_bytree": 0.7801997007878172,
+        "learning_rate": 0.0010785962778329494,
+        "n_estimators": 238,
+        "num_leaves": 28,
+        "reg_lambda": 1.7123375973163988,
+        "subsample": 0.7218455076693483
+      },
+      "val_rmse": 0.021426,
+      "test_rmse": 0.015566,
+      "directional_accuracy": 0.4894,
+      "wall_time_s": 8.062,
+      "n_candidates": 15
+    }
+  }
+}

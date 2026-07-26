@@ -1,0 +1,103 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "BAJAJ-AUTO.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "max_depth": 9,
+    "max_features": "log2",
+    "min_samples_leaf": 92
+  },
+  "selected_features": [
+    "dist_sma_100",
+    "volume_lag_10",
+    "rolling_vol_5",
+    "roc_5",
+    "day_of_month",
+    "dist_sma_10",
+    "volume_momentum",
+    "macd_hist",
+    "month_cos",
+    "momentum_10",
+    "day_of_week_sin",
+    "rolling_var_10",
+    "day_of_week",
+    "trading_day_number",
+    "volume_lag_1",
+    "volume_change",
+    "high_low_range",
+    "rolling_vol_20",
+    "return_lag_1",
+    "atr_pct",
+    "atr",
+    "return_lag_10",
+    "dist_sma_20",
+    "dist_sma_5",
+    "return_lag_5",
+    "momentum_20",
+    "week",
+    "vma_5",
+    "volume_ratio_20",
+    "volume_change_ratio",
+    "return_lag_20",
+    "volume_ratio_10",
+    "month_sin",
+    "vma_20",
+    "bb_width",
+    "bb_pct",
+    "rolling_var_20",
+    "dist_sma_200",
+    "Volume",
+    "vma_10"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\BAJAJ-AUTO_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "BAJAJ-AUTO.NS",
+    "row_counts": {
+      "train": 3533,
+      "val": 757,
+      "test": 757
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-05-15"
+      ],
+      "val": [
+        "2020-05-19",
+        "2023-06-01"
+      ],
+      "test": [
+        "2023-06-05",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.017145857649071755,
+    "validation": {
+      "mae": 0.011226558343018422,
+      "mse": 0.00023625921549163913,
+      "rmse": 0.015370725925981477,
+      "r2": -0.0477842760463687,
+      "mape": 137.72392780012157
+    },
+    "test": {
+      "mae": 0.011826768054169828,
+      "mse": 0.0002662980166500784,
+      "rmse": 0.01631864015934166,
+      "r2": -0.055215836523316186,
+      "mape": 151.06611196331215
+    },
+    "directional_accuracy": 0.48728246318607765
+  },
+  "training_time_s": 0.4721,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:40:22+00:00",
+  "stockm_version": "1.0"
+}

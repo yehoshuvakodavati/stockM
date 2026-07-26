@@ -1,0 +1,106 @@
+{
+  "model_name": "xgboost",
+  "symbol": "MARUTI.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "colsample_bytree": 0.679486272613669,
+    "learning_rate": 0.0010319982330247674,
+    "max_depth": 5,
+    "n_estimators": 392,
+    "reg_lambda": 0.6720930050156113,
+    "subsample": 0.8916028672163949
+  },
+  "selected_features": [
+    "roc_10",
+    "month_sin",
+    "price_diff",
+    "momentum_10",
+    "volume_lag_1",
+    "volume_ratio_10",
+    "rolling_var_5",
+    "day_of_month",
+    "rolling_var_20",
+    "day_of_week_sin",
+    "dist_sma_5",
+    "rolling_var_10",
+    "volume_lag_3",
+    "atr_pct",
+    "rolling_vol_20",
+    "obv",
+    "dist_sma_10",
+    "bb_width",
+    "month_cos",
+    "day_of_week",
+    "bb_pct",
+    "return_lag_3",
+    "volume_ratio_20",
+    "rolling_vol_5",
+    "momentum_20",
+    "week",
+    "High",
+    "rolling_vol_10",
+    "dist_sma_50",
+    "roc_20",
+    "vma_20",
+    "macd",
+    "macd_hist",
+    "volume_ratio_5",
+    "volume_lag_5",
+    "Volume",
+    "volume_lag_10",
+    "return_lag_5",
+    "volume_change_ratio",
+    "dist_sma_200"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\MARUTI_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "MARUTI.NS",
+    "row_counts": {
+      "train": 3565,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.019169449670529106,
+    "validation": {
+      "mae": 0.012180627852968222,
+      "mse": 0.000302638339929072,
+      "rmse": 0.017396503669676617,
+      "r2": -0.0026896690800597423,
+      "mape": 105.18881472190593
+    },
+    "test": {
+      "mae": 0.009876528685186944,
+      "mse": 0.0001841719893539133,
+      "rmse": 0.013570998097189216,
+      "r2": 0.004632997100071146,
+      "mape": 118.0180800627644
+    },
+    "directional_accuracy": 0.47619047619047616
+  },
+  "training_time_s": 19.6113,
+  "seed": 42,
+  "tuned_at": "2026-07-23T14:51:51+00:00",
+  "stockm_version": "1.0"
+}

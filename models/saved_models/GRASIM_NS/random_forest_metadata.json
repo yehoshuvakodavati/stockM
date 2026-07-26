@@ -1,0 +1,112 @@
+{
+  "model_name": "random_forest",
+  "symbol": "GRASIM.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:58:16+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "bb_pct",
+    "volume_momentum",
+    "dist_sma_50",
+    "high_low_range",
+    "return_lag_20",
+    "momentum_5",
+    "dist_sma_20",
+    "rolling_var_20",
+    "volume_change",
+    "volume_lag_5",
+    "volume_lag_20",
+    "volume_lag_10",
+    "vma_20",
+    "log_return",
+    "rolling_vol_20",
+    "day_of_week_sin",
+    "roc_10",
+    "rolling_var_5",
+    "rolling_var_10",
+    "rolling_vol_10",
+    "atr",
+    "return_lag_10",
+    "day_of_month",
+    "volume_lag_1",
+    "dist_sma_10",
+    "roc_20",
+    "volume_change_ratio",
+    "rsi",
+    "day_of_week",
+    "month_cos",
+    "bb_upper",
+    "week",
+    "volume_ratio_10",
+    "volume_lag_3",
+    "momentum_20",
+    "obv",
+    "momentum_10",
+    "macd",
+    "dist_sma_5",
+    "Volume"
+  ],
+  "hyperparameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "oob_score": false,
+    "random_state": null,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_time_s": 11.6932,
+  "metrics": {
+    "validation": {
+      "mae": 0.014048991054924926,
+      "mse": 0.00034287377761205374,
+      "rmse": 0.018516851179724205,
+      "r2": -0.09513130314528295,
+      "mape": 165.17776143304545
+    },
+    "test": {
+      "mae": 0.011171143220714708,
+      "mse": 0.0002198505930084686,
+      "rmse": 0.014827359610141942,
+      "r2": -0.1284409603209391,
+      "mape": 174.4533964096917
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\GRASIM_NS\\scaler_params.json",
+  "is_best": true
+}

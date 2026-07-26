@@ -1,0 +1,106 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "ADANIENT.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:59:08+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "momentum_20",
+    "vma_20",
+    "momentum_10",
+    "volume_ratio_5",
+    "month_cos",
+    "trading_day_number",
+    "macd_hist",
+    "dist_sma_10",
+    "momentum_5",
+    "macd",
+    "vma_10",
+    "dist_sma_50",
+    "bb_width",
+    "return_lag_20",
+    "obv",
+    "return_lag_5",
+    "high_low_range",
+    "day_of_month",
+    "dist_sma_5",
+    "rsi",
+    "roc_10",
+    "open_close_diff",
+    "volume_ratio_10",
+    "atr",
+    "volume_lag_1",
+    "rolling_vol_10",
+    "atr_pct",
+    "month_sin",
+    "Volume",
+    "volume_lag_3",
+    "dist_sma_100",
+    "week",
+    "roc_20",
+    "return_lag_10",
+    "log_return",
+    "volume_lag_20",
+    "bb_pct",
+    "volume_change_ratio",
+    "roc_5",
+    "volume_ratio_20"
+  ],
+  "hyperparameters": {
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": null,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "random_state": null,
+    "splitter": "best"
+  },
+  "training_time_s": 0.2267,
+  "metrics": {
+    "validation": {
+      "mae": 0.04030110252267747,
+      "mse": 0.003306260782879474,
+      "rmse": 0.05750009376409289,
+      "r2": -1.4266176385924947,
+      "mape": 820.5659746950437
+    },
+    "test": {
+      "mae": 0.04204537436237542,
+      "mse": 0.0034526144763675666,
+      "rmse": 0.05875895230828718,
+      "r2": -4.542556723790429,
+      "mape": 1069.4098850426278
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ADANIENT_NS\\scaler_params.json",
+  "is_best": false
+}

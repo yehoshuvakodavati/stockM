@@ -1,0 +1,112 @@
+{
+  "model_name": "random_forest",
+  "symbol": "SHREECEM.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T16:00:33+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "trading_day_number",
+    "month_cos",
+    "day_of_week",
+    "return_lag_10",
+    "rsi",
+    "rolling_vol_20",
+    "vma_20",
+    "obv",
+    "volume_change",
+    "dist_sma_5",
+    "momentum_10",
+    "bb_pct",
+    "Volume",
+    "price_diff",
+    "volume_ratio_10",
+    "volume_lag_10",
+    "rolling_var_5",
+    "volume_momentum",
+    "return_lag_1",
+    "atr",
+    "day_of_week_sin",
+    "roc_10",
+    "vma_10",
+    "open_close_diff",
+    "macd_hist",
+    "momentum_20",
+    "rolling_vol_10",
+    "volume_ratio_20",
+    "price_diff_pct",
+    "return_lag_5",
+    "volume_lag_20",
+    "day_of_month",
+    "volume_lag_5",
+    "return_lag_3",
+    "bb_width",
+    "dist_sma_200",
+    "volume_change_ratio",
+    "high_low_range",
+    "dist_sma_20",
+    "atr_pct"
+  ],
+  "hyperparameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "oob_score": false,
+    "random_state": null,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_time_s": 10.826,
+  "metrics": {
+    "validation": {
+      "mae": 0.014675409527541787,
+      "mse": 0.0003806578688273355,
+      "rmse": 0.01951045537211614,
+      "r2": -0.11546964048179786,
+      "mape": 160.07239034177837
+    },
+    "test": {
+      "mae": 0.011006824249038755,
+      "mse": 0.000212597190856688,
+      "rmse": 0.014580712974909286,
+      "r2": -0.0892723892608307,
+      "mape": 163.7949794934838
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\SHREECEM_NS\\scaler_params.json",
+  "is_best": false
+}

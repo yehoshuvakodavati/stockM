@@ -1,0 +1,106 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "ADANIPORTS.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:58:58+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "dist_sma_100",
+    "roc_10",
+    "atr",
+    "dist_sma_50",
+    "volume_lag_1",
+    "volume_lag_3",
+    "momentum_10",
+    "volume_change_ratio",
+    "sma_200",
+    "volume_ratio_10",
+    "return_lag_5",
+    "dist_sma_5",
+    "week",
+    "open_close_diff",
+    "month_sin",
+    "roc_20",
+    "return_lag_20",
+    "rolling_vol_5",
+    "pct_change_1d",
+    "rolling_var_20",
+    "bb_pct",
+    "high_low_range",
+    "day_of_week_sin",
+    "vma_10",
+    "macd_hist",
+    "macd",
+    "day_of_month",
+    "bb_width",
+    "volume_lag_10",
+    "atr_pct",
+    "return_lag_10",
+    "obv",
+    "momentum_20",
+    "rsi",
+    "volume_change",
+    "volume_ratio_20",
+    "return_lag_3",
+    "vma_20",
+    "rolling_vol_20",
+    "volume_lag_5"
+  ],
+  "hyperparameters": {
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": null,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "random_state": null,
+    "splitter": "best"
+  },
+  "training_time_s": 0.1965,
+  "metrics": {
+    "validation": {
+      "mae": 0.037134162638431015,
+      "mse": 0.003016101780590111,
+      "rmse": 0.05491904752078382,
+      "r2": -3.524704093406278,
+      "mape": 896.2475266066921
+    },
+    "test": {
+      "mae": 0.026281121291672784,
+      "mse": 0.0013951490192250756,
+      "rmse": 0.03735169365939215,
+      "r2": -1.8292774602048003,
+      "mape": 512.2911870168266
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3061,
+      "val": 656,
+      "test": 656
+    },
+    "date_ranges": {
+      "train": [
+        "2008-09-16",
+        "2021-03-03"
+      ],
+      "val": [
+        "2021-03-05",
+        "2023-10-30"
+      ],
+      "test": [
+        "2023-11-01",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ADANIPORTS_NS\\scaler_params.json",
+  "is_best": false
+}

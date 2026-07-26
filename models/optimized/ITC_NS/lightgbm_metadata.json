@@ -1,0 +1,106 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "ITC.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "colsample_bytree": 0.7801997007878172,
+    "learning_rate": 0.0010785962778329494,
+    "n_estimators": 238,
+    "num_leaves": 28,
+    "reg_lambda": 1.7123375973163988,
+    "subsample": 0.7218455076693483
+  },
+  "selected_features": [
+    "volume_lag_1",
+    "roc_5",
+    "volume_ratio_20",
+    "momentum_20",
+    "dist_sma_20",
+    "dist_sma_50",
+    "return_lag_20",
+    "day_of_week_sin",
+    "rolling_var_5",
+    "rolling_var_10",
+    "macd_signal",
+    "log_return",
+    "return_lag_10",
+    "day_of_month",
+    "roc_10",
+    "atr",
+    "rsi",
+    "rolling_var_20",
+    "return_lag_1",
+    "week",
+    "vma_20",
+    "Volume",
+    "roc_20",
+    "return_lag_5",
+    "rolling_vol_5",
+    "dist_sma_100",
+    "volume_lag_10",
+    "volume_ratio_5",
+    "macd",
+    "vma_5",
+    "volume_momentum",
+    "volume_lag_3",
+    "volume_lag_20",
+    "dist_sma_10",
+    "price_diff",
+    "volume_ratio_10",
+    "obv",
+    "rolling_vol_20",
+    "dist_sma_5",
+    "bb_pct"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ITC_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "ITC.NS",
+    "row_counts": {
+      "train": 3568,
+      "val": 765,
+      "test": 765
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-24"
+      ],
+      "val": [
+        "2020-04-28",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.01634564974566702,
+    "validation": {
+      "mae": 0.011079452642773036,
+      "mse": 0.00023098985731405335,
+      "rmse": 0.015198350480037408,
+      "r2": -0.0034641995130599845,
+      "mape": 101.62957662833082
+    },
+    "test": {
+      "mae": 0.00836833313426669,
+      "mse": 0.0001368416681675174,
+      "rmse": 0.01169793435472765,
+      "r2": -0.010293451732376724,
+      "mape": 105.5311833101863
+    },
+    "directional_accuracy": 0.4795244385733157
+  },
+  "training_time_s": 8.3793,
+  "seed": 42,
+  "tuned_at": "2026-07-23T14:44:14+00:00",
+  "stockm_version": "1.0"
+}

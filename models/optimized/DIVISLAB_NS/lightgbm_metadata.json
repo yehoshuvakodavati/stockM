@@ -1,0 +1,106 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "DIVISLAB.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "colsample_bytree": 0.662397808134481,
+    "learning_rate": 0.0013927723945289009,
+    "n_estimators": 237,
+    "num_leaves": 50,
+    "reg_lambda": 0.003727925903376985,
+    "subsample": 0.8603553891795411
+  },
+  "selected_features": [
+    "day_of_month",
+    "day_of_week_sin",
+    "volume_lag_20",
+    "log_return",
+    "month_cos",
+    "volume_ratio_20",
+    "roc_20",
+    "rolling_vol_20",
+    "dist_sma_200",
+    "rolling_vol_10",
+    "volume_change_ratio",
+    "roc_5",
+    "week",
+    "volume_lag_10",
+    "rolling_var_10",
+    "vma_10",
+    "return_lag_10",
+    "dist_sma_100",
+    "dist_sma_20",
+    "obv",
+    "macd",
+    "volume_change",
+    "volume_lag_5",
+    "bb_pct",
+    "day_of_week",
+    "macd_signal",
+    "rsi",
+    "volume_ratio_10",
+    "volume_lag_1",
+    "return_lag_3",
+    "rolling_vol_5",
+    "return_lag_1",
+    "price_diff",
+    "open_close_diff",
+    "momentum_10",
+    "volume_ratio_5",
+    "dist_sma_5",
+    "return_lag_20",
+    "macd_hist",
+    "volume_momentum"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\DIVISLAB_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "DIVISLAB.NS",
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.019017393575755288,
+    "validation": {
+      "mae": 0.013295480697925004,
+      "mse": 0.0003608304381063873,
+      "rmse": 0.01899553732081268,
+      "r2": -0.00573515151753301,
+      "mape": 113.02485419666229
+    },
+    "test": {
+      "mae": 0.011049646753474342,
+      "mse": 0.00023556730467752974,
+      "rmse": 0.015348202001457036,
+      "r2": -0.0011039524451224025,
+      "mape": 106.36420482349129
+    },
+    "directional_accuracy": 0.5106951871657754
+  },
+  "training_time_s": 9.512,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:32:07+00:00",
+  "stockm_version": "1.0"
+}

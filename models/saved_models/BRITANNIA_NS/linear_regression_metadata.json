@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "BRITANNIA.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:59:57+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "bb_pct",
+    "rolling_var_5",
+    "volume_lag_10",
+    "rolling_vol_10",
+    "volume_change_ratio",
+    "week",
+    "volume_ratio_10",
+    "dist_sma_100",
+    "volume_lag_1",
+    "volume_lag_20",
+    "open_close_diff",
+    "vma_5",
+    "macd_signal",
+    "rolling_var_20",
+    "day_of_month",
+    "Volume",
+    "return_lag_20",
+    "volume_ratio_5",
+    "atr_pct",
+    "dist_sma_200",
+    "return_lag_3",
+    "obv",
+    "rolling_vol_20",
+    "roc_20",
+    "dist_sma_50",
+    "volume_ratio_20",
+    "rolling_vol_5",
+    "return_lag_1",
+    "volume_change",
+    "rolling_var_10",
+    "atr",
+    "price_diff_pct",
+    "rsi",
+    "momentum_20",
+    "volume_momentum",
+    "high_low_range",
+    "dist_sma_5",
+    "macd",
+    "roc_10",
+    "momentum_5"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0046,
+  "metrics": {
+    "validation": {
+      "mae": 0.010031164248612641,
+      "mse": 0.00018563606086522864,
+      "rmse": 0.013624832507786238,
+      "r2": -0.06185891164054258,
+      "mape": 150.11856030777878
+    },
+    "test": {
+      "mae": 0.01087056891436717,
+      "mse": 0.00023337127183856483,
+      "rmse": 0.015276494095130756,
+      "r2": -0.5008492484619926,
+      "mape": 261.53619539682546
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3560,
+      "val": 763,
+      "test": 763
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-24"
+      ],
+      "val": [
+        "2020-04-28",
+        "2023-05-25"
+      ],
+      "test": [
+        "2023-05-29",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\BRITANNIA_NS\\scaler_params.json",
+  "is_best": true
+}

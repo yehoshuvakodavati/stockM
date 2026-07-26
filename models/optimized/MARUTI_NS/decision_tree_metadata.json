@@ -1,0 +1,103 @@
+{
+  "model_name": "decision_tree",
+  "symbol": "MARUTI.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "max_depth": 5,
+    "max_features": "log2",
+    "min_samples_leaf": 62
+  },
+  "selected_features": [
+    "roc_10",
+    "month_sin",
+    "price_diff",
+    "momentum_10",
+    "volume_lag_1",
+    "volume_ratio_10",
+    "rolling_var_5",
+    "day_of_month",
+    "rolling_var_20",
+    "day_of_week_sin",
+    "dist_sma_5",
+    "rolling_var_10",
+    "volume_lag_3",
+    "atr_pct",
+    "rolling_vol_20",
+    "obv",
+    "dist_sma_10",
+    "bb_width",
+    "month_cos",
+    "day_of_week",
+    "bb_pct",
+    "return_lag_3",
+    "volume_ratio_20",
+    "rolling_vol_5",
+    "momentum_20",
+    "week",
+    "High",
+    "rolling_vol_10",
+    "dist_sma_50",
+    "roc_20",
+    "vma_20",
+    "macd",
+    "macd_hist",
+    "volume_ratio_5",
+    "volume_lag_5",
+    "Volume",
+    "volume_lag_10",
+    "return_lag_5",
+    "volume_change_ratio",
+    "dist_sma_200"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\MARUTI_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "MARUTI.NS",
+    "row_counts": {
+      "train": 3565,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.01922836371179833,
+    "validation": {
+      "mae": 0.012191394619510474,
+      "mse": 0.0003024330364756558,
+      "rmse": 0.01739060195840431,
+      "r2": -0.002009465600833815,
+      "mape": 110.46204019367892
+    },
+    "test": {
+      "mae": 0.009814749464730335,
+      "mse": 0.00018459767232483217,
+      "rmse": 0.013586672599456872,
+      "r2": 0.0023323715574169457,
+      "mape": 104.7766692093339
+    },
+    "directional_accuracy": 0.48544973544973546
+  },
+  "training_time_s": 0.2883,
+  "seed": 42,
+  "tuned_at": "2026-07-23T14:50:00+00:00",
+  "stockm_version": "1.0"
+}

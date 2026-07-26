@@ -57,9 +57,41 @@ def _signal_from_return(ret: float, threshold: float) -> str:
     return "HOLD"
 
 
-def load_model(symbol: str, model_name: str | None = None):
-    """Load a saved model + metadata for a symbol (best model if name is None)."""
-    return _load_from_storage(symbol, model_name)
+def load_model(symbol: str, model_name: str | None = None, prefer_optimized: bool = True):
+    """Load the deployed model + metadata for a symbol.
+
+    Resolution order (Lesson 13 - production predictor):
+      1. If ``prefer_optimized`` and a tuned model exists under
+         models/optimized/<SYM>/best_optimized.json -> load it.
+      2. Otherwise fall back to the Phase 5 baseline under
+         models/saved_models/<SYM>/best_model.json.
+
+    Args:
+        symbol:           Ticker.
+        model_name:       Specific model name, or None for the deployed best.
+        prefer_optimized: Prefer the Phase 6 tuned model if present.
+
+    Returns:
+        (model, metadata). The metadata includes a ``source`` field noting
+        whether it came from the optimized or baseline store.
+    """
+    if prefer_optimized and model_name is None:
+        try:
+            from optimization.model_saver import load_optimized_model
+            model, meta = load_optimized_model(symbol)
+            meta = {**meta, "source": "optimized"}
+            logger.info("loaded optimized model for %s", symbol)
+            return model, meta
+        except FileNotFoundError:
+            logger.info(
+                "no optimized model for %s; falling back to Phase 5 baseline.", symbol
+            )
+        except Exception as e:  # noqa: BLE001
+            logger.warning("optimized load failed for %s (%s); using baseline.", symbol, e)
+
+    model, meta = _load_from_storage(symbol, model_name)
+    meta = {**meta, "source": "baseline"}
+    return model, meta
 
 
 def predict(model, X: pd.DataFrame) -> pd.Series:

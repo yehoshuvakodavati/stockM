@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "BPCL.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T16:00:33+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "month_sin",
+    "return_lag_10",
+    "pct_change_1d",
+    "vma_5",
+    "roc_5",
+    "day_of_week",
+    "return_lag_3",
+    "rolling_vol_10",
+    "return_lag_1",
+    "momentum_20",
+    "dist_sma_100",
+    "momentum_10",
+    "volume_ratio_5",
+    "rolling_vol_5",
+    "volume_momentum",
+    "vma_20",
+    "atr",
+    "price_diff",
+    "rsi",
+    "rolling_var_5",
+    "volume_lag_10",
+    "volume_lag_3",
+    "macd_signal",
+    "dist_sma_10",
+    "volume_lag_20",
+    "volume_ratio_20",
+    "open_close_diff",
+    "dist_sma_200",
+    "volume_lag_1",
+    "rolling_vol_20",
+    "dist_sma_5",
+    "return_lag_20",
+    "obv",
+    "volume_lag_5",
+    "atr_pct",
+    "week",
+    "momentum_5",
+    "high_low_range",
+    "High",
+    "dist_sma_50"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0051,
+  "metrics": {
+    "validation": {
+      "mae": 0.014371706342432436,
+      "mse": 0.0004055712948146565,
+      "rmse": 0.02013880072930502,
+      "r2": -0.11741999613503751,
+      "mape": 174.10380284347212
+    },
+    "test": {
+      "mae": 0.014694311088341828,
+      "mse": 0.00040233758520083224,
+      "rmse": 0.020058354498832455,
+      "r2": -0.08033002840844183,
+      "mape": 155.17351432024307
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\BPCL_NS\\scaler_params.json",
+  "is_best": false
+}

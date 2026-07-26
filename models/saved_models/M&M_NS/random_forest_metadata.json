@@ -1,0 +1,112 @@
+{
+  "model_name": "random_forest",
+  "symbol": "M&M.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:57:47+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "bb_width",
+    "dist_sma_200",
+    "volume_change_ratio",
+    "roc_5",
+    "day_of_month",
+    "atr",
+    "rolling_var_20",
+    "rolling_vol_5",
+    "roc_10",
+    "return_lag_5",
+    "dist_sma_50",
+    "rolling_var_10",
+    "return_lag_20",
+    "High",
+    "macd",
+    "volume_momentum",
+    "week",
+    "month_cos",
+    "obv",
+    "dist_sma_5",
+    "volume_ratio_20",
+    "momentum_5",
+    "macd_hist",
+    "rolling_vol_20",
+    "volume_lag_10",
+    "dist_sma_10",
+    "open_close_diff",
+    "return_lag_3",
+    "volume_lag_1",
+    "volume_change",
+    "price_diff",
+    "high_low_range",
+    "rolling_var_5",
+    "dist_sma_100",
+    "momentum_20",
+    "return_lag_10",
+    "volume_lag_20",
+    "momentum_10",
+    "rolling_vol_10",
+    "volume_lag_5"
+  ],
+  "hyperparameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "oob_score": false,
+    "random_state": null,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "training_time_s": 13.681,
+  "metrics": {
+    "validation": {
+      "mae": 0.015505182369660678,
+      "mse": 0.00044945681891824305,
+      "rmse": 0.021200396668889076,
+      "r2": -0.16501562859985053,
+      "mape": 201.58540307839624
+    },
+    "test": {
+      "mae": 0.019240296773157906,
+      "mse": 0.0005699615431518659,
+      "rmse": 0.023873867368984565,
+      "r2": -0.7271541594541175,
+      "mape": 410.57288897204023
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3568,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-24"
+      ],
+      "val": [
+        "2020-04-28",
+        "2023-05-23"
+      ],
+      "test": [
+        "2023-05-25",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\M&M_NS\\scaler_params.json",
+  "is_best": true
+}

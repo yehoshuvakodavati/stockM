@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "COALINDIA.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T15:57:25+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "bb_pct",
+    "volume_ratio_10",
+    "rolling_var_20",
+    "bb_upper",
+    "sma_200",
+    "return_lag_20",
+    "volume_lag_3",
+    "dist_sma_10",
+    "rolling_vol_5",
+    "dist_sma_5",
+    "macd",
+    "dist_sma_100",
+    "obv",
+    "high_low_range",
+    "day_of_month",
+    "vma_5",
+    "momentum_20",
+    "volume_lag_10",
+    "volume_ratio_5",
+    "vma_20",
+    "macd_hist",
+    "month_cos",
+    "High",
+    "dist_sma_50",
+    "month_sin",
+    "dist_sma_200",
+    "open_close_diff",
+    "volume_momentum",
+    "volume_change",
+    "return_lag_5",
+    "atr",
+    "volume_ratio_20",
+    "Volume",
+    "rolling_vol_20",
+    "momentum_5",
+    "rolling_vol_10",
+    "volume_lag_20",
+    "momentum_10",
+    "return_lag_1",
+    "volume_lag_5"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0048,
+  "metrics": {
+    "validation": {
+      "mae": 0.016501904418658467,
+      "mse": 0.0005009426291769015,
+      "rmse": 0.02238174767923411,
+      "r2": -0.38300070880805803,
+      "mape": 280.72794434485763
+    },
+    "test": {
+      "mae": 0.022247956392099102,
+      "mse": 0.0007278900748726747,
+      "rmse": 0.026979438001423876,
+      "r2": -1.6665799728112551,
+      "mape": 601.2549705098395
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 2560,
+      "val": 548,
+      "test": 548
+    },
+    "date_ranges": {
+      "train": [
+        "2011-08-23",
+        "2022-01-17"
+      ],
+      "val": [
+        "2022-01-19",
+        "2024-04-09"
+      ],
+      "test": [
+        "2024-04-12",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\COALINDIA_NS\\scaler_params.json",
+  "is_best": false
+}

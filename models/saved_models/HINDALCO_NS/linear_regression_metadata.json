@@ -1,0 +1,99 @@
+{
+  "model_name": "linear_regression",
+  "symbol": "HINDALCO.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-21T16:01:20+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "week",
+    "month_sin",
+    "day_of_week_sin",
+    "atr_pct",
+    "roc_5",
+    "price_diff_pct",
+    "rolling_var_20",
+    "volume_lag_20",
+    "rsi",
+    "macd",
+    "dist_sma_10",
+    "volume_momentum",
+    "volume_change",
+    "vma_20",
+    "dist_sma_200",
+    "rolling_var_5",
+    "volume_ratio_20",
+    "return_lag_5",
+    "open_lag_20",
+    "atr",
+    "volume_lag_5",
+    "volume_ratio_10",
+    "rolling_var_10",
+    "momentum_5",
+    "month_cos",
+    "dist_sma_20",
+    "volume_lag_10",
+    "bb_width",
+    "return_lag_20",
+    "obv",
+    "momentum_20",
+    "roc_20",
+    "volume_lag_1",
+    "Volume",
+    "volume_ratio_5",
+    "roc_10",
+    "price_diff",
+    "return_lag_3",
+    "momentum_10",
+    "High"
+  ],
+  "hyperparameters": {
+    "copy_X": true,
+    "fit_intercept": true,
+    "n_jobs": null,
+    "positive": false,
+    "tol": 1e-06
+  },
+  "training_time_s": 0.0058,
+  "metrics": {
+    "validation": {
+      "mae": 0.022783184874868745,
+      "mse": 0.0008626998836866389,
+      "rmse": 0.02937175315990925,
+      "r2": -0.27938373802330285,
+      "mape": 249.99688613417547
+    },
+    "test": {
+      "mae": 0.027748659734709222,
+      "mse": 0.0011221166548701516,
+      "rmse": 0.03349800971505847,
+      "r2": -2.3116699913048038,
+      "mape": 606.3642148295056
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\HINDALCO_NS\\scaler_params.json",
+  "is_best": true
+}

@@ -1,0 +1,106 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "EICHERMOT.NS",
+  "model_version": "optimized_v1",
+  "optimization_method": "random",
+  "best_hyperparameters": {
+    "colsample_bytree": 0.662397808134481,
+    "learning_rate": 0.0013927723945289009,
+    "n_estimators": 237,
+    "num_leaves": 50,
+    "reg_lambda": 0.003727925903376985,
+    "subsample": 0.8603553891795411
+  },
+  "selected_features": [
+    "vma_10",
+    "month_cos",
+    "macd",
+    "obv",
+    "return_lag_20",
+    "rolling_vol_10",
+    "volume_lag_1",
+    "volume_lag_5",
+    "week",
+    "trading_day_number",
+    "volume_change",
+    "dist_sma_20",
+    "momentum_20",
+    "vma_5",
+    "dist_sma_200",
+    "volume_lag_3",
+    "momentum_5",
+    "high_low_range",
+    "atr",
+    "rolling_var_10",
+    "bb_width",
+    "volume_lag_10",
+    "volume_lag_20",
+    "atr_pct",
+    "rolling_var_20",
+    "return_lag_1",
+    "day_of_week",
+    "volume_ratio_10",
+    "Volume",
+    "price_diff",
+    "pct_change_1d",
+    "rolling_vol_5",
+    "volume_momentum",
+    "open_close_diff",
+    "roc_10",
+    "volume_change_ratio",
+    "return_lag_10",
+    "High",
+    "return_lag_5",
+    "bb_pct"
+  ],
+  "n_features": 40,
+  "scaler_ref": "C:\\stockM\\data\\prepared\\EICHERMOT_NS\\scaler_params.json",
+  "dataset_version": {
+    "symbol": "EICHERMOT.NS",
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    }
+  },
+  "cv": {
+    "method": "timeseries",
+    "n_splits": 3
+  },
+  "metrics": {
+    "cv_rmse": 0.021518060670357674,
+    "validation": {
+      "mae": 0.014360080108784083,
+      "mse": 0.0003652461440125206,
+      "rmse": 0.019111413972088005,
+      "r2": 0.001081893148654367,
+      "mape": 104.12380900532641
+    },
+    "test": {
+      "mae": 0.011375571118404882,
+      "mse": 0.0002533366255616475,
+      "rmse": 0.01591655193695065,
+      "r2": 0.0005154580113869711,
+      "mape": 102.69880211250133
+    },
+    "directional_accuracy": 0.5198412698412699
+  },
+  "training_time_s": 11.0205,
+  "seed": 42,
+  "tuned_at": "2026-07-23T15:39:05+00:00",
+  "stockm_version": "1.0"
+}
