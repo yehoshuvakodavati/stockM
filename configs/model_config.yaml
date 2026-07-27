@@ -39,6 +39,16 @@ transformer_v1:
   num_layers: 2
   dropout: 0.1
 
+cnn_v1:
+  family: deep_learning
+  type: cnn
+  input_size: auto                # inferred from n_features
+  filters: 64                     # conv channels per layer
+  kernel_size: 3                  # local temporal pattern width (days)
+  num_layers: 2                   # conv blocks; receptive field grows with depth
+  dropout: 0.2
+  output_size: 1
+
 # ── Ensembles (future) ──────────────────────────────────────
 ensemble_blend_v1:
   family: ensemble

@@ -1,0 +1,124 @@
+{
+  "symbol": "RELIANCE.NS",
+  "recommendation": {
+    "best_model": "lightgbm_optimized",
+    "test_rmse": 0.0132,
+    "test_r2": -0.006,
+    "directional_accuracy": 0.4938,
+    "beats_naive": false,
+    "any_model_beats_naive": false,
+    "verdict": "no edge - best of a no-edge field; not deployable for trading"
+  },
+  "table": {
+    "naive_zero": {
+      "test_rmse": 0.013039721682246725,
+      "test_r2": -0.0002842076950519967,
+      "directional_accuracy": null,
+      "beats_naive": true,
+      "train_time_s": 0.0,
+      "inference_time_s": 0.0,
+      "params": 0,
+      "family": "naive",
+      "interpretability": "N/A (predicts zero)"
+    },
+    "linear_regression": {
+      "test_rmse": 0.018210762672498337,
+      "test_r2": -0.9509360663300124,
+      "directional_accuracy": 0.48010610079575594,
+      "beats_naive": false,
+      "train_time_s": 0.004983099992386997,
+      "inference_time_s": null,
+      "params": null,
+      "family": "classical_baseline",
+      "interpretability": "High (coefficients = factor loadings)"
+    },
+    "decision_tree": {
+      "test_rmse": 0.03875110926316947,
+      "test_r2": -7.833952220943363,
+      "directional_accuracy": 0.5119363395225465,
+      "beats_naive": false,
+      "train_time_s": 0.26106599997729063,
+      "inference_time_s": null,
+      "params": null,
+      "family": "classical_baseline",
+      "interpretability": "High (human-readable splits)"
+    },
+    "random_forest": {
+      "test_rmse": 0.014089458071542186,
+      "test_r2": -0.16781848779835906,
+      "directional_accuracy": 0.5265251989389921,
+      "beats_naive": false,
+      "train_time_s": 12.715526799991494,
+      "inference_time_s": null,
+      "params": null,
+      "family": "classical_baseline",
+      "interpretability": "Medium (feature importance, many trees)"
+    },
+    "gradient_boosting": {
+      "test_rmse": 0.015919602194958818,
+      "test_r2": -0.4909091866475388,
+      "directional_accuracy": 0.4946949602122016,
+      "beats_naive": false,
+      "train_time_s": 1.7170536000048742,
+      "inference_time_s": null,
+      "params": null,
+      "family": "classical_baseline",
+      "interpretability": "Medium (feature importance)"
+    },
+    "lightgbm_optimized": {
+      "test_rmse": 0.0132,
+      "test_r2": -0.006,
+      "directional_accuracy": 0.4938,
+      "beats_naive": false,
+      "train_time_s": null,
+      "inference_time_s": 0.029,
+      "params": null,
+      "family": "classical_optimized",
+      "interpretability": "Medium (tree importance + SHAP)"
+    },
+    "lstm": {
+      "test_rmse": 0.0162,
+      "test_r2": -0.517,
+      "directional_accuracy": 0.4924,
+      "beats_naive": false,
+      "train_time_s": 15.14,
+      "inference_time_s": 0.086,
+      "params": 60481,
+      "family": "deep_learning",
+      "interpretability": "Low (opaque cell state)"
+    },
+    "gru": {
+      "test_rmse": 0.0145,
+      "test_r2": -0.215,
+      "directional_accuracy": 0.4952,
+      "beats_naive": false,
+      "train_time_s": 63.51,
+      "inference_time_s": 0.148,
+      "params": 45377,
+      "family": "deep_learning",
+      "interpretability": "Low (opaque hidden state)"
+    },
+    "cnn": {
+      "test_rmse": 0.0178,
+      "test_r2": -0.827,
+      "directional_accuracy": 0.5048,
+      "beats_naive": false,
+      "train_time_s": 6.86,
+      "inference_time_s": 0.038,
+      "params": 20161,
+      "family": "deep_learning",
+      "interpretability": "Low-Medium (filters somewhat readable)"
+    },
+    "transformer": {
+      "test_rmse": 0.0438,
+      "test_r2": -10.09,
+      "directional_accuracy": 0.5048,
+      "beats_naive": false,
+      "train_time_s": 137.83,
+      "inference_time_s": 0.08,
+      "params": 102657,
+      "family": "deep_learning",
+      "interpretability": "Medium (attention weights introspectable)"
+    }
+  }
+}

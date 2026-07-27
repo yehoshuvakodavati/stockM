@@ -1,0 +1,100 @@
+{
+  "model_name": "lstm_v1",
+  "symbol": "RELIANCE.NS",
+  "model_version": "dl_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-07-27T11:40:57+00:00",
+  "arch_type": "lstm",
+  "arch_kwargs": {
+    "input_size": 40,
+    "hidden_size": 64,
+    "num_layers": 2,
+    "dropout": 0.2,
+    "task": "regression"
+  },
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "atr",
+    "price_diff",
+    "return_lag_1",
+    "month_sin",
+    "volume_momentum",
+    "macd_hist",
+    "volume_change_ratio",
+    "macd_signal",
+    "roc_10",
+    "roc_20",
+    "volume_lag_5",
+    "return_lag_3",
+    "volume_lag_1",
+    "dist_sma_20",
+    "obv",
+    "bb_width",
+    "day_of_week_sin",
+    "rolling_var_20",
+    "rolling_vol_5",
+    "momentum_20",
+    "vma_10",
+    "price_diff_pct",
+    "rolling_vol_20",
+    "return_lag_10",
+    "day_of_week",
+    "volume_ratio_5",
+    "dist_sma_5",
+    "dist_sma_50",
+    "volume_ratio_10",
+    "open_close_diff",
+    "momentum_5",
+    "volume_lag_20",
+    "roc_5",
+    "bb_upper",
+    "return_lag_20",
+    "high_low_range",
+    "volume_lag_10",
+    "volume_lag_3",
+    "rolling_var_10",
+    "rolling_vol_10"
+  ],
+  "training": {
+    "epochs_run": 5,
+    "best_val_loss": 0.0003519166916090881,
+    "best_epoch": 3,
+    "train_time_s": 6.05
+  },
+  "metrics": {
+    "test_rmse": 0.016188316654703563,
+    "test_mae": 0.012120214628372865,
+    "directional_accuracy": 0.4884353741496599,
+    "beats_naive": false
+  },
+  "dataset": {
+    "lookback": 30,
+    "horizon": 1,
+    "stride": 1,
+    "window_counts": {
+      "train": 3540,
+      "validation": 735,
+      "test": 735
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1",
+    "dataset_version": "2005-10-18_2026-07-03"
+  },
+  "scaler_ref": "data\\prepared\\RELIANCE_NS\\scaler_params.json",
+  "optimizer_state_saved": true,
+  "is_best": false
+}

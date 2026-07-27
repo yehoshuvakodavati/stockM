@@ -31,11 +31,9 @@ difference is nn.GRU instead of nn.LSTM - a controlled comparison.
 from __future__ import annotations
 
 import logging
-import time
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
-import numpy as np
 import torch
 import torch.nn as nn
 import yaml
@@ -133,92 +131,6 @@ def build_gru(input_size: int, config_path: Path | None = None, **overrides: Any
     return GRUModel(input_size=input_size, **cfg)
 
 
-# ---------------------------------------------------------------------------
-# Shared minimal trainer used for the FAIR LSTM-vs-GRU comparison.
-# Same loop as lstm._train_demo; isolated here so both models train under
-# byte-identical conditions. (The production trainer is Lesson 8.)
-# ---------------------------------------------------------------------------
-def _train_one(
-    model: nn.Module,
-    train_dl,
-    val_dl,
-    test_dl,
-    task: str,
-    epochs: int,
-    lr: float,
-    weight_decay: float,
-    grad_clip: float,
-    device: str,
-) -> dict[str, Any]:
-    """Train one model, return metrics + wall-clock training time."""
-    from deep_learning.framework import count_parameters, get_loss
-
-    loss_fn = get_loss(task)
-    opt = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=weight_decay)
-    params = count_parameters(model)
-
-    t0 = time.perf_counter()
-    history: list[tuple[int, float, float]] = []
-    for epoch in range(1, epochs + 1):
-        model.train()
-        tr_loss, n = 0.0, 0
-        for xb, yb in train_dl:
-            xb, yb = xb.to(device), yb.to(device)
-            pred = model(xb).squeeze(-1)
-            loss = loss_fn(pred, yb.float())
-            opt.zero_grad()
-            loss.backward()
-            torch.nn.utils.clip_grad_norm_(model.parameters(), grad_clip)
-            opt.step()
-            tr_loss += loss.item() * len(yb)
-            n += len(yb)
-        tr_loss /= max(n, 1)
-
-        model.eval()
-        va_loss, nv = 0.0, 0
-        with torch.no_grad():
-            for xb, yb in val_dl:
-                xb, yb = xb.to(device), yb.to(device)
-                va_loss += loss_fn(model(xb).squeeze(-1), yb.float()).item() * len(yb)
-                nv += len(yb)
-        va_loss /= max(nv, 1)
-        history.append((epoch, tr_loss, va_loss))
-        if epoch == 1 or epoch % 5 == 0 or epoch == epochs:
-            logger.info("  epoch %2d/%d | train=%.6f val=%.6f", epoch, epochs, tr_loss, va_loss)
-    train_time = time.perf_counter() - t0
-
-    # Test metrics
-    model.eval()
-    preds, ys = [], []
-    with torch.no_grad():
-        for xb, yb in test_dl:
-            out = model(xb.to(device)).squeeze(-1).cpu()
-            if task == "classification":
-                out = torch.sigmoid(out)
-            preds.append(out)
-            ys.append(yb)
-    y_pred = torch.cat(preds).numpy()
-    y_true = torch.cat(ys).numpy().astype(np.float64)
-
-    if task == "regression":
-        rmse = float(np.sqrt(np.mean((y_pred - y_true) ** 2)))
-        dir_acc = float(np.mean(np.sign(y_pred) == np.sign(y_true)))
-        naive_rmse = float(np.sqrt(np.mean(y_true ** 2)))
-        return {
-            "params": params, "train_time_s": round(train_time, 2),
-            "final_val_loss": history[-1][2], "test_rmse": rmse,
-            "naive_test_rmse": naive_rmse, "beats_naive": rmse < naive_rmse,
-            "directional_accuracy": dir_acc, "history": history,
-        }
-    y_hat = (y_pred > 0.5).astype(np.float64)
-    acc = float(np.mean(y_hat == y_true))
-    maj = float(np.mean(y_true == 1))
-    return {
-        "params": params, "train_time_s": round(train_time, 2),
-        "final_val_loss": history[-1][2], "test_accuracy": acc,
-        "naive_majority_acc": max(maj, 1 - maj), "beats_naive": acc > max(maj, 1 - maj),
-        "directional_accuracy": acc, "history": history,
-    }
 
 
 def compare_rnn(
@@ -245,6 +157,7 @@ def compare_rnn(
     )
     from deep_learning.sequence_builder import build_sequences
     from deep_learning.lstm import build_lstm
+    from deep_learning.trainer import train_one
 
     tcfg = load_training_config()
     device = get_device(tcfg["device"])
@@ -265,12 +178,12 @@ def compare_rnn(
 
     logger.info("=== LSTM ===")
     set_global_seed(42)  # reset before each so both see the same data order + init scale
-    lstm_res = _train_one(build_lstm(seq["n_features"], task=task).to(device),
-                          train_dl, val_dl, test_dl, **common)
+    lstm_res = train_one(build_lstm(seq["n_features"], task=task).to(device),
+                         train_dl, val_dl, test_dl, label="LSTM", **common)
     logger.info("=== GRU ===")
     set_global_seed(42)
-    gru_res = _train_one(build_gru(seq["n_features"], task=task).to(device),
-                         train_dl, val_dl, test_dl, **common)
+    gru_res = train_one(build_gru(seq["n_features"], task=task).to(device),
+                        train_dl, val_dl, test_dl, label="GRU", **common)
 
     summary = {
         "symbol": symbol, "task": task, "epochs": epochs,
@@ -289,10 +202,6 @@ def compare_rnn(
         lstm_res["train_time_s"], gru_res["train_time_s"],
         lstm_res["final_val_loss"], gru_res["final_val_loss"],
         lstm_res.get("test_rmse", lstm_res.get("test_accuracy")),
-        gru_res.get("test_rmse", gru_res.get("test_accuracy")),
-        lstm_res["directional_accuracy"], gru_res["directional_accuracy"],
-        lstm_res["beats_naive"], gru_res["beats_naive"],
-    )
         gru_res.get("test_rmse", gru_res.get("test_accuracy")),
         lstm_res["directional_accuracy"], gru_res["directional_accuracy"],
         lstm_res["beats_naive"], gru_res["beats_naive"],
