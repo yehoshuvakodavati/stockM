@@ -43,12 +43,13 @@ from __future__ import annotations
 import logging
 from dataclasses import dataclass, field
 
+import numpy as np
 import pandas as pd
 
 from backtesting.portfolio import Portfolio
 from backtesting.risk_management import RiskManager
 from backtesting.strategy import Strategy
-from backtesting.trade import Trade
+from backtesting.trade import Trade, TradeAction
 
 logger = logging.getLogger("stockm.backtesting.engine")
 
@@ -103,9 +104,122 @@ class BacktestEngine:
     ) -> "BacktestResult":
         """Walk the timeline bar-by-bar and return the full BacktestResult.
 
+        Timing contract (the engine's invariant, enforced here):
+            At bar t, in order:
+                1. mark open positions to t's price            (mark-to-market)
+                2. ask RiskManager for forced exits at t's price (stops checked)
+                3. execute any forced exits at t's price
+                4. ask the Strategy for a signal using data <= t (no look-ahead)
+                5. gate the signal through the RiskManager      (risk limits)
+                6. execute the (possibly vetoed/reshaped) signal at t's price
+        Decisions use information <= t; execution is at t's price (Adj Close).
+        Exits (steps 2-3) come before entries (steps 4-6) so capital freed by a
+        stop-out is available for a new entry the SAME bar.
+
         Args:
             predictions: Date-indexed table of model predictions per symbol
-                         (columns: predicted_return, [confidence]).
-            prices:       Date-indexed canonical price (Adj Close) per symbol.
+                         (columns: predicted_return, [confidence]). May be empty
+                         for price-only strategies (e.g. Buy & Hold).
+            prices:       Date-indexed canonical price (Adj Close). A Series or
+                          a single-column / adj_close DataFrame.
+
+        Returns:
+            A BacktestResult with equity curve, trades, metrics, and benchmark.
         """
-        raise NotImplementedError("Lesson 5 (wired as portfolio lands)")
+        from backtesting.metrics import compute_metrics
+        from backtesting.strategy import _price_series
+
+        # Normalise prices to a single Series; align predictions to its dates.
+        px = _price_series(prices)
+        preds = predictions if predictions is not None else pd.DataFrame(index=px.index)
+        preds = preds.reindex(px.index)
+
+        # Generate ALL signals up front (the strategy is stateless over the
+        # window; it sees only data <= t by construction since predictions are
+        # dated). The engine then applies them bar-by-bar, interleaving exits.
+        signals = self.strategy.generate_signals(preds, px)
+        sig_by_date = {s.date: s for s in signals}
+
+        for i in range(len(px)):
+            dt = px.index[i]
+            price = float(px.iloc[i])
+            if not np.isfinite(price) or price <= 0:
+                continue
+            prices_map = {self._primary_symbol(px, preds): price}
+            dt_key = dt.date() if hasattr(dt, "date") else dt
+
+            # 1) Mark to market (updates highest_since_entry for trailing stops).
+            self.portfolio.mark_to_market(prices_map, dt_key)
+
+            # 2-3) Forced exits (stops) checked AFTER mark-to-market so today's
+            #      peak is current; execute them before any new entry.
+            exits = self.risk_manager.check_exits(
+                self.portfolio.positions, prices_map, dt_key, self.portfolio
+            )
+            for ex in exits:
+                self.portfolio.execute(ex, price)
+
+            # 4-6) Strategy signal, gated, executed.
+            sig = sig_by_date.get(dt_key)
+            if sig is not None and sig.action != TradeAction.HOLD:
+                gated = self.risk_manager.apply(sig, self.portfolio)
+                if gated is not None:
+                    self.portfolio.execute(gated, price)
+
+        # If no mark-to-market ran (empty prices), seed a flat curve.
+        if len(self.portfolio.equity_curve) == 0:
+            self.portfolio.mark_to_market(
+                {self._primary_symbol(px, preds): float(px.iloc[-1]) if len(px) else 0.0},
+                px.index[-1].date() if hasattr(px.index[-1], "date") else px.index[-1],
+            )
+
+        # Build a Buy & Hold benchmark on the same capital + price for comparison.
+        benchmark = self._buy_and_hold_equity(px)
+
+        metrics = compute_metrics(
+            self.portfolio.equity_curve, self.portfolio.trades,
+            initial_capital=self.portfolio.initial_capital,
+        )
+        symbols = list({s.symbol for s in signals if s.symbol}) or [self._primary_symbol(px, preds)]
+
+        self.logger.info(
+            "backtest '%s' done: %d bars, %d trades, total_return=%.2f%%",
+            getattr(self.strategy, "name", "strategy"), len(px),
+            len(self.portfolio.trades), metrics["total_return"] * 100,
+        )
+        return BacktestResult(
+            strategy_name=getattr(self.strategy, "name", "strategy"),
+            symbols=symbols,
+            equity_curve=self.portfolio.equity_curve,
+            trades=self.portfolio.trades,
+            metrics=metrics,
+            config=self.config,
+            benchmark_equity=benchmark,
+            metadata={**self.config.get("metadata", {}),
+                      "n_bars": len(px), "n_trades": len(self.portfolio.trades)},
+        )
+
+    @staticmethod
+    def _primary_symbol(px: pd.Series, preds: pd.DataFrame) -> str:
+        """Resolve the single traded symbol (v1 is single-symbol)."""
+        if preds is not None and "symbol" in getattr(preds, "columns", []):
+            s = preds["symbol"].dropna()
+            if len(s) > 0:
+                return str(s.iloc[0])
+        return getattr(px, "name", None) or "ASSET"
+
+    def _buy_and_hold_equity(self, px: pd.Series) -> pd.Series:
+        """A Buy & Hold benchmark equity curve on the same initial capital.
+
+        Buys as many shares as possible on bar 0 with the strategy's initial
+        capital and holds; no costs (a benchmark is a yardstick, not a trade).
+        Returns a date-indexed Series aligned to ``px``.
+        """
+        if px is None or len(px) == 0:
+            return pd.Series(dtype=float, name="benchmark")
+        cap = self.portfolio.initial_capital
+        first_price = float(px.iloc[0])
+        if first_price <= 0:
+            return pd.Series([cap] * len(px), index=px.index, name="benchmark")
+        shares = cap / first_price
+        return pd.Series(shares * px.values, index=px.index, name="benchmark")
