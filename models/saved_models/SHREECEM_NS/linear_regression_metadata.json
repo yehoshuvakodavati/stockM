@@ -3,14 +3,14 @@
   "symbol": "SHREECEM.NS",
   "model_version": "baseline_v1",
   "stockm_version": "1.0",
-  "trained_at": "2026-07-21T16:00:22+00:00",
+  "trained_at": "2026-08-02T05:37:12+00:00",
   "target_col": "target_next_return",
   "n_features": 40,
   "feature_names": [
     "trading_day_number",
     "month_cos",
-    "day_of_week",
     "return_lag_10",
+    "day_of_week",
     "rsi",
     "rolling_vol_20",
     "vma_20",
@@ -21,11 +21,11 @@
     "bb_pct",
     "Volume",
     "price_diff",
+    "rolling_var_5",
     "volume_ratio_10",
     "volume_lag_10",
-    "rolling_var_5",
-    "volume_momentum",
     "return_lag_1",
+    "volume_momentum",
     "atr",
     "day_of_week_sin",
     "roc_10",
@@ -33,8 +33,8 @@
     "open_close_diff",
     "macd_hist",
     "momentum_20",
-    "rolling_vol_10",
     "volume_ratio_20",
+    "rolling_vol_10",
     "price_diff_pct",
     "return_lag_5",
     "volume_lag_20",
@@ -55,21 +55,21 @@
     "positive": false,
     "tol": 1e-06
   },
-  "training_time_s": 0.0062,
+  "training_time_s": 0.0132,
   "metrics": {
     "validation": {
-      "mae": 0.014121616200960965,
-      "mse": 0.000361293552706766,
-      "rmse": 0.01900772350142873,
-      "r2": -0.05872496630041302,
-      "mape": 143.19322573113632
+      "mae": 0.01412161543440956,
+      "mse": 0.0003612936264741338,
+      "rmse": 0.019007725441886354,
+      "r2": -0.05872527862008603,
+      "mape": 143.18167167467965
     },
     "test": {
-      "mae": 0.010870338888996018,
-      "mse": 0.0002062901675670328,
-      "rmse": 0.014362805003446673,
-      "r2": -0.05695744521024082,
-      "mape": 153.30037984970429
+      "mae": 0.010870341389487961,
+      "mse": 0.00020629027722541011,
+      "rmse": 0.014362808820889113,
+      "r2": -0.0569583268174878,
+      "mape": 153.30070342962003
     }
   },
   "dataset": {
@@ -95,5 +95,5 @@
     "split_method": "chronological_gap1"
   },
   "scaler_ref": "C:\\stockM\\data\\prepared\\SHREECEM_NS\\scaler_params.json",
-  "is_best": true
+  "is_best": false
 }

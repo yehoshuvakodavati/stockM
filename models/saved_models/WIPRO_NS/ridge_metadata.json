@@ -1,0 +1,102 @@
+{
+  "model_name": "ridge",
+  "symbol": "WIPRO.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:29:23+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "volume_lag_1",
+    "volume_ratio_20",
+    "day_of_week_sin",
+    "atr",
+    "dist_sma_200",
+    "volume_lag_5",
+    "dist_sma_20",
+    "roc_10",
+    "dist_sma_10",
+    "month_cos",
+    "day_of_month",
+    "return_lag_10",
+    "price_diff",
+    "log_return",
+    "volume_momentum",
+    "bb_pct",
+    "dist_sma_100",
+    "dist_sma_5",
+    "momentum_20",
+    "open_close_diff",
+    "rolling_vol_5",
+    "vma_10",
+    "volume_change_ratio",
+    "return_lag_5",
+    "return_lag_20",
+    "bb_width",
+    "high_low_range",
+    "rolling_var_20",
+    "vma_20",
+    "momentum_10",
+    "rolling_var_10",
+    "Volume",
+    "return_lag_1",
+    "atr_pct",
+    "volume_ratio_5",
+    "return_lag_3",
+    "volume_change",
+    "volume_lag_20",
+    "volume_ratio_10",
+    "momentum_5"
+  ],
+  "hyperparameters": {
+    "alpha": 1.0,
+    "copy_X": true,
+    "fit_intercept": true,
+    "max_iter": null,
+    "positive": false,
+    "random_state": null,
+    "solver": "auto",
+    "tol": 0.0001
+  },
+  "training_time_s": 0.0064,
+  "metrics": {
+    "validation": {
+      "mae": 0.015450953680976964,
+      "mse": 0.0004467272948039284,
+      "rmse": 0.02113592427134258,
+      "r2": -0.35702655379037496,
+      "mape": 270.69156438915877
+    },
+    "test": {
+      "mae": 0.013826573825553218,
+      "mse": 0.00034389695773547806,
+      "rmse": 0.01854445894965604,
+      "r2": -0.2996958945231081,
+      "mape": 287.2415552833789
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\WIPRO_NS\\scaler_params.json",
+  "is_best": false
+}

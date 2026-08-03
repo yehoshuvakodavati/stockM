@@ -15,7 +15,7 @@ from __future__ import annotations
 
 from fastapi import APIRouter
 
-from api.config import settings
+from api.config import get_settings
 
 router = APIRouter(tags=["info"])
 
@@ -23,7 +23,8 @@ router = APIRouter(tags=["info"])
 @router.get("/")
 def root() -> dict:
     """API root — confirms the service is reachable."""
-    return {"service": settings.api_title, "status": "ok"}
+    s = get_settings()
+    return {"service": s.api_title, "status": "ok"}
 
 
 @router.get("/health")
@@ -32,10 +33,10 @@ def health() -> dict:
 
     Lesson 4 upgrades this to a readiness check that verifies the registry.
     """
-    return {"status": "healthy"}
+    return {"status": "healthy", "environment": get_settings().environment}
 
 
 @router.get("/version")
 def version() -> dict:
     """Deployed API version (ties to Phase 8 Lesson 13 reproducibility)."""
-    return {"api_version": settings.api_version}
+    return {"api_version": get_settings().api_version, "environment": get_settings().environment}

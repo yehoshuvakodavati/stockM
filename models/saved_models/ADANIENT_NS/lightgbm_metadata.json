@@ -1,0 +1,113 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "ADANIENT.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:35:20+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "momentum_20",
+    "vma_20",
+    "momentum_10",
+    "volume_ratio_5",
+    "month_cos",
+    "trading_day_number",
+    "macd_hist",
+    "dist_sma_10",
+    "macd",
+    "vma_10",
+    "momentum_5",
+    "dist_sma_50",
+    "return_lag_20",
+    "bb_width",
+    "return_lag_5",
+    "obv",
+    "high_low_range",
+    "dist_sma_5",
+    "day_of_month",
+    "rsi",
+    "roc_10",
+    "open_close_diff",
+    "volume_ratio_10",
+    "atr",
+    "volume_lag_1",
+    "rolling_vol_10",
+    "atr_pct",
+    "month_sin",
+    "Volume",
+    "volume_lag_3",
+    "dist_sma_100",
+    "week",
+    "roc_20",
+    "log_return",
+    "volume_lag_20",
+    "bb_pct",
+    "volume_change_ratio",
+    "roc_5",
+    "volume_ratio_20",
+    "return_lag_10"
+  ],
+  "hyperparameters": {
+    "boosting_type": "gbdt",
+    "class_weight": null,
+    "colsample_bytree": 1.0,
+    "importance_type": "split",
+    "learning_rate": 0.1,
+    "max_depth": -1,
+    "min_child_samples": 20,
+    "min_child_weight": 0.001,
+    "min_split_gain": 0.0,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "num_leaves": 31,
+    "objective": null,
+    "random_state": null,
+    "reg_alpha": 0.0,
+    "reg_lambda": 0.0,
+    "subsample": 1.0,
+    "subsample_for_bin": 200000,
+    "subsample_freq": 0
+  },
+  "training_time_s": 0.1473,
+  "metrics": {
+    "validation": {
+      "mae": 0.03080208901549404,
+      "mse": 0.0019274607761475774,
+      "rmse": 0.04390285612745004,
+      "r2": -0.41465227134943894,
+      "mape": 373.4328157141055
+    },
+    "test": {
+      "mae": 0.02657022502329756,
+      "mse": 0.0013188938222585777,
+      "rmse": 0.036316577788367915,
+      "r2": -1.1172487954078223,
+      "mape": 604.858465761377
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ADANIENT_NS\\scaler_params.json",
+  "is_best": false
+}

@@ -1,0 +1,113 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "MARUTI.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:28:07+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "roc_10",
+    "month_sin",
+    "momentum_10",
+    "price_diff",
+    "volume_lag_1",
+    "volume_ratio_10",
+    "day_of_month",
+    "rolling_var_5",
+    "day_of_week_sin",
+    "rolling_var_20",
+    "rolling_var_10",
+    "dist_sma_5",
+    "volume_lag_3",
+    "atr_pct",
+    "rolling_vol_20",
+    "dist_sma_10",
+    "obv",
+    "bb_width",
+    "month_cos",
+    "day_of_week",
+    "bb_pct",
+    "volume_ratio_20",
+    "return_lag_3",
+    "momentum_20",
+    "week",
+    "rolling_vol_5",
+    "rolling_vol_10",
+    "High",
+    "dist_sma_50",
+    "vma_20",
+    "macd",
+    "roc_20",
+    "macd_hist",
+    "volume_ratio_5",
+    "return_lag_1",
+    "volume_lag_10",
+    "Volume",
+    "return_lag_5",
+    "volume_change_ratio",
+    "price_diff_pct"
+  ],
+  "hyperparameters": {
+    "boosting_type": "gbdt",
+    "class_weight": null,
+    "colsample_bytree": 1.0,
+    "importance_type": "split",
+    "learning_rate": 0.1,
+    "max_depth": -1,
+    "min_child_samples": 20,
+    "min_child_weight": 0.001,
+    "min_split_gain": 0.0,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "num_leaves": 31,
+    "objective": null,
+    "random_state": null,
+    "reg_alpha": 0.0,
+    "reg_lambda": 0.0,
+    "subsample": 1.0,
+    "subsample_for_bin": 200000,
+    "subsample_freq": 0
+  },
+  "training_time_s": 0.1586,
+  "metrics": {
+    "validation": {
+      "mae": 0.013222593282615358,
+      "mse": 0.00034923088746882685,
+      "rmse": 0.01868772023198193,
+      "r2": -0.15705831654119606,
+      "mape": 188.75916594411336
+    },
+    "test": {
+      "mae": 0.011957477751508178,
+      "mse": 0.00025262042672958066,
+      "rmse": 0.015894037458417564,
+      "r2": -0.36530010837818483,
+      "mape": 286.8117867731189
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3565,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\MARUTI_NS\\scaler_params.json",
+  "is_best": false
+}

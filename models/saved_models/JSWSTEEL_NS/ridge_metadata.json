@@ -1,0 +1,102 @@
+{
+  "model_name": "ridge",
+  "symbol": "JSWSTEEL.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:32:08+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "High",
+    "return_lag_1",
+    "roc_5",
+    "high_low_range",
+    "return_lag_5",
+    "atr_pct",
+    "volume_ratio_20",
+    "return_lag_10",
+    "Volume",
+    "rolling_var_5",
+    "bb_pct",
+    "week",
+    "month_sin",
+    "rolling_var_20",
+    "volume_lag_10",
+    "volume_momentum",
+    "dist_sma_10",
+    "dist_sma_20",
+    "day_of_week_sin",
+    "rolling_vol_5",
+    "rolling_vol_10",
+    "day_of_month",
+    "open_close_diff",
+    "price_diff",
+    "return_lag_20",
+    "volume_lag_1",
+    "volume_ratio_5",
+    "dist_sma_200",
+    "macd_hist",
+    "obv",
+    "dist_sma_5",
+    "rsi",
+    "bb_width",
+    "rolling_vol_20",
+    "volume_ratio_10",
+    "trading_day_number",
+    "dist_sma_50",
+    "return_lag_3",
+    "volume_lag_5",
+    "momentum_5"
+  ],
+  "hyperparameters": {
+    "alpha": 1.0,
+    "copy_X": true,
+    "fit_intercept": true,
+    "max_iter": null,
+    "positive": false,
+    "random_state": null,
+    "solver": "auto",
+    "tol": 0.0001
+  },
+  "training_time_s": 0.0045,
+  "metrics": {
+    "validation": {
+      "mae": 0.027283237601474216,
+      "mse": 0.0018288963227312109,
+      "rmse": 0.04276559742048754,
+      "r2": -2.6408961969252482,
+      "mape": 405.6899473154478
+    },
+    "test": {
+      "mae": 0.0267505105825336,
+      "mse": 0.0012705672385324393,
+      "rmse": 0.03564501702247369,
+      "r2": -4.294374312361756,
+      "mape": 703.0542862730032
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3562,
+      "val": 763,
+      "test": 763
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-24"
+      ],
+      "val": [
+        "2020-04-28",
+        "2023-05-25"
+      ],
+      "test": [
+        "2023-05-29",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\JSWSTEEL_NS\\scaler_params.json",
+  "is_best": false
+}

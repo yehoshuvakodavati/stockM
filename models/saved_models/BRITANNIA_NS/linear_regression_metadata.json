@@ -3,15 +3,15 @@
   "symbol": "BRITANNIA.NS",
   "model_version": "baseline_v1",
   "stockm_version": "1.0",
-  "trained_at": "2026-07-21T15:59:57+00:00",
+  "trained_at": "2026-08-02T05:36:28+00:00",
   "target_col": "target_next_return",
   "n_features": 40,
   "feature_names": [
     "bb_pct",
     "rolling_var_5",
     "volume_lag_10",
-    "rolling_vol_10",
     "volume_change_ratio",
+    "rolling_vol_10",
     "week",
     "volume_ratio_10",
     "dist_sma_100",
@@ -23,14 +23,14 @@
     "rolling_var_20",
     "day_of_month",
     "Volume",
-    "return_lag_20",
     "volume_ratio_5",
+    "return_lag_20",
+    "return_lag_3",
     "atr_pct",
     "dist_sma_200",
-    "return_lag_3",
     "obv",
-    "rolling_vol_20",
     "roc_20",
+    "rolling_vol_20",
     "dist_sma_50",
     "volume_ratio_20",
     "rolling_vol_5",
@@ -55,21 +55,21 @@
     "positive": false,
     "tol": 1e-06
   },
-  "training_time_s": 0.0046,
+  "training_time_s": 0.0116,
   "metrics": {
     "validation": {
-      "mae": 0.010031164248612641,
-      "mse": 0.00018563606086522864,
-      "rmse": 0.013624832507786238,
-      "r2": -0.06185891164054258,
-      "mape": 150.11856030777878
+      "mae": 0.01003116135898893,
+      "mse": 0.00018563598503854454,
+      "rmse": 0.013624829725121138,
+      "r2": -0.0618583301223663,
+      "mape": 150.11305188511105
     },
     "test": {
-      "mae": 0.01087056891436717,
-      "mse": 0.00023337127183856483,
-      "rmse": 0.015276494095130756,
-      "r2": -0.5008492484619926,
-      "mape": 261.53619539682546
+      "mae": 0.010870570004997485,
+      "mse": 0.00023337104818691844,
+      "rmse": 0.015276486775005517,
+      "r2": -0.500847520445433,
+      "mape": 261.5518902578157
     }
   },
   "dataset": {
@@ -95,5 +95,5 @@
     "split_method": "chronological_gap1"
   },
   "scaler_ref": "C:\\stockM\\data\\prepared\\BRITANNIA_NS\\scaler_params.json",
-  "is_best": true
+  "is_best": false
 }

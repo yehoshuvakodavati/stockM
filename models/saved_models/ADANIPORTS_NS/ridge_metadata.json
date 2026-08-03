@@ -1,0 +1,102 @@
+{
+  "model_name": "ridge",
+  "symbol": "ADANIPORTS.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:34:45+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "dist_sma_100",
+    "roc_10",
+    "atr",
+    "dist_sma_50",
+    "volume_lag_1",
+    "volume_lag_3",
+    "return_lag_5",
+    "volume_change_ratio",
+    "sma_200",
+    "volume_ratio_10",
+    "momentum_10",
+    "dist_sma_5",
+    "week",
+    "open_close_diff",
+    "month_sin",
+    "roc_20",
+    "return_lag_20",
+    "rolling_vol_5",
+    "price_diff_pct",
+    "rolling_var_20",
+    "bb_pct",
+    "high_low_range",
+    "day_of_week_sin",
+    "vma_10",
+    "macd_hist",
+    "macd",
+    "day_of_month",
+    "bb_width",
+    "atr_pct",
+    "return_lag_10",
+    "volume_lag_10",
+    "rsi",
+    "return_lag_3",
+    "obv",
+    "rolling_var_5",
+    "rolling_vol_20",
+    "volume_ratio_20",
+    "momentum_20",
+    "rolling_vol_10",
+    "volume_change"
+  ],
+  "hyperparameters": {
+    "alpha": 1.0,
+    "copy_X": true,
+    "fit_intercept": true,
+    "max_iter": null,
+    "positive": false,
+    "random_state": null,
+    "solver": "auto",
+    "tol": 0.0001
+  },
+  "training_time_s": 0.0039,
+  "metrics": {
+    "validation": {
+      "mae": 0.02131991210262857,
+      "mse": 0.0011618143073187396,
+      "rmse": 0.034085397273887534,
+      "r2": -0.7429337830936538,
+      "mape": 279.53229670642605
+    },
+    "test": {
+      "mae": 0.025233532868770434,
+      "mse": 0.0014949504474869727,
+      "rmse": 0.038664589063986864,
+      "r2": -2.0316691908825284,
+      "mape": 487.6086449543654
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3061,
+      "val": 656,
+      "test": 656
+    },
+    "date_ranges": {
+      "train": [
+        "2008-09-16",
+        "2021-03-03"
+      ],
+      "val": [
+        "2021-03-05",
+        "2023-10-30"
+      ],
+      "test": [
+        "2023-11-01",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ADANIPORTS_NS\\scaler_params.json",
+  "is_best": false
+}

@@ -1,0 +1,102 @@
+{
+  "model_name": "ridge",
+  "symbol": "TATACONSUM.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:37:58+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "volume_lag_3",
+    "vma_20",
+    "vma_5",
+    "bb_upper",
+    "return_lag_3",
+    "macd_signal",
+    "dist_sma_10",
+    "volume_ratio_20",
+    "month_cos",
+    "return_lag_20",
+    "atr",
+    "rolling_vol_10",
+    "roc_10",
+    "return_lag_10",
+    "obv",
+    "volume_momentum",
+    "bb_pct",
+    "rolling_vol_20",
+    "momentum_10",
+    "momentum_20",
+    "rolling_var_5",
+    "dist_sma_20",
+    "volume_ratio_5",
+    "day_of_week_sin",
+    "dist_sma_200",
+    "high_low_range",
+    "volume_lag_20",
+    "return_lag_1",
+    "volume_lag_5",
+    "return_lag_5",
+    "dist_sma_100",
+    "rolling_var_10",
+    "day_of_month",
+    "atr_pct",
+    "rolling_var_20",
+    "volume_lag_10",
+    "rsi",
+    "price_diff",
+    "price_diff_pct",
+    "rolling_vol_5"
+  ],
+  "hyperparameters": {
+    "alpha": 1.0,
+    "copy_X": true,
+    "fit_intercept": true,
+    "max_iter": null,
+    "positive": false,
+    "random_state": null,
+    "solver": "auto",
+    "tol": 0.0001
+  },
+  "training_time_s": 0.0045,
+  "metrics": {
+    "validation": {
+      "mae": 0.018337108113820364,
+      "mse": 0.0005206274367469487,
+      "rmse": 0.022817261815278114,
+      "r2": -0.9643543785289226,
+      "mape": 430.11074392766346
+    },
+    "test": {
+      "mae": 0.027020568138584538,
+      "mse": 0.0010181527421910612,
+      "rmse": 0.03190850579690408,
+      "r2": -3.921050050763892,
+      "mape": 762.3939790953652
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\TATACONSUM_NS\\scaler_params.json",
+  "is_best": false
+}

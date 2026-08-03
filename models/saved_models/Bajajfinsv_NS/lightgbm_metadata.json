@@ -1,0 +1,113 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "Bajajfinsv.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:27:21+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "rolling_vol_20",
+    "high_low_range",
+    "volume_lag_10",
+    "roc_10",
+    "day_of_week",
+    "return_lag_3",
+    "volume_lag_3",
+    "atr",
+    "sma_200",
+    "volume_ratio_20",
+    "month_sin",
+    "volume_ratio_10",
+    "dist_ema_10",
+    "return_lag_20",
+    "dist_sma_10",
+    "bb_upper",
+    "volume_lag_1",
+    "dist_sma_200",
+    "rolling_vol_5",
+    "dist_ema_20",
+    "rolling_var_10",
+    "macd",
+    "roc_20",
+    "bb_width",
+    "price_diff_pct",
+    "return_lag_10",
+    "log_return",
+    "dist_sma_100",
+    "atr_pct",
+    "roc_5",
+    "price_diff",
+    "rolling_var_5",
+    "vma_5",
+    "volume_change_ratio",
+    "volume_change",
+    "obv",
+    "open_close_diff",
+    "volume_momentum",
+    "rolling_var_20",
+    "momentum_20"
+  ],
+  "hyperparameters": {
+    "boosting_type": "gbdt",
+    "class_weight": null,
+    "colsample_bytree": 1.0,
+    "importance_type": "split",
+    "learning_rate": 0.1,
+    "max_depth": -1,
+    "min_child_samples": 20,
+    "min_child_weight": 0.001,
+    "min_split_gain": 0.0,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "num_leaves": 31,
+    "objective": null,
+    "random_state": null,
+    "reg_alpha": 0.0,
+    "reg_lambda": 0.0,
+    "subsample": 1.0,
+    "subsample_for_bin": 200000,
+    "subsample_freq": 0
+  },
+  "training_time_s": 0.0929,
+  "metrics": {
+    "validation": {
+      "mae": 0.01904463671566568,
+      "mse": 0.0006504324460696751,
+      "rmse": 0.02550357712301698,
+      "r2": -0.3521726516244268,
+      "mape": 316.86442819692627
+    },
+    "test": {
+      "mae": 0.014536769695297068,
+      "mse": 0.0003804478842308691,
+      "rmse": 0.019505073294680774,
+      "r2": -0.7710142915322034,
+      "mape": 297.6161340038714
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3559,
+      "val": 762,
+      "test": 762
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-19",
+        "2020-05-04"
+      ],
+      "val": [
+        "2020-05-06",
+        "2023-05-26"
+      ],
+      "test": [
+        "2023-05-30",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\Bajajfinsv_NS\\scaler_params.json",
+  "is_best": false
+}

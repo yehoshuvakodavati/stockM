@@ -32,7 +32,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from api.config import settings
+from api.config import configure_logging, get_settings
 
 logger = logging.getLogger("stockm.api")
 
@@ -41,24 +41,28 @@ logger = logging.getLogger("stockm.api")
 async def lifespan(app: FastAPI):
     """Application startup + shutdown lifecycle.
 
-    STARTUP: load the Model Registry (every deployed model's metadata, and the
-    active model per symbol). This is the expensive step — done ONCE, not per
-    request. Stored on ``app.state.registry`` so dependency injection can hand
-    it to routes without reloading.
+    STARTUP: configure logging, then load the Model Registry (every deployed
+    model's metadata, and the active model per symbol). Both done ONCE, not per
+    request. The registry is stored on ``app.state.registry`` so dependency
+    injection can hand it to routes without reloading.
 
     SHUTDOWN: release resources. For v1 the registry holds joblib/torch objects
     that Python GC reclaims; explicit teardown is a hook for future connection
     pools / GPU contexts.
     """
+    settings = get_settings()
+    configure_logging(settings)  # structured logging per env profile
+
     # Lazy import: the registry imports torch/joblib; keep it out of the module
     # top level so importing `api.main` (e.g. for tests) doesn't drag the heavy
     # ML stack in unless the server actually starts.
     from api.model_registry import ModelRegistry
 
-    logger.info("API starting — loading model registry...")
+    logger.info("API starting — env=%s — loading model registry...", settings.environment)
     registry = ModelRegistry()
     registry.load_all()  # discover + load all deployed models (Lesson 4)
     app.state.registry = registry
+    app.state.settings = settings  # share settings with routes/middleware via DI
     logger.info(
         "model registry ready: %d symbols loaded", registry.count_symbols(),
     )
@@ -79,13 +83,13 @@ def create_app() -> FastAPI:
     wiring point — add routers and middleware here.
     """
     app = FastAPI(
-        title=settings.api_title,
+        title=get_settings().api_title,
         description=(
             "StockM Prediction API — serves AI predictions from trained ML/DL "
             "models. Submit a symbol to get a BUY/HOLD/SELL signal with the "
             "predicted return and model provenance."
         ),
-        version=settings.api_version,
+        version=get_settings().api_version,
         lifespan=lifespan,  # startup loads the registry; shutdown releases it
     )
 

@@ -3,7 +3,7 @@
   "symbol": "NESTLEIND.NS",
   "model_version": "baseline_v1",
   "stockm_version": "1.0",
-  "trained_at": "2026-07-21T15:56:04+00:00",
+  "trained_at": "2026-08-02T05:30:14+00:00",
   "target_col": "target_next_return",
   "n_features": 40,
   "feature_names": [
@@ -14,28 +14,27 @@
     "week",
     "month_sin",
     "volume_ratio_5",
-    "volume_momentum",
     "roc_5",
+    "volume_momentum",
     "month_cos",
+    "roc_20",
     "dist_sma_50",
     "price_diff",
-    "roc_20",
     "bb_pct",
     "open_close_diff",
     "roc_10",
     "volume_lag_5",
     "return_lag_1",
+    "macd_hist",
     "pct_change_1d",
     "vma_10",
-    "macd_hist",
+    "rolling_var_5",
     "volume_lag_10",
     "trading_day_number",
-    "rolling_var_5",
     "dist_sma_100",
     "Volume",
-    "rolling_vol_20",
     "dist_sma_20",
-    "return_lag_20",
+    "rolling_vol_20",
     "volume_lag_1",
     "dist_sma_200",
     "macd_signal",
@@ -46,7 +45,8 @@
     "rolling_vol_5",
     "volume_change",
     "volume_change_ratio",
-    "dist_ema_20"
+    "dist_ema_20",
+    "return_lag_20"
   ],
   "hyperparameters": {
     "ccp_alpha": 0.0,
@@ -62,21 +62,21 @@
     "random_state": null,
     "splitter": "best"
   },
-  "training_time_s": 0.1498,
+  "training_time_s": 0.2791,
   "metrics": {
     "validation": {
-      "mae": 0.014622537567610427,
-      "mse": 0.0003658957323640737,
-      "rmse": 0.019128401197279238,
-      "r2": -1.7043347337483499,
-      "mape": 497.59205803291076
+      "mae": 0.014628511987958356,
+      "mse": 0.0003654792873848546,
+      "rmse": 0.01911751258361962,
+      "r2": -1.701256938810542,
+      "mape": 467.8527644602356
     },
     "test": {
-      "mae": 0.01710114104835961,
-      "mse": 0.0004875154444277917,
-      "rmse": 0.022079751910467467,
-      "r2": -2.210228365467575,
-      "mape": 561.2428875526365
+      "mae": 0.01699460057668518,
+      "mse": 0.0004903407633351116,
+      "rmse": 0.022143639342599303,
+      "r2": -2.2288322943043446,
+      "mape": 580.6429734611717
     }
   },
   "dataset": {

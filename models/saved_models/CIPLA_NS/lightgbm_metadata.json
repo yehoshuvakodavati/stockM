@@ -1,0 +1,113 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "CIPLA.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:34:45+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "dist_sma_100",
+    "high_low_range",
+    "roc_10",
+    "momentum_10",
+    "macd_signal",
+    "vma_5",
+    "dist_sma_5",
+    "return_lag_10",
+    "volume_lag_5",
+    "roc_20",
+    "volume_ratio_20",
+    "volume_lag_20",
+    "open_close_diff",
+    "dist_sma_200",
+    "price_diff",
+    "High",
+    "volume_lag_3",
+    "rolling_var_10",
+    "volume_change_ratio",
+    "week",
+    "momentum_5",
+    "month_cos",
+    "month_sin",
+    "rolling_vol_10",
+    "price_diff_pct",
+    "return_lag_1",
+    "rolling_vol_5",
+    "volume_ratio_5",
+    "volume_change",
+    "rolling_var_20",
+    "volume_lag_10",
+    "bb_pct",
+    "macd_hist",
+    "atr_pct",
+    "return_lag_3",
+    "Volume",
+    "volume_lag_1",
+    "atr",
+    "return_lag_5",
+    "roc_5"
+  ],
+  "hyperparameters": {
+    "boosting_type": "gbdt",
+    "class_weight": null,
+    "colsample_bytree": 1.0,
+    "importance_type": "split",
+    "learning_rate": 0.1,
+    "max_depth": -1,
+    "min_child_samples": 20,
+    "min_child_weight": 0.001,
+    "min_split_gain": 0.0,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "num_leaves": 31,
+    "objective": null,
+    "random_state": null,
+    "reg_alpha": 0.0,
+    "reg_lambda": 0.0,
+    "subsample": 1.0,
+    "subsample_for_bin": 200000,
+    "subsample_freq": 0
+  },
+  "training_time_s": 0.1265,
+  "metrics": {
+    "validation": {
+      "mae": 0.01328415303776505,
+      "mse": 0.00031905896984225186,
+      "rmse": 0.01786222186185839,
+      "r2": -0.23501718458187404,
+      "mape": 229.24968182524665
+    },
+    "test": {
+      "mae": 0.011756683428596466,
+      "mse": 0.00026157379635106617,
+      "rmse": 0.016173243223023208,
+      "r2": -0.21309597397453484,
+      "mape": 232.12507699566922
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\CIPLA_NS\\scaler_params.json",
+  "is_best": false
+}

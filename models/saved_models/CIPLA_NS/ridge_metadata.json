@@ -1,0 +1,102 @@
+{
+  "model_name": "ridge",
+  "symbol": "CIPLA.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:34:30+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "dist_sma_100",
+    "high_low_range",
+    "roc_10",
+    "momentum_10",
+    "macd_signal",
+    "vma_5",
+    "dist_sma_5",
+    "return_lag_10",
+    "volume_lag_5",
+    "roc_20",
+    "volume_ratio_20",
+    "volume_lag_20",
+    "open_close_diff",
+    "dist_sma_200",
+    "price_diff",
+    "High",
+    "volume_lag_3",
+    "rolling_var_10",
+    "volume_change_ratio",
+    "week",
+    "momentum_5",
+    "month_cos",
+    "month_sin",
+    "rolling_vol_10",
+    "price_diff_pct",
+    "return_lag_1",
+    "rolling_vol_5",
+    "volume_ratio_5",
+    "volume_change",
+    "rolling_var_20",
+    "volume_lag_10",
+    "bb_pct",
+    "macd_hist",
+    "atr_pct",
+    "return_lag_3",
+    "Volume",
+    "volume_lag_1",
+    "atr",
+    "return_lag_5",
+    "roc_5"
+  ],
+  "hyperparameters": {
+    "alpha": 1.0,
+    "copy_X": true,
+    "fit_intercept": true,
+    "max_iter": null,
+    "positive": false,
+    "random_state": null,
+    "solver": "auto",
+    "tol": 0.0001
+  },
+  "training_time_s": 0.008,
+  "metrics": {
+    "validation": {
+      "mae": 0.012363849047335625,
+      "mse": 0.00029892487304645056,
+      "rmse": 0.01728944397736522,
+      "r2": -0.15708188769571052,
+      "mape": 166.68216039131528
+    },
+    "test": {
+      "mae": 0.011975776973598383,
+      "mse": 0.0002726912887840712,
+      "rmse": 0.01651336697297287,
+      "r2": -0.2646553637119913,
+      "mape": 246.11142676495118
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\CIPLA_NS\\scaler_params.json",
+  "is_best": false
+}

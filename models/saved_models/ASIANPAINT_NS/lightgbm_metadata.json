@@ -1,0 +1,113 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "ASIANPAINT.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:28:31+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "rolling_var_10",
+    "dist_sma_50",
+    "vma_20",
+    "price_diff",
+    "dist_sma_20",
+    "return_lag_10",
+    "high_low_range",
+    "rolling_var_20",
+    "bb_pct",
+    "volume_lag_3",
+    "vma_10",
+    "day_of_week_sin",
+    "volume_ratio_5",
+    "volume_ratio_20",
+    "volume_change_ratio",
+    "obv",
+    "open_close_diff",
+    "roc_10",
+    "dist_sma_5",
+    "macd_hist",
+    "bb_width",
+    "atr",
+    "volume_ratio_10",
+    "day_of_month",
+    "return_lag_5",
+    "month_sin",
+    "return_lag_1",
+    "volume_lag_20",
+    "rolling_vol_10",
+    "log_return",
+    "momentum_5",
+    "vma_5",
+    "dist_sma_200",
+    "roc_20",
+    "volume_lag_10",
+    "return_lag_3",
+    "volume_lag_5",
+    "return_lag_20",
+    "Volume",
+    "rsi"
+  ],
+  "hyperparameters": {
+    "boosting_type": "gbdt",
+    "class_weight": null,
+    "colsample_bytree": 1.0,
+    "importance_type": "split",
+    "learning_rate": 0.1,
+    "max_depth": -1,
+    "min_child_samples": 20,
+    "min_child_weight": 0.001,
+    "min_split_gain": 0.0,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "num_leaves": 31,
+    "objective": null,
+    "random_state": null,
+    "reg_alpha": 0.0,
+    "reg_lambda": 0.0,
+    "subsample": 1.0,
+    "subsample_for_bin": 200000,
+    "subsample_freq": 0
+  },
+  "training_time_s": 0.1679,
+  "metrics": {
+    "validation": {
+      "mae": 0.013425377853080595,
+      "mse": 0.0003298133591208834,
+      "rmse": 0.01816076427689329,
+      "r2": -0.19801045877098544,
+      "mape": 192.01384172219517
+    },
+    "test": {
+      "mae": 0.010716772238675142,
+      "mse": 0.00021972032659185167,
+      "rmse": 0.014822966187367887,
+      "r2": -0.24909767637460578,
+      "mape": 193.2236824512277
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ASIANPAINT_NS\\scaler_params.json",
+  "is_best": false
+}

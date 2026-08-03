@@ -3,7 +3,7 @@
   "symbol": "NESTLEIND.NS",
   "model_version": "baseline_v1",
   "stockm_version": "1.0",
-  "trained_at": "2026-07-21T15:56:13+00:00",
+  "trained_at": "2026-08-02T05:30:32+00:00",
   "target_col": "target_next_return",
   "n_features": 40,
   "feature_names": [
@@ -14,28 +14,27 @@
     "week",
     "month_sin",
     "volume_ratio_5",
-    "volume_momentum",
     "roc_5",
+    "volume_momentum",
     "month_cos",
+    "roc_20",
     "dist_sma_50",
     "price_diff",
-    "roc_20",
     "bb_pct",
     "open_close_diff",
     "roc_10",
     "volume_lag_5",
     "return_lag_1",
+    "macd_hist",
     "pct_change_1d",
     "vma_10",
-    "macd_hist",
+    "rolling_var_5",
     "volume_lag_10",
     "trading_day_number",
-    "rolling_var_5",
     "dist_sma_100",
     "Volume",
-    "rolling_vol_20",
     "dist_sma_20",
-    "return_lag_20",
+    "rolling_vol_20",
     "volume_lag_1",
     "dist_sma_200",
     "macd_signal",
@@ -46,7 +45,8 @@
     "rolling_vol_5",
     "volume_change",
     "volume_change_ratio",
-    "dist_ema_20"
+    "dist_ema_20",
+    "return_lag_20"
   ],
   "hyperparameters": {
     "categorical_features": "from_dtype",
@@ -71,21 +71,21 @@
     "verbose": 0,
     "warm_start": false
   },
-  "training_time_s": 0.1912,
+  "training_time_s": 0.5561,
   "metrics": {
     "validation": {
-      "mae": 0.009722341450886279,
-      "mse": 0.00016168870366926075,
-      "rmse": 0.012715687306208059,
-      "r2": -0.19504093300668268,
-      "mape": 221.99690001896997
+      "mae": 0.009767499775749294,
+      "mse": 0.00016156992617671182,
+      "rmse": 0.01271101593802446,
+      "r2": -0.19416311471673264,
+      "mape": 220.12790772294005
     },
     "test": {
-      "mae": 0.010468594834088445,
-      "mse": 0.00020145474108097556,
-      "rmse": 0.01419347529962185,
-      "r2": -0.3265543308789718,
-      "mape": 223.78649315463258
+      "mae": 0.010538805527331717,
+      "mse": 0.00020209782816259345,
+      "rmse": 0.014216111569715308,
+      "r2": -0.3307887962277958,
+      "mape": 220.6712828500756
     }
   },
   "dataset": {

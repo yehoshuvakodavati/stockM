@@ -3,7 +3,7 @@
   "symbol": "INFY.NS",
   "model_version": "baseline_v1",
   "stockm_version": "1.0",
-  "trained_at": "2026-07-21T15:51:46+00:00",
+  "trained_at": "2026-08-02T05:24:42+00:00",
   "target_col": "target_next_return",
   "n_features": 40,
   "feature_names": [
@@ -13,35 +13,35 @@
     "obv",
     "High",
     "volume_lag_1",
+    "return_lag_3",
     "vma_20",
     "rolling_vol_20",
-    "return_lag_3",
+    "rolling_vol_10",
     "momentum_5",
     "macd_signal",
     "volume_momentum",
-    "rolling_vol_10",
     "volume_lag_10",
-    "dist_sma_200",
     "roc_10",
+    "dist_sma_200",
     "volume_ratio_10",
-    "return_lag_1",
     "volume_lag_20",
+    "return_lag_1",
     "price_diff",
     "volume_change_ratio",
     "bb_pct",
-    "rsi",
     "momentum_20",
+    "rsi",
     "rolling_var_5",
     "volume_lag_3",
     "month_sin",
     "volume_change",
     "roc_5",
-    "rolling_vol_5",
     "volume_lag_5",
+    "rolling_vol_5",
     "vma_10",
     "volume_ratio_5",
-    "dist_sma_10",
     "macd",
+    "dist_sma_10",
     "dist_sma_50",
     "dist_sma_20",
     "dist_sma_5",
@@ -55,21 +55,21 @@
     "positive": false,
     "tol": 1e-06
   },
-  "training_time_s": 0.0051,
+  "training_time_s": 0.006,
   "metrics": {
     "validation": {
-      "mae": 0.013128439509909027,
-      "mse": 0.00031934713567263723,
-      "rmse": 0.017870286390336255,
-      "r2": -0.1670443526128933,
-      "mape": 170.3284156955666
+      "mae": 0.013128440341336384,
+      "mse": 0.00031934707913307313,
+      "rmse": 0.017870284808392763,
+      "r2": -0.16704418863870263,
+      "mape": 170.33518625147025
     },
     "test": {
-      "mae": 0.012487701068409848,
-      "mse": 0.0003106419015452292,
-      "rmse": 0.01762503621401185,
-      "r2": -0.20142469118232853,
-      "mape": 207.69624538689237
+      "mae": 0.012487692304723434,
+      "mse": 0.00031064174987318856,
+      "rmse": 0.01762503191126724,
+      "r2": -0.20142429649022509,
+      "mape": 207.70019535718976
     }
   },
   "dataset": {
@@ -95,5 +95,5 @@
     "split_method": "chronological_gap1"
   },
   "scaler_ref": "C:\\stockM\\data\\prepared\\INFY_NS\\scaler_params.json",
-  "is_best": true
+  "is_best": false
 }

@@ -1,0 +1,102 @@
+{
+  "model_name": "ridge",
+  "symbol": "BRITANNIA.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:36:28+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "bb_pct",
+    "rolling_var_5",
+    "volume_lag_10",
+    "volume_change_ratio",
+    "rolling_vol_10",
+    "week",
+    "volume_ratio_10",
+    "dist_sma_100",
+    "volume_lag_1",
+    "volume_lag_20",
+    "open_close_diff",
+    "vma_5",
+    "macd_signal",
+    "rolling_var_20",
+    "day_of_month",
+    "Volume",
+    "volume_ratio_5",
+    "return_lag_20",
+    "return_lag_3",
+    "atr_pct",
+    "dist_sma_200",
+    "obv",
+    "roc_20",
+    "rolling_vol_20",
+    "dist_sma_50",
+    "volume_ratio_20",
+    "rolling_vol_5",
+    "return_lag_1",
+    "volume_change",
+    "rolling_var_10",
+    "atr",
+    "price_diff_pct",
+    "rsi",
+    "momentum_20",
+    "volume_momentum",
+    "high_low_range",
+    "dist_sma_5",
+    "macd",
+    "roc_10",
+    "momentum_5"
+  ],
+  "hyperparameters": {
+    "alpha": 1.0,
+    "copy_X": true,
+    "fit_intercept": true,
+    "max_iter": null,
+    "positive": false,
+    "random_state": null,
+    "solver": "auto",
+    "tol": 0.0001
+  },
+  "training_time_s": 0.006,
+  "metrics": {
+    "validation": {
+      "mae": 0.010028905774896646,
+      "mse": 0.00018557350552989626,
+      "rmse": 0.013622536677502331,
+      "r2": -0.061500940434659146,
+      "mape": 149.90254391247447
+    },
+    "test": {
+      "mae": 0.010858279591603142,
+      "mse": 0.00023276063314966607,
+      "rmse": 0.015256494785817155,
+      "r2": -0.4969218411367937,
+      "mape": 260.7249255427153
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3560,
+      "val": 763,
+      "test": 763
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-24"
+      ],
+      "val": [
+        "2020-04-28",
+        "2023-05-25"
+      ],
+      "test": [
+        "2023-05-29",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\BRITANNIA_NS\\scaler_params.json",
+  "is_best": true
+}

@@ -1,0 +1,102 @@
+{
+  "model_name": "ridge",
+  "symbol": "Bajajfinsv.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:27:07+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "rolling_vol_20",
+    "high_low_range",
+    "volume_lag_10",
+    "roc_10",
+    "day_of_week",
+    "return_lag_3",
+    "volume_lag_3",
+    "atr",
+    "sma_200",
+    "volume_ratio_20",
+    "month_sin",
+    "volume_ratio_10",
+    "dist_ema_10",
+    "return_lag_20",
+    "dist_sma_10",
+    "bb_upper",
+    "volume_lag_1",
+    "dist_sma_200",
+    "rolling_vol_5",
+    "dist_ema_20",
+    "rolling_var_10",
+    "macd",
+    "roc_20",
+    "bb_width",
+    "price_diff_pct",
+    "return_lag_10",
+    "log_return",
+    "dist_sma_100",
+    "atr_pct",
+    "roc_5",
+    "price_diff",
+    "rolling_var_5",
+    "vma_5",
+    "volume_change_ratio",
+    "volume_change",
+    "obv",
+    "open_close_diff",
+    "volume_momentum",
+    "rolling_var_20",
+    "momentum_20"
+  ],
+  "hyperparameters": {
+    "alpha": 1.0,
+    "copy_X": true,
+    "fit_intercept": true,
+    "max_iter": null,
+    "positive": false,
+    "random_state": null,
+    "solver": "auto",
+    "tol": 0.0001
+  },
+  "training_time_s": 0.0032,
+  "metrics": {
+    "validation": {
+      "mae": 0.01725080653971338,
+      "mse": 0.0005292336825015797,
+      "rmse": 0.02300507949348534,
+      "r2": -0.10021465891088632,
+      "mape": 224.1610954336231
+    },
+    "test": {
+      "mae": 0.01205739616228451,
+      "mse": 0.00026309379468645254,
+      "rmse": 0.016220166296510418,
+      "r2": -0.22472193884089586,
+      "mape": 216.40441759093795
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3559,
+      "val": 762,
+      "test": 762
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-19",
+        "2020-05-04"
+      ],
+      "val": [
+        "2020-05-06",
+        "2023-05-26"
+      ],
+      "test": [
+        "2023-05-30",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\Bajajfinsv_NS\\scaler_params.json",
+  "is_best": false
+}

@@ -3,18 +3,18 @@
   "symbol": "ASIANPAINT.NS",
   "model_version": "baseline_v1",
   "stockm_version": "1.0",
-  "trained_at": "2026-07-21T15:54:59+00:00",
+  "trained_at": "2026-08-02T05:28:31+00:00",
   "target_col": "target_next_return",
   "n_features": 40,
   "feature_names": [
     "rolling_var_10",
     "dist_sma_50",
     "vma_20",
-    "dist_sma_20",
     "price_diff",
+    "dist_sma_20",
+    "return_lag_10",
     "high_low_range",
     "rolling_var_20",
-    "return_lag_10",
     "bb_pct",
     "volume_lag_3",
     "vma_10",
@@ -26,11 +26,12 @@
     "open_close_diff",
     "roc_10",
     "dist_sma_5",
-    "bb_width",
     "macd_hist",
+    "bb_width",
     "atr",
     "volume_ratio_10",
     "day_of_month",
+    "return_lag_5",
     "month_sin",
     "return_lag_1",
     "volume_lag_20",
@@ -45,8 +46,7 @@
     "volume_lag_5",
     "return_lag_20",
     "Volume",
-    "rsi",
-    "return_lag_5"
+    "rsi"
   ],
   "hyperparameters": {
     "categorical_features": "from_dtype",
@@ -71,21 +71,21 @@
     "verbose": 0,
     "warm_start": false
   },
-  "training_time_s": 0.2172,
+  "training_time_s": 0.448,
   "metrics": {
     "validation": {
-      "mae": 0.012978849994070837,
-      "mse": 0.0003148896345742807,
-      "rmse": 0.017745129883274473,
-      "r2": -0.14380192193344654,
-      "mape": 163.17288391359466
+      "mae": 0.012928449814419665,
+      "mse": 0.00031483233817272536,
+      "rmse": 0.017743515383731753,
+      "r2": -0.14359356120564915,
+      "mape": 160.3443122240626
     },
     "test": {
-      "mae": 0.010035612369975817,
-      "mse": 0.00019673491206416674,
-      "rmse": 0.014026222301965941,
-      "r2": -0.11842627997034261,
-      "mape": 179.78214786278585
+      "mae": 0.01037164613525825,
+      "mse": 0.00020324954620740547,
+      "rmse": 0.014256561514173236,
+      "r2": -0.15546221794701398,
+      "mape": 195.01605675933652
     }
   },
   "dataset": {

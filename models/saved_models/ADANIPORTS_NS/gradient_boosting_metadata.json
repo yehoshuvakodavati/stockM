@@ -3,7 +3,7 @@
   "symbol": "ADANIPORTS.NS",
   "model_version": "baseline_v1",
   "stockm_version": "1.0",
-  "trained_at": "2026-07-21T15:59:08+00:00",
+  "trained_at": "2026-08-02T05:34:59+00:00",
   "target_col": "target_next_return",
   "n_features": 40,
   "feature_names": [
@@ -13,11 +13,11 @@
     "dist_sma_50",
     "volume_lag_1",
     "volume_lag_3",
-    "momentum_10",
+    "return_lag_5",
     "volume_change_ratio",
     "sma_200",
     "volume_ratio_10",
-    "return_lag_5",
+    "momentum_10",
     "dist_sma_5",
     "week",
     "open_close_diff",
@@ -25,7 +25,7 @@
     "roc_20",
     "return_lag_20",
     "rolling_vol_5",
-    "pct_change_1d",
+    "price_diff_pct",
     "rolling_var_20",
     "bb_pct",
     "high_low_range",
@@ -35,18 +35,18 @@
     "macd",
     "day_of_month",
     "bb_width",
-    "volume_lag_10",
     "atr_pct",
     "return_lag_10",
-    "obv",
-    "momentum_20",
+    "volume_lag_10",
     "rsi",
-    "volume_change",
-    "volume_ratio_20",
     "return_lag_3",
-    "vma_20",
+    "obv",
+    "rolling_var_5",
     "rolling_vol_20",
-    "volume_lag_5"
+    "volume_ratio_20",
+    "momentum_20",
+    "rolling_vol_10",
+    "volume_change"
   ],
   "hyperparameters": {
     "categorical_features": "from_dtype",
@@ -71,21 +71,21 @@
     "verbose": 0,
     "warm_start": false
   },
-  "training_time_s": 0.341,
+  "training_time_s": 0.4625,
   "metrics": {
     "validation": {
-      "mae": 0.019826643651438287,
-      "mse": 0.0008225732381177409,
-      "rmse": 0.028680537619049977,
-      "r2": -0.23401024514152713,
-      "mape": 329.52779749699744
+      "mae": 0.01996682379951925,
+      "mse": 0.0008507771439180743,
+      "rmse": 0.029168084337475343,
+      "r2": -0.27632119580356385,
+      "mape": 331.6537073106612
     },
     "test": {
-      "mae": 0.015589228648730155,
-      "mse": 0.000555844998005898,
-      "rmse": 0.02357636524161216,
-      "r2": -0.12721989017286472,
-      "mape": 201.61895493581113
+      "mae": 0.015073493743572006,
+      "mse": 0.0005216329314386434,
+      "rmse": 0.022839284827652625,
+      "r2": -0.05784007078673037,
+      "mape": 210.8234377855792
     }
   },
   "dataset": {

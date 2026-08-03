@@ -1,0 +1,113 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "ADANIPORTS.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:35:00+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "dist_sma_100",
+    "roc_10",
+    "atr",
+    "dist_sma_50",
+    "volume_lag_1",
+    "volume_lag_3",
+    "return_lag_5",
+    "volume_change_ratio",
+    "sma_200",
+    "volume_ratio_10",
+    "momentum_10",
+    "dist_sma_5",
+    "week",
+    "open_close_diff",
+    "month_sin",
+    "roc_20",
+    "return_lag_20",
+    "rolling_vol_5",
+    "price_diff_pct",
+    "rolling_var_20",
+    "bb_pct",
+    "high_low_range",
+    "day_of_week_sin",
+    "vma_10",
+    "macd_hist",
+    "macd",
+    "day_of_month",
+    "bb_width",
+    "atr_pct",
+    "return_lag_10",
+    "volume_lag_10",
+    "rsi",
+    "return_lag_3",
+    "obv",
+    "rolling_var_5",
+    "rolling_vol_20",
+    "volume_ratio_20",
+    "momentum_20",
+    "rolling_vol_10",
+    "volume_change"
+  ],
+  "hyperparameters": {
+    "boosting_type": "gbdt",
+    "class_weight": null,
+    "colsample_bytree": 1.0,
+    "importance_type": "split",
+    "learning_rate": 0.1,
+    "max_depth": -1,
+    "min_child_samples": 20,
+    "min_child_weight": 0.001,
+    "min_split_gain": 0.0,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "num_leaves": 31,
+    "objective": null,
+    "random_state": null,
+    "reg_alpha": 0.0,
+    "reg_lambda": 0.0,
+    "subsample": 1.0,
+    "subsample_for_bin": 200000,
+    "subsample_freq": 0
+  },
+  "training_time_s": 0.1915,
+  "metrics": {
+    "validation": {
+      "mae": 0.019994375668256924,
+      "mse": 0.0008318847355547437,
+      "rmse": 0.028842412096680536,
+      "r2": -0.24797913066198163,
+      "mape": 341.98719629429723
+    },
+    "test": {
+      "mae": 0.0163350826145698,
+      "mse": 0.0005577913980217385,
+      "rmse": 0.02361760779633997,
+      "r2": -0.13116725652308547,
+      "mape": 252.97072146439893
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3061,
+      "val": 656,
+      "test": 656
+    },
+    "date_ranges": {
+      "train": [
+        "2008-09-16",
+        "2021-03-03"
+      ],
+      "val": [
+        "2021-03-05",
+        "2023-10-30"
+      ],
+      "test": [
+        "2023-11-01",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ADANIPORTS_NS\\scaler_params.json",
+  "is_best": false
+}

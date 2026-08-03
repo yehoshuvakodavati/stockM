@@ -1,0 +1,102 @@
+{
+  "model_name": "ridge",
+  "symbol": "SBILIFE.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:38:48+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "dist_sma_200",
+    "month_cos",
+    "volume_ratio_10",
+    "macd",
+    "rsi",
+    "momentum_10",
+    "volume_lag_5",
+    "week",
+    "return_lag_5",
+    "volume_lag_10",
+    "dist_sma_10",
+    "rolling_vol_10",
+    "high_low_range",
+    "return_lag_3",
+    "volume_lag_3",
+    "rolling_vol_20",
+    "obv",
+    "day_of_week",
+    "rolling_vol_5",
+    "bb_upper",
+    "month_sin",
+    "vma_10",
+    "momentum_5",
+    "rolling_var_5",
+    "day_of_month",
+    "macd_signal",
+    "atr",
+    "dist_sma_20",
+    "return_lag_10",
+    "bb_pct",
+    "volume_momentum",
+    "macd_hist",
+    "volume_lag_20",
+    "vma_5",
+    "volume_ratio_20",
+    "atr_pct",
+    "volume_change_ratio",
+    "return_lag_20",
+    "dist_sma_5",
+    "price_diff"
+  ],
+  "hyperparameters": {
+    "alpha": 1.0,
+    "copy_X": true,
+    "fit_intercept": true,
+    "max_iter": null,
+    "positive": false,
+    "random_state": null,
+    "solver": "auto",
+    "tol": 0.0001
+  },
+  "training_time_s": 0.003,
+  "metrics": {
+    "validation": {
+      "mae": 0.014051416208394306,
+      "mse": 0.00033131359738587245,
+      "rmse": 0.018202021793907192,
+      "r2": -0.4252132120323886,
+      "mape": 252.5329283450317
+    },
+    "test": {
+      "mae": 0.018972522120618,
+      "mse": 0.0005047158096709407,
+      "rmse": 0.022465881012569723,
+      "r2": -2.368335217088514,
+      "mape": 669.8595040586092
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 1370,
+      "val": 294,
+      "test": 294
+    },
+    "date_ranges": {
+      "train": [
+        "2018-07-19",
+        "2024-02-07"
+      ],
+      "val": [
+        "2024-02-09",
+        "2025-04-23"
+      ],
+      "test": [
+        "2025-04-25",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\SBILIFE_NS\\scaler_params.json",
+  "is_best": false
+}

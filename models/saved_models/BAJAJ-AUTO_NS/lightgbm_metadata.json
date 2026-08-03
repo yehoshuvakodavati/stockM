@@ -1,0 +1,113 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "BAJAJ-AUTO.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:36:28+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "dist_sma_100",
+    "volume_lag_10",
+    "rolling_vol_5",
+    "roc_5",
+    "day_of_month",
+    "dist_sma_10",
+    "volume_momentum",
+    "macd_hist",
+    "momentum_10",
+    "month_cos",
+    "day_of_week_sin",
+    "rolling_var_10",
+    "day_of_week",
+    "trading_day_number",
+    "return_lag_1",
+    "volume_lag_1",
+    "volume_change",
+    "high_low_range",
+    "rolling_vol_20",
+    "atr_pct",
+    "atr",
+    "return_lag_10",
+    "dist_sma_20",
+    "dist_sma_5",
+    "return_lag_5",
+    "week",
+    "vma_5",
+    "return_lag_20",
+    "volume_ratio_20",
+    "momentum_20",
+    "volume_change_ratio",
+    "volume_ratio_10",
+    "month_sin",
+    "bb_width",
+    "vma_20",
+    "bb_pct",
+    "rolling_var_20",
+    "dist_sma_200",
+    "Volume",
+    "vma_10"
+  ],
+  "hyperparameters": {
+    "boosting_type": "gbdt",
+    "class_weight": null,
+    "colsample_bytree": 1.0,
+    "importance_type": "split",
+    "learning_rate": 0.1,
+    "max_depth": -1,
+    "min_child_samples": 20,
+    "min_child_weight": 0.001,
+    "min_split_gain": 0.0,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "num_leaves": 31,
+    "objective": null,
+    "random_state": null,
+    "reg_alpha": 0.0,
+    "reg_lambda": 0.0,
+    "subsample": 1.0,
+    "subsample_for_bin": 200000,
+    "subsample_freq": 0
+  },
+  "training_time_s": 0.1643,
+  "metrics": {
+    "validation": {
+      "mae": 0.013976499090670445,
+      "mse": 0.00033829333833500783,
+      "rmse": 0.018392752331693258,
+      "r2": -0.5002936222721841,
+      "mape": 323.4186137032802
+    },
+    "test": {
+      "mae": 0.018408179139795897,
+      "mse": 0.0005312277752684729,
+      "rmse": 0.023048379016071235,
+      "r2": -1.105010366542071,
+      "mape": 498.09359443292334
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3533,
+      "val": 757,
+      "test": 757
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-05-15"
+      ],
+      "val": [
+        "2020-05-19",
+        "2023-06-01"
+      ],
+      "test": [
+        "2023-06-05",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\BAJAJ-AUTO_NS\\scaler_params.json",
+  "is_best": false
+}

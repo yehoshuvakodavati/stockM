@@ -1,0 +1,102 @@
+{
+  "model_name": "ridge",
+  "symbol": "HDFCBANK.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:24:25+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "roc_20",
+    "rolling_var_5",
+    "month_sin",
+    "macd",
+    "return_lag_10",
+    "volume_lag_5",
+    "rolling_vol_10",
+    "volume_lag_20",
+    "dist_sma_5",
+    "rolling_vol_5",
+    "volume_ratio_5",
+    "day_of_week_sin",
+    "momentum_20",
+    "dist_sma_50",
+    "return_lag_5",
+    "day_of_week",
+    "roc_10",
+    "atr_pct",
+    "price_diff",
+    "dist_sma_10",
+    "volume_change",
+    "rolling_var_20",
+    "momentum_10",
+    "open_close_diff",
+    "volume_ratio_10",
+    "Volume",
+    "dist_sma_20",
+    "volume_ratio_20",
+    "return_lag_3",
+    "dist_sma_100",
+    "return_lag_1",
+    "volume_momentum",
+    "volume_lag_10",
+    "price_diff_pct",
+    "volume_lag_1",
+    "obv",
+    "bb_width",
+    "macd_hist",
+    "rolling_var_10",
+    "dist_sma_200"
+  ],
+  "hyperparameters": {
+    "alpha": 1.0,
+    "copy_X": true,
+    "fit_intercept": true,
+    "max_iter": null,
+    "positive": false,
+    "random_state": null,
+    "solver": "auto",
+    "tol": 0.0001
+  },
+  "training_time_s": 0.0037,
+  "metrics": {
+    "validation": {
+      "mae": 0.013197729488590814,
+      "mse": 0.0003267203955297651,
+      "rmse": 0.01807540858541696,
+      "r2": -0.2101706943602779,
+      "mape": 170.05197311460748
+    },
+    "test": {
+      "mae": 0.010941880495906879,
+      "mse": 0.00024460153011021375,
+      "rmse": 0.015639742009068237,
+      "r2": -0.5624253564446242,
+      "mape": 235.8166932924288
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\HDFCBANK_NS\\scaler_params.json",
+  "is_best": false
+}

@@ -1,0 +1,102 @@
+{
+  "model_name": "ridge",
+  "symbol": "TCS.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:25:09+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "rolling_vol_20",
+    "volume_lag_10",
+    "return_lag_1",
+    "dist_sma_10",
+    "rsi",
+    "price_diff",
+    "volume_ratio_20",
+    "volume_lag_20",
+    "vma_10",
+    "High",
+    "high_low_range",
+    "dist_sma_5",
+    "price_diff_pct",
+    "return_lag_3",
+    "macd_signal",
+    "momentum_10",
+    "rolling_var_5",
+    "rolling_vol_10",
+    "month_sin",
+    "macd",
+    "rolling_var_10",
+    "rolling_vol_5",
+    "roc_20",
+    "atr",
+    "vma_5",
+    "bb_width",
+    "day_of_week_sin",
+    "volume_ratio_5",
+    "dist_sma_50",
+    "Volume",
+    "roc_5",
+    "return_lag_10",
+    "obv",
+    "return_lag_20",
+    "bb_pct",
+    "volume_momentum",
+    "momentum_5",
+    "dist_sma_20",
+    "volume_lag_3",
+    "day_of_month"
+  ],
+  "hyperparameters": {
+    "alpha": 1.0,
+    "copy_X": true,
+    "fit_intercept": true,
+    "max_iter": null,
+    "positive": false,
+    "random_state": null,
+    "solver": "auto",
+    "tol": 0.0001
+  },
+  "training_time_s": 0.0023,
+  "metrics": {
+    "validation": {
+      "mae": 0.011399651367397763,
+      "mse": 0.00023732415068698125,
+      "rmse": 0.015405328645860862,
+      "r2": -0.1365576691796515,
+      "mape": 187.2155171964632
+    },
+    "test": {
+      "mae": 0.012818467584454455,
+      "mse": 0.0002950171228253958,
+      "rmse": 0.01717606249480351,
+      "r2": -0.494944528232798,
+      "mape": 315.94088801171773
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\TCS_NS\\scaler_params.json",
+  "is_best": true
+}

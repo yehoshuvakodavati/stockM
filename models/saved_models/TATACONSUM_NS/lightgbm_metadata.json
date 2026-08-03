@@ -1,0 +1,113 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "TATACONSUM.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:38:18+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "volume_lag_3",
+    "vma_20",
+    "vma_5",
+    "bb_upper",
+    "return_lag_3",
+    "macd_signal",
+    "dist_sma_10",
+    "volume_ratio_20",
+    "month_cos",
+    "return_lag_20",
+    "atr",
+    "rolling_vol_10",
+    "roc_10",
+    "return_lag_10",
+    "obv",
+    "volume_momentum",
+    "bb_pct",
+    "rolling_vol_20",
+    "momentum_10",
+    "momentum_20",
+    "rolling_var_5",
+    "dist_sma_20",
+    "volume_ratio_5",
+    "day_of_week_sin",
+    "dist_sma_200",
+    "high_low_range",
+    "volume_lag_20",
+    "return_lag_1",
+    "volume_lag_5",
+    "return_lag_5",
+    "dist_sma_100",
+    "rolling_var_10",
+    "day_of_month",
+    "atr_pct",
+    "rolling_var_20",
+    "volume_lag_10",
+    "rsi",
+    "price_diff",
+    "price_diff_pct",
+    "rolling_vol_5"
+  ],
+  "hyperparameters": {
+    "boosting_type": "gbdt",
+    "class_weight": null,
+    "colsample_bytree": 1.0,
+    "importance_type": "split",
+    "learning_rate": 0.1,
+    "max_depth": -1,
+    "min_child_samples": 20,
+    "min_child_weight": 0.001,
+    "min_split_gain": 0.0,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "num_leaves": 31,
+    "objective": null,
+    "random_state": null,
+    "reg_alpha": 0.0,
+    "reg_lambda": 0.0,
+    "subsample": 1.0,
+    "subsample_for_bin": 200000,
+    "subsample_freq": 0
+  },
+  "training_time_s": 0.1541,
+  "metrics": {
+    "validation": {
+      "mae": 0.015399634894740926,
+      "mse": 0.0003975785238278727,
+      "rmse": 0.019939371199410295,
+      "r2": -0.5000844346010631,
+      "mape": 301.3065192240301
+    },
+    "test": {
+      "mae": 0.013622584839111397,
+      "mse": 0.00031358323931811706,
+      "rmse": 0.017708281659102813,
+      "r2": -0.5156456902961861,
+      "mape": 294.5809116249694
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\TATACONSUM_NS\\scaler_params.json",
+  "is_best": false
+}

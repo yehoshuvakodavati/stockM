@@ -3,7 +3,7 @@
   "symbol": "NESTLEIND.NS",
   "model_version": "baseline_v1",
   "stockm_version": "1.0",
-  "trained_at": "2026-07-21T15:56:13+00:00",
+  "trained_at": "2026-08-02T05:30:31+00:00",
   "target_col": "target_next_return",
   "n_features": 40,
   "feature_names": [
@@ -14,28 +14,27 @@
     "week",
     "month_sin",
     "volume_ratio_5",
-    "volume_momentum",
     "roc_5",
+    "volume_momentum",
     "month_cos",
+    "roc_20",
     "dist_sma_50",
     "price_diff",
-    "roc_20",
     "bb_pct",
     "open_close_diff",
     "roc_10",
     "volume_lag_5",
     "return_lag_1",
+    "macd_hist",
     "pct_change_1d",
     "vma_10",
-    "macd_hist",
+    "rolling_var_5",
     "volume_lag_10",
     "trading_day_number",
-    "rolling_var_5",
     "dist_sma_100",
     "Volume",
-    "rolling_vol_20",
     "dist_sma_20",
-    "return_lag_20",
+    "rolling_vol_20",
     "volume_lag_1",
     "dist_sma_200",
     "macd_signal",
@@ -46,7 +45,8 @@
     "rolling_vol_5",
     "volume_change",
     "volume_change_ratio",
-    "dist_ema_20"
+    "dist_ema_20",
+    "return_lag_20"
   ],
   "hyperparameters": {
     "bootstrap": true,
@@ -68,21 +68,21 @@
     "verbose": 0,
     "warm_start": false
   },
-  "training_time_s": 8.4691,
+  "training_time_s": 16.6502,
   "metrics": {
     "validation": {
-      "mae": 0.009230016439383147,
-      "mse": 0.00014829113299134108,
-      "rmse": 0.01217748467423963,
-      "r2": -0.0960195109801052,
-      "mape": 188.12109611832705
+      "mae": 0.009146046086699815,
+      "mse": 0.00014477836455855321,
+      "rmse": 0.012032388148599313,
+      "r2": -0.0700567045858822,
+      "mape": 175.884195694583
     },
     "test": {
-      "mae": 0.009808735115559181,
-      "mse": 0.0001718439666419076,
-      "rmse": 0.013108926982858192,
-      "r2": -0.1315710762677682,
-      "mape": 184.0706507470346
+      "mae": 0.009619222084522878,
+      "mse": 0.00016639470343807417,
+      "rmse": 0.012899407096377498,
+      "r2": -0.09568820753919272,
+      "mape": 177.2935994841367
     }
   },
   "dataset": {

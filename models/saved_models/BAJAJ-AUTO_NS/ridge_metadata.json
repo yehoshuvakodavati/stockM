@@ -1,0 +1,102 @@
+{
+  "model_name": "ridge",
+  "symbol": "BAJAJ-AUTO.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:36:05+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "dist_sma_100",
+    "volume_lag_10",
+    "rolling_vol_5",
+    "roc_5",
+    "day_of_month",
+    "dist_sma_10",
+    "volume_momentum",
+    "macd_hist",
+    "momentum_10",
+    "month_cos",
+    "day_of_week_sin",
+    "rolling_var_10",
+    "day_of_week",
+    "trading_day_number",
+    "return_lag_1",
+    "volume_lag_1",
+    "volume_change",
+    "high_low_range",
+    "rolling_vol_20",
+    "atr_pct",
+    "atr",
+    "return_lag_10",
+    "dist_sma_20",
+    "dist_sma_5",
+    "return_lag_5",
+    "week",
+    "vma_5",
+    "return_lag_20",
+    "volume_ratio_20",
+    "momentum_20",
+    "volume_change_ratio",
+    "volume_ratio_10",
+    "month_sin",
+    "bb_width",
+    "vma_20",
+    "bb_pct",
+    "rolling_var_20",
+    "dist_sma_200",
+    "Volume",
+    "vma_10"
+  ],
+  "hyperparameters": {
+    "alpha": 1.0,
+    "copy_X": true,
+    "fit_intercept": true,
+    "max_iter": null,
+    "positive": false,
+    "random_state": null,
+    "solver": "auto",
+    "tol": 0.0001
+  },
+  "training_time_s": 0.0083,
+  "metrics": {
+    "validation": {
+      "mae": 0.011992104368181981,
+      "mse": 0.0002715046387179491,
+      "rmse": 0.016477397813913126,
+      "r2": -0.20409311011165054,
+      "mape": 176.9380685943203
+    },
+    "test": {
+      "mae": 0.015394986931390079,
+      "mse": 0.0004437038449019859,
+      "rmse": 0.02106427888397763,
+      "r2": -0.7581934467210945,
+      "mape": 321.45190193526247
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3533,
+      "val": 757,
+      "test": 757
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-05-15"
+      ],
+      "val": [
+        "2020-05-19",
+        "2023-06-01"
+      ],
+      "test": [
+        "2023-06-05",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\BAJAJ-AUTO_NS\\scaler_params.json",
+  "is_best": true
+}

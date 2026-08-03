@@ -1,0 +1,113 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "TATASTEEL.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:32:07+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "bb_width",
+    "roc_10",
+    "rolling_vol_10",
+    "momentum_5",
+    "volume_lag_5",
+    "volume_ratio_5",
+    "High",
+    "return_lag_3",
+    "return_lag_1",
+    "volume_lag_1",
+    "dist_sma_20",
+    "dist_sma_200",
+    "rolling_vol_20",
+    "bb_pct",
+    "atr",
+    "obv",
+    "dist_sma_5",
+    "open_close_diff",
+    "roc_20",
+    "volume_ratio_20",
+    "macd",
+    "macd_hist",
+    "rsi",
+    "momentum_10",
+    "price_diff",
+    "dist_sma_10",
+    "return_lag_5",
+    "volume_lag_3",
+    "Volume",
+    "return_lag_20",
+    "rolling_var_10",
+    "dist_sma_100",
+    "volume_change",
+    "volume_change_ratio",
+    "rolling_var_5",
+    "high_low_range",
+    "sma_200",
+    "dist_sma_50",
+    "volume_momentum",
+    "rolling_vol_5"
+  ],
+  "hyperparameters": {
+    "boosting_type": "gbdt",
+    "class_weight": null,
+    "colsample_bytree": 1.0,
+    "importance_type": "split",
+    "learning_rate": 0.1,
+    "max_depth": -1,
+    "min_child_samples": 20,
+    "min_child_weight": 0.001,
+    "min_split_gain": 0.0,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "num_leaves": 31,
+    "objective": null,
+    "random_state": null,
+    "reg_alpha": 0.0,
+    "reg_lambda": 0.0,
+    "subsample": 1.0,
+    "subsample_for_bin": 200000,
+    "subsample_freq": 0
+  },
+  "training_time_s": 0.1607,
+  "metrics": {
+    "validation": {
+      "mae": 0.024448512021927042,
+      "mse": 0.0009500420096387087,
+      "rmse": 0.030822751493640353,
+      "r2": -0.6245761440532855,
+      "mape": 391.9862909586755
+    },
+    "test": {
+      "mae": 0.022055634665618398,
+      "mse": 0.0007275518970869168,
+      "rmse": 0.026973169948801286,
+      "r2": -1.3785995849303818,
+      "mape": 602.1676893362203
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\TATASTEEL_NS\\scaler_params.json",
+  "is_best": false
+}

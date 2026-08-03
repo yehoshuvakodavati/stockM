@@ -3,7 +3,7 @@
   "symbol": "NESTLEIND.NS",
   "model_version": "baseline_v1",
   "stockm_version": "1.0",
-  "trained_at": "2026-07-21T15:56:04+00:00",
+  "trained_at": "2026-08-02T05:30:14+00:00",
   "target_col": "target_next_return",
   "n_features": 40,
   "feature_names": [
@@ -14,28 +14,27 @@
     "week",
     "month_sin",
     "volume_ratio_5",
-    "volume_momentum",
     "roc_5",
+    "volume_momentum",
     "month_cos",
+    "roc_20",
     "dist_sma_50",
     "price_diff",
-    "roc_20",
     "bb_pct",
     "open_close_diff",
     "roc_10",
     "volume_lag_5",
     "return_lag_1",
+    "macd_hist",
     "pct_change_1d",
     "vma_10",
-    "macd_hist",
+    "rolling_var_5",
     "volume_lag_10",
     "trading_day_number",
-    "rolling_var_5",
     "dist_sma_100",
     "Volume",
-    "rolling_vol_20",
     "dist_sma_20",
-    "return_lag_20",
+    "rolling_vol_20",
     "volume_lag_1",
     "dist_sma_200",
     "macd_signal",
@@ -46,7 +45,8 @@
     "rolling_vol_5",
     "volume_change",
     "volume_change_ratio",
-    "dist_ema_20"
+    "dist_ema_20",
+    "return_lag_20"
   ],
   "hyperparameters": {
     "copy_X": true,
@@ -55,21 +55,21 @@
     "positive": false,
     "tol": 1e-06
   },
-  "training_time_s": 0.0042,
+  "training_time_s": 0.0089,
   "metrics": {
     "validation": {
-      "mae": 0.009008471966267485,
-      "mse": 0.0001417830667925491,
-      "rmse": 0.011907269493571945,
-      "r2": -0.047918404806463366,
-      "mape": 160.50743989338486
+      "mae": 0.009008471397861508,
+      "mse": 0.00014178304052849894,
+      "rmse": 0.011907268390714092,
+      "r2": -0.04791826856652448,
+      "mape": 160.49894233052723
     },
     "test": {
-      "mae": 0.009753019561562557,
-      "mse": 0.00018178640762262136,
-      "rmse": 0.013482818979079315,
-      "r2": -0.19704080942819524,
-      "mape": 188.1712740368682
+      "mae": 0.009753010828195957,
+      "mse": 0.00018178611617323412,
+      "rmse": 0.013482808170898008,
+      "r2": -0.1970387258119064,
+      "mape": 188.17010332340058
     }
   },
   "dataset": {
@@ -95,5 +95,5 @@
     "split_method": "chronological_gap1"
   },
   "scaler_ref": "C:\\stockM\\data\\prepared\\NESTLEIND_NS\\scaler_params.json",
-  "is_best": true
+  "is_best": false
 }

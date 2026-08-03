@@ -1,0 +1,113 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "TECHM.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:33:39+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "volume_ratio_5",
+    "volume_change_ratio",
+    "dist_sma_5",
+    "return_lag_3",
+    "momentum_10",
+    "price_diff",
+    "vma_5",
+    "bb_width",
+    "momentum_20",
+    "week",
+    "rolling_vol_10",
+    "macd_hist",
+    "vma_10",
+    "day_of_week",
+    "momentum_5",
+    "return_lag_20",
+    "sma_200",
+    "volume_change",
+    "vma_20",
+    "dist_sma_100",
+    "month_cos",
+    "volume_lag_3",
+    "rolling_vol_20",
+    "rolling_vol_5",
+    "day_of_week_sin",
+    "dist_sma_50",
+    "dist_sma_10",
+    "Volume",
+    "rolling_var_20",
+    "rsi",
+    "roc_10",
+    "open_close_diff",
+    "High",
+    "dist_sma_200",
+    "roc_20",
+    "volume_momentum",
+    "dist_sma_20",
+    "atr_pct",
+    "return_lag_5",
+    "volume_lag_1"
+  ],
+  "hyperparameters": {
+    "boosting_type": "gbdt",
+    "class_weight": null,
+    "colsample_bytree": 1.0,
+    "importance_type": "split",
+    "learning_rate": 0.1,
+    "max_depth": -1,
+    "min_child_samples": 20,
+    "min_child_weight": 0.001,
+    "min_split_gain": 0.0,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "num_leaves": 31,
+    "objective": null,
+    "random_state": null,
+    "reg_alpha": 0.0,
+    "reg_lambda": 0.0,
+    "subsample": 1.0,
+    "subsample_for_bin": 200000,
+    "subsample_freq": 0
+  },
+  "training_time_s": 0.0925,
+  "metrics": {
+    "validation": {
+      "mae": 0.015424147232805798,
+      "mse": 0.0004082942253793278,
+      "rmse": 0.020206291727561686,
+      "r2": -0.21680261506441778,
+      "mape": 224.68675418687144
+    },
+    "test": {
+      "mae": 0.014712160340632404,
+      "mse": 0.0003648968689809211,
+      "rmse": 0.019102273921733012,
+      "r2": -0.34890831579529835,
+      "mape": 270.74420260516297
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3281,
+      "val": 703,
+      "test": 703
+    },
+    "date_ranges": {
+      "train": [
+        "2007-06-19",
+        "2020-10-19"
+      ],
+      "val": [
+        "2020-10-21",
+        "2023-08-21"
+      ],
+      "test": [
+        "2023-08-23",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\TECHM_NS\\scaler_params.json",
+  "is_best": false
+}

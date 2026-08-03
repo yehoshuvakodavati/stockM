@@ -3,27 +3,28 @@
   "symbol": "DRREDDY.NS",
   "model_version": "baseline_v1",
   "stockm_version": "1.0",
-  "trained_at": "2026-07-21T15:58:29+00:00",
+  "trained_at": "2026-08-02T05:34:12+00:00",
   "target_col": "target_next_return",
   "n_features": 40,
   "feature_names": [
     "momentum_10",
     "rolling_vol_5",
     "return_lag_3",
-    "open_close_diff",
     "bb_pct",
+    "open_close_diff",
     "volume_change_ratio",
     "month_cos",
     "obv",
     "volume_ratio_5",
     "volume_lag_5",
     "volume_lag_10",
+    "rsi",
     "week",
     "dist_sma_10",
-    "dist_sma_200",
-    "rsi",
-    "volume_change",
     "momentum_20",
+    "rolling_vol_20",
+    "volume_change",
+    "dist_sma_200",
     "Volume",
     "macd_hist",
     "volume_lag_1",
@@ -32,21 +33,20 @@
     "volume_lag_3",
     "roc_5",
     "rolling_vol_10",
-    "atr",
     "return_lag_1",
+    "atr",
     "momentum_5",
     "volume_ratio_20",
     "vma_5",
-    "rolling_var_10",
     "return_lag_20",
+    "rolling_var_10",
     "volume_momentum",
     "dist_sma_5",
     "trading_day_number",
     "volume_lag_20",
     "High",
-    "dist_sma_20",
-    "rolling_var_20",
-    "vma_20"
+    "vma_20",
+    "dist_sma_20"
   ],
   "hyperparameters": {
     "copy_X": true,
@@ -55,21 +55,21 @@
     "positive": false,
     "tol": 1e-06
   },
-  "training_time_s": 0.0053,
+  "training_time_s": 0.0077,
   "metrics": {
     "validation": {
-      "mae": 0.011763612138381485,
-      "mse": 0.0002795510028326022,
-      "rmse": 0.01671977879137766,
-      "r2": -0.11696892273105153,
-      "mape": 164.02373349378553
+      "mae": 0.011762252527377275,
+      "mse": 0.00027934841317615275,
+      "rmse": 0.01671371931008035,
+      "r2": -0.11615929293223193,
+      "mape": 164.384317177653
     },
     "test": {
-      "mae": 0.01031864658957928,
-      "mse": 0.00019484833501429657,
-      "rmse": 0.013958808509836954,
-      "r2": -0.09685898501418011,
-      "mape": 157.86889531549522
+      "mae": 0.010352926744935927,
+      "mse": 0.00019599161775394125,
+      "rmse": 0.013999700630868549,
+      "r2": -0.10329564277636272,
+      "mape": 159.46149054990124
     }
   },
   "dataset": {
@@ -95,5 +95,5 @@
     "split_method": "chronological_gap1"
   },
   "scaler_ref": "C:\\stockM\\data\\prepared\\DRREDDY_NS\\scaler_params.json",
-  "is_best": true
+  "is_best": false
 }

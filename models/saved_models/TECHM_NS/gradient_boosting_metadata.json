@@ -3,35 +3,35 @@
   "symbol": "TECHM.NS",
   "model_version": "baseline_v1",
   "stockm_version": "1.0",
-  "trained_at": "2026-07-21T15:58:00+00:00",
+  "trained_at": "2026-08-02T05:33:39+00:00",
   "target_col": "target_next_return",
   "n_features": 40,
   "feature_names": [
     "volume_ratio_5",
-    "return_lag_3",
     "volume_change_ratio",
     "dist_sma_5",
-    "price_diff",
+    "return_lag_3",
     "momentum_10",
+    "price_diff",
     "vma_5",
     "bb_width",
     "momentum_20",
     "week",
     "rolling_vol_10",
-    "vma_10",
     "macd_hist",
+    "vma_10",
     "day_of_week",
+    "momentum_5",
     "return_lag_20",
     "sma_200",
     "volume_change",
     "vma_20",
-    "momentum_5",
     "dist_sma_100",
     "month_cos",
     "volume_lag_3",
     "rolling_vol_20",
-    "day_of_week_sin",
     "rolling_vol_5",
+    "day_of_week_sin",
     "dist_sma_50",
     "dist_sma_10",
     "Volume",
@@ -40,12 +40,12 @@
     "roc_10",
     "open_close_diff",
     "High",
-    "roc_20",
     "dist_sma_200",
+    "roc_20",
+    "volume_momentum",
     "dist_sma_20",
     "atr_pct",
-    "volume_ratio_20",
-    "pct_change_1d",
+    "return_lag_5",
     "volume_lag_1"
   ],
   "hyperparameters": {
@@ -71,21 +71,21 @@
     "verbose": 0,
     "warm_start": false
   },
-  "training_time_s": 0.2585,
+  "training_time_s": 0.2164,
   "metrics": {
     "validation": {
-      "mae": 0.01538663108620012,
-      "mse": 0.0004058131737241139,
-      "rmse": 0.02014480512996127,
-      "r2": -0.20940806673536638,
-      "mape": 234.00629977836948
+      "mae": 0.015462853293479423,
+      "mse": 0.0004043820240721152,
+      "rmse": 0.02010925220071883,
+      "r2": -0.2051434328243258,
+      "mape": 228.61373308662917
     },
     "test": {
-      "mae": 0.014168003474113188,
-      "mse": 0.00033892534948258167,
-      "rmse": 0.018409925298126052,
-      "r2": -0.25289997204152814,
-      "mape": 230.00789718657325
+      "mae": 0.013876630205650622,
+      "mse": 0.0003358160909207469,
+      "rmse": 0.01832528556177903,
+      "r2": -0.24140587691518434,
+      "mape": 215.54242795813758
     }
   },
   "dataset": {
@@ -111,5 +111,5 @@
     "split_method": "chronological_gap1"
   },
   "scaler_ref": "C:\\stockM\\data\\prepared\\TECHM_NS\\scaler_params.json",
-  "is_best": true
+  "is_best": false
 }

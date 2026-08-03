@@ -3,21 +3,21 @@
   "symbol": "TITAN.NS",
   "model_version": "baseline_v1",
   "stockm_version": "1.0",
-  "trained_at": "2026-07-21T15:55:52+00:00",
+  "trained_at": "2026-08-02T05:29:52+00:00",
   "target_col": "target_next_return",
   "n_features": 40,
   "feature_names": [
     "rolling_var_20",
     "obv",
-    "dist_sma_5",
     "bb_width",
+    "dist_sma_5",
     "volume_momentum",
     "volume_lag_5",
     "dist_sma_200",
     "volume_ratio_10",
-    "dist_sma_10",
-    "day_of_week",
     "momentum_5",
+    "day_of_week",
+    "dist_sma_10",
     "return_lag_5",
     "rolling_vol_10",
     "day_of_month",
@@ -25,12 +25,12 @@
     "macd",
     "month_sin",
     "high_low_range",
+    "price_diff_pct",
     "bb_upper",
-    "pct_change_1d",
     "roc_10",
     "day_of_week_sin",
-    "Volume",
     "bb_pct",
+    "Volume",
     "momentum_10",
     "volume_ratio_5",
     "month_cos",
@@ -39,14 +39,14 @@
     "dist_sma_100",
     "roc_5",
     "return_lag_3",
-    "roc_20",
     "return_lag_20",
     "rolling_vol_20",
-    "volume_change_ratio",
+    "price_diff",
+    "volume_change",
     "volume_ratio_20",
-    "volume_lag_20",
     "rolling_vol_5",
-    "price_diff"
+    "volume_lag_20",
+    "volume_change_ratio"
   ],
   "hyperparameters": {
     "copy_X": true,
@@ -55,21 +55,21 @@
     "positive": false,
     "tol": 1e-06
   },
-  "training_time_s": 0.0047,
+  "training_time_s": 0.0071,
   "metrics": {
     "validation": {
-      "mae": 0.014030655757679544,
-      "mse": 0.0003711259189141547,
-      "rmse": 0.019264628699099152,
-      "r2": -0.15801445868653818,
-      "mape": 174.61686926325171
+      "mae": 0.014031196623466018,
+      "mse": 0.00037100233195424827,
+      "rmse": 0.019261420818679195,
+      "r2": -0.15762899721133694,
+      "mape": 174.99515082316722
     },
     "test": {
-      "mae": 0.0120126392109303,
-      "mse": 0.0002600284218029968,
-      "rmse": 0.016125396795210863,
-      "r2": -0.3402788434079367,
-      "mape": 290.48035174605616
+      "mae": 0.011976578262965639,
+      "mse": 0.00025844590355691326,
+      "rmse": 0.016076252783435364,
+      "r2": -0.3321218757600648,
+      "mape": 288.1881483104319
     }
   },
   "dataset": {
@@ -95,5 +95,5 @@
     "split_method": "chronological_gap1"
   },
   "scaler_ref": "C:\\stockM\\data\\prepared\\TITAN_NS\\scaler_params.json",
-  "is_best": true
+  "is_best": false
 }

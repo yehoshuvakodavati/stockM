@@ -1,0 +1,113 @@
+{
+  "model_name": "lightgbm",
+  "symbol": "DABUR.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:39:44+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "roc_5",
+    "dist_sma_20",
+    "macd_hist",
+    "obv",
+    "volume_lag_3",
+    "vma_5",
+    "macd",
+    "bb_width",
+    "month_sin",
+    "open_close_diff",
+    "price_diff_pct",
+    "rolling_var_10",
+    "volume_ratio_20",
+    "momentum_5",
+    "volume_lag_1",
+    "rolling_vol_5",
+    "return_lag_1",
+    "dist_sma_10",
+    "dist_sma_5",
+    "volume_lag_10",
+    "dist_sma_50",
+    "Volume",
+    "return_lag_3",
+    "dist_sma_100",
+    "rolling_vol_20",
+    "rolling_vol_10",
+    "momentum_20",
+    "day_of_week",
+    "week",
+    "return_lag_20",
+    "vma_20",
+    "volume_change_ratio",
+    "dist_sma_200",
+    "rolling_var_5",
+    "return_lag_10",
+    "volume_lag_5",
+    "roc_10",
+    "open_lag_1",
+    "price_diff",
+    "return_lag_5"
+  ],
+  "hyperparameters": {
+    "boosting_type": "gbdt",
+    "class_weight": null,
+    "colsample_bytree": 1.0,
+    "importance_type": "split",
+    "learning_rate": 0.1,
+    "max_depth": -1,
+    "min_child_samples": 20,
+    "min_child_weight": 0.001,
+    "min_split_gain": 0.0,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "num_leaves": 31,
+    "objective": null,
+    "random_state": null,
+    "reg_alpha": 0.0,
+    "reg_lambda": 0.0,
+    "subsample": 1.0,
+    "subsample_for_bin": 200000,
+    "subsample_freq": 0
+  },
+  "training_time_s": 0.1721,
+  "metrics": {
+    "validation": {
+      "mae": 0.013435045766427501,
+      "mse": 0.0002862884780715513,
+      "rmse": 0.016920061408622348,
+      "r2": -0.56815462473305,
+      "mape": 308.38501124562924
+    },
+    "test": {
+      "mae": 0.013603421810508932,
+      "mse": 0.00029792331762198293,
+      "rmse": 0.017260455313287158,
+      "r2": -0.6534877319494747,
+      "mape": 385.36513542826845
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\DABUR_NS\\scaler_params.json",
+  "is_best": false
+}

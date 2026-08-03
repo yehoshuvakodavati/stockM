@@ -1,0 +1,102 @@
+{
+  "model_name": "ridge",
+  "symbol": "ADANIENT.NS",
+  "model_version": "baseline_v1",
+  "stockm_version": "1.0",
+  "trained_at": "2026-08-02T05:35:00+00:00",
+  "target_col": "target_next_return",
+  "n_features": 40,
+  "feature_names": [
+    "momentum_20",
+    "vma_20",
+    "momentum_10",
+    "volume_ratio_5",
+    "month_cos",
+    "trading_day_number",
+    "macd_hist",
+    "dist_sma_10",
+    "macd",
+    "vma_10",
+    "momentum_5",
+    "dist_sma_50",
+    "return_lag_20",
+    "bb_width",
+    "return_lag_5",
+    "obv",
+    "high_low_range",
+    "dist_sma_5",
+    "day_of_month",
+    "rsi",
+    "roc_10",
+    "open_close_diff",
+    "volume_ratio_10",
+    "atr",
+    "volume_lag_1",
+    "rolling_vol_10",
+    "atr_pct",
+    "month_sin",
+    "Volume",
+    "volume_lag_3",
+    "dist_sma_100",
+    "week",
+    "roc_20",
+    "log_return",
+    "volume_lag_20",
+    "bb_pct",
+    "volume_change_ratio",
+    "roc_5",
+    "volume_ratio_20",
+    "return_lag_10"
+  ],
+  "hyperparameters": {
+    "alpha": 1.0,
+    "copy_X": true,
+    "fit_intercept": true,
+    "max_iter": null,
+    "positive": false,
+    "random_state": null,
+    "solver": "auto",
+    "tol": 0.0001
+  },
+  "training_time_s": 0.0082,
+  "metrics": {
+    "validation": {
+      "mae": 0.09994809231902774,
+      "mse": 0.02262171587965212,
+      "rmse": 0.15040517238330642,
+      "r2": -15.603119579394903,
+      "mape": 1901.6137783067227
+    },
+    "test": {
+      "mae": 0.10511634267868579,
+      "mse": 0.018128580072661417,
+      "rmse": 0.13464241557793524,
+      "r2": -28.102201916123207,
+      "mape": 3045.690876785669
+    }
+  },
+  "dataset": {
+    "row_counts": {
+      "train": 3569,
+      "val": 764,
+      "test": 764
+    },
+    "date_ranges": {
+      "train": [
+        "2005-10-18",
+        "2020-04-27"
+      ],
+      "val": [
+        "2020-04-29",
+        "2023-05-24"
+      ],
+      "test": [
+        "2023-05-26",
+        "2026-07-03"
+      ]
+    },
+    "split_method": "chronological_gap1"
+  },
+  "scaler_ref": "C:\\stockM\\data\\prepared\\ADANIENT_NS\\scaler_params.json",
+  "is_best": false
+}
