@@ -1,42 +1,42 @@
-"""
-StockM v1.0 - Phase 9, Lesson 2
-Health & Info Routes
-=====================
-
-The simplest route group: root, health, version. These don't need the model
-registry, so they have no dependencies — useful for liveness probes that
-should succeed even if model loading is slow/failing.
-
-``/health`` in Lesson 2 only checks the process. Lesson 4 deepens it to also
-report whether the registry loaded (a true readiness check). Keeping the
-shallow version now lets us start the server before the registry exists.
-"""
+"""Health & info routes — root, health (readiness), version."""
 from __future__ import annotations
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends, Request
 
 from api.config import get_settings
+from api.dependencies import get_registry
+from api.model_registry import ModelRegistry
+from api.schemas.predict import HealthResponse
 
 router = APIRouter(tags=["info"])
 
 
-@router.get("/")
+@router.get("/", summary="API root")
 def root() -> dict:
     """API root — confirms the service is reachable."""
     s = get_settings()
-    return {"service": s.api_title, "status": "ok"}
+    return {"service": s.api_title, "status": "ok", "version": s.api_version}
 
 
-@router.get("/health")
-def health() -> dict:
-    """Liveness probe. Returns 200 if the process is alive.
+@router.get("/health", response_model=HealthResponse, summary="Readiness check")
+def health(registry: ModelRegistry = Depends(get_registry)) -> HealthResponse:
+    """Readiness probe: 200 if the process is alive AND models are loaded.
 
-    Lesson 4 upgrades this to a readiness check that verifies the registry.
+    A liveness probe (process alive) is necessary but not sufficient — a
+    process with zero loaded models can't serve predictions. This readiness
+    check verifies the registry loaded, so orchestrators only route traffic
+    to instances that can actually predict.
     """
-    return {"status": "healthy", "environment": get_settings().environment}
+    s = get_settings()
+    return HealthResponse(
+        status="healthy" if registry.is_ready() else "degraded",
+        environment=s.environment,
+        models_loaded=registry.count_symbols(),
+    )
 
 
-@router.get("/version")
+@router.get("/version", summary="Deployed version")
 def version() -> dict:
     """Deployed API version (ties to Phase 8 Lesson 13 reproducibility)."""
-    return {"api_version": get_settings().api_version, "environment": get_settings().environment}
+    s = get_settings()
+    return {"api_version": s.api_version, "environment": s.environment}
