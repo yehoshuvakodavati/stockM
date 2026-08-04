@@ -1,0 +1,50 @@
+# StockM v1.0 - Phase 9, Lesson 13
+# Production Docker image for the Prediction API
+# =================================================
+# Referenced by docker-compose.yml (build.dockerfile: deployment/docker/Dockerfile.api).
+# Multi-stage: install deps in a fat builder, copy to a slim runtime to minimize
+# attack surface + image size. Runs as a non-root user.
+
+# --- Stage 1: builder ---
+FROM python:3.12-slim AS builder
+
+WORKDIR /build
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential curl && rm -rf /var/lib/apt/lists/*
+
+# Install the project's deps + uvicorn for serving.
+COPY requirements.txt .
+RUN pip install --no-cache-dir --prefix=/install -r requirements.txt \
+    && pip install --no-cache-dir --prefix=/install "uvicorn[standard]"
+
+# --- Stage 2: runtime ---
+FROM python:3.12-slim
+
+WORKDIR /app
+
+COPY --from=builder /install /usr/local
+
+# Application + configs + models + prepared data (for inference).
+COPY src/ ./src/
+COPY configs/ ./configs/
+COPY models/ ./models/
+COPY data/prepared/ ./data/prepared/
+
+# Non-root user: a container compromise must not run as root.
+RUN useradd -m -u 1000 stockm && chown -R stockm:stockm /app
+USER stockm
+
+ENV PYTHONPATH=/app/src
+ENV STOCKM_ENV=production
+ENV PYTHONUNBUFFERED=1
+ENV API_PORT=8000
+ENV API_WORKERS=4
+
+EXPOSE 8000
+
+# Health check: orchestrator polls /health to know the container is ready.
+HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
+
+CMD ["sh", "-c", "uvicorn api.main:app --host 0.0.0.0 --port ${API_PORT} --workers ${API_WORKERS}"]

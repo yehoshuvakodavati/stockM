@@ -11,3 +11,258 @@
 2026-08-02 11:55:00,878 | INFO     | httpx | HTTP Request: GET http://testserver/version "HTTP/1.1 200 OK"
 2026-08-02 11:55:00,880 | INFO     | httpx | HTTP Request: GET http://testserver/docs "HTTP/1.1 200 OK"
 2026-08-02 11:55:00,880 | INFO     | stockm.api | API shutting down — releasing model registry.
+2026-08-03 18:42:56,508 | WARNING  | stockm.api.config | logging_config.yaml could not be applied (Unable to configure formatter 'json'); using stdlib fallback.
+2026-08-03 18:42:56,509 | INFO     | stockm.api | API starting — env=development — loading model registry...
+2026-08-03 18:42:56,526 | INFO     | stockm.api.registry | registry loaded: 0 ML symbols + 0 DL symbols
+2026-08-03 18:42:56,526 | INFO     | stockm.api | model registry ready: 0 ML + DL models
+2026-08-03 18:42:56,531 | INFO     | stockm.api.access | GET / 200 2.3ms rid=88251be394b2
+2026-08-03 18:42:56,532 | INFO     | httpx | HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-08-03 18:42:56,535 | INFO     | stockm.api.access | GET /health 200 2.0ms rid=581b77491660
+2026-08-03 18:42:56,536 | INFO     | httpx | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-08-03 18:42:56,538 | INFO     | stockm.api.access | GET /version 200 1.4ms rid=c394f6d17840
+2026-08-03 18:42:56,539 | INFO     | httpx | HTTP Request: GET http://testserver/version "HTTP/1.1 200 OK"
+2026-08-03 18:42:56,542 | INFO     | stockm.api.access | GET /models 200 1.6ms rid=8370a5b1edd8
+2026-08-03 18:42:56,543 | INFO     | httpx | HTTP Request: GET http://testserver/models "HTTP/1.1 200 OK"
+2026-08-03 18:42:56,543 | INFO     | stockm.api | API shutting down.
+2026-08-03 18:44:48,221 | WARNING  | stockm.api.config | logging_config.yaml could not be applied (Unable to configure formatter 'json'); using stdlib fallback.
+2026-08-03 18:44:48,221 | INFO     | stockm.api | API starting — env=development — loading model registry...
+2026-08-03 18:44:48,288 | INFO     | stockm.api.registry | registry loaded: 50 ML symbols + 0 DL symbols
+2026-08-03 18:44:48,288 | INFO     | stockm.api | model registry ready: 50 ML + DL models
+2026-08-03 18:44:48,291 | INFO     | stockm.api.access | GET /health 200 1.7ms rid=87aa2454da58
+2026-08-03 18:44:48,292 | INFO     | httpx | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-08-03 18:44:48,295 | INFO     | stockm.api.access | GET /models 200 2.3ms rid=8ed982814671
+2026-08-03 18:44:48,296 | INFO     | httpx | HTTP Request: GET http://testserver/models "HTTP/1.1 200 OK"
+2026-08-03 18:44:51,856 | INFO     | stockm.models.prediction | loaded optimized model for RELIANCE.NS
+2026-08-03 18:44:51,918 | INFO     | stockm.api.service | predict RELIANCE.NS date=2026-07-03 signal=SELL ret=-0.000050 latency=3618.8ms
+2026-08-03 18:44:51,919 | INFO     | stockm.api.access | POST /predict 200 3622.2ms rid=dd6716180258
+2026-08-03 18:44:51,920 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 200 OK"
+2026-08-03 18:44:51,924 | INFO     | stockm.api.errors | validation error: (.'.b.o.d.y.'.,. .'.s.y.m.b.o.l.'.): String should have at least 1 character (path=/predict)
+2026-08-03 18:44:51,925 | INFO     | stockm.api.access | POST /predict 422 3.3ms rid=427c63d1ccac
+2026-08-03 18:44:51,926 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 18:44:51,929 | INFO     | stockm.api.errors | validation error: (.'.b.o.d.y.'.,. .'.s.y.m.b.o.l.'.): Field required (path=/predict)
+2026-08-03 18:44:51,930 | INFO     | stockm.api.access | POST /predict 422 1.9ms rid=3e8d4024ace8
+2026-08-03 18:44:51,930 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 18:44:51,934 | WARNING  | stockm.api.errors | APIError MODEL_NOT_FOUND: "no deployed model for 'UNKNOWN.NS'" (path=/predict)
+2026-08-03 18:44:51,934 | INFO     | stockm.api.access | POST /predict 404 2.3ms rid=29298f5b3729
+2026-08-03 18:44:51,935 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 404 Not Found"
+2026-08-03 18:44:51,948 | INFO     | stockm.models.prediction | loaded optimized model for RELIANCE.NS
+2026-08-03 18:44:51,969 | INFO     | stockm.api.service | predict RELIANCE.NS date=2026-07-03 signal=SELL ret=-0.000050 latency=31.2ms
+2026-08-03 18:44:51,981 | INFO     | stockm.models.prediction | loaded optimized model for TCS.NS
+2026-08-03 18:44:52,003 | INFO     | stockm.api.service | predict TCS.NS date=2026-07-03 signal=BUY ret=0.000132 latency=33.9ms
+2026-08-03 18:44:52,003 | WARNING  | stockm.api.service | batch predict: "no deployed model for 'UNKNOWN.NS'"
+2026-08-03 18:44:52,004 | INFO     | stockm.api.service | batch predict: 3 symbols, 2 ok, 1 errors, 65.9ms
+2026-08-03 18:44:52,005 | INFO     | stockm.api.access | POST /predict/batch 200 69.0ms rid=359fb301c3db
+2026-08-03 18:44:52,006 | INFO     | httpx | HTTP Request: POST http://testserver/predict/batch "HTTP/1.1 200 OK"
+2026-08-03 18:44:52,009 | INFO     | stockm.api.access | GET /metrics 200 2.1ms rid=36f388090607
+2026-08-03 18:44:52,011 | INFO     | httpx | HTTP Request: GET http://testserver/metrics "HTTP/1.1 200 OK"
+2026-08-03 18:44:52,013 | INFO     | stockm.api.access | GET /metrics 200 1.2ms rid=1b56b98c4114
+2026-08-03 18:44:52,014 | INFO     | httpx | HTTP Request: GET http://testserver/metrics "HTTP/1.1 200 OK"
+2026-08-03 18:44:52,017 | INFO     | stockm.api.access | GET /health 200 1.8ms rid=rid-123
+2026-08-03 18:44:52,018 | INFO     | httpx | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-08-03 18:44:52,068 | INFO     | stockm.api.access | GET /openapi.json 200 48.8ms rid=d04240b82b6a
+2026-08-03 18:44:52,069 | INFO     | httpx | HTTP Request: GET http://testserver/openapi.json "HTTP/1.1 200 OK"
+2026-08-03 18:44:52,070 | INFO     | stockm.api | API shutting down.
+2026-08-03 18:54:28,758 | WARNING  | stockm.api.config | logging_config.yaml could not be applied (Unable to configure formatter 'json'); using stdlib fallback.
+2026-08-03 18:54:28,758 | INFO     | stockm.api | API starting — env=development — loading model registry...
+2026-08-03 18:54:28,801 | INFO     | stockm.api.registry | registry loaded: 50 ML symbols + 0 DL symbols
+2026-08-03 18:54:28,802 | INFO     | stockm.api | model registry ready: 50 ML + DL models
+2026-08-03 18:54:28,808 | INFO     | stockm.api.access | GET / 200 2.6ms rid=6a50fa234598
+2026-08-03 18:54:28,809 | INFO     | httpx | HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-08-03 18:54:28,814 | INFO     | stockm.api.access | GET /health 200 2.3ms rid=77c3d5eda5a4
+2026-08-03 18:54:28,815 | INFO     | httpx | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-08-03 18:54:28,820 | INFO     | stockm.api.access | GET /version 200 1.2ms rid=d5c0e1afba40
+2026-08-03 18:54:28,821 | INFO     | httpx | HTTP Request: GET http://testserver/version "HTTP/1.1 200 OK"
+2026-08-03 18:54:28,827 | INFO     | stockm.api.access | GET /models 200 3.2ms rid=8ea1ad8755f0
+2026-08-03 18:54:28,828 | INFO     | httpx | HTTP Request: GET http://testserver/models "HTTP/1.1 200 OK"
+2026-08-03 18:54:28,834 | INFO     | stockm.api.access | GET /models 200 2.2ms rid=3124d2b0745f
+2026-08-03 18:54:28,834 | INFO     | httpx | HTTP Request: GET http://testserver/models?model_type=ml "HTTP/1.1 200 OK"
+2026-08-03 18:54:28,840 | INFO     | stockm.api.access | GET /models 200 1.9ms rid=2e19dcf0143c
+2026-08-03 18:54:28,841 | INFO     | httpx | HTTP Request: GET http://testserver/models "HTTP/1.1 200 OK"
+2026-08-03 18:54:31,910 | INFO     | stockm.models.prediction | loaded optimized model for ADANIENT.NS
+2026-08-03 18:54:31,972 | WARNING  | stockm.api.errors | APIError PREDICTION_FAILED: prediction failed for ADANIENT.NS: feature_names mismatch: ['momentum_20', 'vma_20', 'momentum_10', 'volume_ratio_5', 'month_cos', 'trading_day_number', 'macd_hist', 'dist_sma_10', 'momentum_5', 'macd', 'vma_10', 'dist_sma_50', 'bb_width', 'return_lag_20', 'obv', 'return_lag_5', 'high_low_range', 'day_of_month', 'dist_sma_5', 'rsi', 'roc_10', 'open_close_diff', 'volume_ratio_10', 'atr', 'volume_lag_1', 'rolling_vol_10', 'atr_pct', 'month_sin', 'Volume', 'volume_lag_3', 'dist_sma_100', 'week', 'roc_20', 'return_lag_10', 'log_return', 'volume_lag_20', 'bb_pct', 'volume_change_ratio', 'roc_5', 'volume_ratio_20'] ['momentum_20', 'vma_20', 'momentum_10', 'volume_ratio_5', 'month_cos', 'trading_day_number', 'macd_hist', 'dist_sma_10', 'macd', 'vma_10', 'momentum_5', 'dist_sma_50', 'return_lag_20', 'bb_width', 'return_lag_5', 'obv', 'high_low_range', 'dist_sma_5', 'day_of_month', 'rsi', 'roc_10', 'open_close_diff', 'volume_ratio_10', 'atr', 'volume_lag_1', 'rolling_vol_10', 'atr_pct', 'month_sin', 'Volume', 'volume_lag_3', 'dist_sma_100', 'week', 'roc_20', 'log_return', 'volume_lag_20', 'bb_pct', 'volume_change_ratio', 'roc_5', 'volume_ratio_20', 'return_lag_10'] (path=/predict)
+2026-08-03 18:54:31,974 | INFO     | stockm.api.access | POST /predict 503 3131.0ms rid=f022889851cf
+2026-08-03 18:54:31,976 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 503 Service Unavailable"
+2026-08-03 18:54:32,960 | INFO     | stockm.api.access | GET /models 200 2.5ms rid=133242d4586d
+2026-08-03 18:54:32,961 | INFO     | httpx | HTTP Request: GET http://testserver/models "HTTP/1.1 200 OK"
+2026-08-03 18:54:32,974 | INFO     | stockm.models.prediction | loaded optimized model for ADANIENT.NS
+2026-08-03 18:54:33,011 | WARNING  | stockm.api.errors | APIError PREDICTION_FAILED: prediction failed for ADANIENT.NS: feature_names mismatch: ['momentum_20', 'vma_20', 'momentum_10', 'volume_ratio_5', 'month_cos', 'trading_day_number', 'macd_hist', 'dist_sma_10', 'momentum_5', 'macd', 'vma_10', 'dist_sma_50', 'bb_width', 'return_lag_20', 'obv', 'return_lag_5', 'high_low_range', 'day_of_month', 'dist_sma_5', 'rsi', 'roc_10', 'open_close_diff', 'volume_ratio_10', 'atr', 'volume_lag_1', 'rolling_vol_10', 'atr_pct', 'month_sin', 'Volume', 'volume_lag_3', 'dist_sma_100', 'week', 'roc_20', 'return_lag_10', 'log_return', 'volume_lag_20', 'bb_pct', 'volume_change_ratio', 'roc_5', 'volume_ratio_20'] ['momentum_20', 'vma_20', 'momentum_10', 'volume_ratio_5', 'month_cos', 'trading_day_number', 'macd_hist', 'dist_sma_10', 'macd', 'vma_10', 'momentum_5', 'dist_sma_50', 'return_lag_20', 'bb_width', 'return_lag_5', 'obv', 'high_low_range', 'dist_sma_5', 'day_of_month', 'rsi', 'roc_10', 'open_close_diff', 'volume_ratio_10', 'atr', 'volume_lag_1', 'rolling_vol_10', 'atr_pct', 'month_sin', 'Volume', 'volume_lag_3', 'dist_sma_100', 'week', 'roc_20', 'log_return', 'volume_lag_20', 'bb_pct', 'volume_change_ratio', 'roc_5', 'volume_ratio_20', 'return_lag_10'] (path=/predict)
+2026-08-03 18:54:33,012 | INFO     | stockm.api.access | POST /predict 503 47.8ms rid=test-123
+2026-08-03 18:54:33,013 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 503 Service Unavailable"
+2026-08-03 18:54:33,022 | WARNING  | stockm.api.errors | APIError MODEL_NOT_FOUND: "no deployed model for 'NONEXISTENT.NS'" (path=/predict)
+2026-08-03 18:54:33,023 | INFO     | stockm.api.access | POST /predict 404 3.8ms rid=064b27f084c1
+2026-08-03 18:54:33,025 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 404 Not Found"
+2026-08-03 18:54:33,033 | INFO     | stockm.api.access | GET /models 200 3.3ms rid=a6e24f9511af
+2026-08-03 18:54:33,034 | INFO     | httpx | HTTP Request: GET http://testserver/models "HTTP/1.1 200 OK"
+2026-08-03 18:54:33,050 | INFO     | stockm.models.prediction | loaded optimized model for ADANIENT.NS
+2026-08-03 18:54:33,086 | WARNING  | stockm.api.service | batch predict failed for ADANIENT.NS: feature_names mismatch: ['momentum_20', 'vma_20', 'momentum_10', 'volume_ratio_5', 'month_cos', 'trading_day_number', 'macd_hist', 'dist_sma_10', 'momentum_5', 'macd', 'vma_10', 'dist_sma_50', 'bb_width', 'return_lag_20', 'obv', 'return_lag_5', 'high_low_range', 'day_of_month', 'dist_sma_5', 'rsi', 'roc_10', 'open_close_diff', 'volume_ratio_10', 'atr', 'volume_lag_1', 'rolling_vol_10', 'atr_pct', 'month_sin', 'Volume', 'volume_lag_3', 'dist_sma_100', 'week', 'roc_20', 'return_lag_10', 'log_return', 'volume_lag_20', 'bb_pct', 'volume_change_ratio', 'roc_5', 'volume_ratio_20'] ['momentum_20', 'vma_20', 'momentum_10', 'volume_ratio_5', 'month_cos', 'trading_day_number', 'macd_hist', 'dist_sma_10', 'macd', 'vma_10', 'momentum_5', 'dist_sma_50', 'return_lag_20', 'bb_width', 'return_lag_5', 'obv', 'high_low_range', 'dist_sma_5', 'day_of_month', 'rsi', 'roc_10', 'open_close_diff', 'volume_ratio_10', 'atr', 'volume_lag_1', 'rolling_vol_10', 'atr_pct', 'month_sin', 'Volume', 'volume_lag_3', 'dist_sma_100', 'week', 'roc_20', 'log_return', 'volume_lag_20', 'bb_pct', 'volume_change_ratio', 'roc_5', 'volume_ratio_20', 'return_lag_10']
+2026-08-03 18:54:33,086 | WARNING  | stockm.api.service | batch predict: "no deployed model for 'NONEXISTENT.NS'"
+2026-08-03 18:54:33,087 | INFO     | stockm.api.service | batch predict: 2 symbols, 0 ok, 2 errors, 46.6ms
+2026-08-03 18:54:33,088 | INFO     | stockm.api.access | POST /predict/batch 200 51.1ms rid=d5a067ae7468
+2026-08-03 18:54:33,089 | INFO     | httpx | HTTP Request: POST http://testserver/predict/batch "HTTP/1.1 200 OK"
+2026-08-03 18:54:33,114 | INFO     | stockm.api.access | GET /models 200 3.1ms rid=889b3d776b29
+2026-08-03 18:54:33,116 | INFO     | httpx | HTTP Request: GET http://testserver/models "HTTP/1.1 200 OK"
+2026-08-03 18:54:33,128 | INFO     | stockm.models.prediction | loaded optimized model for ADANIENT.NS
+2026-08-03 18:54:33,165 | WARNING  | stockm.api.service | batch predict failed for ADANIENT.NS: feature_names mismatch: ['momentum_20', 'vma_20', 'momentum_10', 'volume_ratio_5', 'month_cos', 'trading_day_number', 'macd_hist', 'dist_sma_10', 'momentum_5', 'macd', 'vma_10', 'dist_sma_50', 'bb_width', 'return_lag_20', 'obv', 'return_lag_5', 'high_low_range', 'day_of_month', 'dist_sma_5', 'rsi', 'roc_10', 'open_close_diff', 'volume_ratio_10', 'atr', 'volume_lag_1', 'rolling_vol_10', 'atr_pct', 'month_sin', 'Volume', 'volume_lag_3', 'dist_sma_100', 'week', 'roc_20', 'return_lag_10', 'log_return', 'volume_lag_20', 'bb_pct', 'volume_change_ratio', 'roc_5', 'volume_ratio_20'] ['momentum_20', 'vma_20', 'momentum_10', 'volume_ratio_5', 'month_cos', 'trading_day_number', 'macd_hist', 'dist_sma_10', 'macd', 'vma_10', 'momentum_5', 'dist_sma_50', 'return_lag_20', 'bb_width', 'return_lag_5', 'obv', 'high_low_range', 'dist_sma_5', 'day_of_month', 'rsi', 'roc_10', 'open_close_diff', 'volume_ratio_10', 'atr', 'volume_lag_1', 'rolling_vol_10', 'atr_pct', 'month_sin', 'Volume', 'volume_lag_3', 'dist_sma_100', 'week', 'roc_20', 'log_return', 'volume_lag_20', 'bb_pct', 'volume_change_ratio', 'roc_5', 'volume_ratio_20', 'return_lag_10']
+2026-08-03 18:54:33,165 | INFO     | stockm.api.service | batch predict: 1 symbols, 0 ok, 1 errors, 44.2ms
+2026-08-03 18:54:33,166 | INFO     | stockm.api.access | POST /predict/batch 200 47.8ms rid=4f9c8a251077
+2026-08-03 18:54:33,168 | INFO     | httpx | HTTP Request: POST http://testserver/predict/batch "HTTP/1.1 200 OK"
+2026-08-03 18:54:33,176 | INFO     | stockm.api.errors | validation error: (.'.b.o.d.y.'.,. .'.s.y.m.b.o.l.'.): String should have at least 1 character (path=/predict)
+2026-08-03 18:54:33,176 | INFO     | stockm.api.access | POST /predict 422 3.5ms rid=e5dffbacaab1
+2026-08-03 18:54:33,178 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 18:54:33,186 | INFO     | stockm.api.errors | validation error: (.'.b.o.d.y.'.,. .'.s.y.m.b.o.l.'.): Field required (path=/predict)
+2026-08-03 18:54:33,187 | INFO     | stockm.api.access | POST /predict 422 3.3ms rid=d991bab6874e
+2026-08-03 18:54:33,188 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 18:54:33,196 | INFO     | stockm.api.access | GET /models 200 2.8ms rid=98fee9632b57
+2026-08-03 18:54:33,197 | INFO     | httpx | HTTP Request: GET http://testserver/models "HTTP/1.1 200 OK"
+2026-08-03 18:54:33,208 | INFO     | stockm.api.errors | validation error: (.'.b.o.d.y.'.,. .'.t.h.r.e.s.h.o.l.d.'.): Input should be less than or equal to 0.1 (path=/predict)
+2026-08-03 18:54:33,209 | INFO     | stockm.api.access | POST /predict 422 8.2ms rid=2716b963deb4
+2026-08-03 18:54:33,210 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 18:54:33,219 | INFO     | stockm.api.errors | validation error: (.'.b.o.d.y.'.,. .'.s.y.m.b.o.l.s.'.): List should have at least 1 item after validation, not 0 (path=/predict/batch)
+2026-08-03 18:54:33,220 | INFO     | stockm.api.access | POST /predict/batch 422 3.6ms rid=174491ac58be
+2026-08-03 18:54:33,221 | INFO     | httpx | HTTP Request: POST http://testserver/predict/batch "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 18:54:33,228 | INFO     | stockm.api.access | GET /health 200 2.3ms rid=06ee4f51f56b
+2026-08-03 18:54:33,231 | INFO     | httpx | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-08-03 18:54:33,238 | INFO     | stockm.api.access | GET /health 200 1.8ms rid=abc-123
+2026-08-03 18:54:33,240 | INFO     | httpx | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-08-03 18:54:33,246 | INFO     | stockm.api.access | GET / 200 1.9ms rid=845bdaf38567
+2026-08-03 18:54:33,248 | INFO     | httpx | HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-08-03 18:54:33,255 | INFO     | stockm.api.access | GET /metrics 200 2.1ms rid=ae058ba23233
+2026-08-03 18:54:33,257 | INFO     | httpx | HTTP Request: GET http://testserver/metrics "HTTP/1.1 200 OK"
+2026-08-03 18:54:33,261 | INFO     | stockm.api.access | GET /health 200 2.0ms rid=59e48e8c5eb7
+2026-08-03 18:54:33,262 | INFO     | httpx | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-08-03 18:54:33,267 | INFO     | stockm.api.access | GET /metrics 200 2.0ms rid=e9f5370e1a30
+2026-08-03 18:54:33,268 | INFO     | httpx | HTTP Request: GET http://testserver/metrics "HTTP/1.1 200 OK"
+2026-08-03 18:54:33,273 | INFO     | stockm.api.access | GET /nonexistent 404 0.8ms rid=abaab840202c
+2026-08-03 18:54:33,275 | INFO     | httpx | HTTP Request: GET http://testserver/nonexistent "HTTP/1.1 404 Not Found"
+2026-08-03 18:54:33,277 | INFO     | stockm.api | API shutting down.
+2026-08-03 18:55:16,058 | WARNING  | stockm.api.config | logging_config.yaml could not be applied (Unable to configure formatter 'json'); using stdlib fallback.
+2026-08-03 18:55:16,059 | INFO     | stockm.api | API starting — env=development — loading model registry...
+2026-08-03 18:55:16,125 | INFO     | stockm.api.registry | registry loaded: 50 ML symbols + 0 DL symbols
+2026-08-03 18:55:16,125 | INFO     | stockm.api | model registry ready: 50 ML + DL models
+2026-08-03 18:55:16,133 | INFO     | stockm.api.access | GET / 200 2.9ms rid=7ca9b7d26c54
+2026-08-03 18:55:16,134 | INFO     | httpx | HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-08-03 18:55:16,144 | INFO     | stockm.api.access | GET /health 200 4.9ms rid=203be619b4c7
+2026-08-03 18:55:16,145 | INFO     | httpx | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-08-03 18:55:16,151 | INFO     | stockm.api.access | GET /version 200 1.7ms rid=cc6944cf6546
+2026-08-03 18:55:16,153 | INFO     | httpx | HTTP Request: GET http://testserver/version "HTTP/1.1 200 OK"
+2026-08-03 18:55:16,161 | INFO     | stockm.api.access | GET /models 200 4.1ms rid=2ee0b9eefbd7
+2026-08-03 18:55:16,162 | INFO     | httpx | HTTP Request: GET http://testserver/models "HTTP/1.1 200 OK"
+2026-08-03 18:55:16,168 | INFO     | stockm.api.access | GET /models 200 2.6ms rid=5ce43c86ed41
+2026-08-03 18:55:16,170 | INFO     | httpx | HTTP Request: GET http://testserver/models?model_type=ml "HTTP/1.1 200 OK"
+2026-08-03 18:55:16,179 | INFO     | stockm.api.access | GET /models 200 3.5ms rid=ed1fee80e2d6
+2026-08-03 18:55:16,181 | INFO     | httpx | HTTP Request: GET http://testserver/models "HTTP/1.1 200 OK"
+2026-08-03 18:55:18,978 | INFO     | stockm.models.prediction | loaded optimized model for ADANIENT.NS
+2026-08-03 18:55:19,029 | WARNING  | stockm.api.errors | APIError PREDICTION_FAILED: prediction failed for ADANIENT.NS: feature_names mismatch: ['momentum_20', 'vma_20', 'momentum_10', 'volume_ratio_5', 'month_cos', 'trading_day_number', 'macd_hist', 'dist_sma_10', 'momentum_5', 'macd', 'vma_10', 'dist_sma_50', 'bb_width', 'return_lag_20', 'obv', 'return_lag_5', 'high_low_range', 'day_of_month', 'dist_sma_5', 'rsi', 'roc_10', 'open_close_diff', 'volume_ratio_10', 'atr', 'volume_lag_1', 'rolling_vol_10', 'atr_pct', 'month_sin', 'Volume', 'volume_lag_3', 'dist_sma_100', 'week', 'roc_20', 'return_lag_10', 'log_return', 'volume_lag_20', 'bb_pct', 'volume_change_ratio', 'roc_5', 'volume_ratio_20'] ['momentum_20', 'vma_20', 'momentum_10', 'volume_ratio_5', 'month_cos', 'trading_day_number', 'macd_hist', 'dist_sma_10', 'macd', 'vma_10', 'momentum_5', 'dist_sma_50', 'return_lag_20', 'bb_width', 'return_lag_5', 'obv', 'high_low_range', 'dist_sma_5', 'day_of_month', 'rsi', 'roc_10', 'open_close_diff', 'volume_ratio_10', 'atr', 'volume_lag_1', 'rolling_vol_10', 'atr_pct', 'month_sin', 'Volume', 'volume_lag_3', 'dist_sma_100', 'week', 'roc_20', 'log_return', 'volume_lag_20', 'bb_pct', 'volume_change_ratio', 'roc_5', 'volume_ratio_20', 'return_lag_10'] (path=/predict)
+2026-08-03 18:55:19,031 | INFO     | stockm.api.access | POST /predict 503 2846.9ms rid=2450bd1fcfdd
+2026-08-03 18:55:19,032 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 503 Service Unavailable"
+2026-08-03 18:55:19,046 | INFO     | stockm.models.prediction | loaded optimized model for ADANIPORTS.NS
+2026-08-03 18:55:19,082 | INFO     | stockm.api.service | predict ADANIPORTS.NS date=2026-07-03 signal=BUY ret=0.001346 latency=46.2ms
+2026-08-03 18:55:19,084 | INFO     | stockm.api.access | POST /predict 200 50.1ms rid=6cf10cc070f5
+2026-08-03 18:55:19,085 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,099 | INFO     | stockm.models.prediction | loaded optimized model for ADANIPORTS.NS
+2026-08-03 18:55:19,122 | INFO     | stockm.api.service | predict ADANIPORTS.NS date=2026-07-03 signal=BUY ret=0.001346 latency=33.8ms
+2026-08-03 18:55:19,123 | INFO     | stockm.api.access | POST /predict 200 36.5ms rid=713940aacfe8
+2026-08-03 18:55:19,125 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,130 | INFO     | stockm.api.access | GET /models 200 2.0ms rid=a124314b496f
+2026-08-03 18:55:19,132 | INFO     | httpx | HTTP Request: GET http://testserver/models "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,145 | INFO     | stockm.models.prediction | loaded optimized model for ADANIENT.NS
+2026-08-03 18:55:19,179 | WARNING  | stockm.api.errors | APIError PREDICTION_FAILED: prediction failed for ADANIENT.NS: feature_names mismatch: ['momentum_20', 'vma_20', 'momentum_10', 'volume_ratio_5', 'month_cos', 'trading_day_number', 'macd_hist', 'dist_sma_10', 'momentum_5', 'macd', 'vma_10', 'dist_sma_50', 'bb_width', 'return_lag_20', 'obv', 'return_lag_5', 'high_low_range', 'day_of_month', 'dist_sma_5', 'rsi', 'roc_10', 'open_close_diff', 'volume_ratio_10', 'atr', 'volume_lag_1', 'rolling_vol_10', 'atr_pct', 'month_sin', 'Volume', 'volume_lag_3', 'dist_sma_100', 'week', 'roc_20', 'return_lag_10', 'log_return', 'volume_lag_20', 'bb_pct', 'volume_change_ratio', 'roc_5', 'volume_ratio_20'] ['momentum_20', 'vma_20', 'momentum_10', 'volume_ratio_5', 'month_cos', 'trading_day_number', 'macd_hist', 'dist_sma_10', 'macd', 'vma_10', 'momentum_5', 'dist_sma_50', 'return_lag_20', 'bb_width', 'return_lag_5', 'obv', 'high_low_range', 'dist_sma_5', 'day_of_month', 'rsi', 'roc_10', 'open_close_diff', 'volume_ratio_10', 'atr', 'volume_lag_1', 'rolling_vol_10', 'atr_pct', 'month_sin', 'Volume', 'volume_lag_3', 'dist_sma_100', 'week', 'roc_20', 'log_return', 'volume_lag_20', 'bb_pct', 'volume_change_ratio', 'roc_5', 'volume_ratio_20', 'return_lag_10'] (path=/predict)
+2026-08-03 18:55:19,180 | INFO     | stockm.api.access | POST /predict 503 46.7ms rid=3f493670004c
+2026-08-03 18:55:19,181 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 503 Service Unavailable"
+2026-08-03 18:55:19,239 | INFO     | stockm.models.prediction | loaded optimized model for ADANIPORTS.NS
+2026-08-03 18:55:19,260 | INFO     | stockm.api.service | predict ADANIPORTS.NS date=2026-07-03 signal=BUY ret=0.001346 latency=30.9ms
+2026-08-03 18:55:19,261 | INFO     | stockm.api.access | POST /predict 200 78.3ms rid=76857e3b00e3
+2026-08-03 18:55:19,262 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,276 | INFO     | stockm.models.prediction | loaded optimized model for ADANIPORTS.NS
+2026-08-03 18:55:19,295 | INFO     | stockm.api.service | predict ADANIPORTS.NS date=2026-07-03 signal=BUY ret=0.001346 latency=28.5ms
+2026-08-03 18:55:19,296 | INFO     | stockm.api.access | POST /predict 200 31.7ms rid=test-123
+2026-08-03 18:55:19,297 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,302 | WARNING  | stockm.api.errors | APIError MODEL_NOT_FOUND: "no deployed model for 'NONEXISTENT.NS'" (path=/predict)
+2026-08-03 18:55:19,303 | INFO     | stockm.api.access | POST /predict 404 2.2ms rid=56df3bad3f48
+2026-08-03 18:55:19,304 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 404 Not Found"
+2026-08-03 18:55:19,309 | INFO     | stockm.api.access | GET /models 200 2.6ms rid=99e4382134b1
+2026-08-03 18:55:19,311 | INFO     | httpx | HTTP Request: GET http://testserver/models "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,324 | INFO     | stockm.models.prediction | loaded optimized model for ADANIENT.NS
+2026-08-03 18:55:19,356 | WARNING  | stockm.api.errors | APIError PREDICTION_FAILED: prediction failed for ADANIENT.NS: feature_names mismatch: ['momentum_20', 'vma_20', 'momentum_10', 'volume_ratio_5', 'month_cos', 'trading_day_number', 'macd_hist', 'dist_sma_10', 'momentum_5', 'macd', 'vma_10', 'dist_sma_50', 'bb_width', 'return_lag_20', 'obv', 'return_lag_5', 'high_low_range', 'day_of_month', 'dist_sma_5', 'rsi', 'roc_10', 'open_close_diff', 'volume_ratio_10', 'atr', 'volume_lag_1', 'rolling_vol_10', 'atr_pct', 'month_sin', 'Volume', 'volume_lag_3', 'dist_sma_100', 'week', 'roc_20', 'return_lag_10', 'log_return', 'volume_lag_20', 'bb_pct', 'volume_change_ratio', 'roc_5', 'volume_ratio_20'] ['momentum_20', 'vma_20', 'momentum_10', 'volume_ratio_5', 'month_cos', 'trading_day_number', 'macd_hist', 'dist_sma_10', 'macd', 'vma_10', 'momentum_5', 'dist_sma_50', 'return_lag_20', 'bb_width', 'return_lag_5', 'obv', 'high_low_range', 'dist_sma_5', 'day_of_month', 'rsi', 'roc_10', 'open_close_diff', 'volume_ratio_10', 'atr', 'volume_lag_1', 'rolling_vol_10', 'atr_pct', 'month_sin', 'Volume', 'volume_lag_3', 'dist_sma_100', 'week', 'roc_20', 'log_return', 'volume_lag_20', 'bb_pct', 'volume_change_ratio', 'roc_5', 'volume_ratio_20', 'return_lag_10'] (path=/predict)
+2026-08-03 18:55:19,357 | INFO     | stockm.api.access | POST /predict 503 44.5ms rid=1a433051d643
+2026-08-03 18:55:19,358 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 503 Service Unavailable"
+2026-08-03 18:55:19,372 | INFO     | stockm.models.prediction | loaded optimized model for ADANIPORTS.NS
+2026-08-03 18:55:19,393 | INFO     | stockm.api.service | predict ADANIPORTS.NS date=2026-07-03 signal=BUY ret=0.001346 latency=31.0ms
+2026-08-03 18:55:19,394 | INFO     | stockm.api.access | POST /predict 200 34.4ms rid=305ea7a8655b
+2026-08-03 18:55:19,395 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,409 | INFO     | stockm.models.prediction | loaded optimized model for ADANIPORTS.NS
+2026-08-03 18:55:19,430 | INFO     | stockm.api.service | predict ADANIPORTS.NS date=2026-07-03 signal=BUY ret=0.001346 latency=30.9ms
+2026-08-03 18:55:19,430 | WARNING  | stockm.api.service | batch predict: "no deployed model for 'NONEXISTENT.NS'"
+2026-08-03 18:55:19,430 | INFO     | stockm.api.service | batch predict: 2 symbols, 1 ok, 1 errors, 31.5ms
+2026-08-03 18:55:19,431 | INFO     | stockm.api.access | POST /predict/batch 200 34.8ms rid=56ca52855ce6
+2026-08-03 18:55:19,432 | INFO     | httpx | HTTP Request: POST http://testserver/predict/batch "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,437 | INFO     | stockm.api.access | GET /models 200 1.9ms rid=c89619aef89a
+2026-08-03 18:55:19,438 | INFO     | httpx | HTTP Request: GET http://testserver/models "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,452 | INFO     | stockm.models.prediction | loaded optimized model for ADANIENT.NS
+2026-08-03 18:55:19,484 | WARNING  | stockm.api.errors | APIError PREDICTION_FAILED: prediction failed for ADANIENT.NS: feature_names mismatch: ['momentum_20', 'vma_20', 'momentum_10', 'volume_ratio_5', 'month_cos', 'trading_day_number', 'macd_hist', 'dist_sma_10', 'momentum_5', 'macd', 'vma_10', 'dist_sma_50', 'bb_width', 'return_lag_20', 'obv', 'return_lag_5', 'high_low_range', 'day_of_month', 'dist_sma_5', 'rsi', 'roc_10', 'open_close_diff', 'volume_ratio_10', 'atr', 'volume_lag_1', 'rolling_vol_10', 'atr_pct', 'month_sin', 'Volume', 'volume_lag_3', 'dist_sma_100', 'week', 'roc_20', 'return_lag_10', 'log_return', 'volume_lag_20', 'bb_pct', 'volume_change_ratio', 'roc_5', 'volume_ratio_20'] ['momentum_20', 'vma_20', 'momentum_10', 'volume_ratio_5', 'month_cos', 'trading_day_number', 'macd_hist', 'dist_sma_10', 'macd', 'vma_10', 'momentum_5', 'dist_sma_50', 'return_lag_20', 'bb_width', 'return_lag_5', 'obv', 'high_low_range', 'dist_sma_5', 'day_of_month', 'rsi', 'roc_10', 'open_close_diff', 'volume_ratio_10', 'atr', 'volume_lag_1', 'rolling_vol_10', 'atr_pct', 'month_sin', 'Volume', 'volume_lag_3', 'dist_sma_100', 'week', 'roc_20', 'log_return', 'volume_lag_20', 'bb_pct', 'volume_change_ratio', 'roc_5', 'volume_ratio_20', 'return_lag_10'] (path=/predict)
+2026-08-03 18:55:19,485 | INFO     | stockm.api.access | POST /predict 503 44.7ms rid=4b17266d12f1
+2026-08-03 18:55:19,486 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 503 Service Unavailable"
+2026-08-03 18:55:19,499 | INFO     | stockm.models.prediction | loaded optimized model for ADANIPORTS.NS
+2026-08-03 18:55:19,519 | INFO     | stockm.api.service | predict ADANIPORTS.NS date=2026-07-03 signal=BUY ret=0.001346 latency=30.0ms
+2026-08-03 18:55:19,520 | INFO     | stockm.api.access | POST /predict 200 33.2ms rid=19b839291554
+2026-08-03 18:55:19,521 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,534 | INFO     | stockm.models.prediction | loaded optimized model for ADANIPORTS.NS
+2026-08-03 18:55:19,553 | INFO     | stockm.api.service | predict ADANIPORTS.NS date=2026-07-03 signal=BUY ret=0.001346 latency=28.8ms
+2026-08-03 18:55:19,554 | INFO     | stockm.api.service | batch predict: 1 symbols, 1 ok, 0 errors, 29.1ms
+2026-08-03 18:55:19,555 | INFO     | stockm.api.access | POST /predict/batch 200 32.2ms rid=1d8c72786bd3
+2026-08-03 18:55:19,556 | INFO     | httpx | HTTP Request: POST http://testserver/predict/batch "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,562 | INFO     | stockm.api.errors | validation error: (.'.b.o.d.y.'.,. .'.s.y.m.b.o.l.'.): String should have at least 1 character (path=/predict)
+2026-08-03 18:55:19,562 | INFO     | stockm.api.access | POST /predict 422 2.1ms rid=793a26168d4f
+2026-08-03 18:55:19,563 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 18:55:19,567 | INFO     | stockm.api.errors | validation error: (.'.b.o.d.y.'.,. .'.s.y.m.b.o.l.'.): Field required (path=/predict)
+2026-08-03 18:55:19,568 | INFO     | stockm.api.access | POST /predict 422 1.9ms rid=3b38a9091180
+2026-08-03 18:55:19,568 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 18:55:19,574 | INFO     | stockm.api.access | GET /models 200 2.8ms rid=a2b1c324b4e9
+2026-08-03 18:55:19,575 | INFO     | httpx | HTTP Request: GET http://testserver/models "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,590 | INFO     | stockm.models.prediction | loaded optimized model for ADANIENT.NS
+2026-08-03 18:55:19,623 | WARNING  | stockm.api.errors | APIError PREDICTION_FAILED: prediction failed for ADANIENT.NS: feature_names mismatch: ['momentum_20', 'vma_20', 'momentum_10', 'volume_ratio_5', 'month_cos', 'trading_day_number', 'macd_hist', 'dist_sma_10', 'momentum_5', 'macd', 'vma_10', 'dist_sma_50', 'bb_width', 'return_lag_20', 'obv', 'return_lag_5', 'high_low_range', 'day_of_month', 'dist_sma_5', 'rsi', 'roc_10', 'open_close_diff', 'volume_ratio_10', 'atr', 'volume_lag_1', 'rolling_vol_10', 'atr_pct', 'month_sin', 'Volume', 'volume_lag_3', 'dist_sma_100', 'week', 'roc_20', 'return_lag_10', 'log_return', 'volume_lag_20', 'bb_pct', 'volume_change_ratio', 'roc_5', 'volume_ratio_20'] ['momentum_20', 'vma_20', 'momentum_10', 'volume_ratio_5', 'month_cos', 'trading_day_number', 'macd_hist', 'dist_sma_10', 'macd', 'vma_10', 'momentum_5', 'dist_sma_50', 'return_lag_20', 'bb_width', 'return_lag_5', 'obv', 'high_low_range', 'dist_sma_5', 'day_of_month', 'rsi', 'roc_10', 'open_close_diff', 'volume_ratio_10', 'atr', 'volume_lag_1', 'rolling_vol_10', 'atr_pct', 'month_sin', 'Volume', 'volume_lag_3', 'dist_sma_100', 'week', 'roc_20', 'log_return', 'volume_lag_20', 'bb_pct', 'volume_change_ratio', 'roc_5', 'volume_ratio_20', 'return_lag_10'] (path=/predict)
+2026-08-03 18:55:19,623 | INFO     | stockm.api.access | POST /predict 503 45.4ms rid=052abb2bd754
+2026-08-03 18:55:19,624 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 503 Service Unavailable"
+2026-08-03 18:55:19,638 | INFO     | stockm.models.prediction | loaded optimized model for ADANIPORTS.NS
+2026-08-03 18:55:19,659 | INFO     | stockm.api.service | predict ADANIPORTS.NS date=2026-07-03 signal=BUY ret=0.001346 latency=31.0ms
+2026-08-03 18:55:19,661 | INFO     | stockm.api.access | POST /predict 200 34.4ms rid=34bf5355cfd3
+2026-08-03 18:55:19,661 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,665 | INFO     | stockm.api.errors | validation error: (.'.b.o.d.y.'.,. .'.t.h.r.e.s.h.o.l.d.'.): Input should be less than or equal to 0.1 (path=/predict)
+2026-08-03 18:55:19,666 | INFO     | stockm.api.access | POST /predict 422 2.4ms rid=e860050ba495
+2026-08-03 18:55:19,666 | INFO     | httpx | HTTP Request: POST http://testserver/predict "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 18:55:19,671 | INFO     | stockm.api.errors | validation error: (.'.b.o.d.y.'.,. .'.s.y.m.b.o.l.s.'.): List should have at least 1 item after validation, not 0 (path=/predict/batch)
+2026-08-03 18:55:19,672 | INFO     | stockm.api.access | POST /predict/batch 422 2.4ms rid=4ac14f91fda1
+2026-08-03 18:55:19,672 | INFO     | httpx | HTTP Request: POST http://testserver/predict/batch "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 18:55:19,678 | INFO     | stockm.api.access | GET /health 200 1.6ms rid=f9fd4bd01ea7
+2026-08-03 18:55:19,679 | INFO     | httpx | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,683 | INFO     | stockm.api.access | GET /health 200 1.3ms rid=abc-123
+2026-08-03 18:55:19,684 | INFO     | httpx | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,688 | INFO     | stockm.api.access | GET / 200 0.9ms rid=63ad4ac8b65d
+2026-08-03 18:55:19,689 | INFO     | httpx | HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,694 | INFO     | stockm.api.access | GET /metrics 200 1.8ms rid=7f83f640d3d1
+2026-08-03 18:55:19,695 | INFO     | httpx | HTTP Request: GET http://testserver/metrics "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,698 | INFO     | stockm.api.access | GET /health 200 1.3ms rid=6e3519e848b6
+2026-08-03 18:55:19,698 | INFO     | httpx | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,701 | INFO     | stockm.api.access | GET /metrics 200 1.2ms rid=3b69c834631a
+2026-08-03 18:55:19,702 | INFO     | httpx | HTTP Request: GET http://testserver/metrics "HTTP/1.1 200 OK"
+2026-08-03 18:55:19,705 | INFO     | stockm.api.access | GET /nonexistent 404 0.4ms rid=442bbe90c246
+2026-08-03 18:55:19,706 | INFO     | httpx | HTTP Request: GET http://testserver/nonexistent "HTTP/1.1 404 Not Found"
+2026-08-03 18:55:19,707 | INFO     | stockm.api | API shutting down.
+2026-08-03 19:04:59,994 | WARNING  | stockm.api.config | logging_config.yaml could not be applied (Unable to configure formatter 'json'); using stdlib fallback.
+2026-08-03 19:04:59,996 | INFO     | stockm.api | API starting — env=development — loading model registry...
+2026-08-03 19:05:00,087 | INFO     | stockm.api.registry | registry loaded: 50 ML symbols + 0 DL symbols
+2026-08-03 19:05:00,087 | INFO     | stockm.api | model registry ready: 50 ML + DL models
+2026-08-03 19:05:04,961 | INFO     | stockm.api.access | GET /health 200 7.7ms rid=41ae2fed26bf
+2026-08-03 19:05:05,187 | INFO     | stockm.api.access | GET /models 200 8.0ms rid=30f3656cb312
+2026-08-03 19:07:02,297 | WARNING  | stockm.api.config | logging_config.yaml could not be applied (Unable to configure formatter 'json'); using stdlib fallback.
+2026-08-03 19:07:02,297 | INFO     | stockm.api | API starting — env=development — loading model registry...
+2026-08-03 19:07:02,360 | INFO     | stockm.api.registry | registry loaded: 50 ML symbols + 0 DL symbols
+2026-08-03 19:07:02,360 | INFO     | stockm.api | model registry ready: 50 ML + DL models
+2026-08-03 19:07:07,262 | INFO     | stockm.api.access | GET /health 200 3.8ms rid=da568cd1a1b2
+2026-08-03 19:07:29,072 | WARNING  | stockm.api.config | logging_config.yaml could not be applied (Unable to configure formatter 'json'); using stdlib fallback.
+2026-08-03 19:07:29,072 | INFO     | stockm.api | API starting — env=development — loading model registry...
+2026-08-03 19:07:29,101 | INFO     | stockm.api.registry | registry loaded: 50 ML symbols + 0 DL symbols
+2026-08-03 19:07:29,102 | INFO     | stockm.api | model registry ready: 50 ML + DL models
+2026-08-03 19:07:48,475 | INFO     | stockm.api.access | GET / 200 2.5ms rid=da71be373908
+2026-08-03 19:07:48,526 | INFO     | stockm.api.access | GET /favicon.ico 404 1.0ms rid=a2d58e32c17f
+2026-08-03 19:12:41,661 | INFO     | stockm.api | API shutting down.
