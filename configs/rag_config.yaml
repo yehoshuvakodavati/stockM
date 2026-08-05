@@ -1,0 +1,22 @@
+# StockM v1.0 - Phase 10 — RAG configuration (structured source config)
+# Env-var-driven settings live in .env (see src/stockM/rag/config.py).
+# This file holds STRUCTURED source config (RSS feeds, etc.) that doesn't fit
+# a flat env var. Missing file is fine — sensible defaults ship in code.
+
+sources:
+  # RSS feeds for RSSFeedLoader. Each entry is one feed.
+  # 'company' is a feed-wide hint (null if the feed covers many stocks).
+  rss: []
+    # - name: moneycontrol_markets
+    #   url: https://www.moneycontrol.com/rss/latest-news.xml
+    #   company: null
+    #   category: financial_news
+    # - name: reliance_news
+    #   url: https://example.com/reliance.rss
+    #   company: RELIANCE
+    #   category: financial_news
+
+# FilingsDirLoader reads from data/documents/filings/<company>/<category>/
+# Drop files into that tree and they're indexed on the next run.
+filings:
+  root_dir: data/documents/filings
